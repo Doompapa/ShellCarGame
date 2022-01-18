@@ -1,0 +1,75 @@
+{
+  "ver": "1.3.21",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "eeb86515-eaa5-4f80-8d5d-2f9c1ea493ab",
+  "files": [],
+  "subMetas": {
+    "39742": {
+      "importer": "gltf-material",
+      "uuid": "eeb86515-eaa5-4f80-8d5d-2f9c1ea493ab@39742",
+      "displayName": "",
+      "id": "39742",
+      "name": "PolygonCity_Mat_01_A.material",
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "2afdd": {
+      "importer": "gltf-mesh",
+      "uuid": "eeb86515-eaa5-4f80-8d5d-2f9c1ea493ab@2afdd",
+      "displayName": "",
+      "id": "2afdd",
+      "name": "SM_Bld_Apartment_Stairs_Planter_02.mesh",
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".json",
+        ".bin"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "941ab": {
+      "importer": "gltf-scene",
+      "uuid": "eeb86515-eaa5-4f80-8d5d-2f9c1ea493ab@941ab",
+      "displayName": "",
+      "id": "941ab",
+      "name": "SM_Bld_Apartment_Stairs_Planter_02.prefab",
+      "ver": "1.0.11",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "redirect": "eeb86515-eaa5-4f80-8d5d-2f9c1ea493ab@941ab",
+    "assetFinder": {
+      "meshes": [
+        "eeb86515-eaa5-4f80-8d5d-2f9c1ea493ab@2afdd"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "eeb86515-eaa5-4f80-8d5d-2f9c1ea493ab@39742"
+      ],
+      "scenes": [
+        "eeb86515-eaa5-4f80-8d5d-2f9c1ea493ab@941ab"
+      ]
+    }
+  }
+}
