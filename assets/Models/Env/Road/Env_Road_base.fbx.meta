@@ -1,0 +1,75 @@
+{
+  "ver": "1.3.21",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "b0e596fb-e25e-4a2f-8aa5-b8497b82051e",
+  "files": [],
+  "subMetas": {
+    "73c6b": {
+      "importer": "gltf-mesh",
+      "uuid": "b0e596fb-e25e-4a2f-8aa5-b8497b82051e@73c6b",
+      "displayName": "",
+      "id": "73c6b",
+      "name": "SM_Env_Road_Bare_85.mesh",
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".json",
+        ".bin"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "39cba": {
+      "importer": "gltf-material",
+      "uuid": "b0e596fb-e25e-4a2f-8aa5-b8497b82051e@39cba",
+      "displayName": "",
+      "id": "39cba",
+      "name": "PolygonCity_Mat_Road_01.material",
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "c4a8c": {
+      "importer": "gltf-scene",
+      "uuid": "b0e596fb-e25e-4a2f-8aa5-b8497b82051e@c4a8c",
+      "displayName": "",
+      "id": "c4a8c",
+      "name": "Env_Road_base.prefab",
+      "ver": "1.0.11",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "redirect": "b0e596fb-e25e-4a2f-8aa5-b8497b82051e@c4a8c",
+    "assetFinder": {
+      "meshes": [
+        "b0e596fb-e25e-4a2f-8aa5-b8497b82051e@73c6b"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "b0e596fb-e25e-4a2f-8aa5-b8497b82051e@39cba"
+      ],
+      "scenes": [
+        "b0e596fb-e25e-4a2f-8aa5-b8497b82051e@c4a8c"
+      ]
+    }
+  }
+}
