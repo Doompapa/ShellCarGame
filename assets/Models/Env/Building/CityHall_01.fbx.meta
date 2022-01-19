@@ -1,0 +1,75 @@
+{
+  "ver": "1.3.21",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "e2557e69-4ebd-40fc-988f-9cc31127cc7c",
+  "files": [],
+  "subMetas": {
+    "39742": {
+      "importer": "gltf-material",
+      "uuid": "e2557e69-4ebd-40fc-988f-9cc31127cc7c@39742",
+      "displayName": "",
+      "id": "39742",
+      "name": "PolygonCity_Mat_01_A.material",
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "50d73": {
+      "importer": "gltf-mesh",
+      "uuid": "e2557e69-4ebd-40fc-988f-9cc31127cc7c@50d73",
+      "displayName": "",
+      "id": "50d73",
+      "name": "SM_Bld_CityHall_01.mesh",
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".json",
+        ".bin"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "9c0f3": {
+      "importer": "gltf-scene",
+      "uuid": "e2557e69-4ebd-40fc-988f-9cc31127cc7c@9c0f3",
+      "displayName": "",
+      "id": "9c0f3",
+      "name": "CityHall_01.prefab",
+      "ver": "1.0.11",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "redirect": "e2557e69-4ebd-40fc-988f-9cc31127cc7c@9c0f3",
+    "assetFinder": {
+      "meshes": [
+        "e2557e69-4ebd-40fc-988f-9cc31127cc7c@50d73"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "e2557e69-4ebd-40fc-988f-9cc31127cc7c@39742"
+      ],
+      "scenes": [
+        "e2557e69-4ebd-40fc-988f-9cc31127cc7c@9c0f3"
+      ]
+    }
+  }
+}

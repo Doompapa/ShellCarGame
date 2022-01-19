@@ -17,32 +17,32 @@ export class ItemsMananger extends Component {
     onLoad() {
         //设定距离区间的普通金币数量，第三个参数是从其实点距离，终点距离是第四个参数
         //多次运行是因为提高后期游戏出现几率，后面同理
-        this.initItems("normalCoin", 25, 500);
-        this.initItems("normalCoin", 10, 700);
-        this.initItems("normalCoin", 10, 1850);
-        //设定距离区间的加速金币数量，第三个参数是从其实点距离，终点距离是第四个参数
-        this.initItems("addSpeedCoin", 10, 500);
-        this.initItems("addSpeedCoin", 7, 700);
-        this.initItems("addSpeedCoin", 5, 1850);
-        //设定距离区间的裂隙数量，第三个参数是从其实点距离，终点距离是第四个参数
-        this.initItems("Crack", 15, 500);
-        this.initItems("Crack", 8, 700);
-        this.initItems("Crack", 8, 1850);
+        // this.initItems("normalCoin", 25, 500);
+        // this.initItems("normalCoin", 10, 700);
+        // this.initItems("normalCoin", 10, 1850);
+        // //设定距离区间的加速金币数量，第三个参数是从其实点距离，终点距离是第四个参数
+        // this.initItems("addSpeedCoin", 10, 500);
+        // this.initItems("addSpeedCoin", 7, 700);
+        // this.initItems("addSpeedCoin", 5, 1850);
+        // //设定距离区间的裂隙数量，第三个参数是从其实点距离，终点距离是第四个参数
+        // this.initItems("Crack", 15, 500);
+        // this.initItems("Crack", 8, 700);
+        // this.initItems("Crack", 8, 1850);
 
-        this.initRoadItems("Tree1", 20, 700, 3250);
-        this.initRoadItems("Tree2", 20, 700, 3250);
-        this.initRoadItems("Tree3", 15);
-        this.initRoadItems("Tree1", 15);
-        this.initRoadItems("Tree2", 15);
-        //第三关以后多种树，哈哈哈
-        this.initRoadItems("Tree1", 40, 1850);
-        this.initRoadItems("Tree2", 40, 1850);
-        this.initRoadItems("Tree3", 40, 1850);
+        // this.initRoadItems("New/Env/TreeStyle_A", 20, 700, 3250);
+        // this.initRoadItems("New/Env/TreeStyle_B", 20, 700, 3250);
+        // this.initRoadItems("New/Env/TreeStyle_C", 15);
+        // this.initRoadItems("New/Env/TreeStyle_A", 15);
+        // this.initRoadItems("New/Env/TreeStyle_B", 15);
+        // //第三关以后多种树，哈哈哈
+        // this.initRoadItems("New/Env/TreeStyle_A", 40, 1850);
+        // this.initRoadItems("New/Env/TreeStyle_B", 40, 1850);
+        // this.initRoadItems("New/Env/TreeStyle_C", 40, 1850);
 
-        this.initRoadItems("Cactus", 150, 100,1850);
+        // this.initRoadItems("Cactus", 150, 100,1850);
         
-        this.initRoadItems("Rock1", 200, 100, 1850);
-        this.initRoadItems("Montain", 20, 700, 3250,180,-22,14,5,5,0.004,0.0005);
+        // this.initRoadItems("Rock1", 200, 100, 1850);
+        // this.initRoadItems("Montain", 20, 700, 3250,180,-22,14,5,5,0.004,0.0005);
     }
 
     private initRoadItems(itemName:string, itemNum:number, startPosZ:number = 50, endPosZ:number = null,
