@@ -2,7 +2,7 @@
   "ver": "1.0.18",
   "importer": "image",
   "imported": true,
-  "uuid": "4c438139-8211-41e6-92a9-6fc796ef5b8a",
+  "uuid": "6282b3e4-f3ff-4f1d-a703-e4d41c3d249c",
   "files": [
     ".png",
     ".json"
@@ -10,7 +10,7 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "4c438139-8211-41e6-92a9-6fc796ef5b8a@6c48a",
+      "uuid": "6282b3e4-f3ff-4f1d-a703-e4d41c3d249c@6c48a",
       "displayName": "HypercarTexture",
       "id": "6c48a",
       "name": "texture",
@@ -29,12 +29,12 @@
         "premultiplyAlpha": false,
         "anisotropy": 1,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "4c438139-8211-41e6-92a9-6fc796ef5b8a"
+        "imageUuidOrDatabaseUri": "6282b3e4-f3ff-4f1d-a703-e4d41c3d249c"
       }
     }
   },
   "userData": {
     "type": "texture",
-    "redirect": "4c438139-8211-41e6-92a9-6fc796ef5b8a@6c48a"
+    "redirect": "6282b3e4-f3ff-4f1d-a703-e4d41c3d249c@6c48a"
   }
 }
