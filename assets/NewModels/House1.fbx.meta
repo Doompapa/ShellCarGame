@@ -1,0 +1,75 @@
+{
+  "ver": "1.3.21",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "4e99c2cb-5216-4f06-9433-e08b103593a1",
+  "files": [],
+  "subMetas": {
+    "28543": {
+      "importer": "gltf-scene",
+      "uuid": "4e99c2cb-5216-4f06-9433-e08b103593a1@28543",
+      "displayName": "",
+      "id": "28543",
+      "name": "House1.prefab",
+      "ver": "1.0.11",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "9254a": {
+      "importer": "gltf-mesh",
+      "uuid": "4e99c2cb-5216-4f06-9433-e08b103593a1@9254a",
+      "displayName": "",
+      "id": "9254a",
+      "name": "楼房.003.mesh",
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".json",
+        ".bin"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "bc290": {
+      "importer": "gltf-material",
+      "uuid": "4e99c2cb-5216-4f06-9433-e08b103593a1@bc290",
+      "displayName": "",
+      "id": "bc290",
+      "name": "Texture.material",
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "redirect": "4e99c2cb-5216-4f06-9433-e08b103593a1@28543",
+    "assetFinder": {
+      "meshes": [
+        "4e99c2cb-5216-4f06-9433-e08b103593a1@9254a"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "4e99c2cb-5216-4f06-9433-e08b103593a1@bc290"
+      ],
+      "scenes": [
+        "4e99c2cb-5216-4f06-9433-e08b103593a1@28543"
+      ]
+    }
+  }
+}

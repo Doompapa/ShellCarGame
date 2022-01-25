@@ -9,6 +9,8 @@ export class ItemsMananger extends Component {
 
     // addSpeedCoin: Node[] = []
 
+    public Instance: ItemsMananger = null;
+
     @property({
         type: Node
     })
@@ -40,18 +42,20 @@ export class ItemsMananger extends Component {
         // this.initRoadItems("New/Env/TreeStyle_C", 40, 1850);
 
         // this.initRoadItems("Cactus", 150, 100,1850);
-        
+
         // this.initRoadItems("Rock1", 200, 100, 1850);
         // this.initRoadItems("Montain", 20, 700, 3250,180,-22,14,5,5,0.004,0.0005);
+
+        this.Instance = this;
+
     }
 
-    private initRoadItems(itemName:string, itemNum:number, startPosZ:number = 50, endPosZ:number = null,
-        randomRotate:number = 180, left:number = -15, right:number = 11, randomLeft:number = 9, 
-        randomRight:number = 9, maxSize:number = 0.015, minSize:number = 0.003)
-        {
+    private initRoadItems(itemName: string, itemNum: number, startPosZ: number = 50, endPosZ: number = null,
+        randomRotate: number = 180, left: number = -15, right: number = 11, randomLeft: number = 9,
+        randomRight: number = 9, maxSize: number = 0.015, minSize: number = 0.003) {
         const car = this.carNode.getComponent(Car);
         const initItemStartZ = car.startPos.position.z + startPosZ;
-        if (endPosZ == null){
+        if (endPosZ == null) {
             endPosZ = car.EndPos.position.z + 250;
         }
         const itemDiffZ = Math.floor((endPosZ - initItemStartZ) / itemNum);
@@ -68,32 +72,40 @@ export class ItemsMananger extends Component {
                 default:
                     break;
             }
-            if (itemName.indexOf("Montain") != -1){
+            if (itemName.indexOf("Montain") != -1) {
                 console.log(itemX);
             }
-            
+
             const itemY: number = 0;
             let itemZ = initItemStartZ + i * itemDiffZ + ((Math.random() - 0.5) * itemDiffZ);
             const itemPos: Vec3 = new Vec3(itemX, itemY, itemZ);
-            loader.loadRes("prefabs/" + itemName, Prefab, (err: any, prefab: Prefab)=>{
-                if (err){
+            loader.loadRes("prefabs/" + itemName, Prefab, (err: any, prefab: Prefab) => {
+                if (err) {
                     console.warn(err);
                     return;
                 }
                 const fab = instantiate(prefab);
                 fab.position = itemPos;
                 fab.parent = find("ItemsManager");
-                fab.eulerAngles = new Vec3(0,Math.random() * 360,0);
-                let randSize:number = Math.random() * (maxSize - minSize) + minSize;
-                fab.scale = new Vec3(randSize,randSize,randSize);
+                fab.eulerAngles = new Vec3(0, Math.random() * 360, 0);
+                let randSize: number = Math.random() * (maxSize - minSize) + minSize;
+                fab.scale = new Vec3(randSize, randSize, randSize);
             })
         }
-        
+
     }
 
-    private initItems(itemName:string, itemNum:number, startPosZ:number = 100, endPosZ:number = null, size:number = 0.01){
+    public AppendRoad() {
+
+        console.log('AppendRoad')
+    }
+
+
+
+
+    private initItems(itemName: string, itemNum: number, startPosZ: number = 100, endPosZ: number = null, size: number = 0.01) {
         const car = this.carNode.getComponent(Car);
-        if (endPosZ == null){
+        if (endPosZ == null) {
             endPosZ = car.EndPos.position.z + 250;
         }
         const initConinStartZ = car.startPos.position.z + startPosZ;
@@ -117,15 +129,15 @@ export class ItemsMananger extends Component {
             const coinY: number = 0;
             let coinZ = initConinStartZ + i * coinDiffZ + ((Math.random() - 0.5) * coinDiffZ);
             const coinPos: Vec3 = new Vec3(coinX, coinY, coinZ);
-            loader.loadRes("prefabs/" + itemName, Prefab, (err: any, prefab: Prefab)=>{
-                if (err){
+            loader.loadRes("prefabs/" + itemName, Prefab, (err: any, prefab: Prefab) => {
+                if (err) {
                     console.warn(err);
                     return;
                 }
                 const fab = instantiate(prefab);
                 fab.position = coinPos;
                 fab.parent = find("ItemsManager");
-                fab.eulerAngles = new Vec3(0,180,0);
+                fab.eulerAngles = new Vec3(0, 180, 0);
                 fab.scale = new Vec3(size, size, size);
                 this.initColliderObjects(fab, Constants.ColliderGroup.NORMALCOIN, Constants.ColliderGroup.CAR);
             })
@@ -134,7 +146,7 @@ export class ItemsMananger extends Component {
 
     private initColliderObjects(obj: Node, group: number, mask: number) {
         const collider = obj.getComponent(BoxColliderComponent);
-        if(collider){
+        if (collider) {
             collider.setGroup(group);
             collider.setMask(mask);
         }

@@ -1,0 +1,521 @@
+{
+  "ver": "1.3.21",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "66ed18fc-62d5-469b-a07c-854dddcf8707",
+  "files": [],
+  "subMetas": {
+    "358e9": {
+      "importer": "gltf-mesh",
+      "uuid": "66ed18fc-62d5-469b-a07c-854dddcf8707@358e9",
+      "displayName": "",
+      "id": "358e9",
+      "name": "WHEEL_FL.mesh",
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".json",
+        ".bin"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "63ac9": {
+      "importer": "gltf-mesh",
+      "uuid": "66ed18fc-62d5-469b-a07c-854dddcf8707@63ac9",
+      "displayName": "",
+      "id": "63ac9",
+      "name": "WHEEL_FR.mesh",
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".json",
+        ".bin"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 1
+      }
+    },
+    "2cc09": {
+      "importer": "gltf-mesh",
+      "uuid": "66ed18fc-62d5-469b-a07c-854dddcf8707@2cc09",
+      "displayName": "",
+      "id": "2cc09",
+      "name": "WHEEL_RL.mesh",
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".json",
+        ".bin"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 2
+      }
+    },
+    "f704a": {
+      "importer": "gltf-mesh",
+      "uuid": "66ed18fc-62d5-469b-a07c-854dddcf8707@f704a",
+      "displayName": "",
+      "id": "f704a",
+      "name": "WHEEL_RR.mesh",
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".json",
+        ".bin"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 3
+      }
+    },
+    "f616f": {
+      "importer": "gltf-mesh",
+      "uuid": "66ed18fc-62d5-469b-a07c-854dddcf8707@f616f",
+      "displayName": "",
+      "id": "f616f",
+      "name": "BODY.mesh",
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".json",
+        ".bin"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 4
+      }
+    },
+    "ad37b": {
+      "importer": "gltf-animation",
+      "uuid": "66ed18fc-62d5-469b-a07c-854dddcf8707@ad37b",
+      "displayName": "",
+      "id": "ad37b",
+      "name": "BODY|Flat1.002Action.animation",
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 0.0416666679084301
+        },
+        "events": []
+      }
+    },
+    "bea18": {
+      "importer": "gltf-animation",
+      "uuid": "66ed18fc-62d5-469b-a07c-854dddcf8707@bea18",
+      "displayName": "",
+      "id": "bea18",
+      "name": "Hypercar|Flat1.002Action.animation",
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 1,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 0.0416666679084301
+        },
+        "events": []
+      }
+    },
+    "4fca8": {
+      "importer": "gltf-animation",
+      "uuid": "66ed18fc-62d5-469b-a07c-854dddcf8707@4fca8",
+      "displayName": "",
+      "id": "4fca8",
+      "name": "WHEEL_FL|Flat1.002Action.animation",
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 2,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 0.0416666679084301
+        },
+        "events": []
+      }
+    },
+    "b433d": {
+      "importer": "gltf-animation",
+      "uuid": "66ed18fc-62d5-469b-a07c-854dddcf8707@b433d",
+      "displayName": "",
+      "id": "b433d",
+      "name": "WHEEL_FR|Flat1.002Action.animation",
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 3,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 0.0416666679084301
+        },
+        "events": []
+      }
+    },
+    "fae84": {
+      "importer": "gltf-animation",
+      "uuid": "66ed18fc-62d5-469b-a07c-854dddcf8707@fae84",
+      "displayName": "",
+      "id": "fae84",
+      "name": "WHEEL_RL|Flat1.002Action.animation",
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 4,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 0.0416666679084301
+        },
+        "events": []
+      }
+    },
+    "ce08e": {
+      "importer": "gltf-animation",
+      "uuid": "66ed18fc-62d5-469b-a07c-854dddcf8707@ce08e",
+      "displayName": "",
+      "id": "ce08e",
+      "name": "WHEEL_RR|Flat1.002Action.animation",
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 5,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 0.0416666679084301
+        },
+        "events": []
+      }
+    },
+    "48b02": {
+      "importer": "gltf-embeded-image",
+      "uuid": "66ed18fc-62d5-469b-a07c-854dddcf8707@48b02",
+      "displayName": "",
+      "id": "48b02",
+      "name": "base_color_texture.image",
+      "ver": "1.0.2",
+      "imported": true,
+      "files": [
+        ".png",
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "7d6ab": {
+      "importer": "texture",
+      "uuid": "66ed18fc-62d5-469b-a07c-854dddcf8707@7d6ab",
+      "displayName": "",
+      "id": "7d6ab",
+      "name": "base_color_texture.texture",
+      "ver": "1.0.19",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "premultiplyAlpha": false,
+        "anisotropy": 1,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "66ed18fc-62d5-469b-a07c-854dddcf8707@48b02"
+      }
+    },
+    "6d31e": {
+      "importer": "gltf-material",
+      "uuid": "66ed18fc-62d5-469b-a07c-854dddcf8707@6d31e",
+      "displayName": "",
+      "id": "6d31e",
+      "name": "palette.001.material",
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "df717": {
+      "importer": "gltf-material",
+      "uuid": "66ed18fc-62d5-469b-a07c-854dddcf8707@df717",
+      "displayName": "",
+      "id": "df717",
+      "name": "Simple Glass.material",
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 1
+      }
+    },
+    "e2818": {
+      "importer": "gltf-material",
+      "uuid": "66ed18fc-62d5-469b-a07c-854dddcf8707@e2818",
+      "displayName": "",
+      "id": "e2818",
+      "name": "Backlights.material",
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 2
+      }
+    },
+    "6f209": {
+      "importer": "gltf-material",
+      "uuid": "66ed18fc-62d5-469b-a07c-854dddcf8707@6f209",
+      "displayName": "",
+      "id": "6f209",
+      "name": "Headlights.material",
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 3
+      }
+    },
+    "5672a": {
+      "importer": "gltf-material",
+      "uuid": "66ed18fc-62d5-469b-a07c-854dddcf8707@5672a",
+      "displayName": "",
+      "id": "5672a",
+      "name": "Turn_left.material",
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 4
+      }
+    },
+    "4a7c4": {
+      "importer": "gltf-material",
+      "uuid": "66ed18fc-62d5-469b-a07c-854dddcf8707@4a7c4",
+      "displayName": "",
+      "id": "4a7c4",
+      "name": "Turn_right.material",
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 5
+      }
+    },
+    "d19c3": {
+      "importer": "gltf-material",
+      "uuid": "66ed18fc-62d5-469b-a07c-854dddcf8707@d19c3",
+      "displayName": "",
+      "id": "d19c3",
+      "name": "palette.material",
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 6
+      }
+    },
+    "ea006": {
+      "importer": "gltf-scene",
+      "uuid": "66ed18fc-62d5-469b-a07c-854dddcf8707@ea006",
+      "displayName": "",
+      "id": "ea006",
+      "name": "Car.prefab",
+      "ver": "1.0.11",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "base_color_texture",
+        "uri": "66ed18fc-62d5-469b-a07c-854dddcf8707@48b02"
+      }
+    ],
+    "animationImportSettings": [
+      {
+        "name": "BODY|Flat1.002Action",
+        "duration": 0.0416666679084301,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "BODY|Flat1.002Action",
+            "from": 0,
+            "to": 0.0416666679084301,
+            "wrapMode": 2
+          }
+        ]
+      },
+      {
+        "name": "Hypercar|Flat1.002Action",
+        "duration": 0.0416666679084301,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "Hypercar|Flat1.002Action",
+            "from": 0,
+            "to": 0.0416666679084301,
+            "wrapMode": 2
+          }
+        ]
+      },
+      {
+        "name": "WHEEL_FL|Flat1.002Action",
+        "duration": 0.0416666679084301,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "WHEEL_FL|Flat1.002Action",
+            "from": 0,
+            "to": 0.0416666679084301,
+            "wrapMode": 2
+          }
+        ]
+      },
+      {
+        "name": "WHEEL_FR|Flat1.002Action",
+        "duration": 0.0416666679084301,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "WHEEL_FR|Flat1.002Action",
+            "from": 0,
+            "to": 0.0416666679084301,
+            "wrapMode": 2
+          }
+        ]
+      },
+      {
+        "name": "WHEEL_RL|Flat1.002Action",
+        "duration": 0.0416666679084301,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "WHEEL_RL|Flat1.002Action",
+            "from": 0,
+            "to": 0.0416666679084301,
+            "wrapMode": 2
+          }
+        ]
+      },
+      {
+        "name": "WHEEL_RR|Flat1.002Action",
+        "duration": 0.0416666679084301,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "WHEEL_RR|Flat1.002Action",
+            "from": 0,
+            "to": 0.0416666679084301,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "66ed18fc-62d5-469b-a07c-854dddcf8707@ea006",
+    "assetFinder": {
+      "meshes": [
+        "66ed18fc-62d5-469b-a07c-854dddcf8707@358e9",
+        "66ed18fc-62d5-469b-a07c-854dddcf8707@63ac9",
+        "66ed18fc-62d5-469b-a07c-854dddcf8707@2cc09",
+        "66ed18fc-62d5-469b-a07c-854dddcf8707@f704a",
+        "66ed18fc-62d5-469b-a07c-854dddcf8707@f616f"
+      ],
+      "skeletons": [],
+      "textures": [
+        "66ed18fc-62d5-469b-a07c-854dddcf8707@7d6ab"
+      ],
+      "materials": [
+        "66ed18fc-62d5-469b-a07c-854dddcf8707@6d31e",
+        "66ed18fc-62d5-469b-a07c-854dddcf8707@df717",
+        "66ed18fc-62d5-469b-a07c-854dddcf8707@e2818",
+        "66ed18fc-62d5-469b-a07c-854dddcf8707@6f209",
+        "66ed18fc-62d5-469b-a07c-854dddcf8707@5672a",
+        "66ed18fc-62d5-469b-a07c-854dddcf8707@4a7c4",
+        "66ed18fc-62d5-469b-a07c-854dddcf8707@d19c3"
+      ],
+      "scenes": [
+        "66ed18fc-62d5-469b-a07c-854dddcf8707@ea006"
+      ]
+    }
+  }
+}

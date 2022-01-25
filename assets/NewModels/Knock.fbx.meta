@@ -1,0 +1,196 @@
+{
+  "ver": "1.3.21",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "e02bf415-b843-4936-9603-4b9a8ae1eeb1",
+  "files": [],
+  "subMetas": {
+    "6d5dc": {
+      "importer": "gltf-mesh",
+      "uuid": "e02bf415-b843-4936-9603-4b9a8ae1eeb1@6d5dc",
+      "displayName": "",
+      "id": "6d5dc",
+      "name": "NurbsPath.mesh",
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".json",
+        ".bin"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "d1493": {
+      "importer": "gltf-animation",
+      "uuid": "e02bf415-b843-4936-9603-4b9a8ae1eeb1@d1493",
+      "displayName": "",
+      "id": "d1493",
+      "name": "NurbsPath|Flat1.002Action.animation",
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 0.0416666679084301
+        },
+        "events": []
+      }
+    },
+    "48b02": {
+      "importer": "gltf-embeded-image",
+      "uuid": "e02bf415-b843-4936-9603-4b9a8ae1eeb1@48b02",
+      "displayName": "",
+      "id": "48b02",
+      "name": "base_color_texture.image",
+      "ver": "1.0.2",
+      "imported": true,
+      "files": [
+        ".png",
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "7d6ab": {
+      "importer": "texture",
+      "uuid": "e02bf415-b843-4936-9603-4b9a8ae1eeb1@7d6ab",
+      "displayName": "",
+      "id": "7d6ab",
+      "name": "base_color_texture.texture",
+      "ver": "1.0.19",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "premultiplyAlpha": false,
+        "anisotropy": 1,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "e02bf415-b843-4936-9603-4b9a8ae1eeb1@48b02"
+      }
+    },
+    "376c5": {
+      "importer": "gltf-material",
+      "uuid": "e02bf415-b843-4936-9603-4b9a8ae1eeb1@376c5",
+      "displayName": "",
+      "id": "376c5",
+      "name": "Black.006.material",
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "a71af": {
+      "importer": "gltf-material",
+      "uuid": "e02bf415-b843-4936-9603-4b9a8ae1eeb1@a71af",
+      "displayName": "",
+      "id": "a71af",
+      "name": "CarBodyMat2.002.material",
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 1
+      }
+    },
+    "e1533": {
+      "importer": "gltf-material",
+      "uuid": "e02bf415-b843-4936-9603-4b9a8ae1eeb1@e1533",
+      "displayName": "",
+      "id": "e1533",
+      "name": "Material.026.material",
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 2
+      }
+    },
+    "f5682": {
+      "importer": "gltf-scene",
+      "uuid": "e02bf415-b843-4936-9603-4b9a8ae1eeb1@f5682",
+      "displayName": "",
+      "id": "f5682",
+      "name": "Knock.prefab",
+      "ver": "1.0.11",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "base_color_texture",
+        "uri": "e02bf415-b843-4936-9603-4b9a8ae1eeb1@48b02"
+      }
+    ],
+    "animationImportSettings": [
+      {
+        "name": "NurbsPath|Flat1.002Action",
+        "duration": 0.0416666679084301,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "NurbsPath|Flat1.002Action",
+            "from": 0,
+            "to": 0.0416666679084301,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "e02bf415-b843-4936-9603-4b9a8ae1eeb1@f5682",
+    "assetFinder": {
+      "meshes": [
+        "e02bf415-b843-4936-9603-4b9a8ae1eeb1@6d5dc"
+      ],
+      "skeletons": [],
+      "textures": [
+        "e02bf415-b843-4936-9603-4b9a8ae1eeb1@7d6ab"
+      ],
+      "materials": [
+        "e02bf415-b843-4936-9603-4b9a8ae1eeb1@376c5",
+        "e02bf415-b843-4936-9603-4b9a8ae1eeb1@a71af",
+        "e02bf415-b843-4936-9603-4b9a8ae1eeb1@e1533"
+      ],
+      "scenes": [
+        "e02bf415-b843-4936-9603-4b9a8ae1eeb1@f5682"
+      ]
+    }
+  }
+}

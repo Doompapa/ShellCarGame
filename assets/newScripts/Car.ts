@@ -1,10 +1,11 @@
-import { _decorator, Component, Node, Vec2, Vec3, BoxColliderComponent, ICollisionEvent, AnimationComponent, Scheduler, RigidBodyComponent, find } from 'cc';
+import { _decorator, Component, Node, Vec2, Vec3, BoxColliderComponent, loader, instantiate, Prefab, ICollisionEvent, AnimationComponent, Scheduler, RigidBodyComponent, find } from 'cc';
 import { GameCtrl } from './GameCtrl';
 import { Constants } from './Other/constants';
 import { customerListener } from './Other/listener';
 import { ResourceManager } from './ResourceManager';
 import { RoadPoints } from './RoadPoints';
 import { TabControl } from './UIManager/uiControl';
+
 const { ccclass, property } = _decorator;
 
 @ccclass('Car')
@@ -55,6 +56,13 @@ export class Car extends Component {
     })
     rightEndPos: Node = null  //右赛道开始点
 
+
+    @property({
+        type: Node,
+        displayOrder: 8
+    })
+    roadGroup: Node = null  //右赛道开始点
+
     @property({
         type: Node
     })
@@ -63,8 +71,6 @@ export class Car extends Component {
     private _cameraPos = new Vec3();   //相机初始位置
 
     private _cameraRotate = new Vec3(); //固定相机旋转
-
-
 
 
 
@@ -91,6 +97,9 @@ export class Car extends Component {
     private _isRuning = false;  //是否游戏开始
     private _isShutCamera: boolean = false;  //是否固定住摄像机
 
+    private distanceCount = new Vec3();
+    private roadCount = 1;
+
     @property({
         type: ResourceManager
     })
@@ -116,10 +125,6 @@ export class Car extends Component {
                 console.log('固定摄像机')
                 this.setCamera(false)
             }
-
-
-
-
         }
 
     }
@@ -129,6 +134,8 @@ export class Car extends Component {
         this._cameraRotate = this.camera.eulerAngles;
         customerListener.on(Constants.GameStatus.GAME_START, this.GameStart, this)
         // customerListener.on(Constants.GameStatus.GAME_OVER, this.GameOver, this)
+
+        this.distanceCount.set(this.startPos.worldPosition);
     }
     public GameStart() {
         this._isRuning = true
@@ -189,8 +196,11 @@ export class Car extends Component {
             this.camera.setWorldPosition(this._cameraPos)
         } else {
             //console.log(this.node.worldPosition.y, this.node.position.z);
-            this.camera.setWorldPosition(this.node.worldPosition.x, this.node.worldPosition.y + 6,
-                this.node.worldPosition.z - 11.5)
+            // this.camera.setWorldPosition(this.node.worldPosition.x, this.node.worldPosition.y + 6,
+            //     this.node.worldPosition.z - 11.5)
+
+            this.camera.setWorldPosition(this.node.worldPosition.x - 2, this.node.worldPosition.y + 6,
+                this.node.worldPosition.z - 15)
         }
 
     }
@@ -270,7 +280,6 @@ export class Car extends Component {
         this._offsetPos.set(this.node.worldPosition)
         const z = this._endPos.z - this._offsetPos.z
 
-        // console.log('移动>>>>>>>',z)
         if (z !== 0) {
             if (z > 0) {
                 this._offsetPos.z += this.speed;
@@ -283,7 +292,19 @@ export class Car extends Component {
         this.node.setWorldPosition(this._offsetPos)
 
 
+
+        //拼接路
+        if (Math.abs(Math.abs(this.node.worldPosition.z) - Math.abs(this.distanceCount.z)) > 80) {
+            console.log('超过80');
+            this.distanceCount.set(this.node.worldPosition);
+            this.roadCount += 1;
+            this.AppendRoad();
+        }
+
+
+
         Vec3.subtract(this.temVec, this._endPos, this._offsetPos) //判断起点 -- 终点的距离
+
         if (this.temVec.length() <= 0.01) {
 
             this._isMove = false    //到终点了
@@ -291,6 +312,21 @@ export class Car extends Component {
         }
 
     }
+
+
+    private AppendRoad() {
+        const newPos: Vec3 = new Vec3(this.roadGroup.worldPosition.x, this.roadGroup.worldPosition.y, 480 + this.roadCount * 80);
+        loader.loadRes("prefabs/Env/Roads", Prefab, (err: any, prefab: Prefab) => {
+            if (err) {
+                console.warn(err);
+                return;
+            }
+            const fab = instantiate(prefab);
+            fab.position = newPos;
+            fab.parent = this.roadGroup;
+        })
+    }
+
     public setNode(entry: Node) { //设置起跑点
         console.log('设置起跑点')
         this._startPos = entry.getWorldPosition();

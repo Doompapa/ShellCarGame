@@ -1,0 +1,75 @@
+{
+  "ver": "1.3.21",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "40b4ba9d-0a33-4ad8-b132-fb257a9bf670",
+  "files": [],
+  "subMetas": {
+    "df5cd": {
+      "importer": "gltf-mesh",
+      "uuid": "40b4ba9d-0a33-4ad8-b132-fb257a9bf670@df5cd",
+      "displayName": "",
+      "id": "df5cd",
+      "name": "楼房.mesh",
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".json",
+        ".bin"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "98afd": {
+      "importer": "gltf-material",
+      "uuid": "40b4ba9d-0a33-4ad8-b132-fb257a9bf670@98afd",
+      "displayName": "",
+      "id": "98afd",
+      "name": "Texture.001.material",
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "2be97": {
+      "importer": "gltf-scene",
+      "uuid": "40b4ba9d-0a33-4ad8-b132-fb257a9bf670@2be97",
+      "displayName": "",
+      "id": "2be97",
+      "name": "House2.prefab",
+      "ver": "1.0.11",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "redirect": "40b4ba9d-0a33-4ad8-b132-fb257a9bf670@2be97",
+    "assetFinder": {
+      "meshes": [
+        "40b4ba9d-0a33-4ad8-b132-fb257a9bf670@df5cd"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "40b4ba9d-0a33-4ad8-b132-fb257a9bf670@98afd"
+      ],
+      "scenes": [
+        "40b4ba9d-0a33-4ad8-b132-fb257a9bf670@2be97"
+      ]
+    }
+  }
+}

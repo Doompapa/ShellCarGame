@@ -1,0 +1,114 @@
+{
+  "ver": "1.3.21",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "3b631281-88cb-472a-b16d-b68f02d62423",
+  "files": [],
+  "subMetas": {
+    "919dd": {
+      "importer": "gltf-mesh",
+      "uuid": "3b631281-88cb-472a-b16d-b68f02d62423@919dd",
+      "displayName": "",
+      "id": "919dd",
+      "name": "Cylinder.063.mesh",
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".json",
+        ".bin"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "a0d86": {
+      "importer": "gltf-animation",
+      "uuid": "3b631281-88cb-472a-b16d-b68f02d62423@a0d86",
+      "displayName": "",
+      "id": "a0d86",
+      "name": "Cylinder.063|Flat1.002Action.animation",
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 0.0416666679084301
+        },
+        "events": []
+      }
+    },
+    "40b5b": {
+      "importer": "gltf-material",
+      "uuid": "3b631281-88cb-472a-b16d-b68f02d62423@40b5b",
+      "displayName": "",
+      "id": "40b5b",
+      "name": "楼房.material",
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "fae7e": {
+      "importer": "gltf-scene",
+      "uuid": "3b631281-88cb-472a-b16d-b68f02d62423@fae7e",
+      "displayName": "",
+      "id": "fae7e",
+      "name": "Building1.prefab",
+      "ver": "1.0.11",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "animationImportSettings": [
+      {
+        "name": "Cylinder.063|Flat1.002Action",
+        "duration": 0.0416666679084301,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "Cylinder.063|Flat1.002Action",
+            "from": 0,
+            "to": 0.0416666679084301,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "3b631281-88cb-472a-b16d-b68f02d62423@fae7e",
+    "assetFinder": {
+      "meshes": [
+        "3b631281-88cb-472a-b16d-b68f02d62423@919dd"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "3b631281-88cb-472a-b16d-b68f02d62423@40b5b"
+      ],
+      "scenes": [
+        "3b631281-88cb-472a-b16d-b68f02d62423@fae7e"
+      ]
+    }
+  }
+}
