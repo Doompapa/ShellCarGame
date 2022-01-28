@@ -199,8 +199,8 @@ export class Car extends Component {
             // this.camera.setWorldPosition(this.node.worldPosition.x, this.node.worldPosition.y + 6,
             //     this.node.worldPosition.z - 11.5)
 
-            this.camera.setWorldPosition(this.node.worldPosition.x - 2, this.node.worldPosition.y + 6,
-                this.node.worldPosition.z - 15)
+            this.camera.setWorldPosition(this.node.worldPosition.x, this.node.worldPosition.y + 10,
+                this.node.worldPosition.z - 20)
         }
 
     }
@@ -294,8 +294,8 @@ export class Car extends Component {
 
 
         //拼接路
-        if (Math.abs(Math.abs(this.node.worldPosition.z) - Math.abs(this.distanceCount.z)) > 80) {
-            console.log('超过80');
+        if (Math.abs(Math.abs(this.node.worldPosition.z) - Math.abs(this.distanceCount.z)) > 90) {
+            console.log('超过90');
             this.distanceCount.set(this.node.worldPosition);
             this.roadCount += 1;
             this.AppendRoad();
@@ -315,7 +315,7 @@ export class Car extends Component {
 
 
     private AppendRoad() {
-        const newPos: Vec3 = new Vec3(this.roadGroup.worldPosition.x, this.roadGroup.worldPosition.y, 480 + this.roadCount * 80);
+        const newPos: Vec3 = new Vec3(this.roadGroup.worldPosition.x, this.roadGroup.worldPosition.y, 270 + this.roadCount * 90);
         loader.loadRes("prefabs/Env/Roads", Prefab, (err: any, prefab: Prefab) => {
             if (err) {
                 console.warn(err);

@@ -22,30 +22,6 @@
         "gltfIndex": 0
       }
     },
-    "a69ea": {
-      "importer": "gltf-animation",
-      "uuid": "b0fb4734-261e-4d6e-b35f-363f118407c5@a69ea",
-      "displayName": "",
-      "id": "a69ea",
-      "name": "Cube.095|Flat1.002Action.animation",
-      "ver": "1.0.14",
-      "imported": true,
-      "files": [
-        ".bin",
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0,
-        "wrapMode": 2,
-        "sample": 30,
-        "span": {
-          "from": 0,
-          "to": 0.0416666679084301
-        },
-        "events": []
-      }
-    },
     "48b02": {
       "importer": "gltf-embeded-image",
       "uuid": "b0fb4734-261e-4d6e-b35f-363f118407c5@48b02",
@@ -87,54 +63,6 @@
         "imageUuidOrDatabaseUri": "b0fb4734-261e-4d6e-b35f-363f118407c5@48b02"
       }
     },
-    "a6cb6": {
-      "importer": "gltf-material",
-      "uuid": "b0fb4734-261e-4d6e-b35f-363f118407c5@a6cb6",
-      "displayName": "",
-      "id": "a6cb6",
-      "name": "Black.008.material",
-      "ver": "1.0.14",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
-    },
-    "35dfa": {
-      "importer": "gltf-material",
-      "uuid": "b0fb4734-261e-4d6e-b35f-363f118407c5@35dfa",
-      "displayName": "",
-      "id": "35dfa",
-      "name": "CarBodyMat2.003.material",
-      "ver": "1.0.14",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 1
-      }
-    },
-    "3679a": {
-      "importer": "gltf-material",
-      "uuid": "b0fb4734-261e-4d6e-b35f-363f118407c5@3679a",
-      "displayName": "",
-      "id": "3679a",
-      "name": "资源 1.001.material",
-      "ver": "1.0.14",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 2
-      }
-    },
     "75a22": {
       "importer": "gltf-scene",
       "uuid": "b0fb4734-261e-4d6e-b35f-363f118407c5@75a22",
@@ -159,21 +87,6 @@
         "uri": "b0fb4734-261e-4d6e-b35f-363f118407c5@48b02"
       }
     ],
-    "animationImportSettings": [
-      {
-        "name": "Cube.095|Flat1.002Action",
-        "duration": 0.0416666679084301,
-        "fps": 30,
-        "splits": [
-          {
-            "name": "Cube.095|Flat1.002Action",
-            "from": 0,
-            "to": 0.0416666679084301,
-            "wrapMode": 2
-          }
-        ]
-      }
-    ],
     "redirect": "b0fb4734-261e-4d6e-b35f-363f118407c5@75a22",
     "assetFinder": {
       "meshes": [
@@ -184,13 +97,14 @@
         "b0fb4734-261e-4d6e-b35f-363f118407c5@7d6ab"
       ],
       "materials": [
-        "b0fb4734-261e-4d6e-b35f-363f118407c5@a6cb6",
-        "b0fb4734-261e-4d6e-b35f-363f118407c5@35dfa",
-        "b0fb4734-261e-4d6e-b35f-363f118407c5@3679a"
+        "cd8ab04a-3964-4442-b96d-e440ac0a5b87",
+        "a624f4c5-4dd6-4213-8bef-61eb2c6a5828",
+        "3235f766-1db0-412d-b744-d9abbacf2aa6"
       ],
       "scenes": [
         "b0fb4734-261e-4d6e-b35f-363f118407c5@75a22"
       ]
-    }
+    },
+    "dumpMaterials": true
   }
 }

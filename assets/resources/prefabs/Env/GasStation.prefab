@@ -21,9 +21,13 @@
       }
     ],
     "_active": true,
-    "_components": [],
+    "_components": [
+      {
+        "__id__": 240
+      }
+    ],
     "_prefab": {
-      "__id__": 212
+      "__id__": 241
     },
     "_lpos": {
       "__type__": "cc.Vec3",
@@ -74,28 +78,28 @@
         "__id__": 15
       },
       {
-        "__id__": 19
-      },
-      {
         "__id__": 67
       },
       {
-        "__id__": 115
+        "__id__": 119
       },
       {
-        "__id__": 163
+        "__id__": 171
+      },
+      {
+        "__id__": 223
       }
     ],
     "_active": true,
     "_components": [],
     "_prefab": {
-      "__id__": 211
+      "__id__": 239
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 182.299,
+      "x": 0,
       "y": 0,
-      "z": 23.296
+      "z": 0
     },
     "_lrot": {
       "__type__": "cc.Quat",
@@ -138,9 +142,9 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -184.961441040039,
+      "x": -1.63197076320648,
       "y": 0.293970584869385,
-      "z": -25.7604293823242
+      "z": 1.05146837234497
     },
     "_lrot": {
       "__type__": "cc.Quat",
@@ -174,7 +178,7 @@
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@90788"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@da0bc"
       }
     ],
     "_visFlags": 0,
@@ -182,7 +186,7 @@
       "__id__": 5
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@281b4"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@281b4"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -212,7 +216,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "a2KczbRFdB76Y3dnleIVAi",
+    "fileId": "01PO1CVphJ4rVfnL7wBHdH",
     "sync": false,
     "_synced": {
       "default": false,
@@ -238,9 +242,9 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -184.961441040039,
+      "x": -1.63197076320648,
       "y": 15.7619562149048,
-      "z": -25.8916835784912
+      "z": 0.920212209224701
     },
     "_lrot": {
       "__type__": "cc.Quat",
@@ -274,10 +278,10 @@
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@a0634"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@10ac0"
       },
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@56bf7"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@5281e"
       }
     ],
     "_visFlags": 0,
@@ -285,7 +289,7 @@
       "__id__": 9
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@78521"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@78521"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -315,7 +319,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "ccH4PeSGBDyJlnP241nHJK",
+    "fileId": "13zKAgv9BOSryL9ErA9XlK",
     "sync": false,
     "_synced": {
       "default": false,
@@ -341,9 +345,9 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -200.911026000977,
+      "x": -17.5815563201904,
       "y": 15.8244323730469,
-      "z": -15.6252422332764
+      "z": 11.1866550445557
     },
     "_lrot": {
       "__type__": "cc.Quat",
@@ -377,13 +381,13 @@
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@254ef"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@e946f"
       },
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@ec074"
+        "__uuid__": "74128386-27cf-47d7-8e2d-a5d170168d71"
       },
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@3fdb6"
+        "__uuid__": "c20bf285-c82a-41f1-b40a-9cf5095f7817"
       }
     ],
     "_visFlags": 0,
@@ -391,7 +395,7 @@
       "__id__": 13
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@39a73"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@39a73"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -421,113 +425,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "8fBLjlj1lNGIYqzhSyjoKM",
-    "sync": false,
-    "_synced": {
-      "default": false,
-      "serializable": false
-    }
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "房子.001",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 2
-    },
-    "_children": [],
-    "_active": true,
-    "_components": [
-      {
-        "__id__": 16
-      }
-    ],
-    "_prefab": {
-      "__id__": 18
-    },
-    "_lpos": {
-      "__type__": "cc.Vec3",
-      "x": -184.961441040039,
-      "y": 4.86853122711182,
-      "z": -36.4606819152832
-    },
-    "_lrot": {
-      "__type__": "cc.Quat",
-      "x": -0.7071068407911811,
-      "y": -1.1520233497803904e-7,
-      "z": -1.152023491888933e-7,
-      "w": 0.7071067215818901
-    },
-    "_lscale": {
-      "__type__": "cc.Vec3",
-      "x": -1443.31262207031,
-      "y": -351.130981445313,
-      "z": -429.006011962891
-    },
-    "_layer": 1073741824,
-    "_euler": {
-      "__type__": "cc.Vec3",
-      "x": -90.00000965934629,
-      "y": -0.000018669338682706375,
-      "z": 4.2222384199153795e-13
-    },
-    "_id": ""
-  },
-  {
-    "__type__": "cc.ModelComponent",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 15
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@88dfb"
-      },
-      {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@95724"
-      },
-      {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@1043e"
-      }
-    ],
-    "_visFlags": 0,
-    "lightmapSettings": {
-      "__id__": 17
-    },
-    "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@a12e9"
-    },
-    "_shadowCastingMode": 0,
-    "_enableMorph": true,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.ModelLightmapSettings",
-    "texture": null,
-    "uvParam": {
-      "__type__": "cc.Vec4",
-      "x": 0,
-      "y": 0,
-      "z": 0,
-      "w": 0
-    },
-    "_bakeable": false,
-    "_castShadow": false,
-    "_receiveShadow": false,
-    "_recieveShadow": false,
-    "_lightmapSize": 64
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__id__": 0
-    },
-    "fileId": "c3m4x9bHVKgYLksqu4+1VN",
+    "fileId": "491yrdxvBC06sAg3y7XWdO",
     "sync": false,
     "_synced": {
       "default": false,
@@ -543,6 +441,9 @@
     },
     "_children": [
       {
+        "__id__": 16
+      },
+      {
         "__id__": 20
       },
       {
@@ -550,9 +451,6 @@
       },
       {
         "__id__": 28
-      },
-      {
-        "__id__": 32
       },
       {
         "__id__": 60
@@ -569,9 +467,9 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -193.355270385742,
+      "x": -10.0258007049561,
       "y": 0.696962773799896,
-      "z": -16.3164329528809
+      "z": 10.4954652786255
     },
     "_lrot": {
       "__type__": "cc.Quat",
@@ -600,30 +498,30 @@
     "_name": "大柱.001",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 19
+      "__id__": 15
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 21
+        "__id__": 17
       }
     ],
     "_prefab": {
-      "__id__": 23
+      "__id__": 19
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0.0100520700216293,
+      "x": 0.0100521370768547,
       "y": 1.90734859017994e-8,
       "z": 0.830609083175659
     },
     "_lrot": {
       "__type__": "cc.Quat",
-      "x": 3.5548540554557534e-23,
-      "y": -3.554853424367022e-23,
-      "z": 0.7071068407911906,
-      "w": 0.7071067215818996
+      "x": 3.554854355107585e-23,
+      "y": 3.554854355107585e-23,
+      "z": 0.7071067811865475,
+      "w": 0.7071067811865476
     },
     "_lscale": {
       "__type__": "cc.Vec3",
@@ -642,26 +540,26 @@
   },
   {
     "__type__": "cc.ModelComponent",
-    "_name": "",
+    "_name": "大柱.001<ModelComponent>",
     "_objFlags": 0,
     "node": {
-      "__id__": 20
+      "__id__": 16
     },
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@c5ad7"
+        "__uuid__": "33a090dd-f1b0-4e27-b105-e0c5a64948c5"
       },
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@ec074"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@00aeb"
       }
     ],
     "_visFlags": 0,
     "lightmapSettings": {
-      "__id__": 22
+      "__id__": 18
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@c59ce"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@c59ce"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -691,7 +589,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "cdmmabCYhC7avRZwXYPRrI",
+    "fileId": "2aKmBdFk5LhJdbst6owuvX",
     "sync": false,
     "_synced": {
       "default": false,
@@ -703,22 +601,22 @@
     "_name": "广告牌.001",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 19
+      "__id__": 15
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 25
+        "__id__": 21
       }
     ],
     "_prefab": {
-      "__id__": 27
+      "__id__": 23
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0.00165405264124274,
-      "y": 0.00199359888210893,
+      "x": 0.00165411946363747,
+      "y": 0.00199358933605254,
       "z": 1.00848853588104
     },
     "_lrot": {
@@ -748,26 +646,26 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 24
+      "__id__": 20
     },
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@5815a"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@2b1a6"
       },
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@a9549"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@98a7f"
       },
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@7359b"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@2573e"
       }
     ],
     "_visFlags": 0,
     "lightmapSettings": {
-      "__id__": 26
+      "__id__": 22
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@06cfd"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@06cfd"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -797,7 +695,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "4aIfa0ZaFKCr8Kez8hXLxD",
+    "fileId": "aeFqLtZ4VNQ5AUftm9lJmC",
     "sync": false,
     "_synced": {
       "default": false,
@@ -809,22 +707,22 @@
     "_name": "栓.001",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 19
+      "__id__": 15
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 29
+        "__id__": 25
       }
     ],
     "_prefab": {
-      "__id__": 31
+      "__id__": 27
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -0.0145860286429524,
-      "y": -0.000132369998027571,
+      "x": -0.0145859904587269,
+      "y": -0.00013239860709291,
       "z": 0.00764146773144603
     },
     "_lrot": {
@@ -854,20 +752,20 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 28
+      "__id__": 24
     },
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@ea6e2"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@ea6e2"
       }
     ],
     "_visFlags": 0,
     "lightmapSettings": {
-      "__id__": 30
+      "__id__": 26
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@f5342"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@f5342"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -897,7 +795,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "58g0ewggdMjJcDkuBNAhMK",
+    "fileId": "eafr3glWVMFoqOJtoHbR3d",
     "sync": false,
     "_synced": {
       "default": false,
@@ -909,9 +807,12 @@
     "_name": "油箱.004",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 19
+      "__id__": 15
     },
     "_children": [
+      {
+        "__id__": 29
+      },
       {
         "__id__": 33
       },
@@ -942,8 +843,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0.000662078848108649,
-      "y": -0.00259031285531819,
+      "x": 0.000662054982967675,
+      "y": -0.00259024603292346,
       "z": 0.413308262825012
     },
     "_lrot": {
@@ -973,23 +874,23 @@
     "_name": "黑线.005",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 32
+      "__id__": 28
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 34
+        "__id__": 30
       }
     ],
     "_prefab": {
-      "__id__": 36
+      "__id__": 32
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0.0630132853984833,
-      "y": 0.00730300880968571,
-      "z": -0.000436589703895152
+      "x": 0.06,
+      "y": 0.014,
+      "z": 0
     },
     "_lrot": {
       "__type__": "cc.Quat",
@@ -1018,20 +919,20 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 33
+      "__id__": 29
     },
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@ee25b"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@23dc6"
       }
     ],
     "_visFlags": 0,
     "lightmapSettings": {
-      "__id__": 35
+      "__id__": 31
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@8061d"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@8061d"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -1061,7 +962,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "99zpCTvp9Fso9WfK1kg51b",
+    "fileId": "6f/+f0QyJGD6y8TONliz4V",
     "sync": false,
     "_synced": {
       "default": false,
@@ -1073,22 +974,22 @@
     "_name": "绿线.004",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 32
+      "__id__": 28
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 38
+        "__id__": 34
       }
     ],
     "_prefab": {
-      "__id__": 40
+      "__id__": 36
     },
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0.0630132853984833,
-      "y": -0.000156936643179506,
+      "y": -0.00015682696539443,
       "z": 0.00301632401533425
     },
     "_lrot": {
@@ -1118,20 +1019,20 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 37
+      "__id__": 33
     },
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@d0e6c"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@d2ea0"
       }
     ],
     "_visFlags": 0,
     "lightmapSettings": {
-      "__id__": 39
+      "__id__": 35
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@1a337"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@1a337"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -1161,7 +1062,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "36Af8VLUNCJ61Fr6B3N41S",
+    "fileId": "bexCsPeZZHCYz4OJKb1O13",
     "sync": false,
     "_synced": {
       "default": false,
@@ -1173,7 +1074,107 @@
     "_name": "红块.004",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 32
+      "__id__": 28
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 38
+      }
+    ],
+    "_prefab": {
+      "__id__": 40
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0.008,
+      "y": -0.004,
+      "z": -0.001
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.74284815788269,
+      "y": 2.1234438419342,
+      "z": 1.25184273719788
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.ModelComponent",
+    "_name": "红块.004<ModelComponent>",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 37
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@5281e"
+      }
+    ],
+    "_visFlags": 0,
+    "lightmapSettings": {
+      "__id__": 39
+    },
+    "_mesh": {
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@0f749"
+    },
+    "_shadowCastingMode": 0,
+    "_enableMorph": true,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.ModelLightmapSettings",
+    "texture": null,
+    "uvParam": {
+      "__type__": "cc.Vec4",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 0
+    },
+    "_bakeable": false,
+    "_castShadow": false,
+    "_receiveShadow": false,
+    "_recieveShadow": false,
+    "_lightmapSize": 64
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "8b665QwwNJcbf89daFu1VC",
+    "sync": false,
+    "_synced": {
+      "default": false,
+      "serializable": false
+    }
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "绿块.004",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 28
     },
     "_children": [],
     "_active": true,
@@ -1187,16 +1188,16 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0.00845474191009998,
-      "y": -0.00569404568523169,
-      "z": -0.00166731595527381
+      "x": 0.008,
+      "y": 0.001,
+      "z": -0.001
     },
     "_lrot": {
       "__type__": "cc.Quat",
-      "x": 0.03464342689141206,
-      "y": -0.37091705581964945,
-      "z": -0.7770106871825125,
-      "w": 0.5074197105744531
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
     },
     "_lscale": {
       "__type__": "cc.Vec3",
@@ -1207,9 +1208,9 @@
     "_layer": 1073741824,
     "_euler": {
       "__type__": "cc.Vec3",
-      "x": -111.19561729511254,
-      "y": -146.24276937915286,
-      "z": -54.51235818395591
+      "x": 0,
+      "y": 0,
+      "z": 0
     },
     "_id": ""
   },
@@ -1223,7 +1224,7 @@
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@56bf7"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@d2ea0"
       }
     ],
     "_visFlags": 0,
@@ -1231,7 +1232,7 @@
       "__id__": 43
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@0f749"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@75eef"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -1261,7 +1262,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "01WtfF/wxCbZ5IFsjs3RO1",
+    "fileId": "7b88D0kfRMbZeAJs6BQvEz",
     "sync": false,
     "_synced": {
       "default": false,
@@ -1270,10 +1271,10 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "绿块.004",
+    "_name": "黑块.004",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 32
+      "__id__": 28
     },
     "_children": [],
     "_active": true,
@@ -1287,16 +1288,16 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0.00845472328364849,
-      "y": -0.000712203967850655,
-      "z": -0.00166731595527381
+      "x": 0.008,
+      "y": 0.006,
+      "z": -0.002
     },
     "_lrot": {
       "__type__": "cc.Quat",
-      "x": 0.03464342689141206,
-      "y": -0.37091705581964945,
-      "z": -0.7770106871825125,
-      "w": 0.5074197105744531
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
     },
     "_lscale": {
       "__type__": "cc.Vec3",
@@ -1307,9 +1308,9 @@
     "_layer": 1073741824,
     "_euler": {
       "__type__": "cc.Vec3",
-      "x": -111.19561729511254,
-      "y": -146.24276937915286,
-      "z": -54.51235818395591
+      "x": 0,
+      "y": 0,
+      "z": 0
     },
     "_id": ""
   },
@@ -1323,7 +1324,7 @@
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@d0e6c"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@23dc6"
       }
     ],
     "_visFlags": 0,
@@ -1331,7 +1332,7 @@
       "__id__": 47
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@75eef"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@36fa8"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -1361,7 +1362,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "1fZjjtd0hDFpbGCWv2Z1zi",
+    "fileId": "bfbX0QzUVP14w6E0T7W8F2",
     "sync": false,
     "_synced": {
       "default": false,
@@ -1370,10 +1371,10 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "黑块.004",
+    "_name": "红线.004",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 32
+      "__id__": 28
     },
     "_children": [],
     "_active": true,
@@ -1387,109 +1388,9 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0.00845472328364849,
-      "y": 0.0041734310798347,
-      "z": -0.00166731595527381
-    },
-    "_lrot": {
-      "__type__": "cc.Quat",
-      "x": 0.03464342689141206,
-      "y": -0.37091705581964945,
-      "z": -0.7770106871825125,
-      "w": 0.5074197105744531
-    },
-    "_lscale": {
-      "__type__": "cc.Vec3",
-      "x": 0.74284815788269,
-      "y": 2.1234438419342,
-      "z": 1.25184273719788
-    },
-    "_layer": 1073741824,
-    "_euler": {
-      "__type__": "cc.Vec3",
-      "x": -111.19561729511254,
-      "y": -146.24276937915286,
-      "z": -54.51235818395591
-    },
-    "_id": ""
-  },
-  {
-    "__type__": "cc.ModelComponent",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 49
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@ee25b"
-      }
-    ],
-    "_visFlags": 0,
-    "lightmapSettings": {
-      "__id__": 51
-    },
-    "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@36fa8"
-    },
-    "_shadowCastingMode": 0,
-    "_enableMorph": true,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.ModelLightmapSettings",
-    "texture": null,
-    "uvParam": {
-      "__type__": "cc.Vec4",
-      "x": 0,
-      "y": 0,
-      "z": 0,
-      "w": 0
-    },
-    "_bakeable": false,
-    "_castShadow": false,
-    "_receiveShadow": false,
-    "_recieveShadow": false,
-    "_lightmapSize": 64
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__id__": 0
-    },
-    "fileId": "06zTJ42uFI478x3vJQUTTG",
-    "sync": false,
-    "_synced": {
-      "default": false,
-      "serializable": false
-    }
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "红线.004",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 32
-    },
-    "_children": [],
-    "_active": true,
-    "_components": [
-      {
-        "__id__": 54
-      }
-    ],
-    "_prefab": {
-      "__id__": 56
-    },
-    "_lpos": {
-      "__type__": "cc.Vec3",
-      "x": 0.0401434898376465,
-      "y": -0.0229564663022757,
-      "z": 0.00291301473043859
+      "x": 0.032,
+      "y": -0.035,
+      "z": 0.003
     },
     "_lrot": {
       "__type__": "cc.Quat",
@@ -1518,20 +1419,20 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 53
+      "__id__": 49
     },
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@56bf7"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@5281e"
       }
     ],
     "_visFlags": 0,
     "lightmapSettings": {
-      "__id__": 55
+      "__id__": 51
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@b2fb2"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@b2fb2"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -1561,7 +1462,113 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "60tfEJQMpEbL3LeA/x8PDD",
+    "fileId": "8eCCbNdCtOBovviI/7f7xF",
+    "sync": false,
+    "_synced": {
+      "default": false,
+      "serializable": false
+    }
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "logo1.002",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 28
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 54
+      }
+    ],
+    "_prefab": {
+      "__id__": 56
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0.008,
+      "y": -0.001,
+      "z": 0.014
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": -5.0275364671417555e-9,
+      "y": 1.766613897059505e-7,
+      "z": -0.7071066195032545,
+      "w": 0.7071069428697107
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": -0.589102,
+      "y": 0.140513,
+      "z": 0.258336
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 8.14746973764084e-7,
+      "z": -90
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.ModelComponent",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 53
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@e946f"
+      },
+      {
+        "__uuid__": "74128386-27cf-47d7-8e2d-a5d170168d71"
+      },
+      {
+        "__uuid__": "c20bf285-c82a-41f1-b40a-9cf5095f7817"
+      }
+    ],
+    "_visFlags": 0,
+    "lightmapSettings": {
+      "__id__": 55
+    },
+    "_mesh": {
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@39a73"
+    },
+    "_shadowCastingMode": 0,
+    "_enableMorph": true,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.ModelLightmapSettings",
+    "texture": null,
+    "uvParam": {
+      "__type__": "cc.Vec4",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 0
+    },
+    "_bakeable": false,
+    "_castShadow": false,
+    "_receiveShadow": false,
+    "_recieveShadow": false,
+    "_lightmapSize": 64
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "6cdPSAEqlLqY4eZWJrvdAc",
     "sync": false,
     "_synced": {
       "default": false,
@@ -1573,21 +1580,21 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 32
+      "__id__": 28
     },
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@a0634"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@10ac0"
       },
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@5c108"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@65545"
       },
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@85512"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@c3276"
       },
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@ee25b"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@23dc6"
       }
     ],
     "_visFlags": 0,
@@ -1595,7 +1602,7 @@
       "__id__": 58
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@909f5"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@909f5"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -1625,7 +1632,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "eckGTV7IlIdIC1l955Y5Ye",
+    "fileId": "ba6LOiR1JFdL4j/RmWfbw8",
     "sync": false,
     "_synced": {
       "default": false,
@@ -1637,7 +1644,7 @@
     "_name": "小箱.001",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 19
+      "__id__": 15
     },
     "_children": [],
     "_active": true,
@@ -1651,8 +1658,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -0.00838726013898849,
-      "y": -0.00166458124294877,
+      "x": -0.00838726479560137,
+      "y": -0.00166453362908214,
       "z": 0.235348045825958
     },
     "_lrot": {
@@ -1687,7 +1694,7 @@
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@ee25b"
+        "__uuid__": "6aa38595-0b95-4edc-9279-b390cd5277ec"
       }
     ],
     "_visFlags": 0,
@@ -1695,7 +1702,7 @@
       "__id__": 62
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@9dd92"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@9dd92"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -1725,7 +1732,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "30sX44B45ApIGR6cOWAfPY",
+    "fileId": "12CjQgOrNBCo0+wySQlLHm",
     "sync": false,
     "_synced": {
       "default": false,
@@ -1737,12 +1744,12 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 19
+      "__id__": 15
     },
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@90788"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@da0bc"
       }
     ],
     "_visFlags": 0,
@@ -1750,7 +1757,7 @@
       "__id__": 65
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@6103b"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@6103b"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -1780,7 +1787,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "70K/+qVeRFErMYzdE8oGjH",
+    "fileId": "54YKajzfRNI786Y6xPXGIn",
     "sync": false,
     "_synced": {
       "default": false,
@@ -1789,7 +1796,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "小地面（父级）.005",
+    "_name": "小地面（父级）.008",
     "_objFlags": 0,
     "_parent": {
       "__id__": 2
@@ -1808,30 +1815,30 @@
         "__id__": 80
       },
       {
-        "__id__": 108
+        "__id__": 112
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 112
+        "__id__": 116
       }
     ],
     "_prefab": {
-      "__id__": 114
+      "__id__": 118
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -193.355270385742,
+      "x": -10.0258007049561,
       "y": 0.696962773799896,
-      "z": -27.6161632537842
+      "z": -0.804267406463623
     },
     "_lrot": {
       "__type__": "cc.Quat",
-      "x": -1.3767876449545e-7,
+      "x": -1.3767876445461205e-7,
       "y": 0.7071068109888552,
       "z": 0.7071067513842118,
-      "w": 1.3767877870630362e-7
+      "w": 1.3767877866546568e-7
     },
     "_lscale": {
       "__type__": "cc.Vec3",
@@ -1850,7 +1857,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "大柱.005",
+    "_name": "大柱.001",
     "_objFlags": 0,
     "_parent": {
       "__id__": 67
@@ -1867,16 +1874,16 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0.0100520700216293,
+      "x": 0.0100521370768547,
       "y": 1.90734859017994e-8,
       "z": 0.830609083175659
     },
     "_lrot": {
       "__type__": "cc.Quat",
-      "x": 3.5548540554557534e-23,
-      "y": -3.554853424367022e-23,
-      "z": 0.7071068407911906,
-      "w": 0.7071067215818996
+      "x": 3.554854355107585e-23,
+      "y": 3.554854355107585e-23,
+      "z": 0.7071067811865475,
+      "w": 0.7071067811865476
     },
     "_lscale": {
       "__type__": "cc.Vec3",
@@ -1895,7 +1902,7 @@
   },
   {
     "__type__": "cc.ModelComponent",
-    "_name": "",
+    "_name": "大柱.001<ModelComponent>",
     "_objFlags": 0,
     "node": {
       "__id__": 68
@@ -1903,10 +1910,10 @@
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@c5ad7"
+        "__uuid__": "33a090dd-f1b0-4e27-b105-e0c5a64948c5"
       },
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@ec074"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@00aeb"
       }
     ],
     "_visFlags": 0,
@@ -1914,7 +1921,7 @@
       "__id__": 70
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@ce318"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@c59ce"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -1944,7 +1951,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "4fMQNhuztL17uaAxZAvetS",
+    "fileId": "7b5sOTz3tNQY4kgi8/QeCt",
     "sync": false,
     "_synced": {
       "default": false,
@@ -1953,7 +1960,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "广告牌.005",
+    "_name": "广告牌.001",
     "_objFlags": 0,
     "_parent": {
       "__id__": 67
@@ -1970,8 +1977,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0.0016540908254683,
-      "y": 0.00199357978999615,
+      "x": 0.00165411946363747,
+      "y": 0.00199358933605254,
       "z": 1.00848853588104
     },
     "_lrot": {
@@ -2006,13 +2013,13 @@
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@5815a"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@2b1a6"
       },
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@a9549"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@98a7f"
       },
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@7359b"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@2573e"
       }
     ],
     "_visFlags": 0,
@@ -2020,7 +2027,7 @@
       "__id__": 74
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@26215"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@06cfd"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -2050,7 +2057,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "43HrjTHDNA5JsmhzYn/ge6",
+    "fileId": "b15a4bMCFNmZOy/IqmlktC",
     "sync": false,
     "_synced": {
       "default": false,
@@ -2059,7 +2066,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "栓.005",
+    "_name": "栓.001",
     "_objFlags": 0,
     "_parent": {
       "__id__": 67
@@ -2077,7 +2084,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": -0.0145859904587269,
-      "y": -0.00013238906103652,
+      "y": -0.00013239860709291,
       "z": 0.00764146773144603
     },
     "_lrot": {
@@ -2112,7 +2119,7 @@
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@ea6e2"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@ea6e2"
       }
     ],
     "_visFlags": 0,
@@ -2120,7 +2127,7 @@
       "__id__": 78
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@05f1a"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@f5342"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -2150,7 +2157,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "bfRHecGsNCQqYAX3Ig4Lsg",
+    "fileId": "14EtI+5spGkq6T3g5utojE",
     "sync": false,
     "_synced": {
       "default": false,
@@ -2159,7 +2166,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "油箱.005",
+    "_name": "油箱.004",
     "_objFlags": 0,
     "_parent": {
       "__id__": 67
@@ -2182,21 +2189,24 @@
       },
       {
         "__id__": 101
+      },
+      {
+        "__id__": 105
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 105
+        "__id__": 109
       }
     ],
     "_prefab": {
-      "__id__": 107
+      "__id__": 111
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0.000662116974126548,
-      "y": -0.00259027467109263,
+      "x": 0.000662054982967675,
+      "y": -0.00259024603292346,
       "z": 0.413308262825012
     },
     "_lrot": {
@@ -2223,7 +2233,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "黑线.006",
+    "_name": "黑线.005",
     "_objFlags": 0,
     "_parent": {
       "__id__": 80
@@ -2240,9 +2250,9 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0.0630133450031281,
-      "y": 0.00730308517813683,
-      "z": -0.000436589703895152
+      "x": 0.06,
+      "y": 0.014,
+      "z": 0
     },
     "_lrot": {
       "__type__": "cc.Quat",
@@ -2276,7 +2286,7 @@
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@ee25b"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@23dc6"
       }
     ],
     "_visFlags": 0,
@@ -2284,7 +2294,7 @@
       "__id__": 83
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@d9833"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@8061d"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -2314,7 +2324,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "ecnZWPjkRMs5E988sHAB9h",
+    "fileId": "7bt5IkNCVJD7f0U1Zi8Qn3",
     "sync": false,
     "_synced": {
       "default": false,
@@ -2323,7 +2333,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "绿线.006",
+    "_name": "绿线.004",
     "_objFlags": 0,
     "_parent": {
       "__id__": 80
@@ -2340,8 +2350,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0.0630133450031281,
-      "y": -0.000156860347487964,
+      "x": 0.0630132853984833,
+      "y": -0.00015682696539443,
       "z": 0.00301632401533425
     },
     "_lrot": {
@@ -2376,7 +2386,7 @@
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@d0e6c"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@d2ea0"
       }
     ],
     "_visFlags": 0,
@@ -2384,7 +2394,7 @@
       "__id__": 87
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@afd07"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@1a337"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -2414,7 +2424,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "eek4PKvWRF0KMG7KxbbODH",
+    "fileId": "d63Hu/jd9NArMPq4YUaF1a",
     "sync": false,
     "_synced": {
       "default": false,
@@ -2423,7 +2433,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "红块.005",
+    "_name": "红块.004",
     "_objFlags": 0,
     "_parent": {
       "__id__": 80
@@ -2440,16 +2450,16 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0.00845478009432554,
-      "y": -0.00569404568523169,
-      "z": -0.00166731595527381
+      "x": 0.008,
+      "y": -0.004,
+      "z": -0.001
     },
     "_lrot": {
       "__type__": "cc.Quat",
-      "x": 0.03464342689141206,
-      "y": -0.37091705581964945,
-      "z": -0.7770106871825125,
-      "w": 0.5074197105744531
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
     },
     "_lscale": {
       "__type__": "cc.Vec3",
@@ -2460,15 +2470,15 @@
     "_layer": 1073741824,
     "_euler": {
       "__type__": "cc.Vec3",
-      "x": -111.19561729511254,
-      "y": -146.24276937915286,
-      "z": -54.51235818395591
+      "x": 0,
+      "y": 0,
+      "z": 0
     },
     "_id": ""
   },
   {
     "__type__": "cc.ModelComponent",
-    "_name": "",
+    "_name": "红块.004<ModelComponent>",
     "_objFlags": 0,
     "node": {
       "__id__": 89
@@ -2476,7 +2486,7 @@
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@56bf7"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@5281e"
       }
     ],
     "_visFlags": 0,
@@ -2484,7 +2494,7 @@
       "__id__": 91
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@0938a"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@0f749"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -2514,7 +2524,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "8dHoCbbbBNur3YgGCMLcCa",
+    "fileId": "f2RNtHbZFOProcLu220xKf",
     "sync": false,
     "_synced": {
       "default": false,
@@ -2523,7 +2533,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "绿块.005",
+    "_name": "绿块.004",
     "_objFlags": 0,
     "_parent": {
       "__id__": 80
@@ -2540,16 +2550,16 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0.00845478009432554,
-      "y": -0.000712203967850655,
-      "z": -0.00166731595527381
+      "x": 0.008,
+      "y": 0.001,
+      "z": -0.001
     },
     "_lrot": {
       "__type__": "cc.Quat",
-      "x": 0.03464342689141206,
-      "y": -0.37091705581964945,
-      "z": -0.7770106871825125,
-      "w": 0.5074197105744531
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
     },
     "_lscale": {
       "__type__": "cc.Vec3",
@@ -2560,9 +2570,9 @@
     "_layer": 1073741824,
     "_euler": {
       "__type__": "cc.Vec3",
-      "x": -111.19561729511254,
-      "y": -146.24276937915286,
-      "z": -54.51235818395591
+      "x": 0,
+      "y": 0,
+      "z": 0
     },
     "_id": ""
   },
@@ -2576,7 +2586,7 @@
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@d0e6c"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@d2ea0"
       }
     ],
     "_visFlags": 0,
@@ -2584,7 +2594,7 @@
       "__id__": 95
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@ec8be"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@75eef"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -2614,7 +2624,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "8cjA1agoxAoJlOqtwxo1rN",
+    "fileId": "0dXIES69BFPLGUoTRlTfBd",
     "sync": false,
     "_synced": {
       "default": false,
@@ -2623,7 +2633,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "黑块.005",
+    "_name": "黑块.004",
     "_objFlags": 0,
     "_parent": {
       "__id__": 80
@@ -2640,16 +2650,16 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0.00845478009432554,
-      "y": 0.0041734310798347,
-      "z": -0.00166731595527381
+      "x": 0.008,
+      "y": 0.006,
+      "z": -0.002
     },
     "_lrot": {
       "__type__": "cc.Quat",
-      "x": 0.03464342689141206,
-      "y": -0.37091705581964945,
-      "z": -0.7770106871825125,
-      "w": 0.5074197105744531
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
     },
     "_lscale": {
       "__type__": "cc.Vec3",
@@ -2660,9 +2670,9 @@
     "_layer": 1073741824,
     "_euler": {
       "__type__": "cc.Vec3",
-      "x": -111.19561729511254,
-      "y": -146.24276937915286,
-      "z": -54.51235818395591
+      "x": 0,
+      "y": 0,
+      "z": 0
     },
     "_id": ""
   },
@@ -2676,7 +2686,7 @@
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@ee25b"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@23dc6"
       }
     ],
     "_visFlags": 0,
@@ -2684,7 +2694,7 @@
       "__id__": 99
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@80fc8"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@36fa8"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -2714,7 +2724,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "52DubEL2FDcI0HFeSI1NJ4",
+    "fileId": "41syECV11KTacjh3sNOkLX",
     "sync": false,
     "_synced": {
       "default": false,
@@ -2723,7 +2733,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "红线.005",
+    "_name": "红线.004",
     "_objFlags": 0,
     "_parent": {
       "__id__": 80
@@ -2740,9 +2750,9 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0.040143508464098,
-      "y": -0.0229564663022757,
-      "z": 0.00291301473043859
+      "x": 0.032,
+      "y": -0.035,
+      "z": 0.003
     },
     "_lrot": {
       "__type__": "cc.Quat",
@@ -2776,7 +2786,7 @@
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@56bf7"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@5281e"
       }
     ],
     "_visFlags": 0,
@@ -2784,7 +2794,7 @@
       "__id__": 103
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@e920c"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@b2fb2"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -2814,7 +2824,113 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "abdapUG2pFE76a9h6v417N",
+    "fileId": "9dx9R2dy1IfLyT2j1sXmdt",
+    "sync": false,
+    "_synced": {
+      "default": false,
+      "serializable": false
+    }
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "logo1.002",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 80
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 106
+      }
+    ],
+    "_prefab": {
+      "__id__": 108
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0.008,
+      "y": -0.001,
+      "z": 0.014
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": -5.0275364671417555e-9,
+      "y": 1.766613897059505e-7,
+      "z": -0.7071066195032545,
+      "w": 0.7071069428697107
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": -0.589102,
+      "y": 0.140513,
+      "z": 0.258336
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 8.14746973764084e-7,
+      "z": -90
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.ModelComponent",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 105
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@e946f"
+      },
+      {
+        "__uuid__": "74128386-27cf-47d7-8e2d-a5d170168d71"
+      },
+      {
+        "__uuid__": "c20bf285-c82a-41f1-b40a-9cf5095f7817"
+      }
+    ],
+    "_visFlags": 0,
+    "lightmapSettings": {
+      "__id__": 107
+    },
+    "_mesh": {
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@39a73"
+    },
+    "_shadowCastingMode": 0,
+    "_enableMorph": true,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.ModelLightmapSettings",
+    "texture": null,
+    "uvParam": {
+      "__type__": "cc.Vec4",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 0
+    },
+    "_bakeable": false,
+    "_castShadow": false,
+    "_receiveShadow": false,
+    "_recieveShadow": false,
+    "_lightmapSize": 64
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "21KKMEUJlOuIDtJuJZtEYY",
     "sync": false,
     "_synced": {
       "default": false,
@@ -2831,24 +2947,24 @@
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@a0634"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@10ac0"
       },
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@5c108"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@65545"
       },
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@85512"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@c3276"
       },
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@ee25b"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@23dc6"
       }
     ],
     "_visFlags": 0,
     "lightmapSettings": {
-      "__id__": 106
+      "__id__": 110
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@8d3b2"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@909f5"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -2878,7 +2994,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "33HBcKIDVFpJMN4Q5T3fLp",
+    "fileId": "6bKTogE0RGMLYLMsIZyCuq",
     "sync": false,
     "_synced": {
       "default": false,
@@ -2887,7 +3003,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "小箱.005",
+    "_name": "小箱.001",
     "_objFlags": 0,
     "_parent": {
       "__id__": 67
@@ -2896,16 +3012,16 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 109
+        "__id__": 113
       }
     ],
     "_prefab": {
-      "__id__": 111
+      "__id__": 115
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -0.00838722195476294,
-      "y": -0.00166456215083599,
+      "x": -0.00838726479560137,
+      "y": -0.00166453362908214,
       "z": 0.235348045825958
     },
     "_lrot": {
@@ -2935,20 +3051,20 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 108
+      "__id__": 112
     },
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@ee25b"
+        "__uuid__": "6aa38595-0b95-4edc-9279-b390cd5277ec"
       }
     ],
     "_visFlags": 0,
     "lightmapSettings": {
-      "__id__": 110
+      "__id__": 114
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@83ee9"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@9dd92"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -2978,7 +3094,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "06uCC5u4FCp4pzeHdM+Hpw",
+    "fileId": "bewgAcb8hDaYqbuhq0DAbJ",
     "sync": false,
     "_synced": {
       "default": false,
@@ -2995,15 +3111,15 @@
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@90788"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@da0bc"
       }
     ],
     "_visFlags": 0,
     "lightmapSettings": {
-      "__id__": 113
+      "__id__": 117
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@c1539"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@6103b"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -3033,7 +3149,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "debDuayJpGvrFCbc3BG5h+",
+    "fileId": "a1ddG49e5HWqie9V9XLKj6",
     "sync": false,
     "_synced": {
       "default": false,
@@ -3042,15 +3158,12 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "小地面（父级）.006",
+    "_name": "小地面（父级）.009",
     "_objFlags": 0,
     "_parent": {
       "__id__": 2
     },
     "_children": [
-      {
-        "__id__": 116
-      },
       {
         "__id__": 120
       },
@@ -3061,30 +3174,33 @@
         "__id__": 128
       },
       {
-        "__id__": 156
+        "__id__": 132
+      },
+      {
+        "__id__": 164
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 160
+        "__id__": 168
       }
     ],
     "_prefab": {
-      "__id__": 162
+      "__id__": 170
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -178.366943359375,
+      "x": 4.96251153945923,
       "y": 0.696962773799896,
-      "z": -27.6161632537842
+      "z": -0.804267406463623
     },
     "_lrot": {
       "__type__": "cc.Quat",
-      "x": -1.3767876449545e-7,
+      "x": -1.3767876445461205e-7,
       "y": 0.7071068109888552,
       "z": 0.7071067513842118,
-      "w": 1.3767877870630362e-7
+      "w": 1.3767877866546568e-7
     },
     "_lscale": {
       "__type__": "cc.Vec3",
@@ -3103,33 +3219,33 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "大柱.006",
+    "_name": "大柱.001",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 115
+      "__id__": 119
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 117
+        "__id__": 121
       }
     ],
     "_prefab": {
-      "__id__": 119
+      "__id__": 123
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0.010052184574306,
+      "x": 0.0100521370768547,
       "y": 1.90734859017994e-8,
       "z": 0.830609083175659
     },
     "_lrot": {
       "__type__": "cc.Quat",
-      "x": 3.5548540554557534e-23,
-      "y": -3.554853424367022e-23,
-      "z": 0.7071068407911906,
-      "w": 0.7071067215818996
+      "x": 3.554854355107585e-23,
+      "y": 3.554854355107585e-23,
+      "z": 0.7071067811865475,
+      "w": 0.7071067811865476
     },
     "_lscale": {
       "__type__": "cc.Vec3",
@@ -3148,26 +3264,26 @@
   },
   {
     "__type__": "cc.ModelComponent",
-    "_name": "",
+    "_name": "大柱.001<ModelComponent>",
     "_objFlags": 0,
     "node": {
-      "__id__": 116
+      "__id__": 120
     },
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@c5ad7"
+        "__uuid__": "33a090dd-f1b0-4e27-b105-e0c5a64948c5"
       },
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@ec074"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@00aeb"
       }
     ],
     "_visFlags": 0,
     "lightmapSettings": {
-      "__id__": 118
+      "__id__": 122
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@cb221"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@c59ce"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -3197,7 +3313,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "8d3dx/XKVLvJK/z1myuMXH",
+    "fileId": "26Y4Is+upARKFsLTp0nppA",
     "sync": false,
     "_synced": {
       "default": false,
@@ -3206,25 +3322,25 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "广告牌.006",
+    "_name": "广告牌.001",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 115
+      "__id__": 119
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 121
+        "__id__": 125
       }
     ],
     "_prefab": {
-      "__id__": 123
+      "__id__": 127
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0.00165412900969386,
-      "y": 0.00199357978999615,
+      "x": 0.00165411946363747,
+      "y": 0.00199358933605254,
       "z": 1.00848853588104
     },
     "_lrot": {
@@ -3254,26 +3370,26 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 120
+      "__id__": 124
     },
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@5815a"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@2b1a6"
       },
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@a9549"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@98a7f"
       },
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@7359b"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@2573e"
       }
     ],
     "_visFlags": 0,
     "lightmapSettings": {
-      "__id__": 122
+      "__id__": 126
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@8c43e"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@06cfd"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -3303,7 +3419,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "2ajPwY1+JBKZItRm/TSq3V",
+    "fileId": "48Hqfd8y9EALAO4V+xHGCw",
     "sync": false,
     "_synced": {
       "default": false,
@@ -3312,25 +3428,25 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "栓.006",
+    "_name": "栓.001",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 115
+      "__id__": 119
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 125
+        "__id__": 129
       }
     ],
     "_prefab": {
-      "__id__": 127
+      "__id__": 131
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -0.0145859522745013,
-      "y": -0.00013238906103652,
+      "x": -0.0145859904587269,
+      "y": -0.00013239860709291,
       "z": 0.00764146773144603
     },
     "_lrot": {
@@ -3360,20 +3476,20 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 124
+      "__id__": 128
     },
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@ea6e2"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@ea6e2"
       }
     ],
     "_visFlags": 0,
     "lightmapSettings": {
-      "__id__": 126
+      "__id__": 130
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@58ec5"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@f5342"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -3403,7 +3519,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "603mm5RFpNzo8CsSWgYzDj",
+    "fileId": "27W61gKnNK8qZ22k0TVKyB",
     "sync": false,
     "_synced": {
       "default": false,
@@ -3412,15 +3528,12 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "油箱.006",
+    "_name": "油箱.004",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 115
+      "__id__": 119
     },
     "_children": [
-      {
-        "__id__": 129
-      },
       {
         "__id__": 133
       },
@@ -3435,21 +3548,27 @@
       },
       {
         "__id__": 149
+      },
+      {
+        "__id__": 153
+      },
+      {
+        "__id__": 157
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 153
+        "__id__": 161
       }
     ],
     "_prefab": {
-      "__id__": 155
+      "__id__": 163
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0.000662040722090751,
-      "y": -0.00259025557897985,
+      "x": 0.000662054982967675,
+      "y": -0.00259024603292346,
       "z": 0.413308262825012
     },
     "_lrot": {
@@ -3476,26 +3595,26 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "黑线.007",
+    "_name": "黑线.005",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 128
+      "__id__": 132
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 130
+        "__id__": 134
       }
     ],
     "_prefab": {
-      "__id__": 132
+      "__id__": 136
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0.0630133450031281,
-      "y": 0.00730316154658794,
-      "z": -0.000436589703895152
+      "x": 0.06,
+      "y": 0.014,
+      "z": 0
     },
     "_lrot": {
       "__type__": "cc.Quat",
@@ -3524,20 +3643,20 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 129
+      "__id__": 133
     },
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@ee25b"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@23dc6"
       }
     ],
     "_visFlags": 0,
     "lightmapSettings": {
-      "__id__": 131
+      "__id__": 135
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@6f482"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@8061d"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -3567,7 +3686,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "b6sa+1X6RNPY88MIkCGWDC",
+    "fileId": "faVS26SORLpbSVNBG+bHsp",
     "sync": false,
     "_synced": {
       "default": false,
@@ -3576,25 +3695,25 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "绿线.007",
+    "_name": "绿线.004",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 128
+      "__id__": 132
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 134
+        "__id__": 138
       }
     ],
     "_prefab": {
-      "__id__": 136
+      "__id__": 140
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0.0630133450031281,
-      "y": -0.000156784051796421,
+      "x": 0.0630132853984833,
+      "y": -0.00015682696539443,
       "z": 0.00301632401533425
     },
     "_lrot": {
@@ -3624,112 +3743,12 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 133
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@d0e6c"
-      }
-    ],
-    "_visFlags": 0,
-    "lightmapSettings": {
-      "__id__": 135
-    },
-    "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@afdac"
-    },
-    "_shadowCastingMode": 0,
-    "_enableMorph": true,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.ModelLightmapSettings",
-    "texture": null,
-    "uvParam": {
-      "__type__": "cc.Vec4",
-      "x": 0,
-      "y": 0,
-      "z": 0,
-      "w": 0
-    },
-    "_bakeable": false,
-    "_castShadow": false,
-    "_receiveShadow": false,
-    "_recieveShadow": false,
-    "_lightmapSize": 64
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__id__": 0
-    },
-    "fileId": "5cmh11SFZJz6ILajSBk7ME",
-    "sync": false,
-    "_synced": {
-      "default": false,
-      "serializable": false
-    }
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "红块.006",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 128
-    },
-    "_children": [],
-    "_active": true,
-    "_components": [
-      {
-        "__id__": 138
-      }
-    ],
-    "_prefab": {
-      "__id__": 140
-    },
-    "_lpos": {
-      "__type__": "cc.Vec3",
-      "x": 0.00845478009432554,
-      "y": -0.00569396978244185,
-      "z": -0.00166731595527381
-    },
-    "_lrot": {
-      "__type__": "cc.Quat",
-      "x": 0.03464342689141206,
-      "y": -0.37091705581964945,
-      "z": -0.7770106871825125,
-      "w": 0.5074197105744531
-    },
-    "_lscale": {
-      "__type__": "cc.Vec3",
-      "x": 0.74284815788269,
-      "y": 2.1234438419342,
-      "z": 1.25184273719788
-    },
-    "_layer": 1073741824,
-    "_euler": {
-      "__type__": "cc.Vec3",
-      "x": -111.19561729511254,
-      "y": -146.24276937915286,
-      "z": -54.51235818395591
-    },
-    "_id": ""
-  },
-  {
-    "__type__": "cc.ModelComponent",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
       "__id__": 137
     },
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@56bf7"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@d2ea0"
       }
     ],
     "_visFlags": 0,
@@ -3737,7 +3756,7 @@
       "__id__": 139
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@2dae1"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@1a337"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -3767,7 +3786,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "a4QsiJH51Ic7zIZzcfct06",
+    "fileId": "43Q0NuYXlKUrLShCz6AmoL",
     "sync": false,
     "_synced": {
       "default": false,
@@ -3776,10 +3795,10 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "绿块.006",
+    "_name": "红块.004",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 128
+      "__id__": 132
     },
     "_children": [],
     "_active": true,
@@ -3793,16 +3812,16 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0.00845478009432554,
-      "y": -0.000712127657607198,
-      "z": -0.00166731595527381
+      "x": 0.008,
+      "y": -0.004,
+      "z": -0.001
     },
     "_lrot": {
       "__type__": "cc.Quat",
-      "x": 0.03464342689141206,
-      "y": -0.37091705581964945,
-      "z": -0.7770106871825125,
-      "w": 0.5074197105744531
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
     },
     "_lscale": {
       "__type__": "cc.Vec3",
@@ -3813,15 +3832,15 @@
     "_layer": 1073741824,
     "_euler": {
       "__type__": "cc.Vec3",
-      "x": -111.19561729511254,
-      "y": -146.24276937915286,
-      "z": -54.51235818395591
+      "x": 0,
+      "y": 0,
+      "z": 0
     },
     "_id": ""
   },
   {
     "__type__": "cc.ModelComponent",
-    "_name": "",
+    "_name": "红块.004<ModelComponent>",
     "_objFlags": 0,
     "node": {
       "__id__": 141
@@ -3829,7 +3848,7 @@
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@d0e6c"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@5281e"
       }
     ],
     "_visFlags": 0,
@@ -3837,7 +3856,7 @@
       "__id__": 143
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@7bb5e"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@0f749"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -3867,7 +3886,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "15QVLXmndDx7xUIYeXjMIo",
+    "fileId": "9cemJD2zJGc6Rh2ZxIo5VT",
     "sync": false,
     "_synced": {
       "default": false,
@@ -3876,10 +3895,10 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "黑块.006",
+    "_name": "绿块.004",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 128
+      "__id__": 132
     },
     "_children": [],
     "_active": true,
@@ -3893,16 +3912,16 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0.00845478009432554,
-      "y": 0.00417350744828582,
-      "z": -0.00166731595527381
+      "x": 0.008,
+      "y": 0.001,
+      "z": -0.001
     },
     "_lrot": {
       "__type__": "cc.Quat",
-      "x": 0.03464342689141206,
-      "y": -0.37091705581964945,
-      "z": -0.7770106871825125,
-      "w": 0.5074197105744531
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
     },
     "_lscale": {
       "__type__": "cc.Vec3",
@@ -3913,9 +3932,9 @@
     "_layer": 1073741824,
     "_euler": {
       "__type__": "cc.Vec3",
-      "x": -111.19561729511254,
-      "y": -146.24276937915286,
-      "z": -54.51235818395591
+      "x": 0,
+      "y": 0,
+      "z": 0
     },
     "_id": ""
   },
@@ -3929,7 +3948,7 @@
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@ee25b"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@d2ea0"
       }
     ],
     "_visFlags": 0,
@@ -3937,7 +3956,7 @@
       "__id__": 147
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@40831"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@75eef"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -3967,7 +3986,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "6erRII0z1GP4mi4PTqnB1p",
+    "fileId": "d4IrRHKrhLhqDmQDKl3TjV",
     "sync": false,
     "_synced": {
       "default": false,
@@ -3976,10 +3995,10 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "红线.006",
+    "_name": "黑块.004",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 128
+      "__id__": 132
     },
     "_children": [],
     "_active": true,
@@ -3993,9 +4012,109 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0.040143508464098,
-      "y": -0.0229563899338245,
-      "z": 0.00291301473043859
+      "x": 0.008,
+      "y": 0.006,
+      "z": -0.002
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.74284815788269,
+      "y": 2.1234438419342,
+      "z": 1.25184273719788
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.ModelComponent",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 149
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@23dc6"
+      }
+    ],
+    "_visFlags": 0,
+    "lightmapSettings": {
+      "__id__": 151
+    },
+    "_mesh": {
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@36fa8"
+    },
+    "_shadowCastingMode": 0,
+    "_enableMorph": true,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.ModelLightmapSettings",
+    "texture": null,
+    "uvParam": {
+      "__type__": "cc.Vec4",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 0
+    },
+    "_bakeable": false,
+    "_castShadow": false,
+    "_receiveShadow": false,
+    "_recieveShadow": false,
+    "_lightmapSize": 64
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "94k1nxCzFE/Y5NY52VFRkM",
+    "sync": false,
+    "_synced": {
+      "default": false,
+      "serializable": false
+    }
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "红线.004",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 132
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 154
+      }
+    ],
+    "_prefab": {
+      "__id__": 156
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0.032,
+      "y": -0.035,
+      "z": 0.003
     },
     "_lrot": {
       "__type__": "cc.Quat",
@@ -4024,20 +4143,20 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 149
+      "__id__": 153
     },
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@56bf7"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@5281e"
       }
     ],
     "_visFlags": 0,
     "lightmapSettings": {
-      "__id__": 151
+      "__id__": 155
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@79c13"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@b2fb2"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -4067,7 +4186,113 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "e4IWDNPsVG2bqR1bzivF3V",
+    "fileId": "b735BTuzpCjqR+n5IfN8tj",
+    "sync": false,
+    "_synced": {
+      "default": false,
+      "serializable": false
+    }
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "logo1.002",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 132
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 158
+      }
+    ],
+    "_prefab": {
+      "__id__": 160
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0.008,
+      "y": -0.001,
+      "z": 0.014
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": -5.0275364671417555e-9,
+      "y": 1.766613897059505e-7,
+      "z": -0.7071066195032545,
+      "w": 0.7071069428697107
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": -0.589102,
+      "y": 0.140513,
+      "z": 0.258336
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 8.14746973764084e-7,
+      "z": -90
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.ModelComponent",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 157
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@e946f"
+      },
+      {
+        "__uuid__": "74128386-27cf-47d7-8e2d-a5d170168d71"
+      },
+      {
+        "__uuid__": "c20bf285-c82a-41f1-b40a-9cf5095f7817"
+      }
+    ],
+    "_visFlags": 0,
+    "lightmapSettings": {
+      "__id__": 159
+    },
+    "_mesh": {
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@39a73"
+    },
+    "_shadowCastingMode": 0,
+    "_enableMorph": true,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.ModelLightmapSettings",
+    "texture": null,
+    "uvParam": {
+      "__type__": "cc.Vec4",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 0
+    },
+    "_bakeable": false,
+    "_castShadow": false,
+    "_receiveShadow": false,
+    "_recieveShadow": false,
+    "_lightmapSize": 64
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "d1lqKSTnROkJrZpHvmo1L2",
     "sync": false,
     "_synced": {
       "default": false,
@@ -4079,29 +4304,29 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 128
+      "__id__": 132
     },
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@a0634"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@10ac0"
       },
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@5c108"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@65545"
       },
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@85512"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@c3276"
       },
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@ee25b"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@23dc6"
       }
     ],
     "_visFlags": 0,
     "lightmapSettings": {
-      "__id__": 154
+      "__id__": 162
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@47bc9"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@909f5"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -4131,7 +4356,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "e8935B4YNKXLciwduqJPCz",
+    "fileId": "f2cdBbvXRJo5po2C3Bqv9r",
     "sync": false,
     "_synced": {
       "default": false,
@@ -4140,25 +4365,25 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "小箱.006",
+    "_name": "小箱.001",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 115
+      "__id__": 119
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 157
+        "__id__": 165
       }
     ],
     "_prefab": {
-      "__id__": 159
+      "__id__": 167
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -0.00838726013898849,
-      "y": -0.00166456215083599,
+      "x": -0.00838726479560137,
+      "y": -0.00166453362908214,
       "z": 0.235348045825958
     },
     "_lrot": {
@@ -4188,20 +4413,20 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 156
+      "__id__": 164
     },
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@ee25b"
+        "__uuid__": "6aa38595-0b95-4edc-9279-b390cd5277ec"
       }
     ],
     "_visFlags": 0,
     "lightmapSettings": {
-      "__id__": 158
+      "__id__": 166
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@13ec8"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@9dd92"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -4231,7 +4456,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "67cfXB1LhJZ5RekKvlKewX",
+    "fileId": "a1I1qvM9lLMYb/gaohpq0z",
     "sync": false,
     "_synced": {
       "default": false,
@@ -4243,20 +4468,20 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 115
+      "__id__": 119
     },
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@90788"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@da0bc"
       }
     ],
     "_visFlags": 0,
     "lightmapSettings": {
-      "__id__": 161
+      "__id__": 169
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@a1635"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@6103b"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -4286,7 +4511,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "94KbKDAtxHw6ub/0LudUwb",
+    "fileId": "74qFnkWFdCd7OzRgJBT3wd",
     "sync": false,
     "_synced": {
       "default": false,
@@ -4295,18 +4520,12 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "小地面（父级）.007",
+    "_name": "小地面（父级）.010",
     "_objFlags": 0,
     "_parent": {
       "__id__": 2
     },
     "_children": [
-      {
-        "__id__": 164
-      },
-      {
-        "__id__": 168
-      },
       {
         "__id__": 172
       },
@@ -4314,30 +4533,36 @@
         "__id__": 176
       },
       {
-        "__id__": 204
+        "__id__": 180
+      },
+      {
+        "__id__": 184
+      },
+      {
+        "__id__": 216
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 208
+        "__id__": 220
       }
     ],
     "_prefab": {
-      "__id__": 210
+      "__id__": 222
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -178.366943359375,
+      "x": 4.96251153945923,
       "y": 0.696962773799896,
-      "z": -16.3089866638184
+      "z": 10.502911567688
     },
     "_lrot": {
       "__type__": "cc.Quat",
-      "x": -1.3767876449545e-7,
+      "x": -1.3767876445461205e-7,
       "y": 0.7071068109888552,
       "z": 0.7071067513842118,
-      "w": 1.3767877870630362e-7
+      "w": 1.3767877866546568e-7
     },
     "_lscale": {
       "__type__": "cc.Vec3",
@@ -4356,33 +4581,33 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "大柱.007",
+    "_name": "大柱.001",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 163
+      "__id__": 171
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 165
+        "__id__": 173
       }
     ],
     "_prefab": {
-      "__id__": 167
+      "__id__": 175
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0.010052184574306,
-      "y": 0,
+      "x": 0.0100521370768547,
+      "y": 1.90734859017994e-8,
       "z": 0.830609083175659
     },
     "_lrot": {
       "__type__": "cc.Quat",
-      "x": 3.5548540554557534e-23,
-      "y": -3.554853424367022e-23,
-      "z": 0.7071068407911906,
-      "w": 0.7071067215818996
+      "x": 3.554854355107585e-23,
+      "y": 3.554854355107585e-23,
+      "z": 0.7071067811865475,
+      "w": 0.7071067811865476
     },
     "_lscale": {
       "__type__": "cc.Vec3",
@@ -4401,26 +4626,26 @@
   },
   {
     "__type__": "cc.ModelComponent",
-    "_name": "",
+    "_name": "大柱.001<ModelComponent>",
     "_objFlags": 0,
     "node": {
-      "__id__": 164
+      "__id__": 172
     },
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@c5ad7"
+        "__uuid__": "33a090dd-f1b0-4e27-b105-e0c5a64948c5"
       },
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@ec074"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@00aeb"
       }
     ],
     "_visFlags": 0,
     "lightmapSettings": {
-      "__id__": 166
+      "__id__": 174
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@c7723"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@c59ce"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -4450,7 +4675,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "64qdt+lWVEI4speH/pD3MV",
+    "fileId": "eb/+tY/UlFxaSsb6U2yUWq",
     "sync": false,
     "_synced": {
       "default": false,
@@ -4459,25 +4684,25 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "广告牌.007",
+    "_name": "广告牌.001",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 163
+      "__id__": 171
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 169
+        "__id__": 177
       }
     ],
     "_prefab": {
-      "__id__": 171
+      "__id__": 179
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0.00165412900969386,
-      "y": 0.00199357978999615,
+      "x": 0.00165411946363747,
+      "y": 0.00199358933605254,
       "z": 1.00848853588104
     },
     "_lrot": {
@@ -4507,26 +4732,26 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 168
+      "__id__": 176
     },
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@5815a"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@2b1a6"
       },
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@a9549"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@98a7f"
       },
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@7359b"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@2573e"
       }
     ],
     "_visFlags": 0,
     "lightmapSettings": {
-      "__id__": 170
+      "__id__": 178
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@c2fdf"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@06cfd"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -4556,7 +4781,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "576B/tAqJI55pwBxJGGXwQ",
+    "fileId": "89MfGqWbtEm7IsEWyV556r",
     "sync": false,
     "_synced": {
       "default": false,
@@ -4565,25 +4790,25 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "栓.007",
+    "_name": "栓.001",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 163
+      "__id__": 171
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 173
+        "__id__": 181
       }
     ],
     "_prefab": {
-      "__id__": 175
+      "__id__": 183
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -0.0145859522745013,
-      "y": -0.000132408138597384,
+      "x": -0.0145859904587269,
+      "y": -0.00013239860709291,
       "z": 0.00764146773144603
     },
     "_lrot": {
@@ -4613,20 +4838,20 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 172
+      "__id__": 180
     },
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@ea6e2"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@ea6e2"
       }
     ],
     "_visFlags": 0,
     "lightmapSettings": {
-      "__id__": 174
+      "__id__": 182
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@40431"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@f5342"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -4656,7 +4881,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "93n5LVIddHSJQFEC5oRAz8",
+    "fileId": "88Qzwi9UhLApChl8bIRR9T",
     "sync": false,
     "_synced": {
       "default": false,
@@ -4665,18 +4890,12 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "油箱.007",
+    "_name": "油箱.004",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 163
+      "__id__": 171
     },
     "_children": [
-      {
-        "__id__": 177
-      },
-      {
-        "__id__": 181
-      },
       {
         "__id__": 185
       },
@@ -4688,21 +4907,30 @@
       },
       {
         "__id__": 197
+      },
+      {
+        "__id__": 201
+      },
+      {
+        "__id__": 205
+      },
+      {
+        "__id__": 209
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 201
+        "__id__": 213
       }
     ],
     "_prefab": {
-      "__id__": 203
+      "__id__": 215
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0.000662040722090751,
-      "y": -0.00259031285531819,
+      "x": 0.000662054982967675,
+      "y": -0.00259024603292346,
       "z": 0.413308262825012
     },
     "_lrot": {
@@ -4729,26 +4957,26 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "黑线.008",
+    "_name": "黑线.005",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 176
+      "__id__": 184
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 178
+        "__id__": 186
       }
     ],
     "_prefab": {
-      "__id__": 180
+      "__id__": 188
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0.0630132853984833,
-      "y": 0.00730308517813683,
-      "z": -0.000436589703895152
+      "x": 0.06,
+      "y": 0.014,
+      "z": 0
     },
     "_lrot": {
       "__type__": "cc.Quat",
@@ -4777,20 +5005,20 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 177
+      "__id__": 185
     },
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@ee25b"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@23dc6"
       }
     ],
     "_visFlags": 0,
     "lightmapSettings": {
-      "__id__": 179
+      "__id__": 187
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@25f76"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@8061d"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -4820,7 +5048,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "e8lAThPz5Ie65CDHx5VnrX",
+    "fileId": "73hlLfbyNAp7GxtKFNaMbm",
     "sync": false,
     "_synced": {
       "default": false,
@@ -4829,25 +5057,25 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "绿线.008",
+    "_name": "绿线.004",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 176
+      "__id__": 184
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 182
+        "__id__": 190
       }
     ],
     "_prefab": {
-      "__id__": 184
+      "__id__": 192
     },
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0.0630132853984833,
-      "y": -0.000156860347487964,
+      "y": -0.00015682696539443,
       "z": 0.00301632401533425
     },
     "_lrot": {
@@ -4877,212 +5105,12 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 181
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@d0e6c"
-      }
-    ],
-    "_visFlags": 0,
-    "lightmapSettings": {
-      "__id__": 183
-    },
-    "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@14de5"
-    },
-    "_shadowCastingMode": 0,
-    "_enableMorph": true,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.ModelLightmapSettings",
-    "texture": null,
-    "uvParam": {
-      "__type__": "cc.Vec4",
-      "x": 0,
-      "y": 0,
-      "z": 0,
-      "w": 0
-    },
-    "_bakeable": false,
-    "_castShadow": false,
-    "_receiveShadow": false,
-    "_recieveShadow": false,
-    "_lightmapSize": 64
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__id__": 0
-    },
-    "fileId": "50JpZ03UVKE5pFZHcV40/k",
-    "sync": false,
-    "_synced": {
-      "default": false,
-      "serializable": false
-    }
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "红块.008",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 176
-    },
-    "_children": [],
-    "_active": true,
-    "_components": [
-      {
-        "__id__": 186
-      }
-    ],
-    "_prefab": {
-      "__id__": 188
-    },
-    "_lpos": {
-      "__type__": "cc.Vec3",
-      "x": 0.00845472328364849,
-      "y": -0.00569396978244185,
-      "z": -0.00166731595527381
-    },
-    "_lrot": {
-      "__type__": "cc.Quat",
-      "x": 0.03464342689141206,
-      "y": -0.37091705581964945,
-      "z": -0.7770106871825125,
-      "w": 0.5074197105744531
-    },
-    "_lscale": {
-      "__type__": "cc.Vec3",
-      "x": 0.74284815788269,
-      "y": 2.1234438419342,
-      "z": 1.25184273719788
-    },
-    "_layer": 1073741824,
-    "_euler": {
-      "__type__": "cc.Vec3",
-      "x": -111.19561729511254,
-      "y": -146.24276937915286,
-      "z": -54.51235818395591
-    },
-    "_id": ""
-  },
-  {
-    "__type__": "cc.ModelComponent",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 185
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@56bf7"
-      }
-    ],
-    "_visFlags": 0,
-    "lightmapSettings": {
-      "__id__": 187
-    },
-    "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@fb6db"
-    },
-    "_shadowCastingMode": 0,
-    "_enableMorph": true,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.ModelLightmapSettings",
-    "texture": null,
-    "uvParam": {
-      "__type__": "cc.Vec4",
-      "x": 0,
-      "y": 0,
-      "z": 0,
-      "w": 0
-    },
-    "_bakeable": false,
-    "_castShadow": false,
-    "_receiveShadow": false,
-    "_recieveShadow": false,
-    "_lightmapSize": 64
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__id__": 0
-    },
-    "fileId": "5aPhgxlSVOCpP5VvuVE6/z",
-    "sync": false,
-    "_synced": {
-      "default": false,
-      "serializable": false
-    }
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "绿块.008",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 176
-    },
-    "_children": [],
-    "_active": true,
-    "_components": [
-      {
-        "__id__": 190
-      }
-    ],
-    "_prefab": {
-      "__id__": 192
-    },
-    "_lpos": {
-      "__type__": "cc.Vec3",
-      "x": 0.00845472328364849,
-      "y": -0.000712127657607198,
-      "z": -0.00166731595527381
-    },
-    "_lrot": {
-      "__type__": "cc.Quat",
-      "x": 0.03464342689141206,
-      "y": -0.37091705581964945,
-      "z": -0.7770106871825125,
-      "w": 0.5074197105744531
-    },
-    "_lscale": {
-      "__type__": "cc.Vec3",
-      "x": 0.74284815788269,
-      "y": 2.1234438419342,
-      "z": 1.25184273719788
-    },
-    "_layer": 1073741824,
-    "_euler": {
-      "__type__": "cc.Vec3",
-      "x": -111.19561729511254,
-      "y": -146.24276937915286,
-      "z": -54.51235818395591
-    },
-    "_id": ""
-  },
-  {
-    "__type__": "cc.ModelComponent",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
       "__id__": 189
     },
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@d0e6c"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@d2ea0"
       }
     ],
     "_visFlags": 0,
@@ -5090,7 +5118,7 @@
       "__id__": 191
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@fed57"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@1a337"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -5120,7 +5148,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "1bHqCvZ/JMlY0tXUFDreyG",
+    "fileId": "12nHMJ8ppFvqWtH+SHX4/Z",
     "sync": false,
     "_synced": {
       "default": false,
@@ -5129,10 +5157,10 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "黑块.008",
+    "_name": "红块.004",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 176
+      "__id__": 184
     },
     "_children": [],
     "_active": true,
@@ -5146,16 +5174,16 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0.00845472328364849,
-      "y": 0.00417350744828582,
-      "z": -0.00166731595527381
+      "x": 0.008,
+      "y": -0.004,
+      "z": -0.001
     },
     "_lrot": {
       "__type__": "cc.Quat",
-      "x": 0.03464342689141206,
-      "y": -0.37091705581964945,
-      "z": -0.7770106871825125,
-      "w": 0.5074197105744531
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
     },
     "_lscale": {
       "__type__": "cc.Vec3",
@@ -5166,15 +5194,15 @@
     "_layer": 1073741824,
     "_euler": {
       "__type__": "cc.Vec3",
-      "x": -111.19561729511254,
-      "y": -146.24276937915286,
-      "z": -54.51235818395591
+      "x": 0,
+      "y": 0,
+      "z": 0
     },
     "_id": ""
   },
   {
     "__type__": "cc.ModelComponent",
-    "_name": "",
+    "_name": "红块.004<ModelComponent>",
     "_objFlags": 0,
     "node": {
       "__id__": 193
@@ -5182,7 +5210,7 @@
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@ee25b"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@5281e"
       }
     ],
     "_visFlags": 0,
@@ -5190,7 +5218,7 @@
       "__id__": 195
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@e2f08"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@0f749"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -5220,7 +5248,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "6c7mGqwoZA07hYqueal4H7",
+    "fileId": "cc26Iss8VFnpLECBtjZBsN",
     "sync": false,
     "_synced": {
       "default": false,
@@ -5229,10 +5257,10 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "红线.008",
+    "_name": "绿块.004",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 176
+      "__id__": 184
     },
     "_children": [],
     "_active": true,
@@ -5246,9 +5274,209 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0.0401434898376465,
-      "y": -0.0229563899338245,
-      "z": 0.00291301473043859
+      "x": 0.008,
+      "y": 0.001,
+      "z": -0.001
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.74284815788269,
+      "y": 2.1234438419342,
+      "z": 1.25184273719788
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.ModelComponent",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 197
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@d2ea0"
+      }
+    ],
+    "_visFlags": 0,
+    "lightmapSettings": {
+      "__id__": 199
+    },
+    "_mesh": {
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@75eef"
+    },
+    "_shadowCastingMode": 0,
+    "_enableMorph": true,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.ModelLightmapSettings",
+    "texture": null,
+    "uvParam": {
+      "__type__": "cc.Vec4",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 0
+    },
+    "_bakeable": false,
+    "_castShadow": false,
+    "_receiveShadow": false,
+    "_recieveShadow": false,
+    "_lightmapSize": 64
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "22DGtuzUJIwIiNCdnOafmB",
+    "sync": false,
+    "_synced": {
+      "default": false,
+      "serializable": false
+    }
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "黑块.004",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 184
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 202
+      }
+    ],
+    "_prefab": {
+      "__id__": 204
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0.008,
+      "y": 0.006,
+      "z": -0.002
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.74284815788269,
+      "y": 2.1234438419342,
+      "z": 1.25184273719788
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.ModelComponent",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 201
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@23dc6"
+      }
+    ],
+    "_visFlags": 0,
+    "lightmapSettings": {
+      "__id__": 203
+    },
+    "_mesh": {
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@36fa8"
+    },
+    "_shadowCastingMode": 0,
+    "_enableMorph": true,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.ModelLightmapSettings",
+    "texture": null,
+    "uvParam": {
+      "__type__": "cc.Vec4",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 0
+    },
+    "_bakeable": false,
+    "_castShadow": false,
+    "_receiveShadow": false,
+    "_recieveShadow": false,
+    "_lightmapSize": 64
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "a0tvu/C5xNe4rXj903Q5Nh",
+    "sync": false,
+    "_synced": {
+      "default": false,
+      "serializable": false
+    }
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "红线.004",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 184
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 206
+      }
+    ],
+    "_prefab": {
+      "__id__": 208
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0.032,
+      "y": -0.035,
+      "z": 0.003
     },
     "_lrot": {
       "__type__": "cc.Quat",
@@ -5277,20 +5505,20 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 197
+      "__id__": 205
     },
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@56bf7"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@5281e"
       }
     ],
     "_visFlags": 0,
     "lightmapSettings": {
-      "__id__": 199
+      "__id__": 207
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@c69a9"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@b2fb2"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -5320,7 +5548,113 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "f3VdIlBQhCO54cAEPbjR/A",
+    "fileId": "b5ZjNhHCdHAIJl2LOryHv/",
+    "sync": false,
+    "_synced": {
+      "default": false,
+      "serializable": false
+    }
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "logo1.002",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 184
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 210
+      }
+    ],
+    "_prefab": {
+      "__id__": 212
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0.008,
+      "y": -0.001,
+      "z": 0.014
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": -5.0275364671417555e-9,
+      "y": 1.766613897059505e-7,
+      "z": -0.7071066195032545,
+      "w": 0.7071069428697107
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": -0.589102,
+      "y": 0.140513,
+      "z": 0.258336
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 8.14746973764084e-7,
+      "z": -90
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.ModelComponent",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 209
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@e946f"
+      },
+      {
+        "__uuid__": "74128386-27cf-47d7-8e2d-a5d170168d71"
+      },
+      {
+        "__uuid__": "c20bf285-c82a-41f1-b40a-9cf5095f7817"
+      }
+    ],
+    "_visFlags": 0,
+    "lightmapSettings": {
+      "__id__": 211
+    },
+    "_mesh": {
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@39a73"
+    },
+    "_shadowCastingMode": 0,
+    "_enableMorph": true,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.ModelLightmapSettings",
+    "texture": null,
+    "uvParam": {
+      "__type__": "cc.Vec4",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 0
+    },
+    "_bakeable": false,
+    "_castShadow": false,
+    "_receiveShadow": false,
+    "_recieveShadow": false,
+    "_lightmapSize": 64
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "00E2Uf2phHkrgkbYArha5s",
     "sync": false,
     "_synced": {
       "default": false,
@@ -5332,29 +5666,29 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 176
+      "__id__": 184
     },
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@a0634"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@10ac0"
       },
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@5c108"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@65545"
       },
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@85512"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@c3276"
       },
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@ee25b"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@23dc6"
       }
     ],
     "_visFlags": 0,
     "lightmapSettings": {
-      "__id__": 202
+      "__id__": 214
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@2185b"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@909f5"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -5384,7 +5718,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "3eUxvmTW1AAInHp/wePRsz",
+    "fileId": "b0syHZ6Z9N8KdRhqg9hiEd",
     "sync": false,
     "_synced": {
       "default": false,
@@ -5393,25 +5727,25 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "小箱.007",
+    "_name": "小箱.001",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 163
+      "__id__": 171
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 205
+        "__id__": 217
       }
     ],
     "_prefab": {
-      "__id__": 207
+      "__id__": 219
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -0.00838726013898849,
-      "y": -0.00166461942717433,
+      "x": -0.00838726479560137,
+      "y": -0.00166453362908214,
       "z": 0.235348045825958
     },
     "_lrot": {
@@ -5441,20 +5775,20 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 204
+      "__id__": 216
     },
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@ee25b"
+        "__uuid__": "6aa38595-0b95-4edc-9279-b390cd5277ec"
       }
     ],
     "_visFlags": 0,
     "lightmapSettings": {
-      "__id__": 206
+      "__id__": 218
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@2e852"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@9dd92"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -5484,7 +5818,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "32K7cyYjBI+KqJjQXIR3uc",
+    "fileId": "571SDCYP1KsK7K6+mBAkjR",
     "sync": false,
     "_synced": {
       "default": false,
@@ -5496,20 +5830,20 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 163
+      "__id__": 171
     },
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@90788"
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@da0bc"
       }
     ],
     "_visFlags": 0,
     "lightmapSettings": {
-      "__id__": 209
+      "__id__": 221
     },
     "_mesh": {
-      "__uuid__": "ab0ec02a-4354-418e-9c58-4908a2b2bc8f@ff105"
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@6103b"
     },
     "_shadowCastingMode": 0,
     "_enableMorph": true,
@@ -5539,7 +5873,404 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "5exm+9QbxFd44LE9enHwLB",
+    "fileId": "e1yp4C1ThHLoo8tcUt4TZL",
+    "sync": false,
+    "_synced": {
+      "default": false,
+      "serializable": false
+    }
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "SM_Bld_Shop_Corner_05",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 2
+    },
+    "_children": [
+      {
+        "__id__": 224
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 238
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -5.906,
+      "y": 0.817,
+      "z": -7.995
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 4,
+      "y": 3,
+      "z": 1
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "RootNode",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 223
+    },
+    "_children": [
+      {
+        "__id__": 225
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 237
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "SM_Bld_Shop_Corner_05",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 224
+    },
+    "_children": [
+      {
+        "__id__": 226
+      },
+      {
+        "__id__": 230
+      }
+    ],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 234
+      }
+    ],
+    "_prefab": {
+      "__id__": 236
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0.000002667308081062922,
+      "z": 0,
+      "w": 0.9999999999964428
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 100,
+      "y": 100,
+      "z": 100
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0.00030565099141245027,
+      "z": 0
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "SM_Bld_Shop_Corner_02_Glass",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 225
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 227
+      }
+    ],
+    "_prefab": {
+      "__id__": 229
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 4.2351647362715e-22,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 4.853141298619866e-20,
+      "z": 0
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.ModelComponent",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 226
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "ba601e96-06ac-4a16-91f7-ee6694a8d950@ec732"
+      }
+    ],
+    "_visFlags": 0,
+    "lightmapSettings": {
+      "__id__": 228
+    },
+    "_mesh": {
+      "__uuid__": "ba601e96-06ac-4a16-91f7-ee6694a8d950@6469b"
+    },
+    "_shadowCastingMode": 0,
+    "_enableMorph": true,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.ModelLightmapSettings",
+    "texture": null,
+    "uvParam": {
+      "__type__": "cc.Vec4",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 0
+    },
+    "_bakeable": false,
+    "_castShadow": false,
+    "_receiveShadow": false,
+    "_recieveShadow": false,
+    "_lightmapSize": 64
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "0aNsHc6L1Hj7tBTs8qw2W4",
+    "sync": false,
+    "_synced": {
+      "default": false,
+      "serializable": false
+    }
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "SM_Bld_Shop_Cover_05",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 225
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 231
+      }
+    ],
+    "_prefab": {
+      "__id__": 233
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0.0299999993294477,
+      "z": 0
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 4.2351647362715e-22,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 4.853141298619866e-20,
+      "z": 0
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.ModelComponent",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 230
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "ba601e96-06ac-4a16-91f7-ee6694a8d950@39742"
+      }
+    ],
+    "_visFlags": 0,
+    "lightmapSettings": {
+      "__id__": 232
+    },
+    "_mesh": {
+      "__uuid__": "ba601e96-06ac-4a16-91f7-ee6694a8d950@f4cce"
+    },
+    "_shadowCastingMode": 0,
+    "_enableMorph": true,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.ModelLightmapSettings",
+    "texture": null,
+    "uvParam": {
+      "__type__": "cc.Vec4",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 0
+    },
+    "_bakeable": false,
+    "_castShadow": false,
+    "_receiveShadow": false,
+    "_recieveShadow": false,
+    "_lightmapSize": 64
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "61XH1tUlZNy7D4n1D87Zln",
+    "sync": false,
+    "_synced": {
+      "default": false,
+      "serializable": false
+    }
+  },
+  {
+    "__type__": "cc.ModelComponent",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 225
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "ba601e96-06ac-4a16-91f7-ee6694a8d950@39742"
+      }
+    ],
+    "_visFlags": 0,
+    "lightmapSettings": {
+      "__id__": 235
+    },
+    "_mesh": {
+      "__uuid__": "ba601e96-06ac-4a16-91f7-ee6694a8d950@bad8e"
+    },
+    "_shadowCastingMode": 0,
+    "_enableMorph": true,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.ModelLightmapSettings",
+    "texture": null,
+    "uvParam": {
+      "__type__": "cc.Vec4",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 0
+    },
+    "_bakeable": false,
+    "_castShadow": false,
+    "_receiveShadow": false,
+    "_recieveShadow": false,
+    "_lightmapSize": 64
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "a8EUu9oNBPYaW6LI+0x2WB",
     "sync": false,
     "_synced": {
       "default": false,
@@ -5554,7 +6285,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "8eqA2ic6NJnKCRe8Bkr0n8",
+    "fileId": "cbox2wIz5I0rYL6Sksm7ca",
     "sync": false,
     "_synced": {
       "default": false,
@@ -5569,7 +6300,209 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "4cn4W2OmNJxJFImrez4QAe",
+    "fileId": "7fcb/5qIRBI4nXf+iU+cFE",
+    "sync": false,
+    "_synced": {
+      "default": false,
+      "serializable": false
+    }
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "77P0PvQWhL64R8bh0g4MPZ",
+    "sync": false,
+    "_synced": {
+      "default": false,
+      "serializable": false
+    }
+  },
+  {
+    "__type__": "cc.AnimationComponent",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "playOnLoad": false,
+    "_clips": [
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@20955"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@84501"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@96440"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@2472c"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@3751b"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@e6ffc"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@95ad5"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@8fab2"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@c77ea"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@355ea"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@fa782"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@d5877"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@8dfbf"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@f48cb"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@cf7a7"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@f87dc"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@775a0"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@5d5d4"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@01112"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@76ce2"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@4a0dc"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@b05ee"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@322a3"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@7b916"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@2d282"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@1d2e6"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@a7e30"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@cf5d5"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@a7078"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@5432f"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@5ebb1"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@ca360"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@360a7"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@3c5d4"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@b564c"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@6fb55"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@57b9e"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@7a909"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@2f457"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@d181c"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@4080c"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@bde1c"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@b3f42"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@984f1"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@715de"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@2f204"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@abdeb"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@74bdc"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@2999f"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@1189f"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@0e1b9"
+      },
+      {
+        "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@34f9f"
+      }
+    ],
+    "_defaultClip": {
+      "__uuid__": "56d8a9fb-e3f4-4c28-afa7-67c924449bde@20955"
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "a968+RlQdKdaP29L3+xgG0",
     "sync": false,
     "_synced": {
       "default": false,

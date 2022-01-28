@@ -1,0 +1,64 @@
+{
+  "ver": "1.3.21",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "c0ab7b77-5d1f-4b6e-9be1-0bd76491ec37",
+  "files": [],
+  "subMetas": {
+    "7aee0": {
+      "importer": "gltf-mesh",
+      "uuid": "c0ab7b77-5d1f-4b6e-9be1-0bd76491ec37@7aee0",
+      "displayName": "",
+      "id": "7aee0",
+      "name": "House_4.mesh",
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".json",
+        ".bin"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "103c9": {
+      "importer": "gltf-scene",
+      "uuid": "c0ab7b77-5d1f-4b6e-9be1-0bd76491ec37@103c9",
+      "displayName": "",
+      "id": "103c9",
+      "name": "House_4.prefab",
+      "ver": "1.0.11",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "redirect": "c0ab7b77-5d1f-4b6e-9be1-0bd76491ec37@103c9",
+    "assetFinder": {
+      "meshes": [
+        "c0ab7b77-5d1f-4b6e-9be1-0bd76491ec37@7aee0"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "ddd24b8e-9bbf-4eb9-bf32-0c9f65479dc1",
+        "0d2c5f67-4817-483c-bb73-d62442022da4",
+        "1316d103-37f4-46f1-9499-f95870c48603",
+        "3c14be7c-4aa2-4c06-a31c-48fe46bbfb5e",
+        "3048ecab-364e-41a4-b1e5-c15676f1b9de"
+      ],
+      "scenes": [
+        "c0ab7b77-5d1f-4b6e-9be1-0bd76491ec37@103c9"
+      ]
+    },
+    "dumpMaterials": true
+  }
+}

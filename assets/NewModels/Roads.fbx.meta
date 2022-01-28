@@ -22,54 +22,6 @@
         "gltfIndex": 0
       }
     },
-    "617c4": {
-      "importer": "gltf-material",
-      "uuid": "4f07001f-bd8d-4cf3-b61b-8bd0d1bd1590@617c4",
-      "displayName": "",
-      "id": "617c4",
-      "name": "White.007.material",
-      "ver": "1.0.14",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
-    },
-    "c6db3": {
-      "importer": "gltf-material",
-      "uuid": "4f07001f-bd8d-4cf3-b61b-8bd0d1bd1590@c6db3",
-      "displayName": "",
-      "id": "c6db3",
-      "name": "Black.010.material",
-      "ver": "1.0.14",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 1
-      }
-    },
-    "14e07": {
-      "importer": "gltf-material",
-      "uuid": "4f07001f-bd8d-4cf3-b61b-8bd0d1bd1590@14e07",
-      "displayName": "",
-      "id": "14e07",
-      "name": "Grey.001.material",
-      "ver": "1.0.14",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 2
-      }
-    },
     "7b087": {
       "importer": "gltf-scene",
       "uuid": "4f07001f-bd8d-4cf3-b61b-8bd0d1bd1590@7b087",
@@ -97,13 +49,14 @@
       "skeletons": [],
       "textures": [],
       "materials": [
-        "4f07001f-bd8d-4cf3-b61b-8bd0d1bd1590@617c4",
-        "4f07001f-bd8d-4cf3-b61b-8bd0d1bd1590@c6db3",
-        "4f07001f-bd8d-4cf3-b61b-8bd0d1bd1590@14e07"
+        "2e6c1511-7118-465f-b1f8-6161c3022f06",
+        "88f86d7b-78d9-4f33-9a5d-9b7204bc21f5",
+        "be25d259-5730-47f0-86e9-ef6349d969c1"
       ],
       "scenes": [
         "4f07001f-bd8d-4cf3-b61b-8bd0d1bd1590@7b087"
       ]
-    }
+    },
+    "dumpMaterials": true
   }
 }

@@ -37,22 +37,6 @@
       "userData": {
         "gltfIndex": 0
       }
-    },
-    "bc290": {
-      "importer": "gltf-material",
-      "uuid": "4e99c2cb-5216-4f06-9433-e08b103593a1@bc290",
-      "displayName": "",
-      "id": "bc290",
-      "name": "Texture.material",
-      "ver": "1.0.14",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
     }
   },
   "userData": {
@@ -65,11 +49,12 @@
       "skeletons": [],
       "textures": [],
       "materials": [
-        "4e99c2cb-5216-4f06-9433-e08b103593a1@bc290"
+        "328cfd2d-9a65-4ade-955e-8cbe3cd0f0e4"
       ],
       "scenes": [
         "4e99c2cb-5216-4f06-9433-e08b103593a1@28543"
       ]
-    }
+    },
+    "dumpMaterials": true
   }
 }

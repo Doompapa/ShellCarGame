@@ -1,0 +1,62 @@
+{
+  "ver": "1.3.21",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "85dad2ea-c4bc-4b49-8542-1670858ca3d8",
+  "files": [],
+  "subMetas": {
+    "b4028": {
+      "importer": "gltf-mesh",
+      "uuid": "85dad2ea-c4bc-4b49-8542-1670858ca3d8@b4028",
+      "displayName": "",
+      "id": "b4028",
+      "name": "Blue Building.mesh",
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".json",
+        ".bin"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "b0286": {
+      "importer": "gltf-scene",
+      "uuid": "85dad2ea-c4bc-4b49-8542-1670858ca3d8@b0286",
+      "displayName": "",
+      "id": "b0286",
+      "name": "Blue Building.prefab",
+      "ver": "1.0.11",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "redirect": "85dad2ea-c4bc-4b49-8542-1670858ca3d8@b0286",
+    "assetFinder": {
+      "meshes": [
+        "85dad2ea-c4bc-4b49-8542-1670858ca3d8@b4028"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "79f8a2ae-1a25-4e17-8d6f-d575626d4c6d",
+        "0ab63d0a-0b28-4229-a881-17d5cc86b96d",
+        "1925509c-04f3-499b-9497-52c6bfe87e70"
+      ],
+      "scenes": [
+        "85dad2ea-c4bc-4b49-8542-1670858ca3d8@b0286"
+      ]
+    },
+    "dumpMaterials": true
+  }
+}

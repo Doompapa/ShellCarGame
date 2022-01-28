@@ -22,30 +22,6 @@
         "gltfIndex": 0
       }
     },
-    "894ba": {
-      "importer": "gltf-animation",
-      "uuid": "185df436-40ef-4d6c-b39e-81ea6698e907@894ba",
-      "displayName": "",
-      "id": "894ba",
-      "name": "Cube.093|Flat1.002Action.animation",
-      "ver": "1.0.14",
-      "imported": true,
-      "files": [
-        ".bin",
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0,
-        "wrapMode": 2,
-        "sample": 30,
-        "span": {
-          "from": 0,
-          "to": 0.0416666679084301
-        },
-        "events": []
-      }
-    },
     "09c97": {
       "importer": "gltf-material",
       "uuid": "185df436-40ef-4d6c-b39e-81ea6698e907@09c97",
@@ -86,14 +62,7 @@
         "name": "Cube.093|Flat1.002Action",
         "duration": 0.0416666679084301,
         "fps": 30,
-        "splits": [
-          {
-            "name": "Cube.093|Flat1.002Action",
-            "from": 0,
-            "to": 0.0416666679084301,
-            "wrapMode": 2
-          }
-        ]
+        "splits": []
       }
     ],
     "redirect": "185df436-40ef-4d6c-b39e-81ea6698e907@6a65d",

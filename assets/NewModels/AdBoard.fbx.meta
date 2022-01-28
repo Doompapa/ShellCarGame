@@ -39,102 +39,6 @@
         "gltfIndex": 1
       }
     },
-    "a1a48": {
-      "importer": "gltf-animation",
-      "uuid": "e839c4a0-4d20-4e0e-9d61-186364da8d06@a1a48",
-      "displayName": "",
-      "id": "a1a48",
-      "name": "Cube.038|Flat1.002Action.animation",
-      "ver": "1.0.14",
-      "imported": true,
-      "files": [
-        ".bin",
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0,
-        "wrapMode": 2,
-        "sample": 30,
-        "span": {
-          "from": 0,
-          "to": 0.0416666679084301
-        },
-        "events": []
-      }
-    },
-    "7b510": {
-      "importer": "gltf-animation",
-      "uuid": "e839c4a0-4d20-4e0e-9d61-186364da8d06@7b510",
-      "displayName": "",
-      "id": "7b510",
-      "name": "Cube|Flat1.002Action.animation",
-      "ver": "1.0.14",
-      "imported": true,
-      "files": [
-        ".bin",
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 1,
-        "wrapMode": 2,
-        "sample": 30,
-        "span": {
-          "from": 0,
-          "to": 0.0416666679084301
-        },
-        "events": []
-      }
-    },
-    "afeef": {
-      "importer": "gltf-material",
-      "uuid": "e839c4a0-4d20-4e0e-9d61-186364da8d06@afeef",
-      "displayName": "",
-      "id": "afeef",
-      "name": "Material.024.material",
-      "ver": "1.0.14",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
-    },
-    "f1ae6": {
-      "importer": "gltf-material",
-      "uuid": "e839c4a0-4d20-4e0e-9d61-186364da8d06@f1ae6",
-      "displayName": "",
-      "id": "f1ae6",
-      "name": "Material.023.material",
-      "ver": "1.0.14",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 1
-      }
-    },
-    "ea6e2": {
-      "importer": "gltf-material",
-      "uuid": "e839c4a0-4d20-4e0e-9d61-186364da8d06@ea6e2",
-      "displayName": "",
-      "id": "ea6e2",
-      "name": "DefaultMaterial.material",
-      "ver": "1.0.14",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 2
-      }
-    },
     "2f2cd": {
       "importer": "gltf-scene",
       "uuid": "e839c4a0-4d20-4e0e-9d61-186364da8d06@2f2cd",
@@ -154,34 +58,6 @@
   },
   "userData": {
     "imageMetas": [],
-    "animationImportSettings": [
-      {
-        "name": "Cube.038|Flat1.002Action",
-        "duration": 0.0416666679084301,
-        "fps": 30,
-        "splits": [
-          {
-            "name": "Cube.038|Flat1.002Action",
-            "from": 0,
-            "to": 0.0416666679084301,
-            "wrapMode": 2
-          }
-        ]
-      },
-      {
-        "name": "Cube|Flat1.002Action",
-        "duration": 0.0416666679084301,
-        "fps": 30,
-        "splits": [
-          {
-            "name": "Cube|Flat1.002Action",
-            "from": 0,
-            "to": 0.0416666679084301,
-            "wrapMode": 2
-          }
-        ]
-      }
-    ],
     "redirect": "e839c4a0-4d20-4e0e-9d61-186364da8d06@2f2cd",
     "assetFinder": {
       "meshes": [
@@ -191,13 +67,14 @@
       "skeletons": [],
       "textures": [],
       "materials": [
-        "e839c4a0-4d20-4e0e-9d61-186364da8d06@afeef",
-        "e839c4a0-4d20-4e0e-9d61-186364da8d06@f1ae6",
-        "e839c4a0-4d20-4e0e-9d61-186364da8d06@ea6e2"
+        "50f9bb13-3e3c-4cea-8d0c-7054b2c884f9",
+        "057f9000-c03c-4cdb-9c49-f1823c3bd274",
+        "9a20cd19-41f1-40a9-99a6-a6ebe9bff2e4"
       ],
       "scenes": [
         "e839c4a0-4d20-4e0e-9d61-186364da8d06@2f2cd"
       ]
-    }
+    },
+    "dumpMaterials": true
   }
 }
