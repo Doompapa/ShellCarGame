@@ -15,7 +15,7 @@ export class Car extends Component {
     @property({
         displayOrder: 1
     })
-    public speed = 0.1;
+    public speed = 0.8;
 
     @property
     minSpeed = 0.1;
@@ -68,6 +68,12 @@ export class Car extends Component {
     })
     camera: Node = null; //设置相机
 
+
+    @property({
+        type: Prefab
+    })
+    envPrefab: Prefab = null;
+
     private _cameraPos = new Vec3();   //相机初始位置
 
     private _cameraRotate = new Vec3(); //固定相机旋转
@@ -78,9 +84,9 @@ export class Car extends Component {
     private _endPos = new Vec3();
     private _offsetPos = new Vec3();
 
-    private _addSpeed = 0.005;
+    private _addSpeed = 0.001;
 
-    public _maxSpeed = 1;
+    public _maxSpeed = 2;
 
     private temVec = new Vec3()
 
@@ -91,6 +97,8 @@ export class Car extends Component {
     private _targetPostion = null
 
     private x = null;
+
+    private rotateSpeed = 0.5;
 
     public score: number = 0;
 
@@ -116,8 +124,8 @@ export class Car extends Component {
                 this.speed = this._maxSpeed
             }
 
-            this._setMoveType()
-            this._running();
+            this._setMoveType(dt)
+            this._running(dt);
             if (!this._isShutCamera) {
                 this.setCamera(true)
             } else {
@@ -128,7 +136,12 @@ export class Car extends Component {
         }
 
     }
+
+
     start() {
+
+        cc.game.setFrameRate(60);
+
         this.setNode(this.startPos)
         this._cameraPos = this.camera.worldPosition;
         this._cameraRotate = this.camera.eulerAngles;
@@ -199,29 +212,26 @@ export class Car extends Component {
             // this.camera.setWorldPosition(this.node.worldPosition.x, this.node.worldPosition.y + 6,
             //     this.node.worldPosition.z - 11.5)
 
-            this.camera.setWorldPosition(this.node.worldPosition.x, this.node.worldPosition.y + 10,
-                this.node.worldPosition.z - 20)
+            // y
+            this.camera.setWorldPosition(this.node.worldPosition.x, this.node.worldPosition.y + 20,
+                this.node.worldPosition.z - 40)
         }
 
     }
-    private _setMoveType() {    //赛车左滑右滑
+    private _setMoveType(dt: number) {    //赛车左滑右滑
         this._offsetPos.set(this.node.worldPosition)
 
         if (this._moveType == 'left') { //左滑
-
-
             this._rotateY.set(0, 30, 0)
-
-
             //往左边滑
             this._targetPostion = this.leftStartPos.worldPosition;
             this.x = this._targetPostion.x - this._offsetPos.x;
 
             if (this.x !== 0) {
-                this._offsetPos.x += 0.2
+                this._offsetPos.x += this.rotateSpeed * dt * 100
                 //console.log('xxxx', this._offsetPos.x, this._targetPostion.x)
                 this.node.eulerAngles = this._rotateY  //设置左滑右滑角度
-                if (this._offsetPos.x > this._targetPostion.x) {
+                if (this._offsetPos.x >= this._targetPostion.x) {
                     this._rotateY.set(0, 0, 0)
                     this.node.eulerAngles = this._rotateY
                     this._offsetPos.x = this._targetPostion.x
@@ -236,10 +246,10 @@ export class Car extends Component {
             this._rotateY.set(0, -30, 0)
             // console.log('右滑判断')
             if (this.x !== 0) {
-                this._offsetPos.x -= 0.2
+                this._offsetPos.x -= this.rotateSpeed * dt * 100
                 // console.log('xxxx', this._offsetPos.x, this._targetPostion.x)
                 this.node.eulerAngles = this._rotateY  //设置左滑右滑角度
-                if (this._offsetPos.x < this._targetPostion.x) {
+                if (this._offsetPos.x <= this._targetPostion.x) {
                     this._rotateY.set(0, 0, 0)
                     this.node.eulerAngles = this._rotateY
                     this._offsetPos.x = this._targetPostion.x
@@ -248,7 +258,6 @@ export class Car extends Component {
 
         } else if (this._moveType == 'center') {
             // console.log('回到中间')
-
             if (this._offsetPos.x < -2.784) {  //从右边回到中间位置
                 this._offsetPos.x += 0.2
 
@@ -274,15 +283,15 @@ export class Car extends Component {
         this.node.setWorldPosition(this._offsetPos)
 
     }
-    private _running() { //赛车移动
+    private _running(dt: number) { //赛车移动
 
         // console.log('移动>>>>>>>')
-        this._offsetPos.set(this.node.worldPosition)
+        this._offsetPos.set(this.node.worldPosition);
         const z = this._endPos.z - this._offsetPos.z
 
         if (z !== 0) {
             if (z > 0) {
-                this._offsetPos.z += this.speed;
+                this._offsetPos.z += this.speed * dt * 100;
                 if (this._offsetPos.z > this._endPos.z) {
                     this._offsetPos.z = this._endPos.z
                 }
@@ -295,7 +304,7 @@ export class Car extends Component {
 
         //拼接路
         if (Math.abs(Math.abs(this.node.worldPosition.z) - Math.abs(this.distanceCount.z)) > 90) {
-            console.log('超过90');
+            // console.log('超过180');
             this.distanceCount.set(this.node.worldPosition);
             this.roadCount += 1;
             this.AppendRoad();
@@ -315,16 +324,20 @@ export class Car extends Component {
 
 
     private AppendRoad() {
-        const newPos: Vec3 = new Vec3(this.roadGroup.worldPosition.x, this.roadGroup.worldPosition.y, 270 + this.roadCount * 90);
-        loader.loadRes("prefabs/Env/Roads", Prefab, (err: any, prefab: Prefab) => {
-            if (err) {
-                console.warn(err);
-                return;
-            }
-            const fab = instantiate(prefab);
-            fab.position = newPos;
-            fab.parent = this.roadGroup;
-        })
+        const newPos: Vec3 = new Vec3(this.roadGroup.worldPosition.x, this.roadGroup.worldPosition.y, 180 + this.roadCount * 180);
+        const fab = instantiate(this.envPrefab);
+        fab.position = newPos;
+        fab.parent = this.roadGroup;
+
+        // loader.loadRes("prefabs/Env/Roads", Prefab, (err: any, prefab: Prefab) => {
+        //     if (err) {
+        //         console.warn(err);
+        //         return;
+        //     }
+        //     const fab = instantiate(prefab);
+        //     fab.position = newPos;
+        //     fab.parent = this.roadGroup;
+        // })
     }
 
     public setNode(entry: Node) { //设置起跑点
