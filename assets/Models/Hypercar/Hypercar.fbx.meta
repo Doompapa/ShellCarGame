@@ -90,102 +90,6 @@
         "gltfIndex": 4
       }
     },
-    "d19c3": {
-      "importer": "gltf-material",
-      "uuid": "8a355c59-b828-47af-bbac-a28fd3158147@d19c3",
-      "displayName": "",
-      "id": "d19c3",
-      "name": "palette.material",
-      "ver": "1.0.14",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
-    },
-    "df717": {
-      "importer": "gltf-material",
-      "uuid": "8a355c59-b828-47af-bbac-a28fd3158147@df717",
-      "displayName": "",
-      "id": "df717",
-      "name": "Simple Glass.material",
-      "ver": "1.0.14",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 1
-      }
-    },
-    "e2818": {
-      "importer": "gltf-material",
-      "uuid": "8a355c59-b828-47af-bbac-a28fd3158147@e2818",
-      "displayName": "",
-      "id": "e2818",
-      "name": "Backlights.material",
-      "ver": "1.0.14",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 2
-      }
-    },
-    "6f209": {
-      "importer": "gltf-material",
-      "uuid": "8a355c59-b828-47af-bbac-a28fd3158147@6f209",
-      "displayName": "",
-      "id": "6f209",
-      "name": "Headlights.material",
-      "ver": "1.0.14",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 3
-      }
-    },
-    "5672a": {
-      "importer": "gltf-material",
-      "uuid": "8a355c59-b828-47af-bbac-a28fd3158147@5672a",
-      "displayName": "",
-      "id": "5672a",
-      "name": "Turn_left.material",
-      "ver": "1.0.14",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 4
-      }
-    },
-    "4a7c4": {
-      "importer": "gltf-material",
-      "uuid": "8a355c59-b828-47af-bbac-a28fd3158147@4a7c4",
-      "displayName": "",
-      "id": "4a7c4",
-      "name": "Turn_right.material",
-      "ver": "1.0.14",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 5
-      }
-    },
     "cd3d3": {
       "importer": "gltf-scene",
       "uuid": "8a355c59-b828-47af-bbac-a28fd3158147@cd3d3",
@@ -217,16 +121,17 @@
       "skeletons": [],
       "textures": [],
       "materials": [
-        "8a355c59-b828-47af-bbac-a28fd3158147@d19c3",
-        "8a355c59-b828-47af-bbac-a28fd3158147@df717",
-        "8a355c59-b828-47af-bbac-a28fd3158147@e2818",
-        "8a355c59-b828-47af-bbac-a28fd3158147@6f209",
-        "8a355c59-b828-47af-bbac-a28fd3158147@5672a",
-        "8a355c59-b828-47af-bbac-a28fd3158147@4a7c4"
+        "515fd036-ffaf-48f1-b44d-67105d6c0435",
+        "9ad6bbf3-4542-4882-9bec-b0501a63f43c",
+        "278fe3a1-ed91-4791-b326-6416430b94f6",
+        "f94ddf49-c66e-4f7b-baca-62836ab8881d",
+        "b7df1d1d-4638-421a-a9a6-5a73847ce1d3",
+        "411d92fa-d9e5-4827-9d83-a9c8a50e458b"
       ],
       "scenes": [
         "8a355c59-b828-47af-bbac-a28fd3158147@cd3d3"
       ]
-    }
+    },
+    "dumpMaterials": true
   }
 }
