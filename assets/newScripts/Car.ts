@@ -1,4 +1,19 @@
-import { _decorator, Component, Node, Vec2, Vec3, BoxColliderComponent, loader, instantiate, Prefab, ICollisionEvent, AnimationComponent, Scheduler, RigidBodyComponent, find } from 'cc';
+import {
+    _decorator,
+    Component,
+    Node,
+    Vec2,
+    Vec3,
+    BoxColliderComponent,
+    loader,
+    instantiate,
+    Prefab,
+    ICollisionEvent,
+    AnimationComponent,
+    Scheduler,
+    RigidBodyComponent,
+    find
+} from 'cc';
 import { GameCtrl } from './GameCtrl';
 import { Constants } from './Other/constants';
 import { customerListener } from './Other/listener';
@@ -79,7 +94,6 @@ export class Car extends Component {
     private _cameraRotate = new Vec3(); //固定相机旋转
 
 
-
     private _startPos = new Vec3();
     private _endPos = new Vec3();
     private _offsetPos = new Vec3();
@@ -116,6 +130,8 @@ export class Car extends Component {
 
     private _isMove = true
 
+    private _isTurning = false;
+
     update(dt: number) {
         if (this._isRuning && this._isMove) {
 
@@ -124,7 +140,10 @@ export class Car extends Component {
                 this.speed = this._maxSpeed
             }
 
+            //运动中不移动
+
             this._setMoveType(dt)
+
             this._running(dt);
             if (!this._isShutCamera) {
                 this.setCamera(true)
@@ -138,10 +157,10 @@ export class Car extends Component {
     }
 
 
+
     start() {
 
         cc.game.setFrameRate(60);
-
         this.setNode(this.startPos)
         this._cameraPos = this.camera.worldPosition;
         this._cameraRotate = this.camera.eulerAngles;
@@ -150,14 +169,17 @@ export class Car extends Component {
 
         this.distanceCount.set(this.startPos.worldPosition);
     }
+
     public GameStart() {
         this._isRuning = true
     }
+
     public GameOver() {
         this._isRuning = false
         // this._isShutCamera = true
         //游戏结束时将摄像机固定住，赛车继续往前跑远
     }
+
     private _colliderInit() {    //碰撞初始化
         const selfcollider = this.node.getComponent(BoxColliderComponent);
         selfcollider.on('onTriggerEnter', this._TriggerCheck, this);
@@ -165,6 +187,7 @@ export class Car extends Component {
         selfcollider.setMask(Constants.ColliderGroup.ADDCOIN);
         selfcollider.addMask(Constants.ColliderGroup.NORMALCOIN);
     }
+
     private _TriggerCheck(event: ICollisionEvent) {   //碰撞检测
         const otherCollider = event.otherCollider;
         console.log(event, otherCollider.node.name, '发生碰撞')
@@ -213,13 +236,14 @@ export class Car extends Component {
             //     this.node.worldPosition.z - 11.5)
 
             // y
-            this.camera.setWorldPosition(this.node.worldPosition.x, this.node.worldPosition.y + 20,
+            this.camera.setWorldPosition(0, this.node.worldPosition.y + 20,
                 this.node.worldPosition.z - 40)
         }
 
     }
+
     private _setMoveType(dt: number) {    //赛车左滑右滑
-        this._offsetPos.set(this.node.worldPosition)
+        this._offsetPos.set(this.node.worldPosition);
 
         if (this._moveType == 'left') { //左滑
             this._rotateY.set(0, 30, 0)
@@ -237,7 +261,6 @@ export class Car extends Component {
                     this._offsetPos.x = this._targetPostion.x
                 }
             }
-            // }
 
         } else if (this._moveType == 'right') {
 
@@ -258,24 +281,24 @@ export class Car extends Component {
 
         } else if (this._moveType == 'center') {
             // console.log('回到中间')
-            if (this._offsetPos.x < -2.784) {  //从右边回到中间位置
-                this._offsetPos.x += 0.2
-
+            if (this._offsetPos.x < 0) {  //从右边回到中间位置
+                this._offsetPos.x += this.rotateSpeed * dt * 100
                 this._rotateY.set(0, 30, 0)
                 this.node.eulerAngles = this._rotateY  //设置左滑右滑角度
-                if (this._offsetPos.x > -2.784) {
+                if (this._offsetPos.x >= 0) {
                     this._rotateY.set(0, 0, 0)
                     this.node.eulerAngles = this._rotateY
-                    this._offsetPos.x = -2.784
+                    this._offsetPos.x = 0
                 }
-            } else {    //从左边回到中间
-                this._offsetPos.x -= 0.2
+            } else {
+                //从左边回到中间
+                this._offsetPos.x -= this.rotateSpeed * dt * 100
                 this._rotateY.set(0, -30, 0)
                 this.node.eulerAngles = this._rotateY  //设置左滑右滑角度
-                if (this._offsetPos.x < -2.784) {
+                if (this._offsetPos.x <= 0) {
                     this._rotateY.set(0, 0, 0)
                     this.node.eulerAngles = this._rotateY
-                    this._offsetPos.x = -2.784
+                    this._offsetPos.x = 0
                 }
             }
 
@@ -283,6 +306,7 @@ export class Car extends Component {
         this.node.setWorldPosition(this._offsetPos)
 
     }
+
     private _running(dt: number) { //赛车移动
 
         // console.log('移动>>>>>>>')
@@ -301,15 +325,13 @@ export class Car extends Component {
         this.node.setWorldPosition(this._offsetPos)
 
 
-
         //拼接路
-        if (Math.abs(Math.abs(this.node.worldPosition.z) - Math.abs(this.distanceCount.z)) > 90) {
+        if (Math.abs(Math.abs(this.node.worldPosition.z) - Math.abs(this.distanceCount.z)) > 100) {
             // console.log('超过180');
             this.distanceCount.set(this.node.worldPosition);
             this.roadCount += 1;
             this.AppendRoad();
         }
-
 
 
         Vec3.subtract(this.temVec, this._endPos, this._offsetPos) //判断起点 -- 终点的距离
@@ -324,7 +346,7 @@ export class Car extends Component {
 
 
     private AppendRoad() {
-        const newPos: Vec3 = new Vec3(this.roadGroup.worldPosition.x, this.roadGroup.worldPosition.y, 180 + this.roadCount * 180);
+        const newPos: Vec3 = new Vec3(this.roadGroup.worldPosition.x, this.roadGroup.worldPosition.y, this.roadCount * 100);
         const fab = instantiate(this.envPrefab);
         fab.position = newPos;
         fab.parent = this.roadGroup;
@@ -347,9 +369,11 @@ export class Car extends Component {
         this.node.setWorldPosition(this._startPos)
         this._colliderInit()
     }
+
     public setMoveType(type: string) {  //控制移动方式
         this._moveType = type
     }
+
     // public controlMove(flag = true) {    //控制是否移动
 
 

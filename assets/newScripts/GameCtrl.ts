@@ -19,59 +19,39 @@ export class GameCtrl extends Component {
 
 
     start() {
-        this.mainCar.setCamera()
-
-
-        // this.node.on(Node.EventType.TOUCH_START, this._touchStart, this)
-        // this.node.on(Node.EventType.TOUCH_END, this._touchEnd, this)      //触屏事件
+        this.mainCar.setCamera();
     }
 
-    public clickLeft(){
-
-        this.mainCar.setMoveType('left')
-        console.log('左边行驶')
+    public clickLeft() {
+        // console.log(this.mainCar.node.worldPosition.x);
+        //当前在中车道
+        if (this.mainCar.node.worldPosition.x == this.mainCar.startPos.worldPosition.x) {
+            this.mainCar.setMoveType('left')
+            //当前在左车道
+        } else if (this.mainCar.node.worldPosition.x == this.mainCar.leftStartPos.worldPosition.x) {
+            
+            console.log("left 撞墙了");
+            //当前在右车道
+        } else if (this.mainCar.node.worldPosition.x == this.mainCar.rightStartPos.worldPosition.x) {
+            this.mainCar.setMoveType('center')
+        }
     }
 
-    public clickRight(){
-        console.log('右边行驶')
-        this.mainCar.setMoveType('right')
+    public clickRight() {
+        //当前在中车道
+        if (this.mainCar.node.worldPosition.x == this.mainCar.startPos.worldPosition.x) {
+            this.mainCar.setMoveType('right')
+            //当前在左车道
+        } else if (this.mainCar.node.worldPosition.x == this.mainCar.leftStartPos.worldPosition.x) {
+            this.mainCar.setMoveType('center')
+            //当前在右车道
+        } else if (this.mainCar.node.worldPosition.x == this.mainCar.rightStartPos.worldPosition.x) {
+            console.log("right 撞墙了");
+
+        }
     }
 
     update() {
 
-    }
-
-    private _touchStart(touch: Touch) {
-        this._touchMoveXY = touch.getLocation();
-        // this.mainCar.controlMove()
-    }
-    private _touchEnd(touch: Touch) {
-        const endXY = touch.getLocation()
-        // this.mainCar.controlMove(false)
-
-        if (endXY.x - this._touchMoveXY.x < 0) {
-            console.log('左滑', this.mainCar.node.worldPosition.x)
-
-            // if (this.mainCar.node.worldPosition.x < -2.784) {
-            //     this.mainCar.setMoveType('center')
-            //     console.log('回到中间')
-            // } else {
-            //     this.mainCar.setMoveType('left')
-            //     console.log('左边行驶')
-            // }
-
-            this.mainCar.setMoveType('left')
-            console.log('左边行驶')
-
-        } else if (endXY.x - this._touchMoveXY.x > 0) {
-
-            console.log('右滑', endXY.x, this._touchMoveXY.x)
-            this.mainCar.setMoveType('right')
-            // if (this.mainCar.node.worldPosition.x > -2.784) {
-            //     this.mainCar.setMoveType('center')
-            // } else {
-            //     this.mainCar.setMoveType('right')
-            // }
-        }
     }
 }

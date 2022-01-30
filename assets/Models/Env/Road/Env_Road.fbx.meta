@@ -22,22 +22,6 @@
         "gltfIndex": 0
       }
     },
-    "39cba": {
-      "importer": "gltf-material",
-      "uuid": "c0406988-513c-4c99-8be7-b1aeaae12c59@39cba",
-      "displayName": "",
-      "id": "39cba",
-      "name": "PolygonCity_Mat_Road_01.material",
-      "ver": "1.0.14",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
-    },
     "51b03": {
       "importer": "gltf-scene",
       "uuid": "c0406988-513c-4c99-8be7-b1aeaae12c59@51b03",
@@ -65,11 +49,12 @@
       "skeletons": [],
       "textures": [],
       "materials": [
-        "c0406988-513c-4c99-8be7-b1aeaae12c59@39cba"
+        "347f44fb-7056-4b02-a5ad-5c44a2aefcf3"
       ],
       "scenes": [
         "c0406988-513c-4c99-8be7-b1aeaae12c59@51b03"
       ]
-    }
+    },
+    "dumpMaterials": true
   }
 }
