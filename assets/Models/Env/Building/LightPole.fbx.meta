@@ -5,22 +5,6 @@
   "uuid": "060c7f47-f9d1-4ef8-8230-c6bb38ebe07d",
   "files": [],
   "subMetas": {
-    "39742": {
-      "importer": "gltf-material",
-      "uuid": "060c7f47-f9d1-4ef8-8230-c6bb38ebe07d@39742",
-      "displayName": "",
-      "id": "39742",
-      "name": "PolygonCity_Mat_01_A.material",
-      "ver": "1.0.14",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
-    },
     "02c78": {
       "importer": "gltf-mesh",
       "uuid": "060c7f47-f9d1-4ef8-8230-c6bb38ebe07d@02c78",
@@ -173,11 +157,12 @@
       "skeletons": [],
       "textures": [],
       "materials": [
-        "060c7f47-f9d1-4ef8-8230-c6bb38ebe07d@39742"
+        "3b36556f-b440-4379-a29f-8947776538b9"
       ],
       "scenes": [
         "060c7f47-f9d1-4ef8-8230-c6bb38ebe07d@1b0bb"
       ]
-    }
+    },
+    "dumpMaterials": true
   }
 }

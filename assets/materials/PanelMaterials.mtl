@@ -25,13 +25,22 @@
     {
       "mainColor": {
         "__type__": "cc.Color",
-        "r": 68,
+        "r": 63,
         "g": 61,
         "b": 61,
         "a": 255
       },
       "roughness": 1,
-      "metallic": 0
+      "metallic": 0,
+      "normalMap": {
+        "__uuid__": "3936dddb-c33b-41a9-828e-3340c3d8c740@6c48a"
+      },
+      "metallicRoughnessMap": {
+        "__uuid__": "238b8392-29ae-4354-9bb4-1b81c47bb56c@6c48a"
+      },
+      "emissiveMap": {
+        "__uuid__": "24924e78-252f-4996-85f3-21f78f1b074a@6c48a"
+      }
     }
   ]
 }
