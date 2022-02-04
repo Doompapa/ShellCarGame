@@ -14,6 +14,8 @@ import {
     RigidBodyComponent,
     find
 } from 'cc';
+import { Tree } from './Env/Tree';
+import { EnvItemControl } from './Env/EnvItemControl';
 import { GameCtrl } from './GameCtrl';
 import { Constants } from './Other/constants';
 import { customerListener } from './Other/listener';
@@ -122,6 +124,8 @@ export class Car extends Component {
     private distanceCount = new Vec3();
     private roadCount = 1;
 
+
+    private envItems = [];
     @property({
         type: ResourceManager
     })
@@ -236,8 +240,8 @@ export class Car extends Component {
             //     this.node.worldPosition.z - 11.5)
 
             // y
-            this.camera.setWorldPosition(0, this.node.worldPosition.y + 20,
-                this.node.worldPosition.z - 40)
+            this.camera.setWorldPosition(0, this.node.worldPosition.y + 25,
+                this.node.worldPosition.z - 50)
         }
 
     }
@@ -326,7 +330,7 @@ export class Car extends Component {
 
 
         //拼接路
-        if (Math.abs(Math.abs(this.node.worldPosition.z) - Math.abs(this.distanceCount.z)) > 100) {
+        if (Math.abs(Math.abs(this.node.worldPosition.z) - Math.abs(this.distanceCount.z)) > 200) {
             // console.log('超过180');
             this.distanceCount.set(this.node.worldPosition);
             this.roadCount += 1;
@@ -346,20 +350,23 @@ export class Car extends Component {
 
 
     private AppendRoad() {
-        const newPos: Vec3 = new Vec3(this.roadGroup.worldPosition.x, this.roadGroup.worldPosition.y, this.roadCount * 100);
-        const fab = instantiate(this.envPrefab);
-        fab.position = newPos;
-        fab.parent = this.roadGroup;
+        const newPos: Vec3 = new Vec3(this.roadGroup.worldPosition.x, this.roadGroup.worldPosition.y, this.roadCount * 200 + 500);
 
-        // loader.loadRes("prefabs/Env/Roads", Prefab, (err: any, prefab: Prefab) => {
-        //     if (err) {
-        //         console.warn(err);
-        //         return;
-        //     }
-        //     const fab = instantiate(prefab);
-        //     fab.position = newPos;
-        //     fab.parent = this.roadGroup;
-        // })
+        if (this.envItems.length > 5) {
+
+            let first = this.envItems[0];
+            this.envItems.splice(0, 1);
+            first.position = newPos;
+            // var env = first.node.getComponent(EnvItemControl);
+            // env.updateRandom();
+            this.envItems.push(first);
+
+        } else {
+            const fab = instantiate(this.envPrefab);
+            fab.position = newPos;
+            fab.parent = this.roadGroup;
+            this.envItems.push(fab);
+        }
     }
 
     public setNode(entry: Node) { //设置起跑点
