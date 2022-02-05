@@ -80,10 +80,6 @@ export class TabControl extends Component {
     }
 
     start() {
-
-
-
-
         // Your initialization goes here.
         this.totalTime = find("Resource").getComponent(ResourceManager).totalTime;
         customerListener.on(Constants.GameStatus.GET_COIN, this._addProgressCouunt, this)

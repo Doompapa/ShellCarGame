@@ -28,19 +28,20 @@ export class EnvItemControl extends Component {
     }
 
     public updateRandom() {
-        let randomAd = this.random(1, 5);
-        if (randomAd <= 2) {
-            this.adBoard1.active = false;
-            this.adBoard2.active = false;
-        } else {
-            if (randomAd <= 3) {
-                this.adBoard1.active = true;
-                this.adBoard2.active = false;
-            } else {
-                this.adBoard1.active = false;
-                this.adBoard2.active = true;
-            }
-        }
+        // let randomAd = this.random(1, 5);
+        // if (randomAd <= 2) {
+        //     this.adBoard1.active = false;
+        //     this.adBoard2.active = false;
+        // } else {
+        //     if (randomAd <= 3) {
+        //         this.adBoard1.active = true;
+        //         this.adBoard2.active = false;
+        //     } else {
+        //         this.adBoard1.active = false;
+        //         this.adBoard2.active = true;
+        //     }
+        // }
+        console.log("updateRandom");
     }
 
     // update (deltaTime: number) {

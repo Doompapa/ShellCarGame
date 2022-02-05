@@ -352,13 +352,13 @@ export class Car extends Component {
     private AppendRoad() {
         const newPos: Vec3 = new Vec3(this.roadGroup.worldPosition.x, this.roadGroup.worldPosition.y, this.roadCount * 200 + 500);
 
-        if (this.envItems.length > 5) {
+        if (this.envItems.length > 3) {
 
             let first = this.envItems[0];
             this.envItems.splice(0, 1);
             first.position = newPos;
-            // var env = first.node.getComponent(EnvItemControl);
-            // env.updateRandom();
+            console.log(first);
+            first.getComponent(EnvItemControl).updateRandom();
             this.envItems.push(first);
 
         } else {

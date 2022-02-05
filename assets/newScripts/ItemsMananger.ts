@@ -19,7 +19,34 @@ export class ItemsMananger extends Component {
     onLoad() {
         //设定距离区间的普通金币数量，第三个参数是从其实点距离，终点距离是第四个参数
         //多次运行是因为提高后期游戏出现几率，后面同理
-        // this.initItems("normalCoin", 25, 500);
+        // this.initItems("Props/Knock", 25, 500);
+
+        loader.loadRes("prefabs/Props/Knock", Prefab, (err: any, prefab: Prefab) => {
+            if (err) {
+                console.warn(err);
+                return;
+            }
+            const fab = instantiate(prefab);
+            fab.position = new Vec3(0, 0, 500);
+            fab.parent = find("ItemsManager");
+            fab.eulerAngles = new Vec3(0, 0, 0);
+            // this.initColliderObjects(fab, Constants.ColliderGroup.NORMALCOIN, Constants.ColliderGroup.CAR);
+        });
+
+        loader.loadRes("prefabs/Props/VShell", Prefab, (err: any, prefab: Prefab) => {
+            if (err) {
+                console.warn(err);
+                return;
+            }
+            const fab = instantiate(prefab);
+            fab.position = new Vec3(-10, 0, 500);
+            fab.parent = find("ItemsManager");
+            fab.eulerAngles = new Vec3(0, 0, 0);
+            // this.initColliderObjects(fab, Constants.ColliderGroup.NORMALCOIN, Constants.ColliderGroup.CAR);
+        });
+
+
+
         // this.initItems("normalCoin", 10, 700);
         // this.initItems("normalCoin", 10, 1850);
         // //设定距离区间的加速金币数量，第三个参数是从其实点距离，终点距离是第四个参数
@@ -109,19 +136,20 @@ export class ItemsMananger extends Component {
             endPosZ = car.EndPos.position.z + 250;
         }
         const initConinStartZ = car.startPos.position.z + startPosZ;
+        console.log("start z " + initConinStartZ)
         const coinDiffZ = Math.floor((endPosZ - initConinStartZ) / itemNum);
         for (var i = 0; i < itemNum; i++) {
             const numX: number = Math.floor(Math.random() * 3);
             let coinX: number = 0;
             switch (numX) {
                 case 0:
-                    coinX = -5.727;
+                    coinX = -5;
                     break;
                 case 1:
-                    coinX = -2.6;
+                    coinX = 5;
                     break;
                 case 2:
-                    coinX = 0.638;
+                    coinX = 0;
                     break;
                 default:
                     break;
