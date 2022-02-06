@@ -1,15 +1,12 @@
 {
-  "ver": "2.0.14",
+  "ver": "4.0.23",
   "importer": "typescript",
   "imported": true,
   "uuid": "cc2dfb89-c403-4517-b86a-2d6bab56822c",
-  "files": [
-    ".js",
-    ".trans"
-  ],
+  "files": [],
   "subMetas": {},
   "userData": {
-    "importAsPlugin": false,
-    "moduleId": "project:///assets/newScripts/Env/Tree.js"
+    "moduleId": "project:///assets/newScripts/Env/Tree.js",
+    "simulateGlobals": []
   }
 }

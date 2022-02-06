@@ -1,15 +1,12 @@
 {
-  "ver": "2.0.14",
+  "ver": "4.0.23",
   "importer": "typescript",
   "imported": true,
   "uuid": "1ac04fda-f184-4760-b1a0-14e80afa7f92",
-  "files": [
-    ".js",
-    ".trans"
-  ],
+  "files": [],
   "subMetas": {},
   "userData": {
-    "importAsPlugin": false,
-    "moduleId": "project:///assets/newScripts/UIManager/startTip.js"
+    "moduleId": "project:///assets/newScripts/UIManager/startTip.js",
+    "simulateGlobals": []
   }
 }

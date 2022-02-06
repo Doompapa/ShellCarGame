@@ -1,5 +1,5 @@
 {
-  "ver": "1.3.21",
+  "ver": "2.1.10",
   "importer": "gltf",
   "imported": true,
   "uuid": "e943c472-0a35-4977-ab06-e283679e424d",
@@ -30,8 +30,8 @@
       "ver": "1.1.0",
       "imported": true,
       "files": [
-        ".json",
-        ".bin"
+        ".bin",
+        ".json"
       ],
       "subMetas": {},
       "userData": {
@@ -47,8 +47,8 @@
       "ver": "1.1.0",
       "imported": true,
       "files": [
-        ".json",
-        ".bin"
+        ".bin",
+        ".json"
       ],
       "subMetas": {},
       "userData": {
@@ -77,7 +77,7 @@
       "displayName": "",
       "id": "808b6",
       "name": "Coin_2.prefab",
-      "ver": "1.0.11",
+      "ver": "1.0.12",
       "imported": true,
       "files": [
         ".json"

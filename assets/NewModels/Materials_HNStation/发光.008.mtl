@@ -35,8 +35,8 @@
       "emissive": {
         "__type__": "cc.Color",
         "r": 255,
-        "g": 169,
-        "b": 61,
+        "g": 207,
+        "b": 124,
         "a": 255
       },
       "emissiveScale": {

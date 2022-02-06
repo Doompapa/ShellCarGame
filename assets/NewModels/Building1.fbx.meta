@@ -1,9 +1,11 @@
 {
-  "ver": "1.3.21",
+  "ver": "2.1.10",
   "importer": "fbx",
   "imported": true,
   "uuid": "3b631281-88cb-472a-b16d-b68f02d62423",
-  "files": [],
+  "files": [
+    "__original-animation-0.cconb"
+  ],
   "subMetas": {
     "919dd": {
       "importer": "gltf-mesh",
@@ -14,8 +16,8 @@
       "ver": "1.1.0",
       "imported": true,
       "files": [
-        ".json",
-        ".bin"
+        ".bin",
+        ".json"
       ],
       "subMetas": {},
       "userData": {
@@ -44,7 +46,7 @@
       "displayName": "",
       "id": "fae7e",
       "name": "Building1.prefab",
-      "ver": "1.0.11",
+      "ver": "1.0.12",
       "imported": true,
       "files": [
         ".json"
@@ -78,6 +80,7 @@
       "scenes": [
         "3b631281-88cb-472a-b16d-b68f02d62423@fae7e"
       ]
-    }
+    },
+    "legacyFbxImporter": true
   }
 }

@@ -1,5 +1,5 @@
 {
-  "ver": "1.0.29",
+  "ver": "1.1.35",
   "importer": "prefab",
   "imported": true,
   "uuid": "70e3f5f7-dd53-49f9-b51e-722cbeed6839",
@@ -7,5 +7,7 @@
     ".json"
   ],
   "subMetas": {},
-  "userData": {}
+  "userData": {
+    "syncNodeName": "CityHall_01"
+  }
 }

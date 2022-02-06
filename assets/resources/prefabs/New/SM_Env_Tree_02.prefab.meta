@@ -1,5 +1,5 @@
 {
-  "ver": "1.0.29",
+  "ver": "1.1.35",
   "importer": "prefab",
   "imported": true,
   "uuid": "130dd4c4-98ed-4d6d-a864-ef860c364ef6",
@@ -7,5 +7,7 @@
     ".json"
   ],
   "subMetas": {},
-  "userData": {}
+  "userData": {
+    "syncNodeName": "SM_Env_Tree_02"
+  }
 }

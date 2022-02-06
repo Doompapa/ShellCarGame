@@ -1,5 +1,5 @@
 {
-  "ver": "1.0.29",
+  "ver": "1.1.35",
   "importer": "prefab",
   "imported": true,
   "uuid": "2bd227b6-68ad-43a0-9596-13f7c9203986",
@@ -7,5 +7,7 @@
     ".json"
   ],
   "subMetas": {},
-  "userData": {}
+  "userData": {
+    "syncNodeName": "EnvItem"
+  }
 }

@@ -25,9 +25,9 @@
     {
       "mainColor": {
         "__type__": "cc.Color",
-        "r": 162,
-        "g": 103,
-        "b": 15,
+        "r": 203,
+        "g": 162,
+        "b": 61,
         "a": 255
       },
       "alphaThreshold": 0,

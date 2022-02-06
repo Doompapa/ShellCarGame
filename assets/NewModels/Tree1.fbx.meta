@@ -1,9 +1,11 @@
 {
-  "ver": "1.3.21",
+  "ver": "2.1.10",
   "importer": "fbx",
   "imported": true,
   "uuid": "cd2dde16-79fe-4304-8f5c-28396d59b2df",
-  "files": [],
+  "files": [
+    "__original-animation-0.cconb"
+  ],
   "subMetas": {
     "debe3": {
       "importer": "gltf-mesh",
@@ -14,8 +16,8 @@
       "ver": "1.1.0",
       "imported": true,
       "files": [
-        ".json",
-        ".bin"
+        ".bin",
+        ".json"
       ],
       "subMetas": {},
       "userData": {
@@ -28,11 +30,10 @@
       "displayName": "",
       "id": "688ff",
       "name": "daun.002|Flat1.002Action.animation",
-      "ver": "1.0.14",
+      "ver": "1.0.16",
       "imported": true,
       "files": [
-        ".bin",
-        ".json"
+        ".cconb"
       ],
       "subMetas": {},
       "userData": {
@@ -84,7 +85,7 @@
       "displayName": "",
       "id": "373fb",
       "name": "Tree1.prefab",
-      "ver": "1.0.11",
+      "ver": "1.0.12",
       "imported": true,
       "files": [
         ".json"
@@ -126,6 +127,7 @@
       "scenes": [
         "cd2dde16-79fe-4304-8f5c-28396d59b2df@373fb"
       ]
-    }
+    },
+    "legacyFbxImporter": true
   }
 }

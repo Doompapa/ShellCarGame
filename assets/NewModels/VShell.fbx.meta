@@ -1,9 +1,11 @@
 {
-  "ver": "1.3.21",
+  "ver": "2.1.10",
   "importer": "fbx",
   "imported": true,
   "uuid": "335498b7-2440-42ff-a67c-d246ebca6059",
-  "files": [],
+  "files": [
+    "__original-animation-0.cconb"
+  ],
   "subMetas": {
     "66336": {
       "importer": "gltf-scene",
@@ -11,7 +13,7 @@
       "displayName": "",
       "id": "66336",
       "name": "VShell.prefab",
-      "ver": "1.0.11",
+      "ver": "1.0.12",
       "imported": true,
       "files": [
         ".json"
@@ -30,8 +32,8 @@
       "ver": "1.1.0",
       "imported": true,
       "files": [
-        ".json",
-        ".bin"
+        ".bin",
+        ".json"
       ],
       "subMetas": {},
       "userData": {
@@ -96,6 +98,7 @@
         "335498b7-2440-42ff-a67c-d246ebca6059@66336"
       ]
     },
-    "dumpMaterials": false
+    "dumpMaterials": false,
+    "legacyFbxImporter": true
   }
 }

@@ -1,5 +1,5 @@
 {
-  "ver": "1.0.18",
+  "ver": "1.0.22",
   "importer": "image",
   "imported": true,
   "uuid": "7ee5d00d-b592-49b2-a6d8-4e1eaef532d0",
@@ -14,7 +14,7 @@
       "displayName": "glass",
       "id": "6c48a",
       "name": "texture",
-      "ver": "1.0.19",
+      "ver": "1.0.21",
       "imported": true,
       "files": [
         ".json"
@@ -27,7 +27,7 @@
         "magfilter": "linear",
         "mipfilter": "none",
         "premultiplyAlpha": false,
-        "anisotropy": 1,
+        "anisotropy": 0,
         "isUuid": true,
         "imageUuidOrDatabaseUri": "7ee5d00d-b592-49b2-a6d8-4e1eaef532d0"
       }
@@ -35,6 +35,7 @@
   },
   "userData": {
     "type": "texture",
-    "redirect": "7ee5d00d-b592-49b2-a6d8-4e1eaef532d0@6c48a"
+    "redirect": "7ee5d00d-b592-49b2-a6d8-4e1eaef532d0@6c48a",
+    "hasAlpha": false
   }
 }

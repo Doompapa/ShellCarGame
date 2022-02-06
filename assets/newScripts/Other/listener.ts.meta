@@ -1,15 +1,12 @@
 {
-  "ver": "2.0.14",
+  "ver": "4.0.23",
   "importer": "typescript",
   "imported": true,
   "uuid": "125e7cdd-bda5-4f71-a5f5-7a5f664a213c",
-  "files": [
-    ".js",
-    ".trans"
-  ],
+  "files": [],
   "subMetas": {},
   "userData": {
-    "importAsPlugin": false,
-    "moduleId": "project:///assets/newScripts/Other/listener.js"
+    "moduleId": "project:///assets/newScripts/Other/listener.js",
+    "simulateGlobals": []
   }
 }

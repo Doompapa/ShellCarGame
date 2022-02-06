@@ -1,5 +1,5 @@
 {
-  "ver": "1.3.21",
+  "ver": "2.1.10",
   "importer": "gltf",
   "imported": true,
   "uuid": "25434110-2d38-45ae-87a3-83eb82928bb2",
@@ -30,8 +30,8 @@
       "ver": "1.1.0",
       "imported": true,
       "files": [
-        ".json",
-        ".bin"
+        ".bin",
+        ".json"
       ],
       "subMetas": {},
       "userData": {
@@ -47,8 +47,8 @@
       "ver": "1.1.0",
       "imported": true,
       "files": [
-        ".json",
-        ".bin"
+        ".bin",
+        ".json"
       ],
       "subMetas": {},
       "userData": {
@@ -64,8 +64,8 @@
       "ver": "1.1.0",
       "imported": true,
       "files": [
-        ".json",
-        ".bin"
+        ".bin",
+        ".json"
       ],
       "subMetas": {},
       "userData": {
@@ -110,7 +110,7 @@
       "displayName": "",
       "id": "3eabe",
       "name": "Flag_.prefab",
-      "ver": "1.0.11",
+      "ver": "1.0.12",
       "imported": true,
       "files": [
         ".json"

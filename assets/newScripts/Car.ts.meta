@@ -1,15 +1,12 @@
 {
-  "ver": "2.0.14",
+  "ver": "4.0.23",
   "importer": "typescript",
   "imported": true,
   "uuid": "501dd2b9-3a4e-4982-bf27-01252bd92711",
-  "files": [
-    ".js",
-    ".trans"
-  ],
+  "files": [],
   "subMetas": {},
   "userData": {
-    "importAsPlugin": false,
-    "moduleId": "project:///assets/newScripts/Car.js"
+    "moduleId": "project:///assets/newScripts/Car.js",
+    "simulateGlobals": []
   }
 }

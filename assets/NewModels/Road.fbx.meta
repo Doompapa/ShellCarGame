@@ -1,9 +1,11 @@
 {
-  "ver": "1.3.21",
+  "ver": "2.1.10",
   "importer": "fbx",
   "imported": true,
   "uuid": "665c12c4-253f-47ca-a51f-90af262c3817",
-  "files": [],
+  "files": [
+    "__original-animation-0.cconb"
+  ],
   "subMetas": {
     "70111": {
       "importer": "gltf-scene",
@@ -11,7 +13,7 @@
       "displayName": "",
       "id": "70111",
       "name": "Road.prefab",
-      "ver": "1.0.11",
+      "ver": "1.0.12",
       "imported": true,
       "files": [
         ".json"
@@ -46,8 +48,8 @@
       "ver": "1.1.0",
       "imported": true,
       "files": [
-        ".json",
-        ".bin"
+        ".bin",
+        ".json"
       ],
       "subMetas": {},
       "userData": {
@@ -60,11 +62,10 @@
       "displayName": "",
       "id": "e3771",
       "name": "Street_Straight.003|Flat1.002Action.animation",
-      "ver": "1.0.14",
+      "ver": "1.0.16",
       "imported": true,
       "files": [
-        ".bin",
-        ".json"
+        ".cconb"
       ],
       "subMetas": {},
       "userData": {
@@ -143,6 +144,7 @@
       "scenes": [
         "665c12c4-253f-47ca-a51f-90af262c3817@70111"
       ]
-    }
+    },
+    "legacyFbxImporter": true
   }
 }

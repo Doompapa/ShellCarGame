@@ -1,5 +1,5 @@
 {
-  "ver": "1.0.29",
+  "ver": "1.1.35",
   "importer": "prefab",
   "imported": true,
   "uuid": "9a49bc30-f980-44b3-8bcb-faee5b761916",
@@ -7,5 +7,7 @@
     ".json"
   ],
   "subMetas": {},
-  "userData": {}
+  "userData": {
+    "syncNodeName": "Knock"
+  }
 }

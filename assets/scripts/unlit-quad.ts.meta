@@ -1,15 +1,12 @@
 {
-  "ver": "2.0.14",
+  "ver": "4.0.23",
   "importer": "typescript",
   "imported": true,
   "uuid": "3fb23458-a2c6-4ab0-b8b6-1dd9ac2e6b81",
-  "files": [
-    ".js",
-    ".trans"
-  ],
+  "files": [],
   "subMetas": {},
   "userData": {
-    "importAsPlugin": false,
-    "moduleId": "project:///assets/scripts/unlit-quad.js"
+    "moduleId": "project:///assets/scripts/unlit-quad.js",
+    "simulateGlobals": []
   }
 }

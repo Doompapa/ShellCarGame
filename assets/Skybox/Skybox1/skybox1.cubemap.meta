@@ -1,5 +1,5 @@
 {
-  "ver": "1.0.2",
+  "ver": "1.0.3",
   "importer": "texture-cube",
   "imported": true,
   "uuid": "256972c3-b032-4789-b3fb-23b14a24250e",
@@ -14,7 +14,7 @@
     "magfilter": "linear",
     "mipfilter": "none",
     "premultiplyAlpha": false,
-    "anisotropy": 1,
+    "anisotropy": 0,
     "left": "66850610-cd2b-4a6c-9c05-5549ab9239f7",
     "right": "66850610-cd2b-4a6c-9c05-5549ab9239f7",
     "back": "66850610-cd2b-4a6c-9c05-5549ab9239f7",

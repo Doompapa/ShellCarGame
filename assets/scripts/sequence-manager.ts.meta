@@ -1,15 +1,12 @@
 {
-  "ver": "2.0.14",
+  "ver": "4.0.23",
   "importer": "typescript",
   "imported": true,
   "uuid": "673c614e-40c1-45c2-a3da-ed43ea783345",
-  "files": [
-    ".js",
-    ".trans"
-  ],
+  "files": [],
   "subMetas": {},
   "userData": {
-    "importAsPlugin": false,
-    "moduleId": "project:///assets/scripts/sequence-manager.js"
+    "moduleId": "project:///assets/scripts/sequence-manager.js",
+    "simulateGlobals": []
   }
 }

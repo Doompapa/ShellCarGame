@@ -1,15 +1,12 @@
 {
-  "ver": "2.0.14",
+  "ver": "4.0.23",
   "importer": "typescript",
   "imported": true,
   "uuid": "dfc661e6-60d4-4ec0-860a-dd8d48dc944a",
-  "files": [
-    ".js",
-    ".trans"
-  ],
+  "files": [],
   "subMetas": {},
   "userData": {
-    "importAsPlugin": false,
-    "moduleId": "project:///assets/newScripts/ResourceManager.js"
+    "moduleId": "project:///assets/newScripts/ResourceManager.js",
+    "simulateGlobals": []
   }
 }

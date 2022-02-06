@@ -1,5 +1,5 @@
 {
-  "ver": "1.0.18",
+  "ver": "1.0.22",
   "importer": "image",
   "imported": true,
   "uuid": "b0bc878f-f4ff-4cd9-a361-913f75ba4940",
@@ -14,7 +14,7 @@
       "displayName": "PolygonCity_Texture_01_A",
       "id": "6c48a",
       "name": "texture",
-      "ver": "1.0.19",
+      "ver": "1.0.21",
       "imported": true,
       "files": [
         ".json"
@@ -27,7 +27,7 @@
         "magfilter": "linear",
         "mipfilter": "none",
         "premultiplyAlpha": false,
-        "anisotropy": 1,
+        "anisotropy": 0,
         "isUuid": true,
         "imageUuidOrDatabaseUri": "b0bc878f-f4ff-4cd9-a361-913f75ba4940"
       }
@@ -35,6 +35,7 @@
   },
   "userData": {
     "type": "texture",
-    "redirect": "b0bc878f-f4ff-4cd9-a361-913f75ba4940@6c48a"
+    "redirect": "b0bc878f-f4ff-4cd9-a361-913f75ba4940@6c48a",
+    "hasAlpha": true
   }
 }

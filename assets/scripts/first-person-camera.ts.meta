@@ -1,15 +1,12 @@
 {
-  "ver": "2.0.14",
+  "ver": "4.0.23",
   "importer": "typescript",
   "imported": true,
   "uuid": "f4bbfa0e-16fe-4e4b-8e17-f4460aedeaed",
-  "files": [
-    ".js",
-    ".trans"
-  ],
+  "files": [],
   "subMetas": {},
   "userData": {
-    "importAsPlugin": false,
-    "moduleId": "project:///assets/scripts/first-person-camera.js"
+    "moduleId": "project:///assets/scripts/first-person-camera.js",
+    "simulateGlobals": []
   }
 }

@@ -28,8 +28,8 @@
       "mainColor": {
         "__type__": "cc.Color",
         "r": 255,
-        "g": 219,
-        "b": 219,
+        "g": 236,
+        "b": 236,
         "a": 255
       },
       "albedoScale": {
@@ -44,8 +44,8 @@
       "emissive": {
         "__type__": "cc.Color",
         "r": 255,
-        "g": 192,
-        "b": 192,
+        "g": 221,
+        "b": 221,
         "a": 255
       },
       "emissiveScale": {

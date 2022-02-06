@@ -1,15 +1,12 @@
 {
-  "ver": "2.0.14",
+  "ver": "4.0.23",
   "importer": "typescript",
   "imported": true,
   "uuid": "fea1e287-3e6f-46f1-af83-3467c434a9f4",
-  "files": [
-    ".js",
-    ".trans"
-  ],
+  "files": [],
   "subMetas": {},
   "userData": {
-    "importAsPlugin": false,
-    "moduleId": "project:///assets/newScripts/Env/EnvItemControl.js"
+    "moduleId": "project:///assets/newScripts/Env/EnvItemControl.js",
+    "simulateGlobals": []
   }
 }

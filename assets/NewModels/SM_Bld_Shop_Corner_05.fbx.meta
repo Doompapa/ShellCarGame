@@ -1,5 +1,5 @@
 {
-  "ver": "1.3.21",
+  "ver": "2.1.10",
   "importer": "fbx",
   "imported": true,
   "uuid": "ba601e96-06ac-4a16-91f7-ee6694a8d950",
@@ -30,8 +30,8 @@
       "ver": "1.1.0",
       "imported": true,
       "files": [
-        ".json",
-        ".bin"
+        ".bin",
+        ".json"
       ],
       "subMetas": {},
       "userData": {
@@ -47,8 +47,8 @@
       "ver": "1.1.0",
       "imported": true,
       "files": [
-        ".json",
-        ".bin"
+        ".bin",
+        ".json"
       ],
       "subMetas": {},
       "userData": {
@@ -64,8 +64,8 @@
       "ver": "1.1.0",
       "imported": true,
       "files": [
-        ".json",
-        ".bin"
+        ".bin",
+        ".json"
       ],
       "subMetas": {},
       "userData": {
@@ -94,7 +94,7 @@
       "displayName": "",
       "id": "66fe9",
       "name": "SM_Bld_Shop_Corner_05.prefab",
-      "ver": "1.0.11",
+      "ver": "1.0.12",
       "imported": true,
       "files": [
         ".json"
@@ -123,6 +123,7 @@
       "scenes": [
         "ba601e96-06ac-4a16-91f7-ee6694a8d950@66fe9"
       ]
-    }
+    },
+    "legacyFbxImporter": true
   }
 }

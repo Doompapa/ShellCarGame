@@ -1,9 +1,11 @@
 {
-  "ver": "1.3.21",
+  "ver": "2.1.10",
   "importer": "fbx",
   "imported": true,
   "uuid": "bb1a3ef9-795b-42b9-9fb4-fd6f8ed227bf",
-  "files": [],
+  "files": [
+    "__original-animation-0.cconb"
+  ],
   "subMetas": {
     "b3886": {
       "importer": "gltf-mesh",
@@ -14,8 +16,8 @@
       "ver": "1.1.0",
       "imported": true,
       "files": [
-        ".json",
-        ".bin"
+        ".bin",
+        ".json"
       ],
       "subMetas": {},
       "userData": {
@@ -44,7 +46,7 @@
       "displayName": "",
       "id": "afba0",
       "name": "Building2.prefab",
-      "ver": "1.0.11",
+      "ver": "1.0.12",
       "imported": true,
       "files": [
         ".json"
@@ -78,6 +80,7 @@
       "scenes": [
         "bb1a3ef9-795b-42b9-9fb4-fd6f8ed227bf@afba0"
       ]
-    }
+    },
+    "legacyFbxImporter": true
   }
 }

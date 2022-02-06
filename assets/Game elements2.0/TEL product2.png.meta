@@ -1,5 +1,5 @@
 {
-  "ver": "1.0.18",
+  "ver": "1.0.22",
   "importer": "image",
   "imported": true,
   "uuid": "4bd50980-056e-41c3-8d66-60b49b0745a9",
@@ -14,20 +14,20 @@
       "displayName": "TEL product2",
       "id": "6c48a",
       "name": "texture",
-      "ver": "1.0.19",
+      "ver": "1.0.21",
       "imported": true,
       "files": [
         ".json"
       ],
       "subMetas": {},
       "userData": {
-        "wrapModeS": "repeat",
-        "wrapModeT": "repeat",
+        "wrapModeS": "clamp-to-edge",
+        "wrapModeT": "clamp-to-edge",
         "minfilter": "linear",
         "magfilter": "linear",
         "mipfilter": "none",
         "premultiplyAlpha": false,
-        "anisotropy": 1,
+        "anisotropy": 0,
         "isUuid": true,
         "imageUuidOrDatabaseUri": "4bd50980-056e-41c3-8d66-60b49b0745a9"
       }
@@ -38,7 +38,7 @@
       "displayName": "TEL product2",
       "id": "f9941",
       "name": "spriteFrame",
-      "ver": "1.0.8",
+      "ver": "1.0.9",
       "imported": true,
       "files": [
         ".json"
@@ -62,12 +62,14 @@
         "borderRight": 250,
         "isUuid": true,
         "imageUuidOrDatabaseUri": "4bd50980-056e-41c3-8d66-60b49b0745a9@6c48a",
-        "atlasUuid": ""
+        "atlasUuid": "",
+        "packable": true
       }
     }
   },
   "userData": {
     "type": "sprite-frame",
-    "redirect": "4bd50980-056e-41c3-8d66-60b49b0745a9@f9941"
+    "redirect": "4bd50980-056e-41c3-8d66-60b49b0745a9@f9941",
+    "hasAlpha": true
   }
 }

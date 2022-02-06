@@ -1,15 +1,12 @@
 {
-  "ver": "2.0.14",
+  "ver": "4.0.23",
   "importer": "typescript",
   "imported": true,
   "uuid": "7400a8fb-671f-49bf-bffe-962bba0401e3",
-  "files": [
-    ".js",
-    ".trans"
-  ],
+  "files": [],
   "subMetas": {},
   "userData": {
-    "importAsPlugin": false,
-    "moduleId": "project:///assets/newScripts/MidPointDistance.js"
+    "moduleId": "project:///assets/newScripts/MidPointDistance.js",
+    "simulateGlobals": []
   }
 }

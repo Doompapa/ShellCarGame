@@ -36,9 +36,9 @@
       "metallic": 0,
       "emissive": {
         "__type__": "cc.Color",
-        "r": 243,
-        "g": 125,
-        "b": 11,
+        "r": 248,
+        "g": 178,
+        "b": 52,
         "a": 255
       },
       "emissiveScale": {

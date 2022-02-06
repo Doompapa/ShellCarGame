@@ -211,16 +211,26 @@ export class Car extends Component {
             console.log(otherCollider.node.name, 'Knock')
             customerListener.dispatch(Constants.GameStatus.GET_COIN, 10)
             const anim: AnimationComponent = otherCollider.node.getComponent(AnimationComponent);
-            const otherRigid = otherCollider.node.getComponent(RigidBodyComponent);
+            // const otherRigid = otherCollider.node.getComponent(RigidBodyComponent);
             this.resourceManager.playCoinSound();
             // anim.play();
-            otherRigid.applyForce(new Vec3(0, 0, 5000 * this.speed));
+            // otherRigid.applyForce(new Vec3(0, 0, 5000 * this.speed));
             // this.scheduleOnce(() => {
             //     this.destroyCoin(otherCollider.node);
             // }, 0.2);
             this.speed = this.minSpeed;
-        
-            otherCollider.getComponent(ParticleSystemComponent).play();
+
+            loader.loadRes("prefabs/Effects/smokeLight/smokeLight01", Prefab, (err: any, prefab: Prefab) => {
+                if (err) {
+                    console.warn(err);
+                    return;
+                }
+                const fab = instantiate(prefab);
+                fab.position = this.node.position;
+                fab.parent = this.node;
+            });
+
+
             // otherCollider.node.destroy();
             this.playShake();
         } else if (otherCollider.node.name == 'VShell') {
@@ -257,7 +267,7 @@ export class Car extends Component {
                 // let z = this.node.position.z;
                 // this.node.position = new Vec3(x, y, z);
             }).start();
-  
+
         //位置是在当前位置增加
         // tween(this.node)
         //     .by(1, { position: new Vec3(0, 0, 0) }, { easing: 'quintOut' }).call(() => {

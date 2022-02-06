@@ -1,15 +1,12 @@
 {
-  "ver": "2.0.14",
+  "ver": "4.0.23",
   "importer": "typescript",
   "imported": true,
   "uuid": "bee19ed3-97aa-4547-8d7e-54e5e3c1619f",
-  "files": [
-    ".js",
-    ".trans"
-  ],
+  "files": [],
   "subMetas": {},
   "userData": {
-    "importAsPlugin": false,
-    "moduleId": "project:///assets/scripts/wireframe-visualizer.js"
+    "moduleId": "project:///assets/scripts/wireframe-visualizer.js",
+    "simulateGlobals": []
   }
 }

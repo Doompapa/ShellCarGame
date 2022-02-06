@@ -1,15 +1,12 @@
 {
-  "ver": "2.0.14",
+  "ver": "4.0.23",
   "importer": "typescript",
   "imported": true,
   "uuid": "cdd3b796-41c6-4b95-b5fe-36c6c4eb9340",
-  "files": [
-    ".js",
-    ".trans"
-  ],
+  "files": [],
   "subMetas": {},
   "userData": {
-    "importAsPlugin": false,
-    "moduleId": "project:///assets/newScripts/UIManager/IconController.js"
+    "moduleId": "project:///assets/newScripts/UIManager/IconController.js",
+    "simulateGlobals": []
   }
 }

@@ -1,15 +1,12 @@
 {
-  "ver": "2.0.14",
+  "ver": "4.0.23",
   "importer": "typescript",
   "imported": true,
   "uuid": "054faa43-74b6-45fd-a061-3e9c7d461995",
-  "files": [
-    ".js",
-    ".trans"
-  ],
+  "files": [],
   "subMetas": {},
   "userData": {
-    "importAsPlugin": false,
-    "moduleId": "project:///assets/newScripts/ItemsMananger.js"
+    "moduleId": "project:///assets/newScripts/ItemsMananger.js",
+    "simulateGlobals": []
   }
 }

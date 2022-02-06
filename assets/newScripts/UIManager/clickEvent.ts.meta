@@ -1,15 +1,12 @@
 {
-  "ver": "2.0.14",
+  "ver": "4.0.23",
   "importer": "typescript",
   "imported": true,
   "uuid": "5055aacb-74da-4dc5-95b2-b60375efedb6",
-  "files": [
-    ".js",
-    ".trans"
-  ],
+  "files": [],
   "subMetas": {},
   "userData": {
-    "importAsPlugin": false,
-    "moduleId": "project:///assets/newScripts/UIManager/clickEvent.js"
+    "moduleId": "project:///assets/newScripts/UIManager/clickEvent.js",
+    "simulateGlobals": []
   }
 }

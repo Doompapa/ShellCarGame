@@ -1,5 +1,5 @@
 {
-  "ver": "1.3.21",
+  "ver": "2.1.10",
   "importer": "fbx",
   "imported": true,
   "uuid": "4f07001f-bd8d-4cf3-b61b-8bd0d1bd1590",
@@ -14,8 +14,8 @@
       "ver": "1.1.0",
       "imported": true,
       "files": [
-        ".json",
-        ".bin"
+        ".bin",
+        ".json"
       ],
       "subMetas": {},
       "userData": {
@@ -28,7 +28,7 @@
       "displayName": "",
       "id": "7b087",
       "name": "Roads.prefab",
-      "ver": "1.0.11",
+      "ver": "1.0.12",
       "imported": true,
       "files": [
         ".json"
@@ -57,6 +57,8 @@
         "4f07001f-bd8d-4cf3-b61b-8bd0d1bd1590@7b087"
       ]
     },
-    "dumpMaterials": true
+    "dumpMaterials": true,
+    "legacyFbxImporter": true,
+    "materialDumpDir": "db://assets/NewModels/Materials_Roads"
   }
 }
