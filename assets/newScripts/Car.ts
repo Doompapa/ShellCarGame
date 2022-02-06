@@ -226,19 +226,7 @@ export class Car extends Component {
             //     this.destroyCoin(otherCollider.node);
             // }, 0.2);
             this.speed = this.minSpeed;
-
-            loader.loadRes("prefabs/Effects/smokeLight/smokeLight01", Prefab, (err: any, prefab: Prefab) => {
-                if (err) {
-                    console.warn(err);
-                    return;
-                }
-                const fab = instantiate(prefab);
-                fab.position = this.node.position;
-                fab.parent = this.node;
-            });
-
-
-            // otherCollider.node.destroy();
+            otherCollider.node.destroy();
             this.playShake();
         } else if (otherCollider.node.name == 'VShell') {
             console.log(otherCollider.node.name, 'VShell')
