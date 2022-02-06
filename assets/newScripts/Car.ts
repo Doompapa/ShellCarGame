@@ -88,6 +88,11 @@ export class Car extends Component {
     })
     camera: Node = null; //设置相机
 
+    @property({
+        type: ParticleSystemComponent
+    })
+    smoke: ParticleSystemComponent = null; //设置黑烟特效
+
 
     @property({
         type: Prefab
@@ -180,6 +185,8 @@ export class Car extends Component {
         // customerListener.on(Constants.GameStatus.GAME_OVER, this.GameOver, this)
 
         this.distanceCount.set(this.startPos.worldPosition);
+
+        this.smoke.node.active = false;
     }
 
     public GameStart() {
@@ -202,7 +209,7 @@ export class Car extends Component {
 
     //碰撞检测
     private _TriggerCheck(event: ICollisionEvent) {
-        this._isMove = false;
+        // this._isMove = false;
 
 
         const otherCollider = event.otherCollider;
@@ -253,6 +260,12 @@ export class Car extends Component {
     }
 
     private playShake() {
+        this.smoke.node.active = true;
+        this.smoke.play();
+        this.scheduleOnce(() => {
+            this.smoke.node.active = false;
+        }, 1.5);
+
         let offset = 0.1;
         tween(this.node)
             .by(0.018, { position: new Vec3(+offset, 0, this.speed * 0.018 * 100) }, { easing: 'sineOutIn' })
