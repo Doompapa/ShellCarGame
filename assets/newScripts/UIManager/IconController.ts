@@ -40,5 +40,6 @@ export class IconController extends Component {
                 this.iconReplenish.active = true;
                 break;
         }
+        
     }
 }

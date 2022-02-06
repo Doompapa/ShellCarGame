@@ -30,7 +30,7 @@ export class ItemsMananger extends Component {
             fab.position = new Vec3(0, 0, 500);
             fab.parent = find("ItemsManager");
             fab.eulerAngles = new Vec3(0, 0, 0);
-            // this.initColliderObjects(fab, Constants.ColliderGroup.NORMALCOIN, Constants.ColliderGroup.CAR);
+            this.initColliderObjects(fab, Constants.ColliderGroup.NORMALCOIN, Constants.ColliderGroup.CAR);
         });
 
         loader.loadRes("prefabs/Props/VShell", Prefab, (err: any, prefab: Prefab) => {
@@ -42,7 +42,7 @@ export class ItemsMananger extends Component {
             fab.position = new Vec3(-10, 0, 500);
             fab.parent = find("ItemsManager");
             fab.eulerAngles = new Vec3(0, 0, 0);
-            // this.initColliderObjects(fab, Constants.ColliderGroup.NORMALCOIN, Constants.ColliderGroup.CAR);
+            this.initColliderObjects(fab, Constants.ColliderGroup.NORMALCOIN, Constants.ColliderGroup.CAR);
         });
 
 

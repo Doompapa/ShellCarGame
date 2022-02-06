@@ -21,9 +21,16 @@
       }
     ],
     "_active": true,
-    "_components": [],
+    "_components": [
+      {
+        "__id__": 8
+      },
+      {
+        "__id__": 9
+      }
+    ],
     "_prefab": {
-      "__id__": 8
+      "__id__": 10
     },
     "_lpos": {
       "__type__": "cc.Vec3",
@@ -74,7 +81,7 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 1,
-      "z": -63.585
+      "z": 0
     },
     "_lrot": {
       "__type__": "cc.Quat",
@@ -215,6 +222,58 @@
       "default": false,
       "serializable": false
     }
+  },
+  {
+    "__type__": "cc.BoxColliderComponent",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "_material": null,
+    "_isTrigger": true,
+    "_center": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 2.5,
+      "z": 0
+    },
+    "_size": {
+      "__type__": "cc.Vec3",
+      "x": 5,
+      "y": 5,
+      "z": 3
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.RigidBodyComponent",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": false,
+    "_mass": 1,
+    "_linearDamping": 0.1,
+    "_angularDamping": 0.1,
+    "_fixedRotation": false,
+    "_isKinematic": false,
+    "_useGravity": false,
+    "_linearFactor": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_angularFactor": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_id": ""
   },
   {
     "__type__": "cc.PrefabInfo",

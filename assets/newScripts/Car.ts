@@ -12,7 +12,10 @@ import {
     AnimationComponent,
     Scheduler,
     RigidBodyComponent,
-    find
+    find,
+    tween,
+    Tween,
+    ParticleSystemComponent,
 } from 'cc';
 import { Tree } from './Env/Tree';
 import { EnvItemControl } from './Env/EnvItemControl';
@@ -114,6 +117,11 @@ export class Car extends Component {
 
     private x = null;
 
+
+    private shakeX = 0;
+    private shakeY = 0;
+
+
     private rotateSpeed = 0.5;
 
     public score: number = 0;
@@ -192,22 +200,31 @@ export class Car extends Component {
         selfcollider.addMask(Constants.ColliderGroup.NORMALCOIN);
     }
 
-    private _TriggerCheck(event: ICollisionEvent) {   //碰撞检测
+    //碰撞检测
+    private _TriggerCheck(event: ICollisionEvent) {
+        this._isMove = false;
+
+
         const otherCollider = event.otherCollider;
         console.log(event, otherCollider.node.name, '发生碰撞')
-        if (otherCollider.node.name == 'normalCoin') {    //普通金币
-            console.log(otherCollider.node.name, '普通金币')
+        if (otherCollider.node.name == 'Knock') {    //普通金币
+            console.log(otherCollider.node.name, 'Knock')
             customerListener.dispatch(Constants.GameStatus.GET_COIN, 10)
             const anim: AnimationComponent = otherCollider.node.getComponent(AnimationComponent);
             const otherRigid = otherCollider.node.getComponent(RigidBodyComponent);
             this.resourceManager.playCoinSound();
-            anim.play();
+            // anim.play();
             otherRigid.applyForce(new Vec3(0, 0, 5000 * this.speed));
-            this.scheduleOnce(() => {
-                this.destroyCoin(otherCollider.node);
-            }, 0.2);
-        } else if (otherCollider.node.name == 'addSpeedCoin') {
-            console.log(otherCollider.node.name, '加速金币')
+            // this.scheduleOnce(() => {
+            //     this.destroyCoin(otherCollider.node);
+            // }, 0.2);
+            this.speed = this.minSpeed;
+        
+            otherCollider.getComponent(ParticleSystemComponent).play();
+            // otherCollider.node.destroy();
+            this.playShake();
+        } else if (otherCollider.node.name == 'VShell') {
+            console.log(otherCollider.node.name, 'VShell')
 
             customerListener.dispatch(Constants.GameStatus.GET_COIN, 20)
             const anim: AnimationComponent = otherCollider.node.getComponent(AnimationComponent);
@@ -224,6 +241,46 @@ export class Car extends Component {
             this.speed = this.minSpeed;
         }
     }
+
+    private playShake() {
+        let offset = 0.1;
+        tween(this.node)
+            .by(0.018, { position: new Vec3(+offset, 0, this.speed * 0.018 * 100) }, { easing: 'sineOutIn' })
+            .by(0.018, { position: new Vec3(-offset, 0, this.speed * 0.018 * 100) }, { easing: 'sineOutIn' })
+            .by(0.018, { position: new Vec3(+offset, 0, this.speed * 0.018 * 100) }, { easing: 'sineOutIn' })
+            .by(0.018, { position: new Vec3(-offset, 0, this.speed * 0.018 * 100) }, { easing: 'sineOutIn' })
+            .by(0.018, { position: new Vec3(+offset, 0, this.speed * 0.018 * 100) }, { easing: 'sineOutIn' })
+            .by(0.018, { position: new Vec3(-offset, 0, this.speed * 0.018 * 100) }, { easing: 'sineOutIn' })
+            .by(0.018, { position: new Vec3(+offset, 0, this.speed * 0.018 * 100) }, { easing: 'sineOutIn' })
+            .by(0.018, { position: new Vec3(-offset, 0, this.speed * 0.018 * 100) }, { easing: 'sineOutIn' })
+            .call(() => {
+                // let z = this.node.position.z;
+                // this.node.position = new Vec3(x, y, z);
+            }).start();
+  
+        //位置是在当前位置增加
+        // tween(this.node)
+        //     .by(1, { position: new Vec3(0, 0, 0) }, { easing: 'quintOut' }).call(() => {
+        //         this._isMove = true;
+        //     })
+        //     .start()
+
+
+        // cc.runAction(action);
+        // setTimeout(() => {
+        //     cc.stopAction(action);
+        //     this.node.position = new Vec3(x, y, z);
+        // }, 1000);
+
+
+        // tween(this.node).to(1, { scale: new Vec3(2, 2, 2), position: new Vec3(5, 5, 5) }).call(() => {
+        //     console.log('This is a callback');
+        // }).by(1, { scale: new Vec3(-1, -1, -1) }, { easing: 'sineOutIn' }
+        // ).start();
+
+
+    }
+
 
     private destroyCoin(whichNode: Node) {
         if (whichNode) {
