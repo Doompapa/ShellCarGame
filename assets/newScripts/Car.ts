@@ -16,6 +16,7 @@ import {
     tween,
     Tween,
     ParticleSystemComponent,
+    game
 } from 'cc';
 import { Tree } from './Env/Tree';
 import { EnvItemControl } from './Env/EnvItemControl';
@@ -44,60 +45,60 @@ export class Car extends Component {
         type: Node,
         displayOrder: 2
     })
-    startPos: Node = null;  //中心开始点
+    startPos!: Node;  //中心开始点
 
     @property({
         type: Node,
         displayOrder: 3
     })
-    leftStartPos: Node = null   //左赛道开始点
+    leftStartPos!: Node    //左赛道开始点
 
     @property({
         type: Node,
         displayOrder: 4
     })
-    rightStartPos: Node = null  //右赛道开始点
+    rightStartPos!: Node  //右赛道开始点
 
     @property({
         type: Node,
         displayOrder: 5
     })
-    EndPos: Node = null;  //中心开始点
+    EndPos!: Node;  //中心开始点
 
     @property({
         type: Node,
         displayOrder: 6
     })
-    leftEndPos: Node = null   //左赛道开始点
+    leftEndPos!: Node    //左赛道开始点
 
     @property({
         type: Node,
         displayOrder: 7
     })
-    rightEndPos: Node = null  //右赛道开始点
+    rightEndPos!: Node   //右赛道开始点
 
 
     @property({
         type: Node,
         displayOrder: 8
     })
-    roadGroup: Node = null  //右赛道开始点
+    roadGroup!: Node   //右赛道开始点
 
     @property({
         type: Node
     })
-    camera: Node = null; //设置相机
+    camera!: Node; //设置相机
 
     @property({
         type: ParticleSystemComponent
     })
-    smoke: ParticleSystemComponent = null; //设置黑烟特效
+    smoke!: ParticleSystemComponent; //设置黑烟特效
 
 
     @property({
         type: Prefab
     })
-    envPrefab: Prefab = null;
+    envPrefab!: Prefab;
 
     private _cameraPos = new Vec3();   //相机初始位置
 
@@ -114,13 +115,13 @@ export class Car extends Component {
 
     private temVec = new Vec3()
 
-    private _moveType = null;   //左、右、中间移动方式，默认为空
+    private _moveType = "";   //左、右、中间移动方式，默认为空
 
     private _rotateY = new Vec3();  //赛车车身旋转角度
 
-    private _targetPostion = null
+    private _targetPostion = new Vec3();
 
-    private x = null;
+    private x = 0;
 
 
     private shakeX = 0;
@@ -138,11 +139,11 @@ export class Car extends Component {
     private roadCount = 1;
 
 
-    private envItems = [];
+    private envItems: Node[] = [];
     @property({
         type: ResourceManager
     })
-    resourceManager: ResourceManager = null;
+    resourceManager!: ResourceManager;
 
 
     private _isMove = true
@@ -174,10 +175,8 @@ export class Car extends Component {
     }
 
 
-
     start() {
-
-        cc.game.setFrameRate(60);
+        game.frameRate = 60;
         this.setNode(this.startPos)
         this._cameraPos = this.camera.worldPosition;
         this._cameraRotate = this.camera.eulerAngles;
@@ -201,10 +200,12 @@ export class Car extends Component {
 
     private _colliderInit() {    //碰撞初始化
         const selfcollider = this.node.getComponent(BoxColliderComponent);
-        selfcollider.on('onTriggerEnter', this._TriggerCheck, this);
-        selfcollider.setGroup(Constants.ColliderGroup.CAR)
-        selfcollider.setMask(Constants.ColliderGroup.ADDCOIN);
-        selfcollider.addMask(Constants.ColliderGroup.NORMALCOIN);
+        if (selfcollider) {
+            selfcollider.on('onTriggerEnter', this._TriggerCheck, this);
+            selfcollider.setGroup(Constants.ColliderGroup.CAR)
+            selfcollider.setMask(Constants.ColliderGroup.ADDCOIN);
+            selfcollider.addMask(Constants.ColliderGroup.NORMALCOIN);
+        }
     }
 
     //碰撞检测
@@ -217,7 +218,6 @@ export class Car extends Component {
         if (otherCollider.node.name == 'Knock') {    //普通金币
             console.log(otherCollider.node.name, 'Knock')
             customerListener.dispatch(Constants.GameStatus.GET_COIN, 10)
-            const anim: AnimationComponent = otherCollider.node.getComponent(AnimationComponent);
             // const otherRigid = otherCollider.node.getComponent(RigidBodyComponent);
             this.resourceManager.playCoinSound();
             // anim.play();
@@ -232,15 +232,12 @@ export class Car extends Component {
             console.log(otherCollider.node.name, 'VShell')
 
             customerListener.dispatch(Constants.GameStatus.GET_COIN, 20)
-            const anim: AnimationComponent = otherCollider.node.getComponent(AnimationComponent);
-            const otherRigid = otherCollider.node.getComponent(RigidBodyComponent);
             this.resourceManager.playCoinSound();
-            anim.play();
-            otherRigid.applyForce(new Vec3(0, 0, 5000 * this.speed));
             this.scheduleOnce(() => {
                 this.destroyCoin(otherCollider.node);
             }, 0.2);
             this._maxSpeed += 0.5;
+            otherCollider.node.destroy();
         } else if (otherCollider.node.name == 'Crack') {
             console.log(otherCollider.node.name, '碰到了裂隙')
             this.speed = this.minSpeed;
@@ -426,11 +423,11 @@ export class Car extends Component {
             this.envItems.splice(0, 1);
             first.position = newPos;
             console.log(first);
-            first.getComponent(EnvItemControl).updateRandom();
+            first.getComponent(EnvItemControl)?.updateRandom();
             this.envItems.push(first);
 
         } else {
-            const fab = instantiate(this.envPrefab);
+            let fab = instantiate(this.envPrefab);
             fab.position = newPos;
             fab.parent = this.roadGroup;
             this.envItems.push(fab);
@@ -440,7 +437,10 @@ export class Car extends Component {
     public setNode(entry: Node) { //设置起跑点
         console.log('设置起跑点')
         this._startPos = entry.getWorldPosition();
-        this._endPos = entry.getComponent(RoadPoints).nextStation.worldPosition;
+        let roadPoints = entry.getComponent(RoadPoints);
+        if (roadPoints) {
+            this._endPos = roadPoints.nextStation.worldPosition;
+        }
         this.node.setWorldPosition(this._startPos)
         this._colliderInit()
     }

@@ -10,7 +10,7 @@ enum ColliderGroup { //定义碰撞组
 enum GameStatus {   //定义游戏状态
 
     GAME_START = 'start',       //游戏开始
-    GAME_OVER = 'over', //游戏50秒时间结束
+    GAME_OVER = 'over', //游戏60秒时间结束
     GAME_CLOCK = 'clock',   //游戏计时开始
     GET_COIN = 'get-coin', //吃到金币
     CLOSE_HELP = 'close-help',    //关闭游戏操作指引
