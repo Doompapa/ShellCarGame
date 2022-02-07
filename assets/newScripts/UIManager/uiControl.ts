@@ -1,4 +1,5 @@
 import { _decorator, Component, Node, LabelComponent, SpriteComponent, find, AnimationComponent } from 'cc';
+import { Car } from '../Car';
 import { Constants } from '../Other/constants';
 import { customerListener } from '../Other/listener';
 import { ResourceManager } from '../ResourceManager';
@@ -9,11 +10,15 @@ const { ccclass, property } = _decorator;
 export class TabControl extends Component {
 
 
-    @property({
-        type: [LabelComponent],
-    })
-    progress: LabelComponent[] = [];
+    // @property({
+    //     type: [LabelComponent],
+    // })
+    // progress: LabelComponent[] = [];
 
+    @property({
+        type: LabelComponent
+    })
+    distanceLabel!: LabelComponent;
 
     @property({
         type: Node
@@ -69,6 +74,7 @@ export class TabControl extends Component {
 
     public runingTime: number = 0;
 
+    private startZ = 0;
 
 
     private doorOneTime: number = 5;
@@ -99,7 +105,12 @@ export class TabControl extends Component {
             this.schedule(this._startSche, 1);
             this.schedule(this._updateRuning, 0.1);
         }, this)
-        customerListener.on(Constants.GameStatus.GAME_OVER, this._gameOverEvent, this)
+        customerListener.on(Constants.GameStatus.GAME_OVER, this._gameOverEvent, this);
+
+        let car = this.mainCar.getComponent(Car);
+        if (car) {
+            this.startZ = car.startPos.position.z;
+        }
 
         // this._clock = this.clock.getComponent(SpriteComponent)
         // this._progress2Node = find('Canvas/GameUI/centerUI/tab/progress2').getComponent(SpriteComponent);
@@ -112,52 +123,38 @@ export class TabControl extends Component {
     }
     private _posTem() {  //计算赛车位置 -  终点距离 //游戏距离
         const _posZ = this.mainCar.getWorldPosition().z;
-        const temp = this._endPos - _posZ
-
-        if (Math.floor(temp) < 2300 && Math.floor(temp) > 1150) {
-            this._level = 2;    //进入第二关
-        } else if (Math.floor(temp) < 1150) {
-            this._level = 3;    //进入第三关
-        } else {
-            this._level = 1;        //处于第一关
-        }
-        console.log(Math.floor(temp), this._level, '实时距离')
-
-
-        //秒表更新
-        // this._clock.fillRange = Number((temp / (3000 + 950)).toFixed(2))
-
-
+        const temp = _posZ - this.startZ;
+        this.distanceLabel.string = Math.floor(temp).toString() + "m";
     }
 
     private _addProgressCouunt(count: number) {   //加分数
 
 
         // console.log('这里加分数', this._level)
-        if (this._level == 2) {  //第二关
-            this.countArr[1] += count;
-            this.progress[1].string = this.countArr[1].toString()
-            // console.log(this.progress[1].,'字体颜色')
-            // this.progress[1].color = new cc.color(255, 255, 255, 255);
-            // this._progress2Node.color = new cc.color(255, 255, 255, 255);
+        // if (this._level == 2) {  //第二关
+        //     this.countArr[1] += count;
+        //     this.progress[1].string = this.countArr[1].toString()
+        //     // console.log(this.progress[1].,'字体颜色')
+        //     // this.progress[1].color = new cc.color(255, 255, 255, 255);
+        //     // this._progress2Node.color = new cc.color(255, 255, 255, 255);
 
 
-        } else if (this._level == 3) {  //第三关
-            this.countArr[2] += count;
-            this.progress[2].string = this.countArr[2].toString()
+        // } else if (this._level == 3) {  //第三关
+        //     this.countArr[2] += count;
+        //     this.progress[2].string = this.countArr[2].toString()
 
-            // this.progress[2].color = new cc.color(255, 255, 255, 255);
-            // this._progress3Node.color = new cc.color(255, 255, 255, 255);
+        //     // this.progress[2].color = new cc.color(255, 255, 255, 255);
+        //     // this._progress3Node.color = new cc.color(255, 255, 255, 255);
 
-        } else {    //第一关
-            this.countArr[0] += count;
-            this.progress[0].string = this.countArr[0].toString()
-        }
+        // } else {    //第一关
+        //     this.countArr[0] += count;
+        //     this.progress[0].string = this.countArr[0].toString()
+        // }
 
-        this.coinTip.active = true
-        // this._coinTipTxt.string = `+${count}` 
-        const ani = this.coinTip.getComponent(AnimationComponent)
-        // ani.play('coinAnim')    //播放加分数提示动画
+        // this.coinTip.active = true
+        // // this._coinTipTxt.string = `+${count}` 
+        // const ani = this.coinTip.getComponent(AnimationComponent)
+        // // ani.play('coinAnim')    //播放加分数提示动画
 
     }
 
@@ -177,7 +174,6 @@ export class TabControl extends Component {
         this.timeCount++;
         this.clockTxt.string = (this.GameTotalTime - this.timeCount).toString();
 
-        this.checkCoinState();
         this.runingTime = this.timeCount;
     }
     private _gameOverEvent() {   //判断终点的游戏结束响应事件

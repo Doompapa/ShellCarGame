@@ -31,13 +31,6 @@ const { ccclass, property } = _decorator;
 
 @ccclass('Car')
 export class Car extends Component {
-
-
-    @property({
-        displayOrder: 1
-    })
-    public speed = 0.8;
-
     @property
     minSpeed = 0.1;
 
@@ -109,9 +102,10 @@ export class Car extends Component {
     private _endPos = new Vec3();
     private _offsetPos = new Vec3();
 
-    private _addSpeed = 0.001;
-
-    public _maxSpeed = 2;
+    //速度相关
+    public speed = 0;
+    private _addSpeed = 0.005;
+    public _maxSpeed = 2.5;
 
     private temVec = new Vec3()
 
@@ -153,7 +147,7 @@ export class Car extends Component {
     update(dt: number) {
         if (this._isRuning && this._isMove) {
 
-            this.speed += this._addSpeed;
+            this.speed += this._addSpeed * dt * 100;
             if (this.speed > this._maxSpeed) {
                 this.speed = this._maxSpeed
             }
@@ -211,8 +205,6 @@ export class Car extends Component {
     //碰撞检测
     private _TriggerCheck(event: ICollisionEvent) {
         // this._isMove = false;
-
-
         const otherCollider = event.otherCollider;
         console.log(event, otherCollider.node.name, '发生碰撞')
         if (otherCollider.node.name == 'Knock') {    //普通金币
