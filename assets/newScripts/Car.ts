@@ -151,7 +151,7 @@ export class Car extends Component {
     private _isShutCamera: boolean = false;  //是否固定住摄像机
 
     private distanceCalPoint = new Vec3();
-    private roadCount = 1;
+    private roadCount = 0;
 
     private currentCameraComponent!: Camera;
 
@@ -307,8 +307,6 @@ export class Car extends Component {
             // this.scheduleOnce(() => {
             //     this.destroyCoin(otherCollider.node);
             // }, 0.2);
-
-            this.speed = this.minSpeed;
             otherCollider.node.destroy();
             this.eatknock();
         } else if (otherCollider.node.name == 'VShell') {
@@ -354,6 +352,7 @@ export class Car extends Component {
     }
 
     private carbonShake() {
+        this.speed = this.minSpeed;
         this.smoke.node.active = true;
         this.smoke.play();
 
@@ -471,7 +470,7 @@ export class Car extends Component {
 
 
         //拼接路
-        if (Math.abs(Math.abs(this.node.worldPosition.z) - Math.abs(this.distanceCalPoint.z)) > 200) {
+        if (Math.abs(Math.abs(this.node.worldPosition.z) - Math.abs(this.distanceCalPoint.z)) > 300) {
             // console.log('超过180');
             this.distanceCalPoint.set(this.node.worldPosition);
             this.roadCount += 1;
@@ -503,9 +502,9 @@ export class Car extends Component {
 
 
     private AppendRoad() {
-        const newPos: Vec3 = new Vec3(this.roadGroup.worldPosition.x, this.roadGroup.worldPosition.y, this.roadCount * 200 + 500);
+        const newPos: Vec3 = new Vec3(this.roadGroup.worldPosition.x, this.roadGroup.worldPosition.y, this.roadCount * 300 + 600);
 
-        if (this.envItems.length > 3) {
+        if (this.envItems.length > 4) {
 
             let first = this.envItems[0];
             this.envItems.splice(0, 1);
