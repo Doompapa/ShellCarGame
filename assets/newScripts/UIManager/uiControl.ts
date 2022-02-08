@@ -65,7 +65,7 @@ export class TabControl extends Component {
     public countArr = [0, 0, 0]
 
     public timeCount = 0; //开始计时，每隔15S进行一次关卡替换
-    private GameTotalTime = 10;
+    private GameTotalTime = 60;
 
 
     private _progress2Node = null;
@@ -81,12 +81,6 @@ export class TabControl extends Component {
 
     private startZ = 0;
 
-
-    private doorOneTime: number = 5;
-    private doorTwoTime: number = 20;
-    private doorThreeTime: number = 35;
-
-    private _level = 1; //根据距离来计算关卡，默认第一关
 
     update() {
         this._posTem();

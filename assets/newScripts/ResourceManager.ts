@@ -6,13 +6,15 @@ export class ResourceManager extends Component {
     @property({
         type: AudioClip
     })
-    coinSound:AudioClip = null;
+    coinSound!: AudioClip;
 
     @property
-    totalTime:number = 0;
+    totalTime: number = 0;
 
-    public playCoinSound(){
+    public playCoinSound() {
         const audioSource = this.node.getComponent(AudioSourceComponent);
-        audioSource.playOneShot(this.coinSound);
+        if (audioSource) {
+            audioSource.playOneShot(this.coinSound);
+        }
     }
 }

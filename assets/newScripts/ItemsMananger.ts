@@ -33,6 +33,18 @@ export class ItemsMananger extends Component {
             this.initColliderObjects(fab, Constants.ColliderGroup.NORMALCOIN, Constants.ColliderGroup.CAR);
         });
 
+        loader.loadRes("prefabs/Props/Knock", Prefab, (err: any, prefab: Prefab) => {
+            if (err) {
+                console.warn(err);
+                return;
+            }
+            const fab = instantiate(prefab);
+            fab.position = new Vec3(0, 0, 800);
+            fab.parent = find("ItemsManager");
+            fab.eulerAngles = new Vec3(0, 0, 0);
+            this.initColliderObjects(fab, Constants.ColliderGroup.NORMALCOIN, Constants.ColliderGroup.CAR);
+        });
+
         loader.loadRes("prefabs/Props/VShell", Prefab, (err: any, prefab: Prefab) => {
             if (err) {
                 console.warn(err);
@@ -40,6 +52,18 @@ export class ItemsMananger extends Component {
             }
             const fab = instantiate(prefab);
             fab.position = new Vec3(-10, 0, 500);
+            fab.parent = find("ItemsManager");
+            fab.eulerAngles = new Vec3(0, 0, 0);
+            this.initColliderObjects(fab, Constants.ColliderGroup.NORMALCOIN, Constants.ColliderGroup.CAR);
+        });
+
+        loader.loadRes("prefabs/Props/VShell", Prefab, (err: any, prefab: Prefab) => {
+            if (err) {
+                console.warn(err);
+                return;
+            }
+            const fab = instantiate(prefab);
+            fab.position = new Vec3(-10, 0, 700);
             fab.parent = find("ItemsManager");
             fab.eulerAngles = new Vec3(0, 0, 0);
             this.initColliderObjects(fab, Constants.ColliderGroup.NORMALCOIN, Constants.ColliderGroup.CAR);
@@ -186,3 +210,7 @@ export class ItemsMananger extends Component {
     //     // Your update function goes here.
     // }
 }
+function loadRes(arg0: string, Prefab: typeof Prefab, arg2: (err: any, prefab: Prefab) => void) {
+    throw new Error('Function not implemented.');
+}
+

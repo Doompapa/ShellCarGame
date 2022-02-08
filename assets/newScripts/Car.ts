@@ -165,6 +165,11 @@ export class Car extends Component {
 
     private _carbonSpeed = 5;
 
+    private _carbonReduce = 30;
+    private _knockReduce = 30;
+
+    private _isCarbonShakeCoolDown = false;
+
     private envItems: Node[] = [];
     @property({
         type: ResourceManager
@@ -188,7 +193,7 @@ export class Car extends Component {
             this._setMoveType(dt)
 
 
-            this.refreshLifeBarUi();
+            this.refreshStatus();
             this._running(dt);
             if (!this._isShutCamera) {
                 this.setCamera(true)
@@ -212,8 +217,8 @@ export class Car extends Component {
 
         this.distanceCalPoint.set(this.startPos.worldPosition);
 
-        this.smoke.node.active = false;
-        this.vshellEffet.node.active = false;
+        // this.smoke.node.active = false;
+        // this.vshellEffet.node.active = false;
 
         this.currentCameraComponent = this.camera.getComponent(CameraComponent)!;
 
@@ -225,7 +230,7 @@ export class Car extends Component {
     }
 
     //刷新状态条UI
-    refreshLifeBarUi(): void {
+    refreshStatus(): void {
         if (!this.knockBar) return;
         if (!this.carbonBar) return;
 
@@ -234,18 +239,35 @@ export class Car extends Component {
 
         let nextPos = new Vec3(_v3_0.x, _v3_0.y + 3, _v3_0.z);
 
+        //爆震
         this.currentCameraComponent.convertToUINode(_v3_0, this.knockBar.node.parent!, _v3_0);
         this.knockBar.node.setPosition(_v3_0);
         this.knockBar.progress = this._knock / 100;
 
+
+
+
+        //积碳
         this.currentCameraComponent.convertToUINode(nextPos, this.carbonBar.node.parent!, nextPos);
         this.carbonBar.node.setPosition(nextPos);
         this.carbonBar.progress = this._carbon / 100;
+        //积碳效果被触发
+        if (!this._isCarbonShakeCoolDown && this._carbon >= 50) {
+            let num = this.random(0, 100);
+            if (num <= this._carbon) {
+                this.carbonShake();
+                this._isCarbonShakeCoolDown = true;
+                this.scheduleOnce(() => {
+                    this._isCarbonShakeCoolDown = false;
+                }, 5);
+            }
+
+        }
+
 
         if (!this.carbonBar.node.active) {
             this.carbonBar.node.active = true;
         }
-
 
         if (!this.knockBar.node.active) {
             this.knockBar.node.active = true;
@@ -285,9 +307,10 @@ export class Car extends Component {
             // this.scheduleOnce(() => {
             //     this.destroyCoin(otherCollider.node);
             // }, 0.2);
+
             this.speed = this.minSpeed;
             otherCollider.node.destroy();
-            this.playShake();
+            this.eatknock();
         } else if (otherCollider.node.name == 'VShell') {
             console.log(otherCollider.node.name, 'VShell')
             customerListener.dispatch(Constants.GameStatus.GET_COIN, 20)
@@ -295,32 +318,47 @@ export class Car extends Component {
             // this.scheduleOnce(() => {
             //     this.destroyCoin(otherCollider.node);
             // }, 0.2);
-            this._maxSpeed += 0.5;
-            this.playVShellEffect();
+            // this._maxSpeed += 0.5;
+            this.eatVShell();
             otherCollider.node.destroy();
-        } else if (otherCollider.node.name == 'Crack') {
-            console.log(otherCollider.node.name, '碰到了裂隙')
-            this.speed = this.minSpeed;
         }
     }
 
-    private playVShellEffect(){
-        this.vshellEffet.node.active = true;
-        this.vshellEffet.play();
-        this.scheduleOnce(() => {
-            this.vshellEffet.node.active = false;
-        }, 1.1);
+    private eatknock() {
+        this._carbon += this._carbonReduce;
+        if (this._carbon > 100) {
+            this._carbon = 100;
+        }
+
+
+        this._knock += this._knockReduce;
+        if (this._knock > 100) {
+            this._knock = 100;
+        }
     }
 
-    private playShake() {
+    private eatVShell() {
+        this.vshellEffet.node.active = true;
+        this.vshellEffet.play();
+
+        this._carbon -= this._carbonReduce;
+        if (this._carbon < 0) {
+            this._carbon = 0;
+        }
+
+
+        this._knock -= this._knockReduce;
+        if (this._knock < 0) {
+            this._knock = 0;
+        }
+    }
+
+    private carbonShake() {
         this.smoke.node.active = true;
         this.smoke.play();
-        this.scheduleOnce(() => {
-            this.smoke.node.active = false;
-        }, 1.1);
 
         let offset = 0.1;
-        let time = 0.05;
+        let time = 0.02;
         tween(this.node)
             .by(time, { position: new Vec3(+offset, 0, this.speed * time * 100) }, { easing: 'sineOutIn' })
             .by(time, { position: new Vec3(-offset, 0, this.speed * time * 100) }, { easing: 'sineOutIn' })
@@ -334,28 +372,6 @@ export class Car extends Component {
                 // let z = this.node.position.z;
                 // this.node.position = new Vec3(x, y, z);
             }).start();
-
-        //位置是在当前位置增加
-        // tween(this.node)
-        //     .by(1, { position: new Vec3(0, 0, 0) }, { easing: 'quintOut' }).call(() => {
-        //         this._isMove = true;
-        //     })
-        //     .start()
-
-
-        // cc.runAction(action);
-        // setTimeout(() => {
-        //     cc.stopAction(action);
-        //     this.node.position = new Vec3(x, y, z);
-        // }, 1000);
-
-
-        // tween(this.node).to(1, { scale: new Vec3(2, 2, 2), position: new Vec3(5, 5, 5) }).call(() => {
-        //     console.log('This is a callback');
-        // }).by(1, { scale: new Vec3(-1, -1, -1) }, { easing: 'sineOutIn' }
-        // ).start();
-
-
     }
 
 
@@ -460,8 +476,18 @@ export class Car extends Component {
             this.distanceCalPoint.set(this.node.worldPosition);
             this.roadCount += 1;
             this.AppendRoad();
-            this._knock += this._knockSpeed;
-            this._carbon += this._carbonSpeed;
+
+            if (this._knock < 100 - this._knockSpeed) {
+                this._knock += this._knockSpeed;
+            } else {
+                this._knock = 100;
+            }
+
+            if (this._carbon < 100 - this._carbonSpeed) {
+                this._carbon += this._carbonSpeed;
+            } else {
+                this._carbon = 100;
+            }
         }
 
 
@@ -517,5 +543,14 @@ export class Car extends Component {
 
     // }
 
+    /**
+     * 随机值
+     * @param lower 
+     * @param upper 
+     * @returns 
+     */
+    random(lower: number, upper: number) {
+        return Math.floor(Math.random() * (upper - lower)) + lower;
+    }
 
 }
