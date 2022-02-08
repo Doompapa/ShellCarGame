@@ -92,6 +92,11 @@ export class Car extends Component {
 
 
     @property({
+        type: ParticleSystemComponent
+    })
+    vshellEffet!: ParticleSystemComponent; //设置黑烟特效
+
+    @property({
         type: Prefab
     })
     envPrefab!: Prefab;
@@ -208,6 +213,7 @@ export class Car extends Component {
         this.distanceCalPoint.set(this.startPos.worldPosition);
 
         this.smoke.node.active = false;
+        this.vshellEffet.node.active = false;
 
         this.currentCameraComponent = this.camera.getComponent(CameraComponent)!;
 
@@ -284,13 +290,13 @@ export class Car extends Component {
             this.playShake();
         } else if (otherCollider.node.name == 'VShell') {
             console.log(otherCollider.node.name, 'VShell')
-
             customerListener.dispatch(Constants.GameStatus.GET_COIN, 20)
             this.resourceManager.playCoinSound();
-            this.scheduleOnce(() => {
-                this.destroyCoin(otherCollider.node);
-            }, 0.2);
+            // this.scheduleOnce(() => {
+            //     this.destroyCoin(otherCollider.node);
+            // }, 0.2);
             this._maxSpeed += 0.5;
+            this.playVShellEffect();
             otherCollider.node.destroy();
         } else if (otherCollider.node.name == 'Crack') {
             console.log(otherCollider.node.name, '碰到了裂隙')
@@ -298,12 +304,20 @@ export class Car extends Component {
         }
     }
 
+    private playVShellEffect(){
+        this.vshellEffet.node.active = true;
+        this.vshellEffet.play();
+        this.scheduleOnce(() => {
+            this.vshellEffet.node.active = false;
+        }, 1.1);
+    }
+
     private playShake() {
         this.smoke.node.active = true;
         this.smoke.play();
         this.scheduleOnce(() => {
             this.smoke.node.active = false;
-        }, 1.5);
+        }, 1.1);
 
         let offset = 0.1;
         let time = 0.05;
