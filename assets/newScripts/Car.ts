@@ -16,7 +16,9 @@ import {
     tween,
     Tween,
     ParticleSystemComponent,
-    game
+    game,
+    CameraComponent,
+    Camera
 } from 'cc';
 import { Tree } from './Env/Tree';
 import { EnvItemControl } from './Env/EnvItemControl';
@@ -93,6 +95,24 @@ export class Car extends Component {
     })
     envPrefab!: Prefab;
 
+
+    @property({
+        type: Node
+    })
+    statusBarParent!: Node;
+
+    @property({
+        type: Node
+    })
+    carbonBarNode!: Node;
+
+    @property({
+        type: Node
+    })
+    knockBarNode!: Node;
+
+
+
     private _cameraPos = new Vec3();   //相机初始位置
 
     private _cameraRotate = new Vec3(); //固定相机旋转
@@ -117,11 +137,6 @@ export class Car extends Component {
 
     private x = 0;
 
-
-    private shakeX = 0;
-    private shakeY = 0;
-
-
     private rotateSpeed = 0.5;
 
     public score: number = 0;
@@ -129,8 +144,15 @@ export class Car extends Component {
     private _isRuning = false;  //是否游戏开始
     private _isShutCamera: boolean = false;  //是否固定住摄像机
 
-    private distanceCount = new Vec3();
+    private distanceCalPoint = new Vec3();
     private roadCount = 1;
+
+    private currentCameraComponent!: Camera;
+
+    //爆震值
+    private _knock = 0;
+    //积碳值
+    private _carbon = 0;
 
 
     private envItems: Node[] = [];
@@ -156,6 +178,8 @@ export class Car extends Component {
 
             this._setMoveType(dt)
 
+
+            this.refreshLifeBarUi();
             this._running(dt);
             if (!this._isShutCamera) {
                 this.setCamera(true)
@@ -175,17 +199,49 @@ export class Car extends Component {
         this._cameraPos = this.camera.worldPosition;
         this._cameraRotate = this.camera.eulerAngles;
         customerListener.on(Constants.GameStatus.GAME_START, this.GameStart, this)
-        // customerListener.on(Constants.GameStatus.GAME_OVER, this.GameOver, this)
+        customerListener.on(Constants.GameStatus.GAME_OVER, this.GameOver, this)
 
-        this.distanceCount.set(this.startPos.worldPosition);
+        this.distanceCalPoint.set(this.startPos.worldPosition);
 
         this.smoke.node.active = false;
+
+        this.currentCameraComponent = this.camera.getComponent(CameraComponent)!;
+
     }
 
     public GameStart() {
-        this._isRuning = true
+        this._isRuning = true;
+
     }
 
+    //
+    refreshLifeBarUi(): void {
+        if (!this.knockBarNode) return;
+        if (!this.carbonBarNode) return;
+
+        let _v3_0: Vec3 = new Vec3(0, 0, 0);
+        this.statusBarParent.getWorldPosition(_v3_0);
+
+        let nextPos = new Vec3(_v3_0.x, _v3_0.y + 3, _v3_0.z);
+
+        this.currentCameraComponent.convertToUINode(_v3_0, this.knockBarNode.parent!, _v3_0);
+        this.knockBarNode.setPosition(_v3_0);
+
+        this.currentCameraComponent.convertToUINode(nextPos, this.carbonBarNode.parent!, nextPos);
+        this.carbonBarNode.setPosition(nextPos);
+
+        if (!this.carbonBarNode.active) {
+            this.carbonBarNode.active = true;
+        }
+
+
+        if (!this.knockBarNode.active) {
+            this.knockBarNode.active = true;
+        }
+    }
+
+
+    //游戏结束
     public GameOver() {
         this._isRuning = false
         // this._isShutCamera = true
@@ -244,15 +300,16 @@ export class Car extends Component {
         }, 1.5);
 
         let offset = 0.1;
+        let time = 0.05;
         tween(this.node)
-            .by(0.018, { position: new Vec3(+offset, 0, this.speed * 0.018 * 100) }, { easing: 'sineOutIn' })
-            .by(0.018, { position: new Vec3(-offset, 0, this.speed * 0.018 * 100) }, { easing: 'sineOutIn' })
-            .by(0.018, { position: new Vec3(+offset, 0, this.speed * 0.018 * 100) }, { easing: 'sineOutIn' })
-            .by(0.018, { position: new Vec3(-offset, 0, this.speed * 0.018 * 100) }, { easing: 'sineOutIn' })
-            .by(0.018, { position: new Vec3(+offset, 0, this.speed * 0.018 * 100) }, { easing: 'sineOutIn' })
-            .by(0.018, { position: new Vec3(-offset, 0, this.speed * 0.018 * 100) }, { easing: 'sineOutIn' })
-            .by(0.018, { position: new Vec3(+offset, 0, this.speed * 0.018 * 100) }, { easing: 'sineOutIn' })
-            .by(0.018, { position: new Vec3(-offset, 0, this.speed * 0.018 * 100) }, { easing: 'sineOutIn' })
+            .by(time, { position: new Vec3(+offset, 0, this.speed * time * 100) }, { easing: 'sineOutIn' })
+            .by(time, { position: new Vec3(-offset, 0, this.speed * time * 100) }, { easing: 'sineOutIn' })
+            .by(time, { position: new Vec3(+offset, 0, this.speed * time * 100) }, { easing: 'sineOutIn' })
+            .by(time, { position: new Vec3(-offset, 0, this.speed * time * 100) }, { easing: 'sineOutIn' })
+            .by(time, { position: new Vec3(+offset, 0, this.speed * time * 100) }, { easing: 'sineOutIn' })
+            .by(time, { position: new Vec3(-offset, 0, this.speed * time * 100) }, { easing: 'sineOutIn' })
+            .by(time, { position: new Vec3(+offset, 0, this.speed * time * 100) }, { easing: 'sineOutIn' })
+            .by(time, { position: new Vec3(-offset, 0, this.speed * time * 100) }, { easing: 'sineOutIn' })
             .call(() => {
                 // let z = this.node.position.z;
                 // this.node.position = new Vec3(x, y, z);
@@ -387,21 +444,21 @@ export class Car extends Component {
 
 
         //拼接路
-        if (Math.abs(Math.abs(this.node.worldPosition.z) - Math.abs(this.distanceCount.z)) > 200) {
+        if (Math.abs(Math.abs(this.node.worldPosition.z) - Math.abs(this.distanceCalPoint.z)) > 200) {
             // console.log('超过180');
-            this.distanceCount.set(this.node.worldPosition);
+            this.distanceCalPoint.set(this.node.worldPosition);
             this.roadCount += 1;
             this.AppendRoad();
         }
 
 
-        Vec3.subtract(this.temVec, this._endPos, this._offsetPos) //判断起点 -- 终点的距离
+        // Vec3.subtract(this.temVec, this._endPos, this._offsetPos) //判断起点 -- 终点的距离
 
-        if (this.temVec.length() <= 0.01) {
+        // if (this.temVec.length() <= 0.01) {
 
-            this._isMove = false    //到终点了
-            customerListener.dispatch(Constants.GameStatus.GAME_OVER)   //游戏结束
-        }
+        //     this._isMove = false    //到终点了
+        //     customerListener.dispatch(Constants.GameStatus.GAME_OVER)   //游戏结束
+        // }
 
     }
 
