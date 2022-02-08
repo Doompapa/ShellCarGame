@@ -53,6 +53,12 @@ export class TabControl extends Component {
     })
     clockTxt!: LabelComponent  //秒表数字
 
+    
+    @property({
+        type: LabelComponent
+    })
+    VShellTxt!: LabelComponent  //增益道具拾取
+
 
     private _endPos: number = 3000     //赛车终点位置Z轴
 
