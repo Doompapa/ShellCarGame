@@ -9,12 +9,12 @@ export class ItemsMananger extends Component {
 
     // addSpeedCoin: Node[] = []
 
-    public Instance: ItemsMananger = null;
+    public Instance!: ItemsMananger;
 
     @property({
         type: Node
     })
-    private carNode: Node = null;
+    private carNode!: Node;
 
     onLoad() {
         //设定距离区间的普通金币数量，第三个参数是从其实点距离，终点距离是第四个参数

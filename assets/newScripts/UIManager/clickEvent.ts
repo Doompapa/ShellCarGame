@@ -14,10 +14,14 @@ export class ClickEvent extends Component {
         location.href = _url.join('/')
     }
     public closeTipText() { //关闭操作提示文本框
+        const tipTxt = find('Canvas/TipUI/operationTip');
+        if (tipTxt) {
+            tipTxt.active = false;
+            customerListener.dispatch(Constants.GameStatus.CLOSE_HELP)
+        }else{
+            console.log("Canvas/TipUI/operationTip 节点为空请检查");
+        }
 
-        const tipTxt = find('Canvas/TipUI/operationTip')
-        tipTxt.active = false;
-        customerListener.dispatch(Constants.GameStatus.CLOSE_HELP)
     }
 
 }

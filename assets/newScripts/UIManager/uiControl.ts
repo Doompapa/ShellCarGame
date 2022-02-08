@@ -3,7 +3,6 @@ import { Car } from '../Car';
 import { Constants } from '../Other/constants';
 import { customerListener } from '../Other/listener';
 import { ResourceManager } from '../ResourceManager';
-import { IconController } from './IconController';
 const { ccclass, property } = _decorator;
 
 @ccclass('TabControl')
@@ -59,8 +58,8 @@ export class TabControl extends Component {
 
     public countArr = [0, 0, 0]
 
-    public timeCount = 1; //开始计时，每隔15S进行一次关卡替换
-    private GameTotalTime = 60;
+    public timeCount = 0; //开始计时，每隔15S进行一次关卡替换
+    private GameTotalTime = 10;
 
 
     private _progress2Node = null;
@@ -112,6 +111,8 @@ export class TabControl extends Component {
             this.startZ = car.startPos.position.z;
         }
 
+        this.clockTxt.string = (this.GameTotalTime).toString();
+
         // this._clock = this.clock.getComponent(SpriteComponent)
         // this._progress2Node = find('Canvas/GameUI/centerUI/tab/progress2').getComponent(SpriteComponent);
         // this._progress3Node = find('Canvas/GameUI/centerUI/tab/progress3').getComponent(SpriteComponent);
@@ -121,7 +122,7 @@ export class TabControl extends Component {
     private _updateRuning() {
         this.runingTime += 0.1;
     }
-    private _posTem() {  //计算赛车位置 -  终点距离 //游戏距离
+    private _posTem() {  //计算赛车位距离
         const _posZ = this.mainCar.getWorldPosition().z;
         const temp = _posZ - this.startZ;
         this.distanceLabel.string = Math.floor(temp).toString() + "m";
@@ -160,21 +161,27 @@ export class TabControl extends Component {
 
     ///开始计时  秒间隔
     private _startSche() {  //不知道checkCoinState方法干啥用的，先不注释了
-        if (this.timeCount >= this.GameTotalTime) {
-            customerListener.dispatch(Constants.GameStatus.GAME_OVER);   //游戏结束
+        // if (this.timeCount >= this.GameTotalTime) {
+        //     customerListener.dispatch(Constants.GameStatus.GAME_OVER);   //游戏结束
 
-            this.unschedule(this._startSche)    //取消定时器
-            //将分数存入localStorage
-            this.NextBtn.active = true
-            localStorage.setItem('liftPoint', JSON.stringify(this.countArr[0]))
-            localStorage.setItem('smoothPoint', JSON.stringify(this.countArr[1]))
-            localStorage.setItem('replenishPoint', JSON.stringify(this.countArr[2]))
-        }
+        //     this.unschedule(this._startSche)    //取消定时器
+
+        //     //将分数存入localStorage
+        //     this.NextBtn.active = true
+        //     // localStorage.setItem('liftPoint', JSON.stringify(this.countArr[0]))
+        //     // localStorage.setItem('smoothPoint', JSON.stringify(this.countArr[1]))
+        //     // localStorage.setItem('replenishPoint', JSON.stringify(this.countArr[2]))
+        // }
         //刷新计时
         this.timeCount++;
         this.clockTxt.string = (this.GameTotalTime - this.timeCount).toString();
+        if (this.GameTotalTime - this.timeCount <= 0) {
+            this.unschedule(this._startSche);
+            this.clockTxt.string = "0";
+            customerListener.dispatch(Constants.GameStatus.GAME_OVER);
+        }
 
-        this.runingTime = this.timeCount;
+        // this.runingTime = this.timeCount;
     }
     private _gameOverEvent() {   //判断终点的游戏结束响应事件
         //将分数存入localStorage
@@ -190,8 +197,6 @@ export class TabControl extends Component {
         // localStorage.setItem('liftPoint', JSON.stringify(this.countArr[0]))
         // localStorage.setItem('smoothPoint', JSON.stringify(this.countArr[1]))
         // localStorage.setItem('replenishPoint', JSON.stringify(this.countArr[2]))
-
-        console.log("收到 game over");
 
     }
     private checkCoinState() {

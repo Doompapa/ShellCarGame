@@ -142,7 +142,7 @@ export class Car extends Component {
 
     public score: number = 0;
 
-    private _isRuning = false;  //是否游戏开始
+
     private _isShutCamera: boolean = false;  //是否固定住摄像机
 
     private distanceCalPoint = new Vec3();
@@ -166,12 +166,11 @@ export class Car extends Component {
     })
     resourceManager!: ResourceManager;
 
-
+    private _isRuning = false;  //是否游戏开始
     private _isMove = true
 
-    private _isTurning = false;
-
     update(dt: number) {
+
         if (this._isRuning && this._isMove) {
 
             this.speed += this._addSpeed * dt * 100;
@@ -250,6 +249,7 @@ export class Car extends Component {
 
     //游戏结束
     public GameOver() {
+
         this._isRuning = false
         // this._isShutCamera = true
         //游戏结束时将摄像机固定住，赛车继续往前跑远
@@ -267,7 +267,6 @@ export class Car extends Component {
 
     //碰撞检测
     private _TriggerCheck(event: ICollisionEvent) {
-        // this._isMove = false;
         const otherCollider = event.otherCollider;
         console.log(event, otherCollider.node.name, '发生碰撞')
         if (otherCollider.node.name == 'Knock') {    //普通金币
@@ -436,16 +435,18 @@ export class Car extends Component {
 
         // console.log('移动>>>>>>>')
         this._offsetPos.set(this.node.worldPosition);
-        const z = this._endPos.z - this._offsetPos.z
+        this._offsetPos.z += this.speed * dt * 100;
 
-        if (z !== 0) {
-            if (z > 0) {
-                this._offsetPos.z += this.speed * dt * 100;
-                if (this._offsetPos.z > this._endPos.z) {
-                    this._offsetPos.z = this._endPos.z
-                }
-            }
-        }
+        // const z = this._endPos.z - this._offsetPos.z
+
+        // if (z !== 0) {
+        //     if (z > 0) {
+        //         this._offsetPos.z += this.speed * dt * 100;
+        //         if (this._offsetPos.z > this._endPos.z) {
+        //             this._offsetPos.z = this._endPos.z
+        //         }
+        //     }
+        // }
         // console.log(this._offsetPos,this.speed,'设置坐标点')
         this.node.setWorldPosition(this._offsetPos)
 

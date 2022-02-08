@@ -10,7 +10,7 @@ export class StartTip extends Component {
         type: LabelComponent,
     })
 
-    txt: LabelComponent = null;
+    txt!: LabelComponent;
     private _count = 3;
 
     start() {
