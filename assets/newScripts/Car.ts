@@ -436,17 +436,6 @@ export class Car extends Component {
         // console.log('移动>>>>>>>')
         this._offsetPos.set(this.node.worldPosition);
         this._offsetPos.z += this.speed * dt * 100;
-
-        // const z = this._endPos.z - this._offsetPos.z
-
-        // if (z !== 0) {
-        //     if (z > 0) {
-        //         this._offsetPos.z += this.speed * dt * 100;
-        //         if (this._offsetPos.z > this._endPos.z) {
-        //             this._offsetPos.z = this._endPos.z
-        //         }
-        //     }
-        // }
         // console.log(this._offsetPos,this.speed,'设置坐标点')
         this.node.setWorldPosition(this._offsetPos)
 
