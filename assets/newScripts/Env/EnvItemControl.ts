@@ -14,12 +14,12 @@ export class EnvItemControl extends Component {
     @property({
         type: Node,
     })
-    adBoard1: Node = null
+    adBoard1!: Node;
 
     @property({
         type: Node,
     })
-    adBoard2: Node = null
+    adBoard2!: Node;
 
 
     start() {
@@ -41,14 +41,9 @@ export class EnvItemControl extends Component {
         //         this.adBoard2.active = true;
         //     }
         // }
-        console.log("updateRandom");
     }
 
-    // update (deltaTime: number) {
-    //     // Your update function goes here.
-    // }
-
-    random(lower, upper) {
+    random(lower: number, upper: number) {
         return Math.floor(Math.random() * (upper - lower)) + lower;
     }
 }

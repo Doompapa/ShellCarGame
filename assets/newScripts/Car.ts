@@ -18,7 +18,8 @@ import {
     ParticleSystemComponent,
     game,
     CameraComponent,
-    Camera
+    Camera,
+    ProgressBar
 } from 'cc';
 import { Tree } from './Env/Tree';
 import { EnvItemControl } from './Env/EnvItemControl';
@@ -102,14 +103,14 @@ export class Car extends Component {
     statusBarParent!: Node;
 
     @property({
-        type: Node
+        type: ProgressBar
     })
-    carbonBarNode!: Node;
+    carbonBar!: ProgressBar;
 
     @property({
-        type: Node
+        type: ProgressBar
     })
-    knockBarNode!: Node;
+    knockBar!: ProgressBar;
 
 
 
@@ -151,9 +152,13 @@ export class Car extends Component {
 
     //爆震值
     private _knock = 0;
+
     //积碳值
     private _carbon = 0;
 
+    private _knockSpeed = 5;
+
+    private _carbonSpeed = 5;
 
     private envItems: Node[] = [];
     @property({
@@ -214,29 +219,31 @@ export class Car extends Component {
 
     }
 
-    //
+    //刷新状态条UI
     refreshLifeBarUi(): void {
-        if (!this.knockBarNode) return;
-        if (!this.carbonBarNode) return;
+        if (!this.knockBar) return;
+        if (!this.carbonBar) return;
 
         let _v3_0: Vec3 = new Vec3(0, 0, 0);
         this.statusBarParent.getWorldPosition(_v3_0);
 
         let nextPos = new Vec3(_v3_0.x, _v3_0.y + 3, _v3_0.z);
 
-        this.currentCameraComponent.convertToUINode(_v3_0, this.knockBarNode.parent!, _v3_0);
-        this.knockBarNode.setPosition(_v3_0);
+        this.currentCameraComponent.convertToUINode(_v3_0, this.knockBar.node.parent!, _v3_0);
+        this.knockBar.node.setPosition(_v3_0);
+        this.knockBar.progress = this._knock / 100;
 
-        this.currentCameraComponent.convertToUINode(nextPos, this.carbonBarNode.parent!, nextPos);
-        this.carbonBarNode.setPosition(nextPos);
+        this.currentCameraComponent.convertToUINode(nextPos, this.carbonBar.node.parent!, nextPos);
+        this.carbonBar.node.setPosition(nextPos);
+        this.carbonBar.progress = this._carbon / 100;
 
-        if (!this.carbonBarNode.active) {
-            this.carbonBarNode.active = true;
+        if (!this.carbonBar.node.active) {
+            this.carbonBar.node.active = true;
         }
 
 
-        if (!this.knockBarNode.active) {
-            this.knockBarNode.active = true;
+        if (!this.knockBar.node.active) {
+            this.knockBar.node.active = true;
         }
     }
 
@@ -449,6 +456,8 @@ export class Car extends Component {
             this.distanceCalPoint.set(this.node.worldPosition);
             this.roadCount += 1;
             this.AppendRoad();
+            this._knock += this._knockSpeed;
+            this._carbon += this._carbonSpeed;
         }
 
 
@@ -471,7 +480,6 @@ export class Car extends Component {
             let first = this.envItems[0];
             this.envItems.splice(0, 1);
             first.position = newPos;
-            console.log(first);
             first.getComponent(EnvItemControl)?.updateRandom();
             this.envItems.push(first);
 

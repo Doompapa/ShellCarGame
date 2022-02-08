@@ -191,6 +191,8 @@ export class TabControl extends Component {
         // localStorage.setItem('smoothPoint', JSON.stringify(this.countArr[1]))
         // localStorage.setItem('replenishPoint', JSON.stringify(this.countArr[2]))
 
+        console.log("收到 game over");
+
     }
     private checkCoinState() {
         // if (this.timeCount == this.doorTwoTime) {

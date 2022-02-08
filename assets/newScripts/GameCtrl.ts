@@ -5,17 +5,17 @@ const { ccclass, property } = _decorator;
 @ccclass('GameCtrl')
 export class GameCtrl extends Component {
 
-    private _touchMoveXY: Vec2 = null;
     @property(
         {
             type: Car
         }
     )
 
-    mainCar: Car = null
+    mainCar!: Car;
 
     public score: number = 0;
 
+    //todo 记录操作
 
 
     start() {
@@ -29,7 +29,7 @@ export class GameCtrl extends Component {
             this.mainCar.setMoveType('left')
             //当前在左车道
         } else if (this.mainCar.node.worldPosition.x == this.mainCar.leftStartPos.worldPosition.x) {
-            
+
             console.log("left 撞墙了");
             //当前在右车道
         } else if (this.mainCar.node.worldPosition.x == this.mainCar.rightStartPos.worldPosition.x) {

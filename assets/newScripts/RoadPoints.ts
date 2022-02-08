@@ -5,10 +5,10 @@ const { ccclass, property } = _decorator;
 export class RoadPoints extends Component {
     @property(
         {
-            type:Node
+            type: Node
         }
     )
-    nextStation:Node = null;
+    nextStation!: Node;
 
-    
+
 }
