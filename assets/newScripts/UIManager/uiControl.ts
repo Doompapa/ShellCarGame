@@ -53,27 +53,17 @@ export class TabControl extends Component {
     })
     clockTxt!: LabelComponent  //秒表数字
 
-    
+
     @property({
         type: LabelComponent
     })
     VShellTxt!: LabelComponent  //增益道具拾取
-
-
-    private _endPos: number = 3000     //赛车终点位置Z轴
 
     public countArr = [0, 0, 0]
 
     public timeCount = 0; //开始计时，每隔15S进行一次关卡替换
     private GameTotalTime = 60;
 
-
-    private _progress2Node = null;
-    private _progress3Node = null;
-
-    private _coinTipTxt = null;
-
-    private _clock = null
 
     private totalTime: number = 0;
 
@@ -96,11 +86,10 @@ export class TabControl extends Component {
             }
         }
 
-        customerListener.on(Constants.GameStatus.GET_COIN, this._addProgressCouunt, this)
+        customerListener.on(Constants.GameStatus.GET_COIN, this._addProgressCount, this)
+        customerListener.on(Constants.GameStatus.GET_VSHELL, this._getVShell, this)
         customerListener.on(Constants.GameStatus.GAME_CLOCK, () => {
-
             this.clock.active = true;
-            // this.clockTxt.node.active = false;
             this.schedule(this._startSche, 1);
             this.schedule(this._updateRuning, 0.1);
         }, this)
@@ -119,6 +108,10 @@ export class TabControl extends Component {
         // this._coinTipTxt = this.coinTip.getComponent(LabelComponent)
     }
 
+    private _getVShell(count: number) {
+        this.VShellTxt.string = count.toString();
+    }
+
     private _updateRuning() {
         this.runingTime += 0.1;
     }
@@ -128,7 +121,7 @@ export class TabControl extends Component {
         this.distanceLabel.string = Math.floor(temp).toString() + "m";
     }
 
-    private _addProgressCouunt(count: number) {   //加分数
+    private _addProgressCount(count: number) {   //加分数
 
 
         // console.log('这里加分数', this._level)

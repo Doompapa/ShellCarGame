@@ -13,6 +13,8 @@ enum GameStatus {   //定义游戏状态
     GAME_OVER = 'over', //游戏60秒时间结束
     GAME_CLOCK = 'clock',   //游戏计时开始
     GET_COIN = 'get-coin', //吃到金币
+    GET_VSHELL = 'vshell', //吃到增益道具
+    GET_KNOCK = 'knock', //吃到负增益道具
     CLOSE_HELP = 'close-help',    //关闭游戏操作指引
 
 

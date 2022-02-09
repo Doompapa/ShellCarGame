@@ -124240,6 +124240,14 @@
       "__id__": 3631
     },
     "adBoard2": null,
+    "VShell": {
+      "__uuid__": "577b2118-9b79-4877-ae73-3601a9173f9d",
+      "__expectedType__": "cc.Prefab"
+    },
+    "Knock": {
+      "__uuid__": "9a49bc30-f980-44b3-8bcb-faee5b761916",
+      "__expectedType__": "cc.Prefab"
+    },
     "_id": ""
   },
   {

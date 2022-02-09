@@ -161,12 +161,14 @@ export class Car extends Component {
     //积碳值
     private _carbon = 0;
 
-    private _knockSpeed = 5;
+    private _knockSpeed = 2;
 
-    private _carbonSpeed = 5;
+    private _carbonSpeed = 2;
 
     private _carbonReduce = 30;
     private _knockReduce = 30;
+
+    private _vshellNumber = 0;
 
     private _isCarbonShakeCoolDown = false;
 
@@ -253,8 +255,8 @@ export class Car extends Component {
         this.carbonBar.progress = this._carbon / 100;
         //积碳效果被触发
         if (!this._isCarbonShakeCoolDown && this._carbon >= 50) {
-            let num = this.random(0, 100);
-            if (num <= this._carbon) {
+            let num = this.random(0, 200);
+            if (num <= this._carbon * 2) {
                 this.carbonShake();
                 this._isCarbonShakeCoolDown = true;
                 this.scheduleOnce(() => {
@@ -299,19 +301,23 @@ export class Car extends Component {
         console.log(event, otherCollider.node.name, '发生碰撞')
         if (otherCollider.node.name == 'Knock') {    //普通金币
             console.log(otherCollider.node.name, 'Knock')
-            customerListener.dispatch(Constants.GameStatus.GET_COIN, 10)
+            customerListener.dispatch(Constants.GameStatus.GET_KNOCK, 10)
+
+            // this.resourceManager.playCoinSound();
+
             // const otherRigid = otherCollider.node.getComponent(RigidBodyComponent);
-            this.resourceManager.playCoinSound();
             // anim.play();
             // otherRigid.applyForce(new Vec3(0, 0, 5000 * this.speed));
             // this.scheduleOnce(() => {
             //     this.destroyCoin(otherCollider.node);
             // }, 0.2);
+            this.resourceManager.playKnockSound();
             otherCollider.node.destroy();
             this.eatknock();
         } else if (otherCollider.node.name == 'VShell') {
             console.log(otherCollider.node.name, 'VShell')
-            customerListener.dispatch(Constants.GameStatus.GET_COIN, 20)
+            this._vshellNumber++;
+            customerListener.dispatch(Constants.GameStatus.GET_VSHELL, this._vshellNumber)
             this.resourceManager.playCoinSound();
             // this.scheduleOnce(() => {
             //     this.destroyCoin(otherCollider.node);
@@ -473,7 +479,6 @@ export class Car extends Component {
         if (Math.abs(Math.abs(this.node.worldPosition.z) - Math.abs(this.distanceCalPoint.z)) > 300) {
             // console.log('超过180');
             this.distanceCalPoint.set(this.node.worldPosition);
-            this.roadCount += 1;
             this.AppendRoad();
 
             if (this._knock < 100 - this._knockSpeed) {
@@ -502,8 +507,8 @@ export class Car extends Component {
 
 
     private AppendRoad() {
-        const newPos: Vec3 = new Vec3(this.roadGroup.worldPosition.x, this.roadGroup.worldPosition.y, this.roadCount * 300 + 600);
-
+        const newPos: Vec3 = new Vec3(this.roadGroup.worldPosition.x, this.roadGroup.worldPosition.y, this.roadCount * 300 + 900);
+        this.roadCount++;
         if (this.envItems.length > 4) {
 
             let first = this.envItems[0];
