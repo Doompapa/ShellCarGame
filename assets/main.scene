@@ -43,7 +43,7 @@
     },
     "autoReleaseAssets": false,
     "_globals": {
-      "__id__": 387
+      "__id__": 391
     },
     "_id": "06a70bad-9025-425b-b438-1ec0a01937cb"
   },
@@ -214,7 +214,7 @@
       "width": 1,
       "height": 1
     },
-    "_aperture": 19,
+    "_aperture": 20,
     "_shutter": 7,
     "_iso": 0,
     "_screenScale": 1,
@@ -4196,21 +4196,21 @@
       "b": 255,
       "a": 255
     },
-    "_useColorTemperature": false,
-    "_colorTemperature": 6550,
+    "_useColorTemperature": true,
+    "_colorTemperature": 15000,
     "_staticSettings": {
       "__id__": 169
     },
     "_illuminanceHDR": 100000,
     "_illuminance": 100000,
-    "_illuminanceLDR": 2.604166666666667,
+    "_illuminanceLDR": 1,
     "_id": "597uMYCbhEtJQc0ffJlcgA"
   },
   {
     "__type__": "cc.StaticLightSettings",
     "_baked": false,
     "_editorOnly": false,
-    "_bakeable": false,
+    "_bakeable": true,
     "_castShadow": false
   },
   {
@@ -7920,7 +7920,7 @@
     "_priority": 1073741824,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 959.9999999999999,
+    "_orthoHeight": 960,
     "_near": 1,
     "_far": 2000,
     "_color": {
@@ -9315,6 +9315,12 @@
       },
       {
         "__id__": 385
+      },
+      {
+        "__id__": 387
+      },
+      {
+        "__id__": 389
       }
     ],
     "nestedPrefabInstanceRoots": [
@@ -9374,9 +9380,7 @@
   },
   {
     "__type__": "cc.TargetOverrideInfo",
-    "source": {
-      "__id__": 72
-    },
+    "source": null,
     "sourceInfo": null,
     "propertyPath": [
       "smoke"
@@ -9458,9 +9462,7 @@
   },
   {
     "__type__": "cc.TargetOverrideInfo",
-    "source": {
-      "__id__": 72
-    },
+    "source": null,
     "sourceInfo": null,
     "propertyPath": [
       "vshellEffet"
@@ -9479,21 +9481,65 @@
     ]
   },
   {
+    "__type__": "cc.TargetOverrideInfo",
+    "source": {
+      "__id__": 72
+    },
+    "sourceInfo": null,
+    "propertyPath": [
+      "smoke"
+    ],
+    "target": {
+      "__id__": 26
+    },
+    "targetInfo": {
+      "__id__": 388
+    }
+  },
+  {
+    "__type__": "cc.TargetInfo",
+    "localID": [
+      "0b7a7v3FVOCpzmec7amMlB"
+    ]
+  },
+  {
+    "__type__": "cc.TargetOverrideInfo",
+    "source": {
+      "__id__": 72
+    },
+    "sourceInfo": null,
+    "propertyPath": [
+      "vshellEffet"
+    ],
+    "target": {
+      "__id__": 44
+    },
+    "targetInfo": {
+      "__id__": 390
+    }
+  },
+  {
+    "__type__": "cc.TargetInfo",
+    "localID": [
+      "554xIv5IdBcq2iiOYTEgzm"
+    ]
+  },
+  {
     "__type__": "cc.SceneGlobals",
     "ambient": {
-      "__id__": 388
+      "__id__": 392
     },
     "shadows": {
-      "__id__": 389
+      "__id__": 393
     },
     "_skybox": {
-      "__id__": 390
+      "__id__": 394
     },
     "fog": {
-      "__id__": 391
+      "__id__": 395
     },
     "octree": {
-      "__id__": 392
+      "__id__": 396
     }
   },
   {
@@ -9533,9 +9579,9 @@
       "x": 1,
       "y": 1,
       "z": 1,
-      "w": 0.520833125
+      "w": 1.5
     },
-    "_skyIllumLDR": 1.9531250000000002,
+    "_skyIllumLDR": 1.5,
     "_groundAlbedoLDR": {
       "__type__": "cc.Vec4",
       "x": 1,
@@ -9599,7 +9645,7 @@
     "_diffuseMapLDR": null,
     "_enabled": true,
     "_useIBL": false,
-    "_useHDR": true
+    "_useHDR": false
   },
   {
     "__type__": "cc.FogInfo",
