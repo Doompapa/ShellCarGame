@@ -131,7 +131,8 @@ export class Car extends Component {
     //速度相关
     public speed = 0;
     private _addSpeed = 0.005;
-    public _maxSpeed = 2.5;
+    private _maxSpeed = 2.5;
+    private _dynamicSpeed = 1.5;
 
     private temVec = new Vec3()
 
@@ -163,7 +164,7 @@ export class Car extends Component {
 
     private _knockSpeed = 2;
 
-    private _carbonSpeed = 2;
+    private _carbonSpeed = 10;
 
     private _carbonReduce = 30;
     private _knockReduce = 30;
@@ -181,22 +182,33 @@ export class Car extends Component {
     private _isRuning = false;  //是否游戏开始
     private _isMove = true
 
+    /**
+     * 是否在冲刺中
+     */
+    private _isSprint = false;
+
+    /**
+     * 冲刺时间
+     */
+    private _sprintTime = 0.5;
+
     update(dt: number) {
 
         if (this._isRuning && this._isMove) {
 
-            this.speed += this._addSpeed * dt * 100;
-            if (this.speed > this._maxSpeed) {
-                this.speed = this._maxSpeed
+            if (!this._isSprint) {
+                this.speed += this._addSpeed * dt * 100;
+                if (this.speed > (this._maxSpeed - this._dynamicSpeed * (this._carbon / 100))) {
+                    this.speed = this._maxSpeed - this._dynamicSpeed * (this._carbon / 100);
+                }
             }
-
             //运动中不移动
-
             this._setMoveType(dt)
-
-
             this.refreshStatus();
             this._running(dt);
+        }
+
+        if (this._isRuning) {
             if (!this._isShutCamera) {
                 this.setCamera(true)
             } else {
@@ -329,21 +341,27 @@ export class Car extends Component {
     }
 
     private eatknock() {
-        this._carbon += this._carbonReduce;
-        if (this._carbon > 100) {
-            this._carbon = 100;
-        }
-
-
         this._knock += this._knockReduce;
         if (this._knock > 100) {
             this._knock = 100;
         }
     }
 
+    /**
+     * 吃到小油滴道具
+     */
     private eatVShell() {
         this.vshellEffet.node.active = true;
         this.vshellEffet.play();
+
+        this._isSprint = true;
+        let speedTemp = this.speed;
+        this.speed = this._maxSpeed * 1.6;
+        this.scheduleOnce(() => {
+            this._isSprint = false;
+            this.speed += this._addSpeed * this._sprintTime * 100;
+            this.speed = speedTemp;
+        }, this._sprintTime);
 
         this._carbon -= this._carbonReduce;
         if (this._carbon < 0) {
@@ -357,6 +375,9 @@ export class Car extends Component {
         }
     }
 
+    /**
+     * 爆震累积触发效果
+     */
     private carbonShake() {
         this.speed = this.minSpeed;
         this.smoke.node.active = true;
@@ -379,13 +400,10 @@ export class Car extends Component {
             }).start();
     }
 
-
-    private destroyCoin(whichNode: Node) {
-        if (whichNode) {
-            whichNode.destroy();
-        }
-    }
-
+    /**
+     * 设置相机跟随
+     * @param flag 
+     */
     public setCamera(flag = false) { //设置相机位置 //true为实时更新
         if (!flag) {
             this.camera.setWorldPosition(this._cameraPos)
@@ -480,12 +498,6 @@ export class Car extends Component {
             // console.log('超过180');
             this.distanceCalPoint.set(this.node.worldPosition);
             this.AppendRoad();
-
-            if (this._knock < 100 - this._knockSpeed) {
-                this._knock += this._knockSpeed;
-            } else {
-                this._knock = 100;
-            }
 
             if (this._carbon < 100 - this._carbonSpeed) {
                 this._carbon += this._carbonSpeed;

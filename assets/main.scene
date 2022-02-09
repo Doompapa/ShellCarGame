@@ -6405,6 +6405,9 @@
     "VShellTxt": {
       "__id__": 323
     },
+    "GameOverLabel": {
+      "__id__": 303
+    },
     "_id": "1c4v7whwhCMJjQA15x7u4M"
   },
   {
@@ -6889,7 +6892,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "AmazingUI",
+    "_name": "GameOverUI",
     "_objFlags": 0,
     "_parent": {
       "__id__": 256
@@ -6899,7 +6902,7 @@
         "__id__": 301
       }
     ],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 305
@@ -6939,7 +6942,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "amazingTip",
+    "_name": "gameOverLabel",
     "_objFlags": 0,
     "_parent": {
       "__id__": 300
@@ -6961,7 +6964,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 189,
+      "y": 0,
       "z": 0
     },
     "_lrot": {
@@ -6997,7 +7000,7 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 247.22,
+      "width": 350,
       "height": 126
     },
     "_anchorPoint": {
@@ -7027,11 +7030,11 @@
       "b": 255,
       "a": 255
     },
-    "_string": "AMAZING!",
+    "_string": "",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 55,
-    "_fontSize": 55,
+    "_actualFontSize": 70,
+    "_fontSize": 70,
     "_fontFamily": "Arial",
     "_lineHeight": 100,
     "_overflow": 0,
@@ -7061,7 +7064,7 @@
     "_target": null,
     "_left": 45.41,
     "_right": 45.41,
-    "_top": 68,
+    "_top": 897,
     "_bottom": 398.128,
     "_horizontalCenter": 0,
     "_verticalCenter": 0,
@@ -7088,8 +7091,8 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 320,
-      "height": 640
+      "width": 1080,
+      "height": 1920
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",

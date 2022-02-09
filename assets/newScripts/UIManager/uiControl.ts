@@ -59,6 +59,12 @@ export class TabControl extends Component {
     })
     VShellTxt!: LabelComponent  //增益道具拾取
 
+
+    @property({
+        type: LabelComponent
+    })
+    GameOverLabel!: LabelComponent  //游戏结束UI
+
     public countArr = [0, 0, 0]
 
     public timeCount = 0; //开始计时，每隔15S进行一次关卡替换
@@ -177,6 +183,10 @@ export class TabControl extends Component {
         // this.runingTime = this.timeCount;
     }
     private _gameOverEvent() {   //判断终点的游戏结束响应事件
+        this.GameOverLabel.string = "恭喜完成挑战！" + "\n" + this.distanceLabel.string;
+
+
+
         //将分数存入localStorage
         // this.NextBtn.active = true
 
