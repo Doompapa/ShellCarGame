@@ -4203,7 +4203,7 @@
     },
     "_illuminanceHDR": 100000,
     "_illuminance": 100000,
-    "_illuminanceLDR": 1,
+    "_illuminanceLDR": 1.5,
     "_id": "597uMYCbhEtJQc0ffJlcgA"
   },
   {
@@ -9652,15 +9652,15 @@
     "_type": 0,
     "_fogColor": {
       "__type__": "cc.Color",
-      "r": 200,
-      "g": 200,
-      "b": 200,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_enabled": false,
     "_fogDensity": 0.3,
     "_fogStart": 0.5,
-    "_fogEnd": 500,
+    "_fogEnd": 600,
     "_fogAtten": 5,
     "_fogTop": 1.5,
     "_fogRange": 1.2,
