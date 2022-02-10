@@ -164,7 +164,7 @@ export class Car extends Component {
 
     private _knockSpeed = 2;
 
-    private _carbonSpeed = 10;
+    private _carbonSpeed = 20;
 
     private _carbonReduce = 30;
     private _knockReduce = 30;

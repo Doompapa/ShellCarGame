@@ -75,7 +75,7 @@ export class EnvItemControl extends Component {
 
             //随机车道
             let randomNum = this.random(-1, 2);
-            fab.position = new Vec3(10 * randomNum, 0, this.node.position.z + 80 * i);
+            fab.position = new Vec3(10 * randomNum, 0, this.node.position.z + 100 * i);
 
             fab.parent = find("ItemsManager");
             fab.eulerAngles = new Vec3(0, 0, 0);

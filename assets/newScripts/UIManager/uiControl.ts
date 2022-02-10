@@ -30,18 +30,6 @@ export class TabControl extends Component {
     })
     clock!: Node
 
-
-    @property({
-        type: Node
-    })
-    AmazingTip!: Node
-
-
-    @property({
-        type: Node
-    })
-    NextBtn!: Node
-
     @property({
         type: Node
     })
@@ -115,7 +103,7 @@ export class TabControl extends Component {
     }
 
     private _getVShell(count: number) {
-        this.VShellTxt.string = count.toString();
+        this.VShellTxt.string = "x" + count.toString();
     }
 
     private _updateRuning() {
