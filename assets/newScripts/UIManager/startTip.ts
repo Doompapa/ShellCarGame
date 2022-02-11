@@ -14,7 +14,9 @@ export class StartTip extends Component {
     private _count = 3;
 
     start() {
+        this.txt.node.active = false;
         customerListener.on(Constants.GameStatus.CLOSE_HELP, () => {
+            this.txt.node.active = true;
             this.schedule(this.tipEnd, 1)
         })
     }

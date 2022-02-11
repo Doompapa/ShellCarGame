@@ -124248,6 +124248,7 @@
       "__uuid__": "9a49bc30-f980-44b3-8bcb-faee5b761916",
       "__expectedType__": "cc.Prefab"
     },
+    "isCreate": true,
     "_id": ""
   },
   {
