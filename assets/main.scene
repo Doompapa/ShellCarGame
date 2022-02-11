@@ -5482,7 +5482,7 @@
     "_enabled": true,
     "__prefab": null,
     "_clip": {
-      "__uuid__": "acdf2752-ff22-4746-aad4-a34b052ba37f",
+      "__uuid__": "bb060c46-bdb9-47e8-a15f-252f9b1d5c5e",
       "__expectedType__": "cc.AudioClip"
     },
     "_loop": true,
