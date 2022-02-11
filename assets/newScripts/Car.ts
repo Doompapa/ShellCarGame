@@ -161,9 +161,6 @@ export class Car extends Component {
 
     //积碳值
     private _carbon = 0;
-
-    private _knockSpeed = 2;
-
     private _carbonSpeed = 20;
 
     private _carbonReduce = 30;
@@ -172,6 +169,11 @@ export class Car extends Component {
     private _vshellNumber = 0;
 
     private _isCarbonShakeCoolDown = false;
+
+    /**
+     * 抖动中无法操作
+     */
+    private _isShaking = false;
 
     private envItems: Node[] = [];
     @property({
@@ -190,7 +192,7 @@ export class Car extends Component {
     /**
      * 冲刺时间
      */
-    private _sprintTime = 0.5;
+    private _sprintTime = 0.2;
 
     update(dt: number) {
 
@@ -265,15 +267,30 @@ export class Car extends Component {
         this.currentCameraComponent.convertToUINode(nextPos, this.carbonBar.node.parent!, nextPos);
         this.carbonBar.node.setPosition(nextPos);
         this.carbonBar.progress = this._carbon / 100;
+
+
+        // //积碳效果被触发
+        // if (!this._isCarbonShakeCoolDown && this._carbon >= 50) {
+        //     let num = this.random(0, 200);
+        //     if (num <= this._carbon * 2) {
+        //         this.carbonShake();
+        //         this._isCarbonShakeCoolDown = true;
+        //         this.scheduleOnce(() => {
+        //             this._isCarbonShakeCoolDown = false;
+        //         }, 3);
+        //     }
+
+        // }
+
         //积碳效果被触发
-        if (!this._isCarbonShakeCoolDown && this._carbon >= 50) {
-            let num = this.random(0, 200);
-            if (num <= this._carbon * 2) {
+        if (!this._isCarbonShakeCoolDown && this._knock >= 50) {
+            let num = this.random(0, 101);
+            if (num <= this._knock) {
                 this.carbonShake();
                 this._isCarbonShakeCoolDown = true;
                 this.scheduleOnce(() => {
                     this._isCarbonShakeCoolDown = false;
-                }, 5);
+                }, 3);
             }
 
         }
@@ -314,15 +331,6 @@ export class Car extends Component {
         if (otherCollider.node.name == 'Knock') {    //普通金币
             console.log(otherCollider.node.name, 'Knock')
             customerListener.dispatch(Constants.GameStatus.GET_KNOCK, 10)
-
-            // this.resourceManager.playCoinSound();
-
-            // const otherRigid = otherCollider.node.getComponent(RigidBodyComponent);
-            // anim.play();
-            // otherRigid.applyForce(new Vec3(0, 0, 5000 * this.speed));
-            // this.scheduleOnce(() => {
-            //     this.destroyCoin(otherCollider.node);
-            // }, 0.2);
             this.resourceManager.playKnockSound();
             otherCollider.node.destroy();
             this.eatknock();
@@ -356,7 +364,7 @@ export class Car extends Component {
 
         this._isSprint = true;
         let speedTemp = this.speed;
-        this.speed = this._maxSpeed * 1.6;
+        this.speed = this._maxSpeed * 1.2;
         this.scheduleOnce(() => {
             this._isSprint = false;
             this.speed += this._addSpeed * this._sprintTime * 100;
@@ -367,7 +375,6 @@ export class Car extends Component {
         if (this._carbon < 0) {
             this._carbon = 0;
         }
-
 
         this._knock -= this._knockReduce;
         if (this._knock < 0) {
@@ -383,20 +390,22 @@ export class Car extends Component {
         this.smoke.node.active = true;
         this.smoke.play();
 
-        let offset = 0.1;
-        let time = 0.02;
+        let offset = 0.2;
+        let time = 0.05;
+        this._isShaking = true;
         tween(this.node)
-            .by(time, { position: new Vec3(+offset, 0, this.speed * time * 100) }, { easing: 'sineOutIn' })
-            .by(time, { position: new Vec3(-offset, 0, this.speed * time * 100) }, { easing: 'sineOutIn' })
-            .by(time, { position: new Vec3(+offset, 0, this.speed * time * 100) }, { easing: 'sineOutIn' })
-            .by(time, { position: new Vec3(-offset, 0, this.speed * time * 100) }, { easing: 'sineOutIn' })
-            .by(time, { position: new Vec3(+offset, 0, this.speed * time * 100) }, { easing: 'sineOutIn' })
-            .by(time, { position: new Vec3(-offset, 0, this.speed * time * 100) }, { easing: 'sineOutIn' })
-            .by(time, { position: new Vec3(+offset, 0, this.speed * time * 100) }, { easing: 'sineOutIn' })
-            .by(time, { position: new Vec3(-offset, 0, this.speed * time * 100) }, { easing: 'sineOutIn' })
+            .by(time, { position: new Vec3(+offset, 0, this.speed * time * 100) }, { easing: 'quadOut' }) //quadOut  sineOutIn
+            .by(time, { position: new Vec3(-offset, 0, this.speed * time * 100) }, { easing: 'quadOut' })
+            .by(time, { position: new Vec3(+offset, 0, this.speed * time * 100) }, { easing: 'quadOut' })
+            .by(time, { position: new Vec3(-offset, 0, this.speed * time * 100) }, { easing: 'quadOut' })
+            .by(time, { position: new Vec3(+offset, 0, this.speed * time * 100) }, { easing: 'quadOut' })
+            .by(time, { position: new Vec3(-offset, 0, this.speed * time * 100) }, { easing: 'quadOut' })
+            .by(time, { position: new Vec3(+offset, 0, this.speed * time * 100) }, { easing: 'quadOut' })
+            .by(time, { position: new Vec3(-offset, 0, this.speed * time * 100) }, { easing: 'quadOut' })
             .call(() => {
                 // let z = this.node.position.z;
                 // this.node.position = new Vec3(x, y, z);
+                this._isShaking = false;
             }).start();
     }
 
@@ -419,7 +428,16 @@ export class Car extends Component {
 
     }
 
+    /**
+     * 控制赛车左右滑
+     * @param dt 
+     */
     private _setMoveType(dt: number) {    //赛车左滑右滑
+
+        if (this._isShaking) {
+            return;
+        }
+
         this._offsetPos.set(this.node.worldPosition);
 
         if (this._moveType == 'left') { //左滑
@@ -495,7 +513,6 @@ export class Car extends Component {
 
         //拼接路
         if (Math.abs(Math.abs(this.node.worldPosition.z) - Math.abs(this.distanceCalPoint.z)) > 300) {
-            // console.log('超过180');
             this.distanceCalPoint.set(this.node.worldPosition);
             this.AppendRoad();
 
@@ -504,6 +521,7 @@ export class Car extends Component {
             } else {
                 this._carbon = 100;
             }
+
         }
 
 

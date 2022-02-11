@@ -36,6 +36,12 @@ export class EnvItemControl extends Component {
     })
     Knock!: Prefab
 
+    /**
+     * 是否生成道具
+     */
+    @property
+    public isCreate = true;
+
     start() {
         let temp = find("ItemsManager");
         if (temp) {
@@ -63,23 +69,44 @@ export class EnvItemControl extends Component {
         //     }
         // }
 
-        for (let i = 1; i < 4; i++) {
+        if (this.isCreate) {
+            for (let i = 0; i < 3; i++) {
+                let whichOne = this.random(0, 4);
+                let fab = null;
+                if (whichOne <= 2) {
+                    fab = instantiate(this.Knock);
+                } else {
+                    fab = instantiate(this.VShell);
+                }
 
-            let whichOne = this.random(0, 3);
-            let fab = null;
-            if (whichOne <= 1) {
-                fab = instantiate(this.Knock);
-            } else {
-                fab = instantiate(this.VShell);
+                //随机车道
+                let randomNum = this.random(-1, 2);
+                fab.position = new Vec3(10 * randomNum, 0, this.node.position.z + this.random(80, 100) * i);
+
+                fab.parent = find("ItemsManager");
+                fab.eulerAngles = new Vec3(0, 0, 0);
+                this.initColliderObjects(fab, Constants.ColliderGroup.NORMALCOIN, Constants.ColliderGroup.CAR);
+
+
+
+                let whichTwo = this.random(0, 4);
+                let fabTwo = null;
+                if (whichTwo <= 2) {
+                    fabTwo = instantiate(this.Knock);
+                } else {
+                    fabTwo = instantiate(this.VShell);
+                }
+
+                let randomNUmSecond = this.random(-1, 2);
+                while (randomNUmSecond == randomNum) {
+                    randomNUmSecond = this.random(-1, 2);
+                }
+                fabTwo.position = new Vec3(10 * randomNUmSecond, 0, this.node.position.z + this.random(80, 100) * i);
+                fabTwo.parent = find("ItemsManager");
+                fabTwo.eulerAngles = new Vec3(0, 0, 0);
+                this.initColliderObjects(fabTwo, Constants.ColliderGroup.NORMALCOIN, Constants.ColliderGroup.CAR);
+
             }
-
-            //随机车道
-            let randomNum = this.random(-1, 2);
-            fab.position = new Vec3(10 * randomNum, 0, this.node.position.z + 100 * i);
-
-            fab.parent = find("ItemsManager");
-            fab.eulerAngles = new Vec3(0, 0, 0);
-            this.initColliderObjects(fab, Constants.ColliderGroup.NORMALCOIN, Constants.ColliderGroup.CAR);
         }
 
     }
