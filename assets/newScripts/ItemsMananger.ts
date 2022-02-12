@@ -6,9 +6,6 @@ const { ccclass, property } = _decorator;
 @ccclass('ItemsMananger')
 export class ItemsMananger extends Component {
 
-
-    // addSpeedCoin: Node[] = []
-
     public Instance!: ItemsMananger;
 
     @property({
@@ -16,132 +13,67 @@ export class ItemsMananger extends Component {
     })
     private carNode!: Node;
 
+
+    @property({
+        type: Node
+    })
+    private envNode!: Node;
+
+
+    /**
+     * 环境预制体
+     */
+    @property({
+        type: Prefab
+    })
+    envPrefab!: Prefab;
+
+
+
+    private envItems: Node[] = [];
+    private _prevPos: Vec3 = new Vec3();
+    private roadCount = 0;
+
+
     onLoad() {
-        //设定距离区间的普通金币数量，第三个参数是从其实点距离，终点距离是第四个参数
-        //多次运行是因为提高后期游戏出现几率，后面同理
-        // this.initItems("Props/Knock", 25, 500);
-
-        // loader.loadRes("prefabs/Props/Knock", Prefab, (err: any, prefab: Prefab) => {
-        //     if (err) {
-        //         console.warn(err);
-        //         return;
-        //     }
-        //     const fab = instantiate(prefab);
-        //     fab.position = new Vec3(0, 0, 500);
-        //     fab.parent = find("ItemsManager");
-        //     fab.eulerAngles = new Vec3(0, 0, 0);
-        //     this.initColliderObjects(fab, Constants.ColliderGroup.NORMALCOIN, Constants.ColliderGroup.CAR);
-        // });
-
-        // loader.loadRes("prefabs/Props/Knock", Prefab, (err: any, prefab: Prefab) => {
-        //     if (err) {
-        //         console.warn(err);
-        //         return;
-        //     }
-        //     const fab = instantiate(prefab);
-        //     fab.position = new Vec3(0, 0, 800);
-        //     fab.parent = find("ItemsManager");
-        //     fab.eulerAngles = new Vec3(0, 0, 0);
-        //     this.initColliderObjects(fab, Constants.ColliderGroup.NORMALCOIN, Constants.ColliderGroup.CAR);
-        // });
-
-        // loader.loadRes("prefabs/Props/VShell", Prefab, (err: any, prefab: Prefab) => {
-        //     if (err) {
-        //         console.warn(err);
-        //         return;
-        //     }
-        //     const fab = instantiate(prefab);
-        //     fab.position = new Vec3(-10, 0, 500);
-        //     fab.parent = find("ItemsManager");
-        //     fab.eulerAngles = new Vec3(0, 0, 0);
-        //     this.initColliderObjects(fab, Constants.ColliderGroup.NORMALCOIN, Constants.ColliderGroup.CAR);
-        // });
-
-        // loader.loadRes("prefabs/Props/VShell", Prefab, (err: any, prefab: Prefab) => {
-        //     if (err) {
-        //         console.warn(err);
-        //         return;
-        //     }
-        //     const fab = instantiate(prefab);
-        //     fab.position = new Vec3(-10, 0, 700);
-        //     fab.parent = find("ItemsManager");
-        //     fab.eulerAngles = new Vec3(0, 0, 0);
-        //     this.initColliderObjects(fab, Constants.ColliderGroup.NORMALCOIN, Constants.ColliderGroup.CAR);
-        // });
-
-
-
-        // this.initItems("normalCoin", 10, 700);
-        // this.initItems("normalCoin", 10, 1850);
-        // //设定距离区间的加速金币数量，第三个参数是从其实点距离，终点距离是第四个参数
-        // this.initItems("addSpeedCoin", 10, 500);
-        // this.initItems("addSpeedCoin", 7, 700);
-        // this.initItems("addSpeedCoin", 5, 1850);
-        // //设定距离区间的裂隙数量，第三个参数是从其实点距离，终点距离是第四个参数
-        // this.initItems("Crack", 15, 500);
-        // this.initItems("Crack", 8, 700);
-        // this.initItems("Crack", 8, 1850);
-
-        // this.initRoadItems("New/Env/TreeStyle_A", 20, 700, 3250);
-        // this.initRoadItems("New/Env/TreeStyle_B", 20, 700, 3250);
-        // this.initRoadItems("New/Env/TreeStyle_C", 15);
-        // this.initRoadItems("New/Env/TreeStyle_A", 15);
-        // this.initRoadItems("New/Env/TreeStyle_B", 15);
-        // //第三关以后多种树，哈哈哈
-        // this.initRoadItems("New/Env/TreeStyle_A", 40, 1850);
-        // this.initRoadItems("New/Env/TreeStyle_B", 40, 1850);
-        // this.initRoadItems("New/Env/TreeStyle_C", 40, 1850);
-
-        // this.initRoadItems("Cactus", 150, 100,1850);
-
-        // this.initRoadItems("Rock1", 200, 100, 1850);
-        // this.initRoadItems("Montain", 20, 700, 3250,180,-22,14,5,5,0.004,0.0005);
-
         this.Instance = this;
-
+        this.InitEnv();
     }
 
-    private initRoadItems(itemName: string, itemNum: number, startPosZ: number = 50, endPosZ: number = null,
-        randomRotate: number = 180, left: number = -15, right: number = 11, randomLeft: number = 9,
-        randomRight: number = 9, maxSize: number = 0.015, minSize: number = 0.003) {
-        const car = this.carNode.getComponent(Car);
-        const initItemStartZ = car.startPos.position.z + startPosZ;
-        if (endPosZ == null) {
-            endPosZ = car.EndPos.position.z + 250;
-        }
-        const itemDiffZ = Math.floor((endPosZ - initItemStartZ) / itemNum);
-        for (var i = 0; i < itemNum; i++) {
-            const numX: number = Math.floor(Math.random() * 2);
-            let itemX: number = 0;
-            switch (numX) {
-                case 0:
-                    itemX = left + randomLeft / 2 - Math.random() * randomLeft;
-                    break;
-                case 1:
-                    itemX = right + randomRight / 2 - Math.random() * randomRight;
-                    break;
-                default:
-                    break;
-            }
-            if (itemName.indexOf("Montain") != -1) {
-                console.log(itemX);
-            }
+    update(dt: number) {
+        this.CheckCar();
+    }
 
-            const itemY: number = 0;
-            let itemZ = initItemStartZ + i * itemDiffZ + ((Math.random() - 0.5) * itemDiffZ);
-            const itemPos: Vec3 = new Vec3(itemX, itemY, itemZ);
-            loader.loadRes("prefabs/" + itemName, Prefab, (err: any, prefab: Prefab) => {
-                if (err) {
-                    console.warn(err);
-                    return;
+    private InitEnv() {
+        //初始化位置
+        this._prevPos.set(this.carNode.worldPosition);
+
+        //初始化环境
+        for (let i = 1; i < 7; i++) {
+            let envItem = instantiate(this.envPrefab);
+            envItem.parent = this.envNode;
+            envItem.position = new Vec3(0, 0, 100 * i);
+            this.envItems.push(envItem);
+        }
+    }
+
+    private CheckCar() {
+        let distance = Math.abs(Math.abs(this.carNode.worldPosition.z) - Math.abs(this._prevPos.z));
+        //拼接路
+        if (distance > 100) {
+            if (this.roadCount == 0) {
+                if (distance >= 200) {
+                    this.roadCount++;
                 }
-                const fab = instantiate(prefab);
-                fab.position = itemPos;
-                fab.parent = find("ItemsManager");
-                fab.eulerAngles = new Vec3(0, Math.random() * 360, 0);
-                let randSize: number = Math.random() * (maxSize - minSize) + minSize;
-                fab.scale = new Vec3(randSize, randSize, randSize);
-            })
+            } else {
+                this._prevPos.set(this.carNode.worldPosition);
+                let newPos: Vec3 = new Vec3(0, 0, this.roadCount * 100 + 600);
+                let first = this.envItems[0];
+                this.envItems.splice(0, 1);
+                first.position = newPos;
+                this.envItems.push(first);
+                this.roadCount++;
+            }
         }
 
     }
@@ -151,50 +83,6 @@ export class ItemsMananger extends Component {
         console.log('AppendRoad')
     }
 
-
-
-
-    private initItems(itemName: string, itemNum: number, startPosZ: number = 100, endPosZ: number = null, size: number = 0.01) {
-        const car = this.carNode.getComponent(Car);
-        if (endPosZ == null) {
-            endPosZ = car.EndPos.position.z + 250;
-        }
-        const initConinStartZ = car.startPos.position.z + startPosZ;
-        console.log("start z " + initConinStartZ)
-        const coinDiffZ = Math.floor((endPosZ - initConinStartZ) / itemNum);
-        for (var i = 0; i < itemNum; i++) {
-            const numX: number = Math.floor(Math.random() * 3);
-            let coinX: number = 0;
-            switch (numX) {
-                case 0:
-                    coinX = -5;
-                    break;
-                case 1:
-                    coinX = 5;
-                    break;
-                case 2:
-                    coinX = 0;
-                    break;
-                default:
-                    break;
-            }
-            const coinY: number = 0;
-            let coinZ = initConinStartZ + i * coinDiffZ + ((Math.random() - 0.5) * coinDiffZ);
-            const coinPos: Vec3 = new Vec3(coinX, coinY, coinZ);
-            loader.loadRes("prefabs/" + itemName, Prefab, (err: any, prefab: Prefab) => {
-                if (err) {
-                    console.warn(err);
-                    return;
-                }
-                const fab = instantiate(prefab);
-                fab.position = coinPos;
-                fab.parent = find("ItemsManager");
-                fab.eulerAngles = new Vec3(0, 180, 0);
-                fab.scale = new Vec3(size, size, size);
-                this.initColliderObjects(fab, Constants.ColliderGroup.NORMALCOIN, Constants.ColliderGroup.CAR);
-            })
-        }
-    }
 
     private initColliderObjects(obj: Node, group: number, mask: number) {
         const collider = obj.getComponent(BoxColliderComponent);
@@ -209,8 +97,5 @@ export class ItemsMananger extends Component {
     // update (deltaTime: number) {
     //     // Your update function goes here.
     // }
-}
-function loadRes(arg0: string, Prefab: typeof Prefab, arg2: (err: any, prefab: Prefab) => void) {
-    throw new Error('Function not implemented.');
 }
 

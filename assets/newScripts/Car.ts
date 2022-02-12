@@ -101,7 +101,6 @@ export class Car extends Component {
     })
     envPrefab!: Prefab;
 
-
     @property({
         type: Node
     })
@@ -151,6 +150,9 @@ export class Car extends Component {
 
     private _isShutCamera: boolean = false;  //是否固定住摄像机
 
+    /**
+     * 用于计算阶段行驶距离
+     */
     private distanceCalPoint = new Vec3();
     private roadCount = 0;
 
@@ -161,7 +163,7 @@ export class Car extends Component {
 
     //积碳值
     private _carbon = 0;
-    private _carbonSpeed = 20;
+    private _carbonSpeed = 5;
 
     private _carbonReduce = 30;
     private _knockReduce = 30;
@@ -261,26 +263,11 @@ export class Car extends Component {
         this.knockBar.progress = this._knock / 100;
 
 
-
-
         //积碳
         this.currentCameraComponent.convertToUINode(nextPos, this.carbonBar.node.parent!, nextPos);
         this.carbonBar.node.setPosition(nextPos);
         this.carbonBar.progress = this._carbon / 100;
 
-
-        // //积碳效果被触发
-        // if (!this._isCarbonShakeCoolDown && this._carbon >= 50) {
-        //     let num = this.random(0, 200);
-        //     if (num <= this._carbon * 2) {
-        //         this.carbonShake();
-        //         this._isCarbonShakeCoolDown = true;
-        //         this.scheduleOnce(() => {
-        //             this._isCarbonShakeCoolDown = false;
-        //         }, 3);
-        //     }
-
-        // }
 
         //积碳效果被触发
         if (!this._isCarbonShakeCoolDown && this._knock >= 50) {
@@ -502,20 +489,23 @@ export class Car extends Component {
 
     }
 
-    private _running(dt: number) { //赛车移动
+    /**
+     * 赛车移动
+     * @param dt 
+     */
+    private _running(dt: number) {
 
-        // console.log('移动>>>>>>>')
+        //移动
         this._offsetPos.set(this.node.worldPosition);
         this._offsetPos.z += this.speed * dt * 100;
-        // console.log(this._offsetPos,this.speed,'设置坐标点')
-        this.node.setWorldPosition(this._offsetPos)
+        this.node.setWorldPosition(this._offsetPos);
 
 
-        //拼接路
-        if (Math.abs(Math.abs(this.node.worldPosition.z) - Math.abs(this.distanceCalPoint.z)) > 300) {
+        let distance = Math.abs(Math.abs(this.node.worldPosition.z) - Math.abs(this.distanceCalPoint.z));
+
+        //更新积碳值
+        if (distance >= 100) {
             this.distanceCalPoint.set(this.node.worldPosition);
-            this.AppendRoad();
-
             if (this._carbon < 100 - this._carbonSpeed) {
                 this._carbon += this._carbonSpeed;
             } else {
@@ -524,35 +514,6 @@ export class Car extends Component {
 
         }
 
-
-        // Vec3.subtract(this.temVec, this._endPos, this._offsetPos) //判断起点 -- 终点的距离
-
-        // if (this.temVec.length() <= 0.01) {
-
-        //     this._isMove = false    //到终点了
-        //     customerListener.dispatch(Constants.GameStatus.GAME_OVER)   //游戏结束
-        // }
-
-    }
-
-
-    private AppendRoad() {
-        const newPos: Vec3 = new Vec3(this.roadGroup.worldPosition.x, this.roadGroup.worldPosition.y, this.roadCount * 300 + 900);
-        this.roadCount++;
-        if (this.envItems.length > 4) {
-
-            let first = this.envItems[0];
-            this.envItems.splice(0, 1);
-            first.position = newPos;
-            first.getComponent(EnvItemControl)?.updateRandom();
-            this.envItems.push(first);
-
-        } else {
-            let fab = instantiate(this.envPrefab);
-            fab.position = newPos;
-            fab.parent = this.roadGroup;
-            this.envItems.push(fab);
-        }
     }
 
     public setNode(entry: Node) { //设置起跑点
