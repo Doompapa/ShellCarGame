@@ -9,9 +9,7 @@
   },
   "_techIdx": 0,
   "_defines": [
-    {
-      "USE_ALBEDO_MAP": true
-    },
+    {},
     {},
     {}
   ],
@@ -30,14 +28,14 @@
   ],
   "_props": [
     {
-      "alphaThreshold": 0,
-      "occlusion": 0,
-      "roughness": 0,
-      "metallic": 0,
-      "mainTexture": {
-        "__uuid__": "e458c1cb-f7e9-4f90-8b38-16b3ee1af84f@6c48a",
-        "__expectedType__": "cc.Texture2D"
-      }
+      "albedoScale": {
+        "__type__": "cc.Vec3",
+        "x": 1,
+        "y": 0.4,
+        "z": 0
+      },
+      "roughness": 1,
+      "metallic": 0.400000005960464
     },
     {},
     {}

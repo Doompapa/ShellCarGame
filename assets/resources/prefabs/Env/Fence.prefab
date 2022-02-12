@@ -14,6 +14,7 @@
     "__type__": "cc.Node",
     "_name": "Fence",
     "_objFlags": 0,
+    "__editorExtras__": {},
     "_parent": null,
     "_children": [
       {
@@ -27,9 +28,9 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0,
+      "x": 15,
       "y": 0,
-      "z": 0
+      "z": 10
     },
     "_lrot": {
       "__type__": "cc.Quat",
@@ -151,30 +152,39 @@
       "__id__": 3
     },
     "_enabled": true,
+    "__prefab": {
+      "__id__": 5
+    },
     "_materials": [
       {
-        "__uuid__": "3235f766-1db0-412d-b744-d9abbacf2aa6"
+        "__uuid__": "3235f766-1db0-412d-b744-d9abbacf2aa6",
+        "__expectedType__": "cc.Material"
       },
       {
-        "__uuid__": "cd8ab04a-3964-4442-b96d-e440ac0a5b87"
+        "__uuid__": "cd8ab04a-3964-4442-b96d-e440ac0a5b87",
+        "__expectedType__": "cc.Material"
       },
       {
-        "__uuid__": "a624f4c5-4dd6-4213-8bef-61eb2c6a5828"
+        "__uuid__": "a624f4c5-4dd6-4213-8bef-61eb2c6a5828",
+        "__expectedType__": "cc.Material"
       }
     ],
     "_visFlags": 0,
     "lightmapSettings": {
-      "__id__": 5
+      "__id__": 6
     },
     "_mesh": {
-      "__uuid__": "b0fb4734-261e-4d6e-b35f-363f118407c5@b2c37"
+      "__uuid__": "b0fb4734-261e-4d6e-b35f-363f118407c5@b2c37",
+      "__expectedType__": "cc.Mesh"
     },
     "_shadowCastingMode": 0,
+    "_shadowReceivingMode": 1,
     "_enableMorph": true,
-    "_id": "",
-    "__prefab": {
-      "__id__": 6
-    }
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "35xaTtgMRExptPIi+GQufK"
   },
   {
     "__type__": "cc.ModelLightmapSettings",
@@ -191,10 +201,6 @@
     "_receiveShadow": false,
     "_recieveShadow": false,
     "_lightmapSize": 64
-  },
-  {
-    "__type__": "cc.CompPrefabInfo",
-    "fileId": "35xaTtgMRExptPIi+GQufK"
   },
   {
     "__type__": "cc.PrefabInfo",

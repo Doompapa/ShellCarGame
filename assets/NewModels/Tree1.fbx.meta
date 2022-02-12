@@ -47,38 +47,6 @@
         "events": []
       }
     },
-    "90ca9": {
-      "importer": "gltf-material",
-      "uuid": "cd2dde16-79fe-4304-8f5c-28396d59b2df@90ca9",
-      "displayName": "",
-      "id": "90ca9",
-      "name": "hijau daun dot.material",
-      "ver": "1.0.14",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
-    },
-    "0daac": {
-      "importer": "gltf-material",
-      "uuid": "cd2dde16-79fe-4304-8f5c-28396d59b2df@0daac",
-      "displayName": "",
-      "id": "0daac",
-      "name": "oranye.001.material",
-      "ver": "1.0.14",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 1
-      }
-    },
     "373fb": {
       "importer": "gltf-scene",
       "uuid": "cd2dde16-79fe-4304-8f5c-28396d59b2df@373fb",
@@ -121,13 +89,15 @@
       "skeletons": [],
       "textures": [],
       "materials": [
-        "cd2dde16-79fe-4304-8f5c-28396d59b2df@90ca9",
-        "cd2dde16-79fe-4304-8f5c-28396d59b2df@0daac"
+        "cbc8e25f-4d8c-4efd-8f35-6ae2f11da324",
+        "d41d8b0a-b63e-4df7-a103-b148811843a4"
       ],
       "scenes": [
         "cd2dde16-79fe-4304-8f5c-28396d59b2df@373fb"
       ]
     },
-    "legacyFbxImporter": true
+    "legacyFbxImporter": true,
+    "dumpMaterials": true,
+    "materialDumpDir": "db://assets/NewModels/Materials_Tree1"
   }
 }

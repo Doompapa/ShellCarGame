@@ -2,40 +2,39 @@
   "ver": "1.0.22",
   "importer": "image",
   "imported": true,
-  "uuid": "54e9d65a-a3ef-4a89-a047-55d2d915aea3",
+  "uuid": "e458c1cb-f7e9-4f90-8b38-16b3ee1af84f",
   "files": [
-    ".png",
+    ".jpg",
     ".json"
   ],
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "54e9d65a-a3ef-4a89-a047-55d2d915aea3@6c48a",
-      "displayName": "资源 1",
+      "uuid": "e458c1cb-f7e9-4f90-8b38-16b3ee1af84f@6c48a",
+      "displayName": "壳牌威澎logo",
       "id": "6c48a",
       "name": "texture",
-      "ver": "1.0.21",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
       "userData": {
         "wrapModeS": "repeat",
         "wrapModeT": "repeat",
         "minfilter": "linear",
         "magfilter": "linear",
         "mipfilter": "none",
-        "premultiplyAlpha": false,
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "54e9d65a-a3ef-4a89-a047-55d2d915aea3"
-      }
+        "imageUuidOrDatabaseUri": "e458c1cb-f7e9-4f90-8b38-16b3ee1af84f"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
     }
   },
   "userData": {
+    "hasAlpha": false,
     "type": "texture",
-    "redirect": "54e9d65a-a3ef-4a89-a047-55d2d915aea3@6c48a",
-    "hasAlpha": true
+    "redirect": "e458c1cb-f7e9-4f90-8b38-16b3ee1af84f@6c48a"
   }
 }
