@@ -12,19 +12,33 @@ export class EnvItemControl extends Component {
     // @property
     // serializableDummy = 0;
 
-    //广告牌控制
+
+    @property({
+        type: Prefab,
+    })
+    leftBuild1!: Prefab;
+
+    @property({
+        type: Prefab,
+    })
+    leftBuild2!: Prefab;
+
     @property({
         type: Node,
     })
-    adBoard1!: Node;
+    leftEnvNode!: Node;
+
 
     @property({
         type: Node,
     })
-    adBoard2!: Node;
+    rightEnvNode!: Node;
 
+    @property({
+        type: Node,
+    })
+    farEnvNode!: Node;
 
-    private itemsMananger!: Node;
 
     @property({
         type: Prefab,
@@ -36,11 +50,17 @@ export class EnvItemControl extends Component {
     })
     Knock!: Prefab
 
+    private itemsMananger!: Node;
+
     /**
      * 是否生成道具
      */
     @property
     public isCreate = true;
+
+    onLoad() {
+
+    }
 
     start() {
         let temp = find("ItemsManager");
@@ -49,64 +69,88 @@ export class EnvItemControl extends Component {
         }
         // Your initialization goes here.
         this.updateRandom();
+
+    }
+
+
+    public updateEnv() {
+        //左边建筑景物
+        for (let i = 0; i < this.leftEnvNode.children.length; i++) {
+            this.leftEnvNode.children[i].active = false;
+        }
+        let randomLeft = this.random(0, this.leftEnvNode.children.length + 2);
+        if (randomLeft < this.leftEnvNode.children.length) {
+            this.leftEnvNode.children[randomLeft].active = true;
+        }
+
+
+        //右边景物
+        for (let i = 0; i < this.rightEnvNode.children.length; i++) {
+            this.rightEnvNode.children[i].active = false;
+        }
+        let randomRight = this.random(0, this.rightEnvNode.children.length);
+        if (randomRight < this.rightEnvNode.children.length) {
+            this.rightEnvNode.children[randomRight].active = true;
+        }
+
+        //远处景物
+        for (let i = 0; i < this.farEnvNode.children.length; i++) {
+            this.farEnvNode.children[i].active = false;
+        }
+        let randomFar = this.random(0, this.farEnvNode.children.length + 2);
+        if (randomFar < this.farEnvNode.children.length) {
+            this.farEnvNode.children[randomFar].active = true;
+        }
+
+
+        // let leftItem;
+        // if (randomLeft >= 5) {
+        //     leftItem = instantiate(this.leftBuild1);
+        // } else {
+        //     leftItem = instantiate(this.leftBuild2);
+        // }
+        // leftItem.parent = this.leftEnvNode;
+        // leftItem.worldPosition = this.leftEnvNode.worldPosition;
     }
 
     /**
      * 刷新环境，包括道具
      */
     public updateRandom() {
-        // let randomAd = this.random(1, 5);
-        // if (randomAd <= 2) {
-        //     this.adBoard1.active = false;
-        //     this.adBoard2.active = false;
-        // } else {
-        //     if (randomAd <= 3) {
-        //         this.adBoard1.active = true;
-        //         this.adBoard2.active = false;
-        //     } else {
-        //         this.adBoard1.active = false;
-        //         this.adBoard2.active = true;
-        //     }
-        // }
-
+        this.updateEnv();
         if (this.isCreate) {
-            for (let i = 0; i < 3; i++) {
-                let whichOne = this.random(0, 4);
-                let fab = null;
-                if (whichOne <= 2) {
-                    fab = instantiate(this.Knock);
-                } else {
-                    fab = instantiate(this.VShell);
-                }
-
-                //随机车道
-                let randomNum = this.random(-1, 2);
-                fab.position = new Vec3(10 * randomNum, 0, this.node.position.z + this.random(80, 100) * i);
-
-                fab.parent = find("ItemsManager");
-                fab.eulerAngles = new Vec3(0, 0, 0);
-                this.initColliderObjects(fab, Constants.ColliderGroup.NORMALCOIN, Constants.ColliderGroup.CAR);
-
-
-
-                let whichTwo = this.random(0, 4);
-                let fabTwo = null;
-                if (whichTwo <= 2) {
-                    fabTwo = instantiate(this.Knock);
-                } else {
-                    fabTwo = instantiate(this.VShell);
-                }
-
-                let randomNUmSecond = this.random(-1, 2);
-                while (randomNUmSecond == randomNum) {
-                    randomNUmSecond = this.random(-1, 2);
-                }
-                fabTwo.position = new Vec3(10 * randomNUmSecond, 0, this.node.position.z + this.random(80, 100) * i);
-                fabTwo.parent = find("ItemsManager");
-                fabTwo.eulerAngles = new Vec3(0, 0, 0);
-                this.initColliderObjects(fabTwo, Constants.ColliderGroup.NORMALCOIN, Constants.ColliderGroup.CAR);
-
+            let whichOne = this.random(0, 4);
+            let fab = null;
+            if (whichOne <= 2) {
+                fab = instantiate(this.Knock);
+            } else {
+                fab = instantiate(this.VShell);
             }
+
+            //随机车道
+            let randomNum = this.random(-1, 2);
+            fab.position = new Vec3(10 * randomNum, 0, this.node.position.z + this.random(60, 70));
+
+            fab.parent = this.itemsMananger;
+            fab.eulerAngles = new Vec3(0, 0, 0);
+            this.initColliderObjects(fab, Constants.ColliderGroup.NORMALCOIN, Constants.ColliderGroup.CAR);
+
+            let whichTwo = this.random(0, 4);
+            let fabTwo = null;
+            if (whichTwo <= 2) {
+                fabTwo = instantiate(this.Knock);
+            } else {
+                fabTwo = instantiate(this.VShell);
+            }
+
+            let randomNUmSecond = this.random(-1, 2);
+            while (randomNUmSecond == randomNum) {
+                randomNUmSecond = this.random(-1, 2);
+            }
+            fabTwo.position = new Vec3(10 * randomNUmSecond, 0, this.node.position.z + this.random(60, 70));
+            fabTwo.parent = this.itemsMananger;
+            fabTwo.eulerAngles = new Vec3(0, 0, 0);
+            this.initColliderObjects(fabTwo, Constants.ColliderGroup.NORMALCOIN, Constants.ColliderGroup.CAR);
         }
 
     }
@@ -117,7 +161,6 @@ export class EnvItemControl extends Component {
             collider.setGroup(group);
             collider.setMask(mask);
         }
-        //console.log(collider);
     }
 
     /**

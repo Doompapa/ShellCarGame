@@ -1,0 +1,68 @@
+{
+  "ver": "2.1.10",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "96c43966-621a-4c42-a658-f5b3777e2b4f",
+  "files": [],
+  "subMetas": {
+    "84b54": {
+      "importer": "gltf-mesh",
+      "uuid": "96c43966-621a-4c42-a658-f5b3777e2b4f@84b54",
+      "displayName": "",
+      "id": "84b54",
+      "name": "Corner Building_Material0.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "74ca3": {
+      "importer": "gltf-scene",
+      "uuid": "96c43966-621a-4c42-a658-f5b3777e2b4f@74ca3",
+      "displayName": "",
+      "id": "74ca3",
+      "name": "Corner Building.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "redirect": "96c43966-621a-4c42-a658-f5b3777e2b4f@74ca3",
+    "assetFinder": {
+      "meshes": [
+        "96c43966-621a-4c42-a658-f5b3777e2b4f@84b54"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "2724e4bb-f363-48a6-8904-7b190b639c85",
+        "bc32f43d-72ef-4013-a2c4-2f9c6c032574",
+        "e8aec6b8-69a3-494d-ba8b-fd3d75477715",
+        "3fdb89dc-261a-4f84-b0fb-2a71c2b59ba4",
+        "b1c52805-f798-4edc-9921-b4d3bfac5990",
+        "6b181a83-0414-4199-a28b-aa93f7d284e4",
+        "bc906e10-8870-41b7-80aa-1be1efdc5435"
+      ],
+      "scenes": [
+        "96c43966-621a-4c42-a658-f5b3777e2b4f@74ca3"
+      ]
+    },
+    "dumpMaterials": true,
+    "materialDumpDir": "db://assets/NewModels/House_2/Materials_Corner Building"
+  }
+}

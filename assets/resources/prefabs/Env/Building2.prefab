@@ -14,6 +14,7 @@
     "__type__": "cc.Node",
     "_name": "Building2",
     "_objFlags": 0,
+    "__editorExtras__": {},
     "_parent": null,
     "_children": [
       {
@@ -85,9 +86,9 @@
     },
     "_lscale": {
       "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
-      "z": 1
+      "x": 2,
+      "y": 2,
+      "z": 2
     },
     "_layer": 1073741824,
     "_euler": {
@@ -151,24 +152,31 @@
       "__id__": 3
     },
     "_enabled": true,
+    "__prefab": {
+      "__id__": 5
+    },
     "_materials": [
       {
-        "__uuid__": "bb1a3ef9-795b-42b9-9fb4-fd6f8ed227bf@0931c"
+        "__uuid__": "bb1a3ef9-795b-42b9-9fb4-fd6f8ed227bf@0931c",
+        "__expectedType__": "cc.Material"
       }
     ],
     "_visFlags": 0,
     "lightmapSettings": {
-      "__id__": 5
+      "__id__": 6
     },
     "_mesh": {
-      "__uuid__": "bb1a3ef9-795b-42b9-9fb4-fd6f8ed227bf@b3886"
+      "__uuid__": "bb1a3ef9-795b-42b9-9fb4-fd6f8ed227bf@b3886",
+      "__expectedType__": "cc.Mesh"
     },
     "_shadowCastingMode": 0,
+    "_shadowReceivingMode": 1,
     "_enableMorph": true,
-    "_id": "",
-    "__prefab": {
-      "__id__": 6
-    }
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "beNPLSVM5IFYqfHWSgYj+U"
   },
   {
     "__type__": "cc.ModelLightmapSettings",
@@ -185,10 +193,6 @@
     "_receiveShadow": false,
     "_recieveShadow": false,
     "_lightmapSize": 64
-  },
-  {
-    "__type__": "cc.CompPrefabInfo",
-    "fileId": "beNPLSVM5IFYqfHWSgYj+U"
   },
   {
     "__type__": "cc.PrefabInfo",

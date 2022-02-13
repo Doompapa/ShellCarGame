@@ -12,7 +12,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "House_4",
+    "_name": "CornerBuilding",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_parent": null,
@@ -23,96 +23,6 @@
     ],
     "_active": true,
     "_components": [],
-    "_prefab": {
-      "__id__": 9
-    },
-    "_lpos": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_lrot": {
-      "__type__": "cc.Quat",
-      "x": 0,
-      "y": 0,
-      "z": 0,
-      "w": 1
-    },
-    "_lscale": {
-      "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
-      "z": 1
-    },
-    "_layer": 1073741824,
-    "_euler": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_id": ""
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "RootNode",
-    "_objFlags": 512,
-    "_parent": {
-      "__id__": 1
-    },
-    "_children": [
-      {
-        "__id__": 3
-      }
-    ],
-    "_active": true,
-    "_components": [],
-    "_prefab": {
-      "__id__": 8
-    },
-    "_lpos": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_lrot": {
-      "__type__": "cc.Quat",
-      "x": 0,
-      "y": 0,
-      "z": 0,
-      "w": 1
-    },
-    "_lscale": {
-      "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
-      "z": 1
-    },
-    "_layer": 1073741824,
-    "_euler": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_id": ""
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "House_4",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 2
-    },
-    "_children": [],
-    "_active": true,
-    "_components": [
-      {
-        "__id__": 4
-      }
-    ],
     "_prefab": {
       "__id__": 7
     },
@@ -131,9 +41,54 @@
     },
     "_lscale": {
       "__type__": "cc.Vec3",
-      "x": 300,
-      "y": 300,
-      "z": 300
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "Corner Building",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 1
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 3
+      }
+    ],
+    "_prefab": {
+      "__id__": 6
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 2,
+      "y": 2,
+      "z": 2
     },
     "_layer": 1073741824,
     "_euler": {
@@ -149,40 +104,68 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 3
+      "__id__": 2
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 5
+      "__id__": 4
     },
     "_materials": [
       {
-        "__uuid__": "ddd24b8e-9bbf-4eb9-bf32-0c9f65479dc1",
+        "__uuid__": "2724e4bb-f363-48a6-8904-7b190b639c85",
         "__expectedType__": "cc.Material"
       },
       {
-        "__uuid__": "0d2c5f67-4817-483c-bb73-d62442022da4",
+        "__uuid__": "bc32f43d-72ef-4013-a2c4-2f9c6c032574",
         "__expectedType__": "cc.Material"
       },
       {
-        "__uuid__": "1316d103-37f4-46f1-9499-f95870c48603",
+        "__uuid__": "e8aec6b8-69a3-494d-ba8b-fd3d75477715",
         "__expectedType__": "cc.Material"
       },
       {
-        "__uuid__": "3c14be7c-4aa2-4c06-a31c-48fe46bbfb5e",
+        "__uuid__": "3fdb89dc-261a-4f84-b0fb-2a71c2b59ba4",
         "__expectedType__": "cc.Material"
       },
       {
-        "__uuid__": "3048ecab-364e-41a4-b1e5-c15676f1b9de",
+        "__uuid__": "bc32f43d-72ef-4013-a2c4-2f9c6c032574",
+        "__expectedType__": "cc.Material"
+      },
+      {
+        "__uuid__": "b1c52805-f798-4edc-9921-b4d3bfac5990",
+        "__expectedType__": "cc.Material"
+      },
+      {
+        "__uuid__": "2724e4bb-f363-48a6-8904-7b190b639c85",
+        "__expectedType__": "cc.Material"
+      },
+      {
+        "__uuid__": "6b181a83-0414-4199-a28b-aa93f7d284e4",
+        "__expectedType__": "cc.Material"
+      },
+      {
+        "__uuid__": "bc906e10-8870-41b7-80aa-1be1efdc5435",
+        "__expectedType__": "cc.Material"
+      },
+      {
+        "__uuid__": "2724e4bb-f363-48a6-8904-7b190b639c85",
+        "__expectedType__": "cc.Material"
+      },
+      {
+        "__uuid__": "6b181a83-0414-4199-a28b-aa93f7d284e4",
+        "__expectedType__": "cc.Material"
+      },
+      {
+        "__uuid__": "6b181a83-0414-4199-a28b-aa93f7d284e4",
         "__expectedType__": "cc.Material"
       }
     ],
     "_visFlags": 0,
     "lightmapSettings": {
-      "__id__": 6
+      "__id__": 5
     },
     "_mesh": {
-      "__uuid__": "c0ab7b77-5d1f-4b6e-9be1-0bd76491ec37@7aee0",
+      "__uuid__": "96c43966-621a-4c42-a658-f5b3777e2b4f@84b54",
       "__expectedType__": "cc.Mesh"
     },
     "_shadowCastingMode": 0,
@@ -192,7 +175,7 @@
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "1evrVJipZJ94uYu374SaZn"
+    "fileId": "23aiOs6VVbTKVk2b/tEBKF"
   },
   {
     "__type__": "cc.ModelLightmapSettings",
@@ -218,7 +201,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "aadyC7LjtIXrIkqu3gauKz"
+    "fileId": "742kRHFP1RSKrBiKD6APhl"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -228,16 +211,6 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "6eWCiLdWJNIbPXe4DQ6k00"
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__id__": 0
-    },
-    "fileId": "bcR7PnOBlEiJhOEbXjP1Yn"
+    "fileId": "b9qWlda3JQH4rJGJmWMJqy"
   }
 ]

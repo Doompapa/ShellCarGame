@@ -37,7 +37,7 @@ export class Tree extends Component {
         }
     }
 
-    random(lower, upper) {
+    random(lower: number, upper: number) {
         return Math.floor(Math.random() * (upper - lower)) + lower;
     }
 }
