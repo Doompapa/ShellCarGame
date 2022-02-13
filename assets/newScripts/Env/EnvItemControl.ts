@@ -12,17 +12,6 @@ export class EnvItemControl extends Component {
     // @property
     // serializableDummy = 0;
 
-
-    @property({
-        type: Prefab,
-    })
-    leftBuild1!: Prefab;
-
-    @property({
-        type: Prefab,
-    })
-    leftBuild2!: Prefab;
-
     @property({
         type: Node,
     })
@@ -101,16 +90,6 @@ export class EnvItemControl extends Component {
         if (randomFar < this.farEnvNode.children.length) {
             this.farEnvNode.children[randomFar].active = true;
         }
-
-
-        // let leftItem;
-        // if (randomLeft >= 5) {
-        //     leftItem = instantiate(this.leftBuild1);
-        // } else {
-        //     leftItem = instantiate(this.leftBuild2);
-        // }
-        // leftItem.parent = this.leftEnvNode;
-        // leftItem.worldPosition = this.leftEnvNode.worldPosition;
     }
 
     /**

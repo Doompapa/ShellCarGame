@@ -14,6 +14,7 @@
     "__type__": "cc.Node",
     "_name": "leveUp",
     "_objFlags": 0,
+    "__editorExtras__": {},
     "_parent": null,
     "_children": [
       {
@@ -117,7 +118,8 @@
     },
     "_materials": [
       {
-        "__uuid__": "d4486615-32c0-4e29-84f6-e207ff4b2f0f"
+        "__uuid__": "d4486615-32c0-4e29-84f6-e207ff4b2f0f",
+        "__expectedType__": "cc.Material"
       }
     ],
     "_visFlags": 0,
@@ -174,6 +176,13 @@
       "__id__": 17
     },
     "bursts": [],
+    "_renderCulling": false,
+    "_cullingMode": 0,
+    "_aabbHalfX": 0,
+    "_aabbHalfY": 0,
+    "_aabbHalfZ": 0,
+    "_dataCulling": false,
+    "enableCulling": false,
     "_colorOverLifetimeModule": {
       "__id__": 18
     },
@@ -204,7 +213,6 @@
     "renderer": {
       "__id__": 55
     },
-    "enableCulling": false,
     "_prewarm": false,
     "_capacity": 80,
     "_simulationSpace": 0,
@@ -403,10 +411,10 @@
   {
     "__type__": "cc.CurveRange",
     "mode": 1,
-    "multiplier": 1,
     "spline": {
       "__id__": 24
-    }
+    },
+    "multiplier": 1
   },
   {
     "__type__": "cc.RealCurve",
@@ -420,9 +428,9 @@
         "interpolationMode": 2,
         "tangentWeightMode": 0,
         "value": 0.22,
-        "leftTangent": 2,
         "rightTangent": 3.1,
         "rightTangentWeight": 0,
+        "leftTangent": 2,
         "leftTangentWeight": 0,
         "easingMethod": 0
       },
@@ -431,9 +439,9 @@
         "interpolationMode": 2,
         "tangentWeightMode": 0,
         "value": 0,
-        "leftTangent": -2.37,
         "rightTangent": 0,
         "rightTangentWeight": 0,
+        "leftTangent": -2.37,
         "leftTangentWeight": 0,
         "easingMethod": 0
       }
@@ -632,10 +640,10 @@
   {
     "__type__": "cc.CurveRange",
     "mode": 1,
-    "multiplier": 1,
     "spline": {
       "__id__": 48
-    }
+    },
+    "multiplier": 1
   },
   {
     "__type__": "cc.RealCurve",
@@ -649,9 +657,9 @@
         "interpolationMode": 2,
         "tangentWeightMode": 0,
         "value": 0,
-        "leftTangent": 1,
         "rightTangent": 1,
         "rightTangentWeight": 0,
+        "leftTangent": 1,
         "leftTangentWeight": 0,
         "easingMethod": 0
       },
@@ -660,9 +668,9 @@
         "interpolationMode": 2,
         "tangentWeightMode": 0,
         "value": 1,
-        "leftTangent": 1,
         "rightTangent": 1,
         "rightTangentWeight": 0,
+        "leftTangent": 1,
         "leftTangentWeight": 0,
         "easingMethod": 0
       }
@@ -743,9 +751,11 @@
     "_lengthScale": 1,
     "_mesh": null,
     "_mainTexture": {
-      "__uuid__": "31c7dae1-9297-4870-8e53-e1399a2ad338@6c48a"
+      "__uuid__": "31c7dae1-9297-4870-8e53-e1399a2ad338@6c48a",
+      "__expectedType__": "cc.Texture2D"
     },
-    "_useGPU": false
+    "_useGPU": false,
+    "_alignSpace": 2
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -818,7 +828,8 @@
     },
     "_materials": [
       {
-        "__uuid__": "2783f408-937b-49f7-bbf9-7097f1d5da3a"
+        "__uuid__": "2783f408-937b-49f7-bbf9-7097f1d5da3a",
+        "__expectedType__": "cc.Material"
       }
     ],
     "_visFlags": 0,
@@ -826,7 +837,8 @@
       "__id__": 60
     },
     "_mesh": {
-      "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@2e76e"
+      "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@2e76e",
+      "__expectedType__": "cc.Mesh"
     },
     "_shadowCastingMode": 0,
     "_shadowReceivingMode": 1,
@@ -867,11 +879,13 @@
     "playOnLoad": true,
     "_clips": [
       {
-        "__uuid__": "0a73f357-98e9-40cb-8123-57b54bea0c33"
+        "__uuid__": "0a73f357-98e9-40cb-8123-57b54bea0c33",
+        "__expectedType__": "cc.AnimationClip"
       }
     ],
     "_defaultClip": {
-      "__uuid__": "0a73f357-98e9-40cb-8123-57b54bea0c33"
+      "__uuid__": "0a73f357-98e9-40cb-8123-57b54bea0c33",
+      "__expectedType__": "cc.AnimationClip"
     },
     "_id": ""
   },
@@ -947,7 +961,8 @@
     },
     "_materials": [
       {
-        "__uuid__": "da268668-7ff0-4842-a1ff-cf06b727aa7e"
+        "__uuid__": "da268668-7ff0-4842-a1ff-cf06b727aa7e",
+        "__expectedType__": "cc.Material"
       }
     ],
     "_visFlags": 0,
@@ -1004,6 +1019,13 @@
       "__id__": 85
     },
     "bursts": [],
+    "_renderCulling": false,
+    "_cullingMode": 0,
+    "_aabbHalfX": 0,
+    "_aabbHalfY": 0,
+    "_aabbHalfZ": 0,
+    "_dataCulling": false,
+    "enableCulling": false,
     "_colorOverLifetimeModule": {
       "__id__": 86
     },
@@ -1034,9 +1056,8 @@
     "renderer": {
       "__id__": 122
     },
-    "enableCulling": false,
     "_prewarm": false,
-    "_capacity": 70,
+    "_capacity": 10,
     "_simulationSpace": 1,
     "_id": ""
   },
@@ -1124,10 +1145,10 @@
   {
     "__type__": "cc.CurveRange",
     "mode": 1,
-    "multiplier": 2,
     "spline": {
       "__id__": 77
-    }
+    },
+    "multiplier": 2
   },
   {
     "__type__": "cc.RealCurve",
@@ -1141,9 +1162,9 @@
         "interpolationMode": 2,
         "tangentWeightMode": 0,
         "value": 0.6,
-        "leftTangent": 0,
         "rightTangent": 0.4,
         "rightTangentWeight": 0,
+        "leftTangent": 0,
         "leftTangentWeight": 0,
         "easingMethod": 0
       },
@@ -1152,9 +1173,9 @@
         "interpolationMode": 2,
         "tangentWeightMode": 0,
         "value": 0.23,
-        "leftTangent": -0.62,
         "rightTangent": 0,
         "rightTangentWeight": 0,
+        "leftTangent": -0.62,
         "leftTangentWeight": 0,
         "easingMethod": 0
       }
@@ -1307,10 +1328,10 @@
   {
     "__type__": "cc.CurveRange",
     "mode": 1,
-    "multiplier": 1,
     "spline": {
       "__id__": 92
-    }
+    },
+    "multiplier": 1
   },
   {
     "__type__": "cc.RealCurve",
@@ -1324,9 +1345,9 @@
         "interpolationMode": 2,
         "tangentWeightMode": 0,
         "value": 0.57,
-        "leftTangent": 2,
         "rightTangent": 0.75,
         "rightTangentWeight": 0,
+        "leftTangent": 2,
         "leftTangentWeight": 0,
         "easingMethod": 0
       },
@@ -1335,9 +1356,9 @@
         "interpolationMode": 2,
         "tangentWeightMode": 0,
         "value": 0.14,
-        "leftTangent": -1.52,
         "rightTangent": 0,
         "rightTangentWeight": 0,
+        "leftTangent": -1.52,
         "leftTangentWeight": 0,
         "easingMethod": 0
       }
@@ -1612,9 +1633,11 @@
     "_lengthScale": 5,
     "_mesh": null,
     "_mainTexture": {
-      "__uuid__": "552b254d-5b4b-4809-b1d8-3e4e1665a0d7@6c48a"
+      "__uuid__": "552b254d-5b4b-4809-b1d8-3e4e1665a0d7@6c48a",
+      "__expectedType__": "cc.Texture2D"
     },
-    "_useGPU": false
+    "_useGPU": false,
+    "_alignSpace": 2
   },
   {
     "__type__": "cc.PrefabInfo",
