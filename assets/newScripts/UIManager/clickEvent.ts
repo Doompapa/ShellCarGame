@@ -21,7 +21,10 @@ export class ClickEvent extends Component {
         }else{
             console.log("Canvas/TipUI/operationTip 节点为空请检查");
         }
+    }
 
+    public openBox(){
+        customerListener.dispatch(Constants.GameStatus.OPEN_BOX)
     }
 
 }

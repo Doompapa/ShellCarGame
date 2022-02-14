@@ -14,9 +14,6 @@ export class ResourceManager extends Component {
     })
     knockSound!: AudioClip;
 
-    @property
-    totalTime: number = 0;
-
     public playCoinSound() {
         const audioSource = this.node.getComponent(AudioSourceComponent);
         if (audioSource) {

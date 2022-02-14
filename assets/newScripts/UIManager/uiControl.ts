@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, LabelComponent, SpriteComponent, find, AnimationComponent } from 'cc';
+import { _decorator, Component, Node, LabelComponent, SpriteComponent, find, AnimationComponent, tween, Vec2, Vec3, Tween } from 'cc';
 import { Car } from '../Car';
 import { Constants } from '../Other/constants';
 import { customerListener } from '../Other/listener';
@@ -49,21 +49,41 @@ export class TabControl extends Component {
 
 
     @property({
+        type: Node
+    })
+    GameOverParent!: Node  //游戏结束UI父节点
+
+    @property({
         type: LabelComponent
     })
-    GameOverLabel!: LabelComponent  //游戏结束UI
+    GameOverDistance!: LabelComponent  //游戏结束UI
 
-    public countArr = [0, 0, 0]
+    @property({
+        type: LabelComponent
+    })
+    VShellLabel!: LabelComponent  //道具数量
+
+    @property({
+        type: Node
+    })
+    Box!: Node  //宝箱
+
+    @property({
+        type: Node
+    })
+    BoxRed!: Node  //宝箱红点
+
+
+    private VShellCount = 0;
 
     public timeCount = 0; //开始计时，每隔15S进行一次关卡替换
     private GameTotalTime = 45;
 
-
-    private totalTime: number = 0;
-
     public runingTime: number = 0;
 
     private startZ = 0;
+
+    private boxTween !: Tween<Node>;
 
 
     update() {
@@ -72,15 +92,7 @@ export class TabControl extends Component {
 
     start() {
         // Your initialization goes here.
-        let resource = find("Resource");
-        if (resource) {
-            let resourceManager = resource.getComponent(ResourceManager);
-            if (resourceManager) {
-                this.totalTime = resourceManager.totalTime;
-            }
-        }
 
-        customerListener.on(Constants.GameStatus.GET_COIN, this._addProgressCount, this)
         customerListener.on(Constants.GameStatus.GET_VSHELL, this._getVShell, this)
         customerListener.on(Constants.GameStatus.GAME_CLOCK, () => {
             this.clock.active = true;
@@ -88,7 +100,7 @@ export class TabControl extends Component {
             this.schedule(this._updateRuning, 0.1);
         }, this)
         customerListener.on(Constants.GameStatus.GAME_OVER, this._gameOverEvent, this);
-
+        customerListener.on(Constants.GameStatus.OPEN_BOX, this._openBox, this);
         let car = this.mainCar.getComponent(Car);
         if (car) {
             this.startZ = car.startPos.position.z;
@@ -96,14 +108,13 @@ export class TabControl extends Component {
 
         this.clockTxt.string = (this.GameTotalTime).toString();
 
-        // this._clock = this.clock.getComponent(SpriteComponent)
-        // this._progress2Node = find('Canvas/GameUI/centerUI/tab/progress2').getComponent(SpriteComponent);
-        // this._progress3Node = find('Canvas/GameUI/centerUI/tab/progress3').getComponent(SpriteComponent);
-        // this._coinTipTxt = this.coinTip.getComponent(LabelComponent)
+        this.GameOverParent.active = false;
+
     }
 
     private _getVShell(count: number) {
-        this.VShellTxt.string = "x" + count.toString();
+        this.VShellCount = count;
+        this.VShellTxt.string = "x" + this.VShellCount.toString();
     }
 
     private _updateRuning() {
@@ -115,36 +126,6 @@ export class TabControl extends Component {
         this.distanceLabel.string = Math.floor(temp).toString() + "m";
     }
 
-    private _addProgressCount(count: number) {   //加分数
-
-
-        // console.log('这里加分数', this._level)
-        // if (this._level == 2) {  //第二关
-        //     this.countArr[1] += count;
-        //     this.progress[1].string = this.countArr[1].toString()
-        //     // console.log(this.progress[1].,'字体颜色')
-        //     // this.progress[1].color = new cc.color(255, 255, 255, 255);
-        //     // this._progress2Node.color = new cc.color(255, 255, 255, 255);
-
-
-        // } else if (this._level == 3) {  //第三关
-        //     this.countArr[2] += count;
-        //     this.progress[2].string = this.countArr[2].toString()
-
-        //     // this.progress[2].color = new cc.color(255, 255, 255, 255);
-        //     // this._progress3Node.color = new cc.color(255, 255, 255, 255);
-
-        // } else {    //第一关
-        //     this.countArr[0] += count;
-        //     this.progress[0].string = this.countArr[0].toString()
-        // }
-
-        // this.coinTip.active = true
-        // // this._coinTipTxt.string = `+${count}` 
-        // const ani = this.coinTip.getComponent(AnimationComponent)
-        // // ani.play('coinAnim')    //播放加分数提示动画
-
-    }
 
     ///开始计时  秒间隔
     private _startSche() {
@@ -156,43 +137,35 @@ export class TabControl extends Component {
             this.clockTxt.string = "0";
             customerListener.dispatch(Constants.GameStatus.GAME_OVER);
         }
-
-        // this.runingTime = this.timeCount;
     }
     private _gameOverEvent() {   //判断终点的游戏结束响应事件
-        this.GameOverLabel.string = "恭喜完成挑战！" + "\n" + this.distanceLabel.string;
 
+        let offset = 15;
+        let time = 0.05;
 
+        this.boxTween = tween(this.Box).repeatForever(
+            tween().by(time, { eulerAngles: new Vec3(0, 0, offset) })
+                .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
+                .by(time, { eulerAngles: new Vec3(0, 0, offset) })
+                .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
+                .by(time, { eulerAngles: new Vec3(0, 0, offset) })
+                .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
+                .by(time, { eulerAngles: new Vec3(0, 0, offset) })
+                .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
+                .delay(2)
+        ).start();
 
-        //将分数存入localStorage
-        // this.NextBtn.active = true
-
-        // this._clock.fillRange = 0
-        // this.clock.active = false
-        // this.radioTxt.node.active = true;
-        // this.radioTxt.string = '0';
-
-        // this.unschedule(this._startSche)
-        // this.unschedule(this._updateRuning)    //取消定时器
-        // localStorage.setItem('liftPoint', JSON.stringify(this.countArr[0]))
-        // localStorage.setItem('smoothPoint', JSON.stringify(this.countArr[1]))
-        // localStorage.setItem('replenishPoint', JSON.stringify(this.countArr[2]))
-
+        this.GameOverParent.active = true;
+        this.GameOverDistance.string = this.distanceLabel.string;
+        this.VShellLabel.string = "您获得了" + this.VShellCount.toString() + "个";
     }
-    private checkCoinState() {
-        // if (this.timeCount == this.doorTwoTime) {
-        //     const icons: IconController[] = find("ItemsManager").getComponentsInChildren(IconController);
-        //     icons.forEach(element => {
-        //         element.showIcon("smooth");
-        //     });
-        // }
 
-        // if (this.timeCount == this.doorThreeTime) {
-        //     const icons: IconController[] = find("ItemsManager").getComponentsInChildren(IconController);
-        //     icons.forEach(element => {
-        //         element.showIcon("replenish");
-        //     });
-        // }
+    /**
+     * 打开宝箱
+     */
+    private _openBox() {
+        this.boxTween.stop();
+        this.BoxRed.active = false;
     }
 
 }

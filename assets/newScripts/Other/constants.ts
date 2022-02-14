@@ -16,7 +16,7 @@ enum GameStatus {   //定义游戏状态
     GET_VSHELL = 'vshell', //吃到增益道具
     GET_KNOCK = 'knock', //吃到负增益道具
     CLOSE_HELP = 'close-help',    //关闭游戏操作指引
-
+    OPEN_BOX = 'open-box', //打开宝箱
 
 }
 // enum CoinScore {    //定义游戏金币类型
