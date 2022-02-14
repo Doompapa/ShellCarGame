@@ -28,18 +28,15 @@
   ],
   "_props": [
     {
-      "albedoScale": {
-        "__type__": "cc.Vec3",
-        "x": 0.228525742888451,
-        "y": 0.512160539627075,
-        "z": 0.00273992936126888
+      "mainColor": {
+        "__type__": "cc.Color",
+        "r": 26,
+        "g": 163,
+        "b": 37,
+        "a": 255
       },
       "roughness": 0,
-      "metallic": 0,
-      "mainTexture": {
-        "__uuid__": "d40ff7a2-cabc-4e29-85c4-cf7d7fb0df04@6c48a",
-        "__expectedType__": "cc.Texture2D"
-      }
+      "metallic": 0
     },
     {},
     {}

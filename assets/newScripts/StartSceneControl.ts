@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, ProgressBar, resources, director } from 'cc';
+import { _decorator, Component, Node, ProgressBar, resources, director, Sprite, Widget } from 'cc';
 const { ccclass, property } = _decorator;
 
 /**
@@ -28,18 +28,24 @@ export class StartSceneControl extends Component {
     })
     loadBar!: ProgressBar;
 
+    @property({
+        type: Widget
+    })
+    loadLogo!: Widget;
+
     start() {
         // [3]
         this.loadScene();
+        console.log(this.loadBar.totalLength);
     }
 
 
     loadScene() {
         resources.loadScene("Scene/main", (completedCount, totalCount, item) => {
-            this.loadBar.progress = completedCount / totalCount;
+            let per = completedCount / totalCount;
+            this.loadBar.progress = per;
+            this.loadLogo.left = this.loadBar.totalLength * per;
         }, (err, scene) => {
-            console.log("load success");
-            console.log("load success" + err);
             director.runScene(scene);
         });
     }
