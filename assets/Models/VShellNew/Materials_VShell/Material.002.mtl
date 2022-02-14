@@ -4,25 +4,30 @@
   "_objFlags": 0,
   "_native": "",
   "_effectAsset": {
-    "__uuid__": "1baf0fc9-befa-459c-8bdd-af1a450a0319"
+    "__uuid__": "1baf0fc9-befa-459c-8bdd-af1a450a0319",
+    "__expectedType__": "cc.EffectAsset"
   },
   "_techIdx": 0,
   "_defines": [
     {
       "HAS_SECOND_UV": true,
       "USE_ALBEDO_MAP": true
-    }
+    },
+    {},
+    {}
   ],
   "_states": [
     {
+      "rasterizerState": {},
+      "depthStencilState": {},
       "blendState": {
         "targets": [
           {}
         ]
-      },
-      "depthStencilState": {},
-      "rasterizerState": {}
-    }
+      }
+    },
+    {},
+    {}
   ],
   "_props": [
     {
@@ -33,12 +38,14 @@
         "z": -0.125,
         "w": 0
       },
-      "alphaThreshold": 0,
       "roughness": 1,
-      "metallic": 0.400000005960464,
+      "metallic": 0,
       "mainTexture": {
-        "__uuid__": "5c12fb2a-ec81-41d1-8767-6d6978662096@6c48a"
+        "__uuid__": "5c12fb2a-ec81-41d1-8767-6d6978662096@6c48a",
+        "__expectedType__": "cc.Texture2D"
       }
-    }
+    },
+    {},
+    {}
   ]
 }
