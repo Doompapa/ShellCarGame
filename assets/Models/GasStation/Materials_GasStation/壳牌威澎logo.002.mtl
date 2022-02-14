@@ -1,0 +1,44 @@
+{
+  "__type__": "cc.Material",
+  "_name": "壳牌威澎logo.002",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "1baf0fc9-befa-459c-8bdd-af1a450a0319",
+    "__expectedType__": "cc.EffectAsset"
+  },
+  "_techIdx": 0,
+  "_defines": [
+    {
+      "USE_ALBEDO_MAP": true
+    }
+  ],
+  "_states": [
+    {
+      "rasterizerState": {},
+      "blendState": {
+        "targets": [
+          {}
+        ]
+      },
+      "depthStencilState": {}
+    }
+  ],
+  "_props": [
+    {
+      "mainTexture": {
+        "__uuid__": "f1439559-4f64-4493-b954-909d77ced6ac@0a1ef",
+        "__expectedType__": "cc.Texture2D"
+      },
+      "tilingOffset": {
+        "__type__": "cc.Vec4",
+        "x": 1,
+        "y": 1,
+        "z": 0.09999999403953552,
+        "w": 0
+      },
+      "metallic": 0.4000000059604645,
+      "roughness": 0.27216553688049316
+    }
+  ]
+}
