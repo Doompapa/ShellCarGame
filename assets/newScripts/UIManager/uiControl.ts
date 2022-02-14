@@ -56,7 +56,7 @@ export class TabControl extends Component {
     public countArr = [0, 0, 0]
 
     public timeCount = 0; //开始计时，每隔15S进行一次关卡替换
-    private GameTotalTime = 60;
+    private GameTotalTime = 45;
 
 
     private totalTime: number = 0;
@@ -147,18 +147,7 @@ export class TabControl extends Component {
     }
 
     ///开始计时  秒间隔
-    private _startSche() {  //不知道checkCoinState方法干啥用的，先不注释了
-        // if (this.timeCount >= this.GameTotalTime) {
-        //     customerListener.dispatch(Constants.GameStatus.GAME_OVER);   //游戏结束
-
-        //     this.unschedule(this._startSche)    //取消定时器
-
-        //     //将分数存入localStorage
-        //     this.NextBtn.active = true
-        //     // localStorage.setItem('liftPoint', JSON.stringify(this.countArr[0]))
-        //     // localStorage.setItem('smoothPoint', JSON.stringify(this.countArr[1]))
-        //     // localStorage.setItem('replenishPoint', JSON.stringify(this.countArr[2]))
-        // }
+    private _startSche() {
         //刷新计时
         this.timeCount++;
         this.clockTxt.string = (this.GameTotalTime - this.timeCount).toString();

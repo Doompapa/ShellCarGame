@@ -98,9 +98,9 @@ export class EnvItemControl extends Component {
     public updateRandom() {
         this.updateEnv();
         if (this.isCreate) {
-            let whichOne = this.random(0, 4);
+            let whichOne = this.random(0, 5);
             let fab = null;
-            if (whichOne <= 2) {
+            if (whichOne < 3) {
                 fab = instantiate(this.Knock);
             } else {
                 fab = instantiate(this.VShell);
@@ -114,9 +114,9 @@ export class EnvItemControl extends Component {
             fab.eulerAngles = new Vec3(0, 0, 0);
             this.initColliderObjects(fab, Constants.ColliderGroup.NORMALCOIN, Constants.ColliderGroup.CAR);
 
-            let whichTwo = this.random(0, 4);
+            let whichTwo = this.random(0, 5);
             let fabTwo = null;
-            if (whichTwo <= 2) {
+            if (whichTwo < 3) {
                 fabTwo = instantiate(this.Knock);
             } else {
                 fabTwo = instantiate(this.VShell);
