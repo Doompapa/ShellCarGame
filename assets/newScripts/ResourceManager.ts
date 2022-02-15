@@ -17,14 +17,14 @@ export class ResourceManager extends Component {
     public playCoinSound() {
         const audioSource = this.node.getComponent(AudioSourceComponent);
         if (audioSource) {
-            audioSource.playOneShot(this.coinSound);
+            audioSource.playOneShot(this.coinSound, 0.1);
         }
     }
 
     public playKnockSound() {
         const audioSource = this.node.getComponent(AudioSourceComponent);
         if (audioSource) {
-            audioSource.playOneShot(this.knockSound);
+            audioSource.playOneShot(this.knockSound, 1.2);
         }
     }
 }

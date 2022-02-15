@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, LabelComponent, SpriteComponent, find, AnimationComponent, tween, Vec2, Vec3, Tween } from 'cc';
+import { _decorator, Component, Node, LabelComponent, SpriteComponent, find, AnimationComponent, tween, Vec2, Vec3, Tween, RichText } from 'cc';
 import { Car } from '../Car';
 import { Constants } from '../Other/constants';
 import { customerListener } from '../Other/listener';
@@ -8,21 +8,10 @@ const { ccclass, property } = _decorator;
 @ccclass('TabControl')
 export class TabControl extends Component {
 
-
-    // @property({
-    //     type: [LabelComponent],
-    // })
-    // progress: LabelComponent[] = [];
-
     @property({
         type: LabelComponent
     })
     distanceLabel!: LabelComponent;
-
-    @property({
-        type: Node
-    })
-    coinTip!: Node;
 
 
     @property({
@@ -72,6 +61,11 @@ export class TabControl extends Component {
         type: Node
     })
     BoxRed!: Node  //宝箱红点
+
+    @property({
+        type: RichText
+    })
+    ScoreRank!: RichText  //道具数量
 
 
     private VShellCount = 0;
@@ -155,9 +149,13 @@ export class TabControl extends Component {
                 .delay(2)
         ).start();
 
-        this.GameOverParent.active = true;
+
         this.GameOverDistance.string = this.distanceLabel.string;
         this.VShellLabel.string = "您获得了" + this.VShellCount.toString() + "个";
+        this.ScoreRank.string = "<color=#dc150b><outline color=#ffc40f width=6><size=70><b>" + 88 + "%</b></size></color>";
+
+        this.GameOverParent.active = true;
+
     }
 
     /**

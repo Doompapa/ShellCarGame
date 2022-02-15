@@ -67,7 +67,7 @@ export class EnvItemControl extends Component {
         for (let i = 0; i < this.leftEnvNode.children.length; i++) {
             this.leftEnvNode.children[i].active = false;
         }
-        let randomLeft = this.random(0, this.leftEnvNode.children.length + 2);
+        let randomLeft = this.random(0, this.leftEnvNode.children.length);
         if (randomLeft < this.leftEnvNode.children.length) {
             this.leftEnvNode.children[randomLeft].active = true;
         }
@@ -86,7 +86,7 @@ export class EnvItemControl extends Component {
         for (let i = 0; i < this.farEnvNode.children.length; i++) {
             this.farEnvNode.children[i].active = false;
         }
-        let randomFar = this.random(0, this.farEnvNode.children.length + 2);
+        let randomFar = this.random(0, this.farEnvNode.children.length);
         if (randomFar < this.farEnvNode.children.length) {
             this.farEnvNode.children[randomFar].active = true;
         }
