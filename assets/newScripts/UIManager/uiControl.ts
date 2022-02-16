@@ -114,8 +114,8 @@ export class TabControl extends Component {
 
         this.GameOverParent.active = false;
 
-        this._checkIsFristPlay();
-
+        this.StartTipNode.active = false;
+        this.InstructionNode.active = true;
     }
 
     /**
