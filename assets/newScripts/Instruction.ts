@@ -20,9 +20,24 @@ export class Instruction extends Component {
     // dummy = '';
 
     @property({
+        type: Node
+    })
+    VShellNode!: Node;
+
+    @property({
         type: Sprite
     })
     VShellSprite!: Sprite;
+
+
+    @property({
+        type: Node
+    })
+    KnockNode!: Node;
+    @property({
+        type: Sprite
+    })
+    KnockSprite!: Sprite;
 
     @property({
         type: Camera
@@ -30,58 +45,85 @@ export class Instruction extends Component {
     renderCamera!: Camera;
 
     @property({
-        type: RenderTexture
-    })
-    renderTex!: RenderTexture
-
-    @property({
         type: Canvas
     })
     currentCavans!: Canvas
 
+
+    @property({
+        type: Node
+    })
+    StartTipNode!: Node
+
+    /**
+     * 当前步骤
+     */
+    private step = 0;
+
+    private width = 0;
+    private height = 0;
+
+
     start() {
-        // [3]
-        // console.log(this.VShellSprite.getComponent(Widget)?._lastSize);
-        console.log(this.currentCavans.getComponent(UITransform)?.height);
-        console.log();
         this.renderCamera.enabled = false;
         this.VShellSprite.node.active = false;
-
-
-
+        this.KnockSprite.node.active = false;
 
         let width = this.currentCavans.getComponent(UITransform)?.width;
         let height = this.currentCavans.getComponent(UITransform)?.height;
 
-        let renderTex = new RenderTexture();
-
         if (width && height) {
-            renderTex.reset({
-                width: width,
-                height: height
-            });
-            this.renderCamera.targetTexture = renderTex;
-
-            this.scheduleOnce(() => {
-                this.renderCamera.enabled = true;
-                if (renderTex) {
-                    let spriteFrame = new SpriteFrame();
-                    spriteFrame.texture = renderTex;
-
-                    // this.VShellSprite.node.eulerAngles = new Vec3(0, 0, 180);
-
-                    this.VShellSprite.spriteFrame = spriteFrame;
-                    this.VShellSprite.node.active = true;
-                }
-
-            }, 2);
+            this.width = width;
+            this.height = height;
         }
-
+        this.showNextStep();
     }
 
-    // update (deltaTime: number) {
-    //     // [4]
-    // }
+    public clickNextStep() {
+        this.step++;
+        this.showNextStep();
+    }
+
+    showNextStep() {
+        let renderTex = new RenderTexture();
+        renderTex.reset({
+            width: this.width,
+            height: this.height
+        });
+        this.renderCamera.targetTexture = renderTex;
+        this.renderCamera.enabled = true;
+
+        let spriteFrame = new SpriteFrame();
+        spriteFrame.texture = renderTex;
+
+
+        switch (this.step) {
+            case 0:
+                this.KnockNode.active = false;
+                this.KnockSprite.node.active = false;
+
+                this.VShellNode.active = true;
+                this.VShellSprite.spriteFrame = spriteFrame;
+                this.VShellSprite.node.active = true;
+                break;
+            case 1:
+                this.VShellNode.active = false;
+                this.VShellSprite.node.active = false;
+
+                this.KnockNode.active = true;
+                this.KnockSprite.spriteFrame = spriteFrame;
+                this.KnockSprite.node.active = true;
+                break;
+            case 2:
+                this.StartTipNode.active = true;
+                //展示开始界面
+                localStorage.setItem("isFristPlay", "true");
+                this.node.active = false;
+                break;
+
+        }
+    }
+
 }
 
 /**

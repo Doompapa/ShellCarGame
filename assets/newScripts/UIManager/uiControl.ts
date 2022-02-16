@@ -67,6 +67,16 @@ export class TabControl extends Component {
     })
     ScoreRank!: RichText  //道具数量
 
+    @property({
+        type: Node
+    })
+    InstructionNode!: Node
+
+    @property({
+        type: Node
+    })
+    StartTipNode!: Node
+
 
     private VShellCount = 0;
 
@@ -104,6 +114,23 @@ export class TabControl extends Component {
 
         this.GameOverParent.active = false;
 
+        this._checkIsFristPlay();
+
+    }
+
+    /**
+     * 检查是否需要展示引导界面
+     */
+    private _checkIsFristPlay() {
+        let isFristPlay = localStorage.getItem("isFristPlay");
+
+        if (isFristPlay) {
+            this.StartTipNode.active = true;
+            this.InstructionNode.active = false;
+        } else {
+            this.StartTipNode.active = false;
+            this.InstructionNode.active = true;
+        }
     }
 
     private _getVShell(count: number) {
