@@ -131,7 +131,10 @@ export class Car extends Component {
     public speed = 0;
     private _addSpeed = 0.005;
     private _maxSpeed = 2;
-    private _dynamicSpeed = 1;
+    /**
+     * 吃到道具的前冲速度倍数
+     */
+    private _dynamicSpeed = 1.5;
 
     private temVec = new Vec3()
 
