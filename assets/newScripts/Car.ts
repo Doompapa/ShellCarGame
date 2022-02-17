@@ -130,8 +130,8 @@ export class Car extends Component {
     //速度相关
     public speed = 0;
     private _addSpeed = 0.005;
-    private _maxSpeed = 2.5;
-    private _dynamicSpeed = 1.5;
+    private _maxSpeed = 2;
+    private _dynamicSpeed = 1;
 
     private temVec = new Vec3()
 

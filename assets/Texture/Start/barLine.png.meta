@@ -2,7 +2,7 @@
   "ver": "1.0.22",
   "importer": "image",
   "imported": true,
-  "uuid": "f445988c-6c39-4501-b1d3-6f2d33e2f10f",
+  "uuid": "4064e019-0de2-4b92-baa2-18e68063b566",
   "files": [
     ".png",
     ".json"
@@ -10,8 +10,8 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "f445988c-6c39-4501-b1d3-6f2d33e2f10f@6c48a",
-      "displayName": "barBorder",
+      "uuid": "4064e019-0de2-4b92-baa2-18e68063b566@6c48a",
+      "displayName": "barLine",
       "id": "6c48a",
       "name": "texture",
       "userData": {
@@ -22,7 +22,7 @@
         "mipfilter": "none",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "f445988c-6c39-4501-b1d3-6f2d33e2f10f"
+        "imageUuidOrDatabaseUri": "4064e019-0de2-4b92-baa2-18e68063b566"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -33,8 +33,8 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "f445988c-6c39-4501-b1d3-6f2d33e2f10f@f9941",
-      "displayName": "barBorder",
+      "uuid": "4064e019-0de2-4b92-baa2-18e68063b566@f9941",
+      "displayName": "barLine",
       "id": "f9941",
       "name": "spriteFrame",
       "userData": {
@@ -45,17 +45,17 @@
         "offsetY": 0,
         "trimX": 0,
         "trimY": 0,
-        "width": 882,
-        "height": 26,
-        "rawWidth": 882,
-        "rawHeight": 26,
+        "width": 350,
+        "height": 8,
+        "rawWidth": 350,
+        "rawHeight": 8,
         "borderTop": 0,
         "borderBottom": 0,
         "borderLeft": 0,
         "borderRight": 0,
         "packable": true,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "f445988c-6c39-4501-b1d3-6f2d33e2f10f@6c48a",
+        "imageUuidOrDatabaseUri": "4064e019-0de2-4b92-baa2-18e68063b566@6c48a",
         "atlasUuid": ""
       },
       "ver": "1.0.9",
@@ -69,6 +69,6 @@
   "userData": {
     "hasAlpha": true,
     "type": "sprite-frame",
-    "redirect": "f445988c-6c39-4501-b1d3-6f2d33e2f10f@f9941"
+    "redirect": "4064e019-0de2-4b92-baa2-18e68063b566@f9941"
   }
 }
