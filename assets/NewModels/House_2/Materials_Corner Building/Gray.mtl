@@ -1,6 +1,6 @@
 {
   "__type__": "cc.Material",
-  "_name": "Gray",
+  "_name": "",
   "_objFlags": 0,
   "_native": "",
   "_effectAsset": {
@@ -9,29 +9,36 @@
   },
   "_techIdx": 0,
   "_defines": [
+    {},
+    {},
     {}
   ],
   "_states": [
     {
       "rasterizerState": {},
+      "depthStencilState": {},
       "blendState": {
         "targets": [
           {}
         ]
-      },
-      "depthStencilState": {}
-    }
+      }
+    },
+    {},
+    {}
   ],
   "_props": [
     {
-      "albedoScale": {
-        "__type__": "cc.Vec3",
-        "x": 0.19811320304870605,
-        "y": 0.19811320304870605,
-        "z": 0.19811320304870605
+      "mainColor": {
+        "__type__": "cc.Color",
+        "r": 226,
+        "g": 123,
+        "b": 64,
+        "a": 255
       },
-      "metallic": 0.4000000059604645,
-      "roughness": 0.30151134729385376
-    }
+      "roughness": 0.30151134729385376,
+      "metallic": 0.4000000059604645
+    },
+    {},
+    {}
   ]
 }

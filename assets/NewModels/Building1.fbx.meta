@@ -24,22 +24,6 @@
         "gltfIndex": 0
       }
     },
-    "40b5b": {
-      "importer": "gltf-material",
-      "uuid": "3b631281-88cb-472a-b16d-b68f02d62423@40b5b",
-      "displayName": "",
-      "id": "40b5b",
-      "name": "楼房.material",
-      "ver": "1.0.14",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
-    },
     "fae7e": {
       "importer": "gltf-scene",
       "uuid": "3b631281-88cb-472a-b16d-b68f02d62423@fae7e",
@@ -75,12 +59,14 @@
       "skeletons": [],
       "textures": [],
       "materials": [
-        "3b631281-88cb-472a-b16d-b68f02d62423@40b5b"
+        "07a7975a-0b64-475f-bb5b-6b755cea18d8"
       ],
       "scenes": [
         "3b631281-88cb-472a-b16d-b68f02d62423@fae7e"
       ]
     },
-    "legacyFbxImporter": true
+    "legacyFbxImporter": true,
+    "dumpMaterials": true,
+    "materialDumpDir": "db://assets/NewModels/Materials_Building1"
   }
 }
