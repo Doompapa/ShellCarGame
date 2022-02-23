@@ -9,7 +9,6 @@ export class StartTip extends Component {
     @property({
         type: LabelComponent,
     })
-
     txt!: LabelComponent;
     private _count = 3;
 
@@ -21,7 +20,7 @@ export class StartTip extends Component {
         })
     }
     private tipEnd() {  //游戏开始321倒计时
-        this._count--
+        this._count--;
         this.txt.string = this._count.toString()
         if (this._count == 0) {
             this.txt.string = 'GO！'

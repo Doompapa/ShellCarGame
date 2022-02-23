@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, LabelComponent, SpriteComponent, find, AnimationComponent, tween, Vec2, Vec3, Tween, RichText } from 'cc';
+import { _decorator, Component, Node, LabelComponent, SpriteComponent, find, AnimationComponent, tween, Vec2, Vec3, Tween, RichText, Label, UIOpacityComponent } from 'cc';
 import { Car } from '../Car';
 import { Constants } from '../Other/constants';
 import { customerListener } from '../Other/listener';
@@ -78,16 +78,33 @@ export class TabControl extends Component {
     StartTipNode!: Node
 
 
+    @property({
+        type: Node
+    })
+    CountDownNode!: Node
+
+    @property({
+        type: LabelComponent
+    })
+    countDownLabel!: LabelComponent
+
+    @property({
+        type: ResourceManager
+    })
+    resourceManager!: ResourceManager;
+
+
     private VShellCount = 0;
 
     public timeCount = 0; //开始计时，每隔15S进行一次关卡替换
-    private GameTotalTime = 45;
+    private GameTotalTime = 6;
 
     public runingTime: number = 0;
 
     private startZ = 0;
 
     private boxTween !: Tween<Node>;
+
 
 
     update() {
@@ -111,11 +128,13 @@ export class TabControl extends Component {
         }
 
         this.clockTxt.string = (this.GameTotalTime).toString();
+        this.countDownLabel != this.CountDownNode.getComponentInChildren(LabelComponent);
 
         this.GameOverParent.active = false;
-
+        this.CountDownNode.active = false;
         this.StartTipNode.active = false;
         this.InstructionNode.active = true;
+
     }
 
     /**
@@ -153,35 +172,57 @@ export class TabControl extends Component {
         //刷新计时
         this.timeCount++;
         this.clockTxt.string = (this.GameTotalTime - this.timeCount).toString();
+
+
+        if (this.GameTotalTime - this.timeCount <= 5) {
+            let time = (this.GameTotalTime - this.timeCount).toString();
+            this.CountDownNode.active = true;
+            this.countDownLabel.string = time;
+            this.resourceManager.playerTimer();
+        }
+
         if (this.GameTotalTime - this.timeCount <= 0) {
             this.unschedule(this._startSche);
             this.clockTxt.string = "0";
+            this.CountDownNode.active = false;
             customerListener.dispatch(Constants.GameStatus.GAME_OVER);
         }
     }
+
     private _gameOverEvent() {   //判断终点的游戏结束响应事件
-
-        let offset = 15;
-        let time = 0.05;
-
-        this.boxTween = tween(this.Box).repeatForever(
-            tween().by(time, { eulerAngles: new Vec3(0, 0, offset) })
-                .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
-                .by(time, { eulerAngles: new Vec3(0, 0, offset) })
-                .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
-                .by(time, { eulerAngles: new Vec3(0, 0, offset) })
-                .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
-                .by(time, { eulerAngles: new Vec3(0, 0, offset) })
-                .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
-                .delay(2)
-        ).start();
+        this.resourceManager.playGameOver();
 
 
-        this.GameOverDistance.string = this.distanceLabel.string;
-        this.VShellLabel.string = "您获得了" + this.VShellCount.toString() + "个";
-        this.ScoreRank.string = "<color=#dc150b><outline color=#ffc40f width=6><size=70><b>" + 88 + "%</b></size></color>";
+        //todo 延迟显示，有过度过程
+        let gameOverOpacity = this.GameOverParent.getComponent(UIOpacityComponent);
+        if (gameOverOpacity != null) {
+            gameOverOpacity.opacity = 0;
+            // this.GameOverParent.worldScale = new Vec3(0, 0, 0);
+            this.GameOverParent.active = true;
+            // tween(gameOverOpacity).by(0.5, { worldScale: new Vec3(1, 1, 1) }).start();
+            tween(gameOverOpacity).by(1.5, { opacity: 255 }).start();
 
-        this.GameOverParent.active = true;
+            //宝箱动画
+            // let offset = 15;
+            // let time = 0.05;
+            // this.boxTween = tween(this.Box).repeatForever(
+            //     tween().by(time, { eulerAngles: new Vec3(0, 0, offset) })
+            //         .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
+            //         .by(time, { eulerAngles: new Vec3(0, 0, offset) })
+            //         .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
+            //         .by(time, { eulerAngles: new Vec3(0, 0, offset) })
+            //         .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
+            //         .by(time, { eulerAngles: new Vec3(0, 0, offset) })
+            //         .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
+            //         .delay(2)
+            // ).start();
+
+            this.GameOverDistance.string = this.distanceLabel.string;
+            this.VShellLabel.string = "您获得了" + this.VShellCount.toString() + "个";
+            this.ScoreRank.string = "<color=#dc150b><outline color=#ffc40f width=6><size=70><b>" + 88 + "%</b></size></color>";
+        }
+
+
 
     }
 

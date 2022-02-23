@@ -14,17 +14,55 @@ export class ResourceManager extends Component {
     })
     knockSound!: AudioClip;
 
+
+    @property({
+        type: AudioClip
+    })
+    eatVshell!: AudioClip;
+
+    @property({
+        type: AudioClip
+    })
+    timer!: AudioClip;
+
+
+    @property({
+        type: AudioClip
+    })
+    gameOver!: AudioClip;
+
+    private audioSource!: AudioSourceComponent;
+
+    start() {
+        let temp = this.node.getComponent(AudioSourceComponent);
+        if (temp) {
+            this.audioSource = temp;
+        }
+
+    }
+
     public playCoinSound() {
-        const audioSource = this.node.getComponent(AudioSourceComponent);
-        if (audioSource) {
-            audioSource.playOneShot(this.coinSound, 0.1);
+        if (this.audioSource) {
+            // this.audioSource.playOneShot(this.coinSound, 0.1);
+            this.audioSource.playOneShot(this.coinSound, 0.6);
         }
     }
 
     public playKnockSound() {
-        const audioSource = this.node.getComponent(AudioSourceComponent);
-        if (audioSource) {
-            audioSource.playOneShot(this.knockSound, 1.2);
+        if (this.audioSource) {
+            this.audioSource.playOneShot(this.knockSound, 1.2);
+        }
+    }
+
+    public playGameOver(){
+        if (this.audioSource) {
+            this.audioSource.playOneShot(this.gameOver, 1.2);
+        }
+    }
+
+    public playerTimer(){
+        if (this.audioSource) {
+            this.audioSource.playOneShot(this.timer, 1);
         }
     }
 }

@@ -19,7 +19,8 @@ import {
     game,
     CameraComponent,
     Camera,
-    ProgressBar
+    ProgressBar,
+    AudioSource
 } from 'cc';
 import { Tree } from './Env/Tree';
 import { EnvItemControl } from './Env/EnvItemControl';
@@ -302,6 +303,10 @@ export class Car extends Component {
         this._isRuning = false
         // this._isShutCamera = true
         //游戏结束时将摄像机固定住，赛车继续往前跑远
+        let audioSource = this.node.getComponent(AudioSource);
+        if (audioSource) {
+            audioSource.pause();
+        }
     }
 
     private _colliderInit() {    //碰撞初始化
