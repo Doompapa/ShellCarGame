@@ -44,7 +44,7 @@ export class ResourceManager extends Component {
     public playCoinSound() {
         if (this.audioSource) {
             // this.audioSource.playOneShot(this.coinSound, 0.1);
-            this.audioSource.playOneShot(this.coinSound, 0.6);
+            this.audioSource.playOneShot(this.coinSound, 0.2);
         }
     }
 

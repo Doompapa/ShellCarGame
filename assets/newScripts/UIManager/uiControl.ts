@@ -93,6 +93,11 @@ export class TabControl extends Component {
     })
     resourceManager!: ResourceManager;
 
+    @property({
+        type: Node
+    })
+    PhotoSelectUI!: Node
+
 
     private VShellCount = 0;
 
@@ -133,8 +138,11 @@ export class TabControl extends Component {
         this.GameOverParent.active = false;
         this.CountDownNode.active = false;
         this.StartTipNode.active = false;
-        this.InstructionNode.active = true;
+        this.PhotoSelectUI.active = false;
 
+        
+        this.InstructionNode.active = true;
+ 
     }
 
     /**
@@ -192,7 +200,8 @@ export class TabControl extends Component {
     private _gameOverEvent() {   //判断终点的游戏结束响应事件
         this.resourceManager.playGameOver();
 
-
+        this.PhotoSelectUI.active = true;
+        return;
         //todo 延迟显示，有过度过程
         let gameOverOpacity = this.GameOverParent.getComponent(UIOpacityComponent);
         if (gameOverOpacity != null) {
