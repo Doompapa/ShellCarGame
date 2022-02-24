@@ -112,11 +112,26 @@ const getBase64 = (url: string) => {
 
             var originWidth = Img.width;
             var originHeight = Img.height;
+            //最大尺寸限制
+            var maxWidth = 1080, maxHeight = 1080
+            // 目标尺寸
+            var targetWidth = originWidth, targetHeight = originHeight;
+            //当原始尺寸大于200*200时候
+            if (originWidth > maxWidth || originHeight > maxHeight) {
+                if (originWidth / originHeight > maxWidth / maxHeight) {
+                    //更宽
+                    targetWidth = maxWidth;
+                    targetHeight = Math.round(maxWidth * (originHeight / originWidth))
+                } else {
+                    targetHeight = maxHeight;
+                    targetWidth = Math.round(maxHeight * (originWidth / originHeight))
+                }
+            }
+            canvas.width = targetWidth || 0;
+            canvas.height = targetHeight || 0;
 
-            canvas.width = originWidth || 0;
-            canvas.height = originHeight || 0;
             let ctx = canvas.getContext('2d');
-            if (ctx) ctx.drawImage(Img, 0, 0, originWidth, originHeight); // 将图片绘制到canvas中
+            if (ctx) ctx.drawImage(Img, 0, 0, targetWidth, targetHeight); // 将图片绘制到canvas中
             dataURL = canvas.toDataURL('image/jpeg'); // 转换图片为dataURL
             resolve(dataURL);
         };
@@ -226,82 +241,84 @@ export class ShareManager extends Component {
         //http://124.222.110.161:8080/getAccessToken
         //https://www.doompapa.com/getAccessToken
 
+        //24.7a80557235b4004c8c39e165cbf51255.2592000.1648243624.282335-25649206
         customerListener.dispatch(Constants.GameStatus.SHOW_MASK, true);
-        HttpUtil.getToken("http://124.222.110.161:8080/getAccessToken", undefined, (isSuccess, respToken) => {
-            console.log(respToken);
+        // HttpUtil.getToken("http://124.222.110.161:8080/getAccessToken", undefined, (isSuccess, respToken) => {
+        // console.log(respToken);
+        var respToken = "24.7a80557235b4004c8c39e165cbf51255.2592000.1648243624.282335-25649206";
+        getBase64(currentUri).then((thumbnail: any) => {
+            //TODO
+            var targetImg = thumbnail.replace(/^data:image\/\w+;base64,/, "");//去掉base64位头部
 
-            getBase64(currentUri).then((thumbnail: any) => {
-                //TODO
-                var targetImg = thumbnail.replace(/^data:image\/\w+;base64,/, "");//去掉base64位头部
+            //加载模板图片
+            resources.load<Texture2D>("pic/temple/texture", (err, imageTemple) => {
+                // console.log(imageTemple.getHtmlElementObj().toDataURL());
+                this.getBase64ImageByTexture2D(imageTemple, (imageTempleBase64) => {
 
-                //加载模板图片
-                resources.load<Texture2D>("pic/temple/texture", (err, imageTemple) => {
-                    // console.log(imageTemple.getHtmlElementObj().toDataURL());
-                    this.getBase64ImageByTexture2D(imageTemple, (imageTempleBase64) => {
+                    imageTempleBase64 = imageTempleBase64.replace(/^data:image\/\w+;base64,/, "");//去掉base64位头部
 
-                        imageTempleBase64 = imageTempleBase64.replace(/^data:image\/\w+;base64,/, "");//去掉base64位头部
+                    let param = {
+                        'version': '4.0',
+                        'image_template': {
+                            'image': imageTempleBase64,
+                            'image_type': 'BASE64'
+                        },
+                        'image_target': {
+                            'image': targetImg,
+                            'image_type': 'BASE64'
+                        },
 
-                        let param = {
-                            'version': '4.0',
-                            'image_template': {
-                                'image': imageTempleBase64,
-                                'image_type': 'BASE64'
-                            },
-                            'image_target': {
-                                'image': targetImg,
-                                'image_type': 'BASE64'
-                            },
+                    }
+                    let paramStr = JSON.stringify(param);
 
-                        }
-                        let paramStr = JSON.stringify(param);
+                    this.uiControl.hideSelectPhoto();
+                    HttpUtil.post("https://aip.baidubce.com/rest/2.0/face/v1/merge?access_token=" + respToken, paramStr, (isSuccess, resp) => {
+                        customerListener.dispatch(Constants.GameStatus.SHOW_MASK, false);
 
-                        this.uiControl.hideSelectPhoto();
-                        HttpUtil.post("https://aip.baidubce.com/rest/2.0/face/v1/merge?access_token=" + respToken, paramStr, (isSuccess, resp) => {
-                            customerListener.dispatch(Constants.GameStatus.SHOW_MASK, false);
+                        if (resp['error_code'] == 0) {
 
-                            if (resp['error_code'] == 0) {
+                            var strImg = "data:image/jpg;base64," + resp['result']['merge_image'];
 
-                                var strImg = "data:image/jpg;base64," + resp['result']['merge_image'];
+                            let my = document.getElementById("divCreator");
+                            if (my == null) {
+                                my = document.createElement("div");
+                                document.body.appendChild(my);
+                                my.style.position = "absolute";
+                                my.id = "divCreator";
+                                my.style.width = (100).toString();
+                                my.style.height = (100).toString();
+                                my.style.backgroundColor = "#ffffcc";
+                            }
+                            my.innerHTML = '<img id=imghead>';
+                            let img = document.getElementById('imghead');
+                            img!.onload = function () {
+                                let texture = new Texture2D();
+                                let imageAsset = new ImageAsset(img as HTMLImageElement);
+                                texture.image = imageAsset;
 
-                                let my = document.getElementById("divCreator");
-                                if (my == null) {
-                                    my = document.createElement("div");
-                                    document.body.appendChild(my);
-                                    my.style.position = "absolute";
-                                    my.id = "divCreator";
-                                    my.style.width = (100).toString();
-                                    my.style.height = (100).toString();
-                                    my.style.backgroundColor = "#ffffcc";
-                                }
-                                my.innerHTML = '<img id=imghead>';
-                                let img = document.getElementById('imghead');
-                                img!.onload = function () {
-                                    let texture = new Texture2D();
-                                    let imageAsset = new ImageAsset(img as HTMLImageElement);
-                                    texture.image = imageAsset;
-
-                                    let tempSpriteFrame = new SpriteFrame();
-                                    tempSpriteFrame.texture = texture;
-                                    showImg.spriteFrame = tempSpriteFrame;
-                                    mergedPic = img as HTMLImageElement;
-                                }
-
-                                if (img) {
-                                    (img as HTMLImageElement).src = strImg;
-                                }
-
-                                my.style.display = 'none';
-                                my.style.visibility = "hidden";
-                            } else {
-                                console.log(resp);
+                                let tempSpriteFrame = new SpriteFrame();
+                                tempSpriteFrame.texture = texture;
+                                showImg.spriteFrame = tempSpriteFrame;
+                                mergedPic = img as HTMLImageElement;
                             }
 
-                        });
+                            if (img) {
+                                (img as HTMLImageElement).src = strImg;
+                            }
+
+                            my.style.display = 'none';
+                            my.style.visibility = "hidden";
+                            
+                        } else {
+                            
+                        }
+
                     });
                 });
-
             });
+
         });
+        // });
 
 
     }

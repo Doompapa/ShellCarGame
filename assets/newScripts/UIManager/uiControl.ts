@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, LabelComponent, SpriteComponent, find, AnimationComponent, tween, Vec2, Vec3, Tween, RichText, Label, UIOpacityComponent, Sprite, ImageAsset, Texture2D, SpriteFrame } from 'cc';
+import { _decorator, Component, Node, LabelComponent, SpriteComponent, find, AnimationComponent, tween, Vec2, Vec3, Tween, RichText, Label, UIOpacityComponent, Sprite, ImageAsset, Texture2D, SpriteFrame, ButtonComponent } from 'cc';
 import { Car } from '../Car';
 import { Constants } from '../Other/constants';
 import { customerListener } from '../Other/listener';
@@ -108,12 +108,6 @@ export class TabControl extends Component {
     })
     ShareUI!: Node
 
-    @property({
-        type: Sprite
-    })
-    ShowImage!: Sprite
-
-
     private VShellCount = 0;
 
     public timeCount = 0; //开始计时，每隔15S进行一次关卡替换
@@ -121,7 +115,7 @@ export class TabControl extends Component {
     /**
      * 游戏总时长
      */
-    private GameTotalTime = 2;
+    private GameTotalTime = 45;
 
     public runingTime: number = 0;
 
@@ -228,8 +222,6 @@ export class TabControl extends Component {
     private _gameOverEvent() {   //判断终点的游戏结束响应事件
         this.resourceManager.playGameOver();
 
-        this.PhotoSelectUI.active = true;
-        return;
         //todo 延迟显示，有过度过程
         let gameOverOpacity = this.GameOverParent.getComponent(UIOpacityComponent);
         if (gameOverOpacity != null) {
@@ -261,23 +253,19 @@ export class TabControl extends Component {
 
     }
 
-    /**
-     * showShareUI
-     */
-     public hideSelectPhoto() {
-        this.PhotoSelectUI.active = false;
-        this.ShareUI.active = true;
+    public goToPhotoSelect(){
+        this.PhotoSelectUI.active = true;
+        this.GameOverParent.active = false;
     }
 
     /**
      * showShareUI
      */
-    public showShareUI(tempSpriteFrame: SpriteFrame) {
-
-        this.ShowImage.spriteFrame = tempSpriteFrame;
+    public hideSelectPhoto() {
         this.PhotoSelectUI.active = false;
         this.ShareUI.active = true;
     }
+
     /**
      * 打开宝箱
      */
