@@ -8,7 +8,6 @@ export class ResourceManager extends Component {
     })
     coinSound!: AudioClip;
 
-
     @property({
         type: AudioClip
     })

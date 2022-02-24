@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, LabelComponent, SpriteComponent, find, AnimationComponent, tween, Vec2, Vec3, Tween, RichText, Label, UIOpacityComponent } from 'cc';
+import { _decorator, Component, Node, LabelComponent, SpriteComponent, find, AnimationComponent, tween, Vec2, Vec3, Tween, RichText, Label, UIOpacityComponent, Sprite, ImageAsset, Texture2D, SpriteFrame } from 'cc';
 import { Car } from '../Car';
 import { Constants } from '../Other/constants';
 import { customerListener } from '../Other/listener';
@@ -98,11 +98,30 @@ export class TabControl extends Component {
     })
     PhotoSelectUI!: Node
 
+    @property({
+        type: Node
+    })
+    Mask!: Node
+
+    @property({
+        type: Node
+    })
+    ShareUI!: Node
+
+    @property({
+        type: Sprite
+    })
+    ShowImage!: Sprite
+
 
     private VShellCount = 0;
 
     public timeCount = 0; //开始计时，每隔15S进行一次关卡替换
-    private GameTotalTime = 6;
+
+    /**
+     * 游戏总时长
+     */
+    private GameTotalTime = 2;
 
     public runingTime: number = 0;
 
@@ -127,6 +146,9 @@ export class TabControl extends Component {
         }, this)
         customerListener.on(Constants.GameStatus.GAME_OVER, this._gameOverEvent, this);
         customerListener.on(Constants.GameStatus.OPEN_BOX, this._openBox, this);
+        customerListener.on(Constants.GameStatus.SHOW_MASK, this._showMask, this);
+
+
         let car = this.mainCar.getComponent(Car);
         if (car) {
             this.startZ = car.startPos.position.z;
@@ -139,11 +161,17 @@ export class TabControl extends Component {
         this.CountDownNode.active = false;
         this.StartTipNode.active = false;
         this.PhotoSelectUI.active = false;
+        this.Mask.active = false;
+        this.ShareUI.active = false;
 
-        
         this.InstructionNode.active = true;
- 
+
     }
+
+    private _showMask(isShow: boolean) {
+        this.Mask.active = isShow;
+    }
+
 
     /**
      * 检查是否需要展示引导界面
@@ -231,10 +259,25 @@ export class TabControl extends Component {
             this.ScoreRank.string = "<color=#dc150b><outline color=#ffc40f width=6><size=70><b>" + 88 + "%</b></size></color>";
         }
 
-
-
     }
 
+    /**
+     * showShareUI
+     */
+     public hideSelectPhoto() {
+        this.PhotoSelectUI.active = false;
+        this.ShareUI.active = true;
+    }
+
+    /**
+     * showShareUI
+     */
+    public showShareUI(tempSpriteFrame: SpriteFrame) {
+
+        this.ShowImage.spriteFrame = tempSpriteFrame;
+        this.PhotoSelectUI.active = false;
+        this.ShareUI.active = true;
+    }
     /**
      * 打开宝箱
      */
