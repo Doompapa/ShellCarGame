@@ -1,0 +1,63 @@
+{
+  "ver": "2.1.10",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "463d14ed-bef7-42b1-9d9f-0e9dfda29558",
+  "files": [],
+  "subMetas": {
+    "94785": {
+      "importer": "gltf-mesh",
+      "uuid": "463d14ed-bef7-42b1-9d9f-0e9dfda29558@94785",
+      "displayName": "",
+      "id": "94785",
+      "name": "资源 1_Material2.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "4071c": {
+      "importer": "gltf-scene",
+      "uuid": "463d14ed-bef7-42b1-9d9f-0e9dfda29558@4071c",
+      "displayName": "",
+      "id": "4071c",
+      "name": "vshell0226.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "redirect": "463d14ed-bef7-42b1-9d9f-0e9dfda29558@4071c",
+    "assetFinder": {
+      "meshes": [
+        "463d14ed-bef7-42b1-9d9f-0e9dfda29558@94785"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "721f2576-0064-444d-88ff-050bc9794c6e",
+        "9498f000-7006-4e8a-83b7-1681457bc78d"
+      ],
+      "scenes": [
+        "463d14ed-bef7-42b1-9d9f-0e9dfda29558@4071c"
+      ]
+    },
+    "dumpMaterials": true,
+    "materialDumpDir": "db://assets/Models/VShellNew/Materials_vshell0226"
+  }
+}
