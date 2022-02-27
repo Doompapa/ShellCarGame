@@ -140,7 +140,7 @@ export class TabControl extends Component {
     /**
      * 游戏总时长
      */
-    private GameTotalTime = 1;
+    private GameTotalTime = 20;
 
     public runingTime: number = 0;
 
