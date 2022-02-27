@@ -108,6 +108,13 @@ export class TabControl extends Component {
     })
     ShareUI!: Node
 
+    
+    @property({
+        type: Node
+    })
+    TempleSelectUI!: Node
+
+
     private VShellCount = 0;
 
     public timeCount = 0; //开始计时，每隔15S进行一次关卡替换
@@ -157,6 +164,8 @@ export class TabControl extends Component {
         this.PhotoSelectUI.active = false;
         this.Mask.active = false;
         this.ShareUI.active = false;
+        this.TempleSelectUI.active = false;
+
 
         this.InstructionNode.active = true;
 
@@ -253,9 +262,25 @@ export class TabControl extends Component {
 
     }
 
+    /**
+     * 展示模板选择界面
+     */
     public goToPhotoSelect(){
-        this.PhotoSelectUI.active = true;
+        // this.PhotoSelectUI.active = true;
+        // this.GameOverParent.active = false;
+
+        this.PhotoSelectUI.active = false;
         this.GameOverParent.active = false;
+
+        this.TempleSelectUI.active = true;
+    }
+
+    public templcSelected(){
+
+        this.GameOverParent.active = false;
+        this.TempleSelectUI.active = false;
+
+        this.PhotoSelectUI.active = true;
     }
 
     /**
@@ -263,6 +288,8 @@ export class TabControl extends Component {
      */
     public hideSelectPhoto() {
         this.PhotoSelectUI.active = false;
+        this.TempleSelectUI.active = false;
+
         this.ShareUI.active = true;
     }
 

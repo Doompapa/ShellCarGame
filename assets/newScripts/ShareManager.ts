@@ -159,7 +159,7 @@ function downloadIamge(image: HTMLImageElement) {
 
 
 
-import { _decorator, Component, Node, Sprite, SpriteFrame, Texture2D, ImageAsset, UITransformComponent, Vec2, Rect, loader, resources } from 'cc';
+import { _decorator, Component, Node, Sprite, SpriteFrame, Texture2D, ImageAsset, UITransformComponent, Vec2, Rect, loader, resources, PageView } from 'cc';
 import { Constants } from './Other/constants';
 import { HttpUtil } from './Other/HttpUtil';
 import { customerListener } from './Other/listener';
@@ -207,6 +207,11 @@ export class ShareManager extends Component {
     })
     ShowImage!: Sprite
 
+    @property({
+        type: PageView
+    })
+    picTemplePageView!: PageView
+
     start() {
         // [3]
     }
@@ -232,11 +237,14 @@ export class ShareManager extends Component {
         setTimeout(function () { fileInput.click() }, 100);
     }
 
+
     public sendToAI() {
 
         if (currentUri == "") {
             return;
         }
+
+        var index = (this.picTemplePageView.curPageIdx + 1).toString();
 
         //http://124.222.110.161:8080/getAccessToken
         //https://www.doompapa.com/getAccessToken
@@ -251,7 +259,7 @@ export class ShareManager extends Component {
             var targetImg = thumbnail.replace(/^data:image\/\w+;base64,/, "");//去掉base64位头部
 
             //加载模板图片
-            resources.load<Texture2D>("pic/temple/texture", (err, imageTemple) => {
+            resources.load<Texture2D>("pic/temple" + index + "/texture", (err, imageTemple) => {
                 // console.log(imageTemple.getHtmlElementObj().toDataURL());
                 this.getBase64ImageByTexture2D(imageTemple, (imageTempleBase64) => {
 
@@ -308,9 +316,9 @@ export class ShareManager extends Component {
 
                             my.style.display = 'none';
                             my.style.visibility = "hidden";
-                            
+
                         } else {
-                            
+
                         }
 
                     });
@@ -318,9 +326,6 @@ export class ShareManager extends Component {
             });
 
         });
-        // });
-
-
     }
 
     public savePic() {
