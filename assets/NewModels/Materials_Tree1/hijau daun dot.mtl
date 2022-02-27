@@ -30,11 +30,12 @@
     {
       "mainColor": {
         "__type__": "cc.Color",
-        "r": 177,
-        "g": 211,
-        "b": 51,
+        "r": 153,
+        "g": 180,
+        "b": 36,
         "a": 255
       },
+      "occlusion": 0.8,
       "roughness": 1,
       "metallic": 0
     },
