@@ -1,5 +1,8 @@
 import { _decorator, Component, Node, LabelComponent, SpriteComponent, find, AnimationComponent, tween, Vec2, Vec3, Tween, RichText, Label, UIOpacityComponent, Sprite, ImageAsset, Texture2D, SpriteFrame, ButtonComponent } from 'cc';
+import { MWComboBox } from '../../many-widgets/ComboBox/MW_ComboBox';
 import { Car } from '../Car';
+import { city } from '../data/city';
+import { province } from '../data/province';
 import { Constants } from '../Other/constants';
 import { customerListener } from '../Other/listener';
 import { ResourceManager } from '../ResourceManager';
@@ -75,6 +78,21 @@ export class TabControl extends Component {
     @property({
         type: Node
     })
+    SelectAreaNode!: Node
+
+    @property({
+        type: MWComboBox
+    })
+    provinceComBox!: MWComboBox
+
+    @property({
+        type: MWComboBox
+    })
+    CityComBox!: MWComboBox
+
+    @property({
+        type: Node
+    })
     StartTipNode!: Node
 
 
@@ -122,7 +140,7 @@ export class TabControl extends Component {
     /**
      * 游戏总时长
      */
-    private GameTotalTime = 45;
+    private GameTotalTime = 1;
 
     public runingTime: number = 0;
 
@@ -165,9 +183,20 @@ export class TabControl extends Component {
         this.Mask.active = false;
         this.ShareUI.active = false;
         this.TempleSelectUI.active = false;
+        this.InstructionNode.active = false;
 
+        this.SelectAreaNode.active = true;
 
-        this.InstructionNode.active = true;
+        let provinces_data: string[] = [];
+
+        for (var i = 0; i < province.length; i++) {
+            provinces_data.push(province[i].name);
+        }
+        this.provinceComBox.setItems(provinces_data);
+        this.CityComBox.setItems([]);
+        customerListener.on(Constants.GameStatus.CLICK_COMBOXITEM, this.OnSelectProvince, this);
+
+        // this.InstructionNode.active = true;
 
     }
 
@@ -300,5 +329,37 @@ export class TabControl extends Component {
         this.boxTween.stop();
         this.BoxRed.active = false;
     }
+
+    public confirmArea(){
+    
+        this.SelectAreaNode.active = false;
+        this.InstructionNode.active = true;
+    }
+
+    private OnSelectProvince() {
+        // let id = 110000000000;
+
+        let id = '';
+
+        for (var i = 0; i < province.length; i++) {
+            if (this.provinceComBox.getCurrentText() == province[i].name) {
+                // id = Number(province[i].id);
+                id = province[i].id;
+            }
+        }
+
+        if (id != '') {
+            let cities_data: string[] = [];
+
+            for (var i = 0; i < city[id].length; i++) {
+                cities_data.push(city[id][i].name);
+            }
+
+            this.CityComBox.setItems(cities_data);
+        }
+
+
+    }
+
 
 }
