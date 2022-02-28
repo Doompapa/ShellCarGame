@@ -50,7 +50,7 @@ export class ItemsMananger extends Component {
         this._prevPos.set(this.carNode.worldPosition);
 
         //初始化环境
-        for (let i = 1; i < 10; i++) {
+        for (let i = 1; i < 11; i++) {
             let envItem = instantiate(this.envPrefab);
             envItem.parent = this.envNode;
             envItem.position = new Vec3(0, 0, 100 * i);

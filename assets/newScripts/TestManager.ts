@@ -21,98 +21,33 @@ const { ccclass, property } = _decorator;
 
 @ccclass('TestManager')
 export class TestManager extends Component {
-    // [1]
-    // dummy = '';
-    //MWComboBox
-    // [2]
-    @property({
-        type: MWComboBox
-    })
-    TestComBox!: MWComboBox
-
-    @property({
-        type: MWComboBox
-    })
-    TestComBoxCity!: MWComboBox
 
     start() {
         // [3]
 
+        this.scheduleOnce(() => {
+            var my = document.getElementById("content");
+            // if (my == null) {
+            //     my = document.createElement("div");
+            //     document.body.appendChild(my);
+            //     my.style.position = "absolute";
+            //     my.id = "divCreator";
+            //     my.style.width = (100).toString();
+            //     my.style.height = (100).toString();
+            //     my.style.backgroundColor = "#ffffcc";
+            // }
 
-        // let startTime1 = (new Date).getTime();
-        // loader.loadRes("prefabs/Env/GasStation", Prefab, (err: any, prefab: Prefab) => {
-        //     if (err) {
-        //         console.warn(err);
-        //         return;
-        //     }
-        //     let endTime = (new Date).getTime();
-        //     console.log("GasStation" + (endTime - startTime1));
-
-        //     for (var i = 0; i < 5; i++) {
-        //         const fab = instantiate(prefab);
-        //         fab.parent = this.node;
-        //         fab.position = new Vec3(0, 0, 100 * i);
-        //         fab.eulerAngles = new Vec3(0, 0, 0);
-        //     }
-        // });
-
-
-        // let startTime = (new Date).getTime();
-        // loader.loadRes("prefabs/Env/EnvBaseItem", Prefab, (err: any, prefab: Prefab) => {
-        //     if (err) {
-        //         console.warn(err);
-        //         return;
-        //     }
-        //     let endTime = (new Date).getTime();
-        //     console.log("EnvBaseItem " + (endTime - startTime));
-        //     for (var i = 0; i < 5; i++) {
-        //         const fab = instantiate(prefab);
-        //         fab.parent = this.node;
-        //         fab.position = new Vec3(0, 0, 100 * i);
-        //         fab.eulerAngles = new Vec3(0, 0, 0);
-        //     }
-
-        //     // this.initColliderObjects(fab, Constants.ColliderGroup.NORMALCOIN, Constants.ColliderGroup.CAR);
-        // });
-
-        // city
-
-        let provinces_data: string[] = [];
-
-        for (var i = 0; i < province.length; i++) {
-            provinces_data.push(province[i].name);
-        }
-        this.TestComBox.setItems(provinces_data);
-        this.TestComBoxCity.setItems([]);
-        customerListener.on(Constants.GameStatus.CLICK_COMBOXITEM, this.OnSelectProvince, this);
-    }
-
-
-
-    public OnSelectProvince() {
-        // let id = 110000000000;
-
-        let id = '';
-
-        for (var i = 0; i < province.length; i++) {
-            if (this.TestComBox.getCurrentText() == province[i].name) {
-                // id = Number(province[i].id);
-                id = province[i].id;
-            }
-        }
-
-        if (id != '') {
-            let cities_data: string[] = [];
-
-            for (var i = 0; i < city[id].length; i++) {
-                cities_data.push(city[id][i].name);
-            }
-
-            this.TestComBoxCity.setItems(cities_data);
-        }
-
+            //'<img src="http://127.0.0.1/test.jpg" style="width: 591px; height: 1280px;">'
+            let test = document.createElement("img");
+            test.src = "http://127.0.0.1/test.jpg";
+            test.style.position = "absolute";
+            my!.appendChild(test);
+        }, 0.5);
 
     }
+
+
+
 
     // update (deltaTime: number) {
     //     // [4]
