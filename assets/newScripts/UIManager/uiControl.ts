@@ -51,11 +51,6 @@ export class TabControl extends Component {
     GameOverDistance!: LabelComponent  //游戏结束UI
 
     @property({
-        type: LabelComponent
-    })
-    VShellLabel!: LabelComponent  //道具数量
-
-    @property({
         type: Node
     })
     Box!: Node  //宝箱
@@ -140,7 +135,7 @@ export class TabControl extends Component {
     /**
      * 游戏总时长
      */
-    private GameTotalTime = 2;
+    private GameTotalTime = 45;
 
     public runingTime: number = 0;
 
@@ -193,9 +188,10 @@ export class TabControl extends Component {
             provinces_data.push(province[i].name);
         }
         this.provinceComBox.setItems(provinces_data);
-        this.CityComBox.setItems([]);
+        // this.CityComBox.setItems([]);
+        
         customerListener.on(Constants.GameStatus.CLICK_COMBOXITEM, this.OnSelectProvince, this);
-
+        customerListener.dispatch(Constants.GameStatus.CLICK_COMBOXITEM,"北京市");
         // this.InstructionNode.active = true;
 
     }
@@ -285,8 +281,7 @@ export class TabControl extends Component {
             // ).start();
 
             this.GameOverDistance.string = this.distanceLabel.string;
-            this.VShellLabel.string = "您获得了" + this.VShellCount.toString() + "个";
-            this.ScoreRank.string = "<color=#dc150b><outline color=#ffc40f width=6><size=70><b>" + 88 + "%</b></size></color>";
+            this.ScoreRank.string = "<color=#dc150b><outline color=#ffc40f width=6><size=60><b>" + this.VShellCount.toString() + "</b></size></color>";
         }
 
     }

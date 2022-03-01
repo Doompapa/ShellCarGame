@@ -249,84 +249,88 @@ export class ShareManager extends Component {
         //http://124.222.110.161:8080/getAccessToken
         //https://www.doompapa.com/getAccessToken
 
+        //http://43.154.2.248/8080/getAccessToken
+
         //24.7a80557235b4004c8c39e165cbf51255.2592000.1648243624.282335-25649206
         customerListener.dispatch(Constants.GameStatus.SHOW_MASK, true);
-        // HttpUtil.getToken("http://124.222.110.161:8080/getAccessToken", undefined, (isSuccess, respToken) => {
-        // console.log(respToken);
-        var respToken = "24.7a80557235b4004c8c39e165cbf51255.2592000.1648243624.282335-25649206";
-        getBase64(currentUri).then((thumbnail: any) => {
-            //TODO
-            var targetImg = thumbnail.replace(/^data:image\/\w+;base64,/, "");//去掉base64位头部
+        HttpUtil.getToken("https://www.doompapa.com/getAccessToken", undefined, (isSuccess, respToken) => {
+            // console.log(respToken);
+            var respToken = "24.7a80557235b4004c8c39e165cbf51255.2592000.1648243624.282335-25649206";
+            getBase64(currentUri).then((thumbnail: any) => {
+                //TODO
+                var targetImg = thumbnail.replace(/^data:image\/\w+;base64,/, "");//去掉base64位头部
 
-            //加载模板图片
-            resources.load<Texture2D>("pic/temple" + index + "/texture", (err, imageTemple) => {
-                // console.log(imageTemple.getHtmlElementObj().toDataURL());
-                this.getBase64ImageByTexture2D(imageTemple, (imageTempleBase64) => {
+                //加载模板图片
+                resources.load<Texture2D>("pic/temple" + index + "/texture", (err, imageTemple) => {
+                    // console.log(imageTemple.getHtmlElementObj().toDataURL());
+                    this.getBase64ImageByTexture2D(imageTemple, (imageTempleBase64) => {
 
-                    imageTempleBase64 = imageTempleBase64.replace(/^data:image\/\w+;base64,/, "");//去掉base64位头部
+                        imageTempleBase64 = imageTempleBase64.replace(/^data:image\/\w+;base64,/, "");//去掉base64位头部
 
-                    let param = {
-                        'version': '4.0',
-                        'image_template': {
-                            'image': imageTempleBase64,
-                            'image_type': 'BASE64'
-                        },
-                        'image_target': {
-                            'image': targetImg,
-                            'image_type': 'BASE64'
-                        },
-
-                    }
-                    let paramStr = JSON.stringify(param);
-
-                    this.uiControl.hideSelectPhoto();
-                    HttpUtil.post("https://aip.baidubce.com/rest/2.0/face/v1/merge?access_token=" + respToken, paramStr, (isSuccess, resp) => {
-                        customerListener.dispatch(Constants.GameStatus.SHOW_MASK, false);
-
-                        if (resp['error_code'] == 0) {
-
-                            var strImg = "data:image/jpg;base64," + resp['result']['merge_image'];
-
-                            let my = document.getElementById("divCreator");
-                            if (my == null) {
-                                my = document.createElement("div");
-                                document.body.appendChild(my);
-                                my.style.position = "absolute";
-                                my.id = "divCreator";
-                                my.style.width = (100).toString();
-                                my.style.height = (100).toString();
-                                my.style.backgroundColor = "#ffffcc";
-                            }
-                            my.innerHTML = '<img id=imghead>';
-                            let img = document.getElementById('imghead');
-                            img!.onload = function () {
-                                let texture = new Texture2D();
-                                let imageAsset = new ImageAsset(img as HTMLImageElement);
-                                texture.image = imageAsset;
-
-                                let tempSpriteFrame = new SpriteFrame();
-                                tempSpriteFrame.texture = texture;
-                                showImg.spriteFrame = tempSpriteFrame;
-                                mergedPic = img as HTMLImageElement;
-                            }
-
-                            if (img) {
-                                (img as HTMLImageElement).src = strImg;
-                            }
-
-                            my.style.display = 'none';
-                            my.style.visibility = "hidden";
-
-                        } else {
+                        let param = {
+                            'version': '4.0',
+                            'image_template': {
+                                'image': imageTempleBase64,
+                                'image_type': 'BASE64'
+                            },
+                            'image_target': {
+                                'image': targetImg,
+                                'image_type': 'BASE64'
+                            },
 
                         }
+                        let paramStr = JSON.stringify(param);
 
+                        this.uiControl.hideSelectPhoto();
+                        HttpUtil.post("https://aip.baidubce.com/rest/2.0/face/v1/merge?access_token=" + respToken, paramStr, (isSuccess, resp) => {
+                            customerListener.dispatch(Constants.GameStatus.SHOW_MASK, false);
+
+                            if (resp['error_code'] == 0) {
+
+                                var strImg = "data:image/jpg;base64," + resp['result']['merge_image'];
+
+                                let my = document.getElementById("divCreator");
+                                if (my == null) {
+                                    my = document.createElement("div");
+                                    document.body.appendChild(my);
+                                    my.style.position = "absolute";
+                                    my.id = "divCreator";
+                                    my.style.width = (100).toString();
+                                    my.style.height = (100).toString();
+                                    my.style.backgroundColor = "#ffffcc";
+                                }
+                                my.innerHTML = '<img id=imghead>';
+                                let img = document.getElementById('imghead');
+                                img!.onload = function () {
+                                    let texture = new Texture2D();
+                                    let imageAsset = new ImageAsset(img as HTMLImageElement);
+                                    texture.image = imageAsset;
+
+                                    let tempSpriteFrame = new SpriteFrame();
+                                    tempSpriteFrame.texture = texture;
+                                    showImg.spriteFrame = tempSpriteFrame;
+                                    mergedPic = img as HTMLImageElement;
+                                }
+
+                                if (img) {
+                                    (img as HTMLImageElement).src = strImg;
+                                }
+
+                                my.style.display = 'none';
+                                my.style.visibility = "hidden";
+
+                            } else {
+
+                            }
+
+                        });
                     });
                 });
-            });
 
+            });
         });
     }
+
 
     public savePic() {
         downloadIamge(mergedPic);

@@ -2,7 +2,7 @@
   "ver": "1.0.22",
   "importer": "image",
   "imported": true,
-  "uuid": "25f7e24e-8029-4af1-8ee1-95a6923b22a2",
+  "uuid": "8f0bd49c-6ef5-4ec0-8c6f-26a8481a05fc",
   "files": [
     ".png",
     ".json"
@@ -10,8 +10,8 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "25f7e24e-8029-4af1-8ee1-95a6923b22a2@6c48a",
-      "displayName": "success",
+      "uuid": "8f0bd49c-6ef5-4ec0-8c6f-26a8481a05fc@6c48a",
+      "displayName": "resultTextBg",
       "id": "6c48a",
       "name": "texture",
       "userData": {
@@ -22,7 +22,7 @@
         "mipfilter": "none",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "25f7e24e-8029-4af1-8ee1-95a6923b22a2"
+        "imageUuidOrDatabaseUri": "8f0bd49c-6ef5-4ec0-8c6f-26a8481a05fc"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -33,8 +33,8 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "25f7e24e-8029-4af1-8ee1-95a6923b22a2@f9941",
-      "displayName": "success",
+      "uuid": "8f0bd49c-6ef5-4ec0-8c6f-26a8481a05fc@f9941",
+      "displayName": "resultTextBg",
       "id": "f9941",
       "name": "spriteFrame",
       "userData": {
@@ -45,17 +45,17 @@
         "offsetY": 0,
         "trimX": 0,
         "trimY": 0,
-        "width": 519,
-        "height": 85,
-        "rawWidth": 519,
-        "rawHeight": 85,
+        "width": 836,
+        "height": 675,
+        "rawWidth": 836,
+        "rawHeight": 675,
         "borderTop": 0,
         "borderBottom": 0,
         "borderLeft": 0,
         "borderRight": 0,
         "packable": true,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "25f7e24e-8029-4af1-8ee1-95a6923b22a2@6c48a",
+        "imageUuidOrDatabaseUri": "8f0bd49c-6ef5-4ec0-8c6f-26a8481a05fc@6c48a",
         "atlasUuid": ""
       },
       "ver": "1.0.9",
@@ -69,6 +69,6 @@
   "userData": {
     "hasAlpha": true,
     "type": "sprite-frame",
-    "redirect": "25f7e24e-8029-4af1-8ee1-95a6923b22a2@f9941"
+    "redirect": "8f0bd49c-6ef5-4ec0-8c6f-26a8481a05fc@f9941"
   }
 }
