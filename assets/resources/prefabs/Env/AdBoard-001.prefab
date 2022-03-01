@@ -12,7 +12,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "AdBoard",
+    "_name": "AdBoard-001",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_parent": null,
@@ -377,7 +377,7 @@
     },
     "_materials": [
       {
-        "__uuid__": "057f9000-c03c-4cdb-9c49-f1823c3bd274",
+        "__uuid__": "33b74ce7-fd07-48b8-a92a-e03926b443b3",
         "__expectedType__": "cc.Material"
       }
     ],

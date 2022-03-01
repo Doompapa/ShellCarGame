@@ -27,6 +27,8 @@ export class MWComboBox extends Component {
     private _init() {
         this._initChildNode();
         this._initEvent();
+
+        customerListener.on(Constants.GameStatus.CLICK_COMBOXITEM, this._OnClickCombox);
     }
 
     private _initChildNode() {
@@ -140,5 +142,15 @@ export class MWComboBox extends Component {
         currentLabel.string = button.node.children[0].getComponent(Label)!.string;
         this._openCloseComboBox();
         customerListener.dispatch(Constants.GameStatus.CLICK_COMBOXITEM, currentLabel.string);
+    }
+
+    private _OnClickCombox(text: string) {
+        //close
+        // if (this._scrollView) {
+        //     this._scrollView.active = false;
+        //     let label = new Label();
+        //     label = this._btnSign.getComponent(Label)!;
+        //     label.string = this._closeSign;
+        // }
     }
 }
