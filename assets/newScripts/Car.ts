@@ -172,7 +172,8 @@ export class Car extends Component {
     private _carbonReduce = 30;
     private _knockReduce = 30;
 
-    private _vshellNumber = 0;
+    public _vshellNumber = 0;
+    public _knockNumber = 0;
 
     private _isCarbonShakeCoolDown = false;
 
@@ -329,6 +330,7 @@ export class Car extends Component {
             this.resourceManager.playKnockSound();
             otherCollider.node.destroy();
             this.eatknock();
+            this._knockNumber++;
         } else if (otherCollider.node.name == 'VShell') {
             console.log(otherCollider.node.name, 'VShell')
             this._vshellNumber++;
