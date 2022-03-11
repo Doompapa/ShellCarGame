@@ -127,6 +127,11 @@ export class TabControl extends Component {
     })
     TempleSelectUI!: Node
 
+    @property({
+        type: Node
+    })
+    LoginUI!: Node
+
 
     private VShellCount = 0;
 
