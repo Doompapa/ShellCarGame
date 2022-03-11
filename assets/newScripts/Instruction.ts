@@ -40,6 +40,11 @@ export class Instruction extends Component {
     KnockSprite!: Sprite;
 
     @property({
+        type: Sprite
+    })
+    CarSprite!: Sprite;
+
+    @property({
         type: Camera
     })
     renderCamera!: Camera;
@@ -68,6 +73,7 @@ export class Instruction extends Component {
         this.renderCamera.enabled = false;
         this.VShellSprite.node.active = false;
         this.KnockSprite.node.active = false;
+        this.CarSprite.node.active = false;
 
         let width = this.currentCavans.getComponent(UITransform)?.width;
         let height = this.currentCavans.getComponent(UITransform)?.height;
@@ -101,6 +107,7 @@ export class Instruction extends Component {
             case 0:
                 this.KnockNode.active = false;
                 this.KnockSprite.node.active = false;
+                this.CarSprite.node.active = false;
 
                 this.VShellNode.active = true;
                 this.VShellSprite.spriteFrame = spriteFrame;
@@ -109,12 +116,22 @@ export class Instruction extends Component {
             case 1:
                 this.VShellNode.active = false;
                 this.VShellSprite.node.active = false;
+                this.CarSprite.node.active = false;
 
                 this.KnockNode.active = true;
                 this.KnockSprite.spriteFrame = spriteFrame;
                 this.KnockSprite.node.active = true;
                 break;
             case 2:
+                this.KnockNode.active = false;
+                this.KnockSprite.node.active = false;
+                this.VShellNode.active = false;
+                this.VShellSprite.node.active = false;
+
+                this.CarSprite.node.active = true;
+                this.CarSprite.spriteFrame = spriteFrame;
+                break;
+            default:
                 this.StartTipNode.active = true;
                 //展示开始界面
                 localStorage.setItem("isFristPlay", "true");
