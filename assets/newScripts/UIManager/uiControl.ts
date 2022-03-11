@@ -121,7 +121,7 @@ export class TabControl extends Component {
     })
     ShareUI!: Node
 
-    
+
     @property({
         type: Node
     })
@@ -140,7 +140,7 @@ export class TabControl extends Component {
     /**
      * 游戏总时长
      */
-    private GameTotalTime = 45;
+    private GameTotalTime = 5;
 
     public runingTime: number = 0;
 
@@ -148,7 +148,7 @@ export class TabControl extends Component {
 
     private boxTween !: Tween<Node>;
 
-
+    private UIList: Node[] = [];;
 
     update() {
         this._posTem();
@@ -166,7 +166,7 @@ export class TabControl extends Component {
         customerListener.on(Constants.GameStatus.GAME_OVER, this._gameOverEvent, this);
         customerListener.on(Constants.GameStatus.OPEN_BOX, this._openBox, this);
         customerListener.on(Constants.GameStatus.SHOW_MASK, this._showMask, this);
-
+        customerListener.on(Constants.GameStatus.OPEN_LOGIN, this._openLoginUI, this);
 
         let car = this.mainCar.getComponent(Car);
         if (car) {
@@ -176,16 +176,19 @@ export class TabControl extends Component {
         this.clockTxt.string = (this.GameTotalTime).toString();
         this.countDownLabel != this.CountDownNode.getComponentInChildren(LabelComponent);
 
-        this.GameOverParent.active = false;
-        this.CountDownNode.active = false;
-        this.StartTipNode.active = false;
-        this.PhotoSelectUI.active = false;
-        this.Mask.active = false;
-        this.ShareUI.active = false;
-        this.TempleSelectUI.active = false;
-        this.InstructionNode.active = false;
+        //初始化UI管理数组
+        this.UIList.push(this.GameOverParent);
+        this.UIList.push(this.CountDownNode);
+        this.UIList.push(this.StartTipNode);
+        this.UIList.push(this.PhotoSelectUI);
+        this.UIList.push(this.ShareUI);
+        this.UIList.push(this.TempleSelectUI);
+        this.UIList.push(this.InstructionNode);
+        this.UIList.push(this.LoginUI);
+        this.UIList.push(this.SelectAreaNode);
+     
 
-        this.SelectAreaNode.active = true;
+        this.openUI(this.SelectAreaNode);
 
         let provinces_data: string[] = [];
 
@@ -194,15 +197,44 @@ export class TabControl extends Component {
         }
         this.provinceComBox.setItems(provinces_data);
         // this.CityComBox.setItems([]);
-        
+
         customerListener.on(Constants.GameStatus.CLICK_COMBOXITEM, this.OnSelectProvince, this);
-        customerListener.dispatch(Constants.GameStatus.CLICK_COMBOXITEM,"北京市");
+        customerListener.dispatch(Constants.GameStatus.CLICK_COMBOXITEM, "北京市");
         // this.InstructionNode.active = true;
 
     }
 
+    /**
+     * 打开一个UI节点
+     * @param ui 
+     */
+    private openUI(ui: Node) {
+        this.closeAllUI();
+        ui.active = true;
+    }
+
+    private closeAllUI() {
+        for (let i = 0; i < this.UIList.length; i++) {
+            this.UIList[i].active = false;
+        }
+    }
+
     private _showMask(isShow: boolean) {
         this.Mask.active = isShow;
+    }
+
+    private _openLoginUI() {
+        this.GameOverParent.active = false;
+        this.CountDownNode.active = false;
+        this.StartTipNode.active = false;
+        this.PhotoSelectUI.active = false;
+        this.Mask.active = false;
+        this.ShareUI.active = false;
+        this.TempleSelectUI.active = false;
+        this.InstructionNode.active = false;
+        this.SelectAreaNode.active = false;
+
+        this.LoginUI.active = true;
     }
 
 
@@ -294,32 +326,32 @@ export class TabControl extends Component {
     /**
      * 展示模板选择界面
      */
-    public goToPhotoSelect(){
-        // this.PhotoSelectUI.active = true;
+    public goToPhotoSelect() {
+        // this.PhotoSelectUI.active = false;
         // this.GameOverParent.active = false;
 
-        this.PhotoSelectUI.active = false;
-        this.GameOverParent.active = false;
-
-        this.TempleSelectUI.active = true;
+        // this.TempleSelectUI.active = true;
+        this.openUI(this.TempleSelectUI);
     }
 
-    public templcSelected(){
+    public templcSelected() {
 
-        this.GameOverParent.active = false;
-        this.TempleSelectUI.active = false;
+        // this.GameOverParent.active = false;
+        // this.TempleSelectUI.active = false;
 
-        this.PhotoSelectUI.active = true;
+        // this.PhotoSelectUI.active = true;
+        this.openUI(this.PhotoSelectUI);
     }
 
     /**
      * showShareUI
      */
     public hideSelectPhoto() {
-        this.PhotoSelectUI.active = false;
-        this.TempleSelectUI.active = false;
+        // this.PhotoSelectUI.active = false;
+        // this.TempleSelectUI.active = false;
 
-        this.ShareUI.active = true;
+        // this.ShareUI.active = true;
+        this.openUI(this.ShareUI);
     }
 
     /**
@@ -330,8 +362,8 @@ export class TabControl extends Component {
         this.BoxRed.active = false;
     }
 
-    public confirmArea(){
-    
+    public confirmArea() {
+
         this.SelectAreaNode.active = false;
         this.InstructionNode.active = true;
     }

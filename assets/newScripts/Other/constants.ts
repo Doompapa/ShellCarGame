@@ -19,6 +19,7 @@ enum GameStatus {   //定义游戏状态
     OPEN_BOX = 'open-box', //打开宝箱
     SHOW_MASK = 'show-mask',
     CLICK_COMBOXITEM = 'click-comboxitem',
+    OPEN_LOGIN = 'open-login',
 
 }
 // enum CoinScore {    //定义游戏金币类型
