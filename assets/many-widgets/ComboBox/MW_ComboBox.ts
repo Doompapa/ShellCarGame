@@ -142,6 +142,7 @@ export class MWComboBox extends Component {
         currentLabel.string = button.node.children[0].getComponent(Label)!.string;
         this._openCloseComboBox();
         customerListener.dispatch(Constants.GameStatus.CLICK_COMBOXITEM, currentLabel.string);
+        console.log(currentLabel.string);
     }
 
     private _OnClickCombox(text: string) {
@@ -152,5 +153,9 @@ export class MWComboBox extends Component {
         //     label = this._btnSign.getComponent(Label)!;
         //     label.string = this._closeSign;
         // }
+        // if (this._currentLabel != null) {
+        //     console.log(this._currentLabel.getComponent(Label));
+        // }
+
     }
 }

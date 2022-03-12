@@ -1,35 +1,81 @@
 
-import { _decorator, Component, Node } from 'cc';
+import { _decorator, Component, Node, EditBoxComponent, ButtonComponent, LabelComponent } from 'cc';
+import { Constants } from './Other/constants';
+import { customerListener } from './Other/listener';
+import { TabControl } from './UIManager/uiControl';
 const { ccclass, property } = _decorator;
 
-/**
- * Predefined variables
- * Name = LoginManager
- * DateTime = Sat Mar 12 2022 03:26:12 GMT+0800 (中国标准时间)
- * Author = sdosatan915
- * FileBasename = LoginManager.ts
- * FileBasenameNoExtension = LoginManager
- * URL = db://assets/newScripts/LoginManager.ts
- * ManualUrl = https://docs.cocos.com/creator/3.4/manual/zh/
- *
- */
- 
+
+
 @ccclass('LoginManager')
 export class LoginManager extends Component {
-    // [1]
-    // dummy = '';
+    @property({
+        type: EditBoxComponent
+    })
+    PhoneInput!: EditBoxComponent
 
-    // [2]
-    // @property
-    // serializableDummy = 0;
+    @property({
+        type: EditBoxComponent
+    })
+    CodeInput!: EditBoxComponent
 
-    start () {
-        // [3]
+    @property({
+        type: LabelComponent
+    })
+    GetCodeButtonLabel!: LabelComponent
+
+    @property({
+        type: ButtonComponent
+    })
+    GetCodeButton!: ButtonComponent
+
+    @property({
+        type: TabControl
+    })
+    uiControl!: TabControl
+    
+
+
+    private totalTime = 60;
+
+    start() {
+
     }
 
     // update (deltaTime: number) {
     //     // [4]
     // }
+
+    public ClickConfirm() {
+
+        let regPhone = /^1[3|4|5|6|7|8|9][0-9]{9}/;
+        if (!regPhone.test(this.PhoneInput.string)) {
+            //弹窗提示
+            customerListener.dispatch(Constants.GameStatus.SHOW_TOAST,"请输入正确的手机格式");
+            return;
+        }
+        //保存当前手机号
+        this.uiControl.ShowInstruction();
+      
+    }
+
+    public ClickGetCode() {
+        //send get code post
+        this.totalTime = 60;
+        this.GetCodeButtonLabel.string = this.totalTime + "s";
+        this.totalTime--;
+        this.schedule(this.ShowCoolDown, 1, 59);
+        this.GetCodeButton.interactable = false;
+    }
+
+    ShowCoolDown() {
+        this.GetCodeButtonLabel.string = ((this.totalTime--) + "s").toString();
+        if (this.totalTime <= 0) {
+            this.unschedule(this.ShowCoolDown);
+            this.GetCodeButtonLabel.string = "获取";
+            this.GetCodeButton.interactable = true;
+        }
+    }
 }
 
 /**

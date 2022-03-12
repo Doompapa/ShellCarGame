@@ -20,6 +20,7 @@ enum GameStatus {   //定义游戏状态
     SHOW_MASK = 'show-mask',
     CLICK_COMBOXITEM = 'click-comboxitem',
     OPEN_LOGIN = 'open-login',
+    SHOW_TOAST = 'show-toast',
 
 }
 // enum CoinScore {    //定义游戏金币类型

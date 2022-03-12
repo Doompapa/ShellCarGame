@@ -132,6 +132,16 @@ export class TabControl extends Component {
     })
     LoginUI!: Node
 
+    @property({
+        type: Node
+    })
+    ToastUI!: Node
+
+    @property({
+        type: LabelComponent
+    })
+    ToastLabel!: LabelComponent
+
 
     private VShellCount = 0;
 
@@ -150,6 +160,8 @@ export class TabControl extends Component {
 
     private UIList: Node[] = [];;
 
+    private selectProvince = "北京市";
+
     update() {
         this._posTem();
     }
@@ -166,7 +178,9 @@ export class TabControl extends Component {
         customerListener.on(Constants.GameStatus.GAME_OVER, this._gameOverEvent, this);
         customerListener.on(Constants.GameStatus.OPEN_BOX, this._openBox, this);
         customerListener.on(Constants.GameStatus.SHOW_MASK, this._showMask, this);
-        customerListener.on(Constants.GameStatus.OPEN_LOGIN, this._openLoginUI, this);
+
+        customerListener.on(Constants.GameStatus.SHOW_TOAST, this.ShowToast, this);
+
 
         let car = this.mainCar.getComponent(Car);
         if (car) {
@@ -186,7 +200,7 @@ export class TabControl extends Component {
         this.UIList.push(this.InstructionNode);
         this.UIList.push(this.LoginUI);
         this.UIList.push(this.SelectAreaNode);
-     
+
 
         this.openUI(this.SelectAreaNode);
 
@@ -202,6 +216,8 @@ export class TabControl extends Component {
         customerListener.dispatch(Constants.GameStatus.CLICK_COMBOXITEM, "北京市");
         // this.InstructionNode.active = true;
 
+
+        this.ToastUI.active = false;
     }
 
     /**
@@ -222,21 +238,6 @@ export class TabControl extends Component {
     private _showMask(isShow: boolean) {
         this.Mask.active = isShow;
     }
-
-    private _openLoginUI() {
-        this.GameOverParent.active = false;
-        this.CountDownNode.active = false;
-        this.StartTipNode.active = false;
-        this.PhotoSelectUI.active = false;
-        this.Mask.active = false;
-        this.ShareUI.active = false;
-        this.TempleSelectUI.active = false;
-        this.InstructionNode.active = false;
-        this.SelectAreaNode.active = false;
-
-        this.LoginUI.active = true;
-    }
-
 
     /**
      * 检查是否需要展示引导界面
@@ -364,8 +365,16 @@ export class TabControl extends Component {
 
     public confirmArea() {
 
-        this.SelectAreaNode.active = false;
-        this.InstructionNode.active = true;
+        // this.SelectAreaNode.active = false;
+        // this.InstructionNode.active = true;
+        //判断当前省份
+        if (this.selectProvince == "北京市" || this.selectProvince == "浙江省") {
+            this.openUI(this.LoginUI);
+        } else {
+            this.openUI(this.InstructionNode);
+        }
+
+
     }
 
     private OnSelectProvince() {
@@ -377,6 +386,7 @@ export class TabControl extends Component {
             if (this.provinceComBox.getCurrentText() == province[i].name) {
                 // id = Number(province[i].id);
                 id = province[i].id;
+                this.selectProvince = province[i].name;
             }
         }
 
@@ -393,5 +403,17 @@ export class TabControl extends Component {
 
     }
 
+    public ShowInstruction(){
+        this.openUI(this.InstructionNode);
+    }
+
+
+    public ShowToast(text: string) {
+        this.ToastLabel.string = text;
+        this.ToastUI.active = true;
+        this.scheduleOnce(() => {
+            this.ToastUI.active = false;
+        }, 2);
+    }
 
 }

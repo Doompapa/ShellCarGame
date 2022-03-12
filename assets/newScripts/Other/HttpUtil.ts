@@ -37,7 +37,7 @@ export class HttpUtil {
             url = url + '?' + dataStr;
         }
         let xhr = loader.getXMLHttpRequest();
-        xhr.open("GET", url, true);
+        xhr.open("POST", url, true);
         xhr.setRequestHeader("Content-Type", "text/plain;charset=UTF-8;application/json");
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4) {
