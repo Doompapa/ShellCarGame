@@ -10,8 +10,6 @@ interface IEvent {
 }
 @ccclass("customerListener")
 
-
-
 //公共事件监听
 export class customerListener extends Component {
 

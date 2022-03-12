@@ -166,26 +166,8 @@ import { customerListener } from './Other/listener';
 import { TabControl } from './UIManager/uiControl';
 const { ccclass, property } = _decorator;
 
-/**
- * Predefined variables
- * Name = ShareManager
- * DateTime = Wed Feb 23 2022 23:10:34 GMT+0800 (中国标准时间)
- * Author = sdosatan915
- * FileBasename = ShareManager.ts
- * FileBasenameNoExtension = ShareManager
- * URL = db://assets/newScripts/ShareManager.ts
- * ManualUrl = https://docs.cocos.com/creator/3.4/manual/zh/
- *
- */
-
 @ccclass('ShareManager')
 export class ShareManager extends Component {
-    // [1]
-    // dummy = '';
-
-    // [2]
-    // @property
-    // serializableDummy = 0;
 
     @property({
         type: Sprite
@@ -245,17 +227,13 @@ export class ShareManager extends Component {
         }
 
         var index = (this.picTemplePageView.curPageIdx + 1).toString();
-
-        //http://124.222.110.161:8080/getAccessToken
         //https://www.doompapa.com/getAccessToken
-
-        //http://43.154.2.248/8080/getAccessToken
 
         //24.7a80557235b4004c8c39e165cbf51255.2592000.1648243624.282335-25649206
         customerListener.dispatch(Constants.GameStatus.SHOW_MASK, true);
         HttpUtil.getToken("https://www.doompapa.com/getAccessToken", undefined, (isSuccess, respToken) => {
             // console.log(respToken);
-            var respToken = "24.7a80557235b4004c8c39e165cbf51255.2592000.1648243624.282335-25649206";
+            // var respToken = "24.7a80557235b4004c8c39e165cbf51255.2592000.1648243624.282335-25649206";
             getBase64(currentUri).then((thumbnail: any) => {
                 //TODO
                 var targetImg = thumbnail.replace(/^data:image\/\w+;base64,/, "");//去掉base64位头部

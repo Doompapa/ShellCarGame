@@ -8,7 +8,6 @@ enum ColliderGroup { //定义碰撞组
     CRACKs = 1 << 3 //裂隙
 }
 enum GameStatus {   //定义游戏状态
-
     GAME_START = 'start',       //游戏开始
     GAME_OVER = 'over', //游戏60秒时间结束
     GAME_CLOCK = 'clock',   //游戏计时开始
@@ -21,7 +20,8 @@ enum GameStatus {   //定义游戏状态
     CLICK_COMBOXITEM = 'click-comboxitem',
     OPEN_LOGIN = 'open-login',
     SHOW_TOAST = 'show-toast',
-
+    SELECT_AREA = 'select-area',
+    PHONE = "phone"
 }
 // enum CoinScore {    //定义游戏金币类型
 //     RED_COIN = 'red-coin',

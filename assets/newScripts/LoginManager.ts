@@ -33,8 +33,6 @@ export class LoginManager extends Component {
         type: TabControl
     })
     uiControl!: TabControl
-    
-
 
     private totalTime = 60;
 
@@ -42,21 +40,27 @@ export class LoginManager extends Component {
 
     }
 
-    // update (deltaTime: number) {
-    //     // [4]
-    // }
-
     public ClickConfirm() {
 
         let regPhone = /^1[3|4|5|6|7|8|9][0-9]{9}/;
         if (!regPhone.test(this.PhoneInput.string)) {
             //弹窗提示
-            customerListener.dispatch(Constants.GameStatus.SHOW_TOAST,"请输入正确的手机格式");
+            customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "请输入正确的手机格式");
             return;
         }
+
         //保存当前手机号
-        this.uiControl.ShowInstruction();
-      
+        localStorage.setItem(Constants.GameStatus.PHONE, this.PhoneInput.string);
+
+        let area = localStorage.getItem(Constants.GameStatus.SELECT_AREA);
+
+        if (area == "北京市" || area == "浙江省") {
+            this.uiControl.ShowInstruction();
+        } else {
+
+        }
+
+
     }
 
     public ClickGetCode() {
@@ -77,14 +81,3 @@ export class LoginManager extends Component {
         }
     }
 }
-
-/**
- * [1] Class member could be defined like this.
- * [2] Use `property` decorator if your want the member to be serializable.
- * [3] Your initialization goes here.
- * [4] Your update function goes here.
- *
- * Learn more about scripting: https://docs.cocos.com/creator/3.4/manual/zh/scripting/
- * Learn more about CCClass: https://docs.cocos.com/creator/3.4/manual/zh/scripting/ccclass.html
- * Learn more about life-cycle callbacks: https://docs.cocos.com/creator/3.4/manual/zh/scripting/life-cycle-callbacks.html
- */

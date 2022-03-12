@@ -51,16 +51,6 @@ export class TabControl extends Component {
     GameOverDistance!: LabelComponent  //游戏结束UI
 
     @property({
-        type: Node
-    })
-    Box!: Node  //宝箱
-
-    @property({
-        type: Node
-    })
-    BoxRed!: Node  //宝箱红点
-
-    @property({
         type: RichText
     })
     ScoreRank!: RichText  //道具数量
@@ -135,6 +125,11 @@ export class TabControl extends Component {
     @property({
         type: Node
     })
+    RewardUI!: Node
+
+    @property({
+        type: Node
+    })
     ToastUI!: Node
 
     @property({
@@ -176,9 +171,7 @@ export class TabControl extends Component {
             this.schedule(this._updateRuning, 0.1);
         }, this)
         customerListener.on(Constants.GameStatus.GAME_OVER, this._gameOverEvent, this);
-        customerListener.on(Constants.GameStatus.OPEN_BOX, this._openBox, this);
         customerListener.on(Constants.GameStatus.SHOW_MASK, this._showMask, this);
-
         customerListener.on(Constants.GameStatus.SHOW_TOAST, this.ShowToast, this);
 
 
@@ -200,6 +193,7 @@ export class TabControl extends Component {
         this.UIList.push(this.InstructionNode);
         this.UIList.push(this.LoginUI);
         this.UIList.push(this.SelectAreaNode);
+        this.UIList.push(this.RewardUI);
 
 
         this.openUI(this.SelectAreaNode);
@@ -303,21 +297,6 @@ export class TabControl extends Component {
             // tween(gameOverOpacity).by(0.5, { worldScale: new Vec3(1, 1, 1) }).start();
             tween(gameOverOpacity).by(1.5, { opacity: 255 }).start();
 
-            //宝箱动画
-            // let offset = 15;
-            // let time = 0.05;
-            // this.boxTween = tween(this.Box).repeatForever(
-            //     tween().by(time, { eulerAngles: new Vec3(0, 0, offset) })
-            //         .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
-            //         .by(time, { eulerAngles: new Vec3(0, 0, offset) })
-            //         .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
-            //         .by(time, { eulerAngles: new Vec3(0, 0, offset) })
-            //         .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
-            //         .by(time, { eulerAngles: new Vec3(0, 0, offset) })
-            //         .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
-            //         .delay(2)
-            // ).start();
-
             this.GameOverDistance.string = this.distanceLabel.string;
             this.ScoreRank.string = "<color=#dc150b><outline color=#ffc40f width=6><size=60><b>" + this.VShellCount.toString() + "</b></size></color>";
         }
@@ -328,19 +307,10 @@ export class TabControl extends Component {
      * 展示模板选择界面
      */
     public goToPhotoSelect() {
-        // this.PhotoSelectUI.active = false;
-        // this.GameOverParent.active = false;
-
-        // this.TempleSelectUI.active = true;
         this.openUI(this.TempleSelectUI);
     }
 
     public templcSelected() {
-
-        // this.GameOverParent.active = false;
-        // this.TempleSelectUI.active = false;
-
-        // this.PhotoSelectUI.active = true;
         this.openUI(this.PhotoSelectUI);
     }
 
@@ -348,38 +318,22 @@ export class TabControl extends Component {
      * showShareUI
      */
     public hideSelectPhoto() {
-        // this.PhotoSelectUI.active = false;
-        // this.TempleSelectUI.active = false;
-
-        // this.ShareUI.active = true;
         this.openUI(this.ShareUI);
-    }
-
-    /**
-     * 打开宝箱
-     */
-    private _openBox() {
-        this.boxTween.stop();
-        this.BoxRed.active = false;
     }
 
     public confirmArea() {
 
-        // this.SelectAreaNode.active = false;
-        // this.InstructionNode.active = true;
+        localStorage.setItem(Constants.GameStatus.SELECT_AREA, this.selectProvince);
+
         //判断当前省份
         if (this.selectProvince == "北京市" || this.selectProvince == "浙江省") {
             this.openUI(this.LoginUI);
         } else {
             this.openUI(this.InstructionNode);
         }
-
-
     }
 
     private OnSelectProvince() {
-        // let id = 110000000000;
-
         let id = '';
 
         for (var i = 0; i < province.length; i++) {
@@ -399,12 +353,14 @@ export class TabControl extends Component {
 
             this.CityComBox.setItems(cities_data);
         }
-
-
     }
 
-    public ShowInstruction(){
+    public ShowInstruction() {
         this.openUI(this.InstructionNode);
+    }
+
+    public ShowReward() {
+        this.openUI(this.RewardUI);
     }
 
 
