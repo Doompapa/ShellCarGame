@@ -145,7 +145,7 @@ export class TabControl extends Component {
     /**
      * 游戏总时长
      */
-    private GameTotalTime = 5;
+    private GameTotalTime = 45;
 
     public runingTime: number = 0;
 
@@ -325,8 +325,14 @@ export class TabControl extends Component {
 
         localStorage.setItem(Constants.GameStatus.SELECT_AREA, this.selectProvince);
 
-        //判断当前省份
-        if (this.selectProvince == "北京市" || this.selectProvince == "浙江省") {
+        //todo 判断当前省份
+        // if (this.selectProvince == "北京市" || this.selectProvince == "浙江省") {
+        //     this.openUI(this.LoginUI);
+        // } else {
+        //     this.openUI(this.InstructionNode);
+        // }
+
+        if (this.selectProvince == "浙江省") {
             this.openUI(this.LoginUI);
         } else {
             this.openUI(this.InstructionNode);
@@ -365,11 +371,14 @@ export class TabControl extends Component {
 
 
     public ShowToast(text: string) {
+        this.unschedule(this._hideToastFuc);
         this.ToastLabel.string = text;
         this.ToastUI.active = true;
-        this.scheduleOnce(() => {
-            this.ToastUI.active = false;
-        }, 2);
+        this.schedule(this._hideToastFuc, 2);
+    }
+
+    _hideToastFuc() {
+        this.ToastUI.active = false;
     }
 
 }

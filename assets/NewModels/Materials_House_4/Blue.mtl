@@ -4,35 +4,43 @@
   "_objFlags": 0,
   "_native": "",
   "_effectAsset": {
-    "__uuid__": "1baf0fc9-befa-459c-8bdd-af1a450a0319"
+    "__uuid__": "1baf0fc9-befa-459c-8bdd-af1a450a0319",
+    "__expectedType__": "cc.EffectAsset"
   },
   "_techIdx": 0,
   "_defines": [
+    {},
+    {},
     {}
   ],
   "_states": [
     {
+      "rasterizerState": {},
+      "depthStencilState": {},
       "blendState": {
         "targets": [
           {}
         ]
-      },
-      "depthStencilState": {},
-      "rasterizerState": {}
-    }
+      }
+    },
+    {},
+    {}
   ],
   "_props": [
     {
       "mainColor": {
         "__type__": "cc.Color",
-        "r": 130,
-        "g": 155,
-        "b": 168,
+        "r": 124,
+        "g": 163,
+        "b": 167,
         "a": 255
       },
       "alphaThreshold": 0,
+      "occlusion": 0.8,
       "roughness": 1,
-      "metallic": 0.400000005960464
-    }
+      "metallic": 0
+    },
+    {},
+    {}
   ]
 }

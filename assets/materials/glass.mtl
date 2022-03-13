@@ -30,6 +30,13 @@
   ],
   "_props": [
     {
+      "mainColor": {
+        "__type__": "cc.Color",
+        "r": 250,
+        "g": 250,
+        "b": 250,
+        "a": 255
+      },
       "roughness": 1,
       "metallic": 0,
       "mainTexture": {

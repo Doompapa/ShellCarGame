@@ -2,6 +2,7 @@
 import { _decorator, Component, Node, EditBoxComponent, ButtonComponent, LabelComponent } from 'cc';
 import { Constants } from './Other/constants';
 import { customerListener } from './Other/listener';
+import { ApiManager } from './plugin/ApiManager';
 import { TabControl } from './UIManager/uiControl';
 const { ccclass, property } = _decorator;
 
@@ -48,17 +49,33 @@ export class LoginManager extends Component {
             customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "请输入正确的手机格式");
             return;
         }
+        let phone = this.PhoneInput.string;
 
         //保存当前手机号
-        localStorage.setItem(Constants.GameStatus.PHONE, this.PhoneInput.string);
+        localStorage.setItem(Constants.GameStatus.PHONE, phone);
 
+        //校验注册
         let area = localStorage.getItem(Constants.GameStatus.SELECT_AREA);
 
-        if (area == "北京市" || area == "浙江省") {
-            this.uiControl.ShowInstruction();
-        } else {
-
+        switch (area) {
+            case "浙江省":
+                ApiManager.GetMemberZJ(phone, (isSuccess, resp) => {
+                    if (isSuccess) {
+                        this.uiControl.ShowInstruction();
+                    } else {
+                        customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "当前手机号未注册");
+                    }
+                });
+                break;
+            default:
+                break;
         }
+
+        // if (area == "北京市" || area == "浙江省") {
+        //     this.uiControl.ShowInstruction();
+        // } else {
+
+        // }
 
 
     }

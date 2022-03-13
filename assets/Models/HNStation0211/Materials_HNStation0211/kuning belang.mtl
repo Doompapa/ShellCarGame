@@ -31,16 +31,12 @@
       "mainColor": {
         "__type__": "cc.Color",
         "r": 255,
-        "g": 182,
-        "b": 0,
+        "g": 209,
+        "b": 77,
         "a": 255
       },
-      "albedoScale": {
-        "__type__": "cc.Vec3",
-        "x": 1,
-        "y": 1,
-        "z": 0
-      },
+      "occlusion": 0.5,
+      "roughness": 1,
       "metallic": 0,
       "SpecularIntensity": 1
     },

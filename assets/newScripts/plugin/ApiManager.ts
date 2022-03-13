@@ -8,7 +8,8 @@ declare var param: any;
 export class ApiManager {
 
     //https://www.doompapa.com
-    public static BaseUrl = "http://localhost:8080";
+    // public static BaseUrl = "http://localhost:8080";
+    public static BaseUrl = "https://www.doompapa.com";
 
 
     public static GetMemberGD(phone: string) {
@@ -29,6 +30,36 @@ export class ApiManager {
 
         // });
 
+
+    }
+
+
+    /**
+     * 抽奖
+     * @param phone 
+     */
+    public static GetMemberZJ(phone: string, callback: (arg0: boolean, arg1: object) => void) {
+        let param = {
+            "phone": phone
+        };
+
+        let paramStr = JSON.stringify(param);
+        HttpUtil.post(this.BaseUrl + "/ZJ/GetMember", paramStr, (isSuccess, resp) => {
+            let respJson = resp as any;
+            let message = JSON.parse(respJson.message);
+            //响应是否成功
+            if (isSuccess) {
+                console.log(message);
+                //数据是否正常
+                if (respJson.code == "200") {
+                    callback(true, message);
+                } else {
+                    callback(false, message);
+                }
+            } else {
+                callback(false, message);
+            }
+        });
     }
 
     /**
@@ -45,7 +76,7 @@ export class ApiManager {
             console.log(resp);
             if (isSuccess) {
                 callback("2元燃油优惠券");
-            }else{
+            } else {
 
             }
 

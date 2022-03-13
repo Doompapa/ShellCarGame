@@ -30,11 +30,11 @@
   ],
   "_props": [
     {
-      "occlusion": 0.7,
+      "occlusion": 0.5,
       "roughness": 1,
       "metallic": 0,
       "mainTexture": {
-        "__uuid__": "16282a1d-93f9-4afb-9a4c-e5a4b8d3e1bc@6c48a",
+        "__uuid__": "e6bfaf5c-01e8-4364-9b88-b8098b07cef3@6c48a",
         "__expectedType__": "cc.Texture2D"
       }
     },

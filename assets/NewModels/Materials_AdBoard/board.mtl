@@ -32,13 +32,13 @@
     {
       "albedoScale": {
         "__type__": "cc.Vec3",
-        "x": 0.800000011920929,
-        "y": 0.800000011920929,
-        "z": 0.800000011920929
+        "x": 1.2,
+        "y": 1.2,
+        "z": 1.2
       },
       "alphaThreshold": 0,
-      "roughness": 0.272165536880493,
-      "metallic": 0.400000005960464,
+      "roughness": 1,
+      "metallic": 0,
       "mainTexture": {
         "__uuid__": "3cfa9c8b-e95c-416e-9302-e1289c94c200@6c48a",
         "__expectedType__": "cc.Texture2D"

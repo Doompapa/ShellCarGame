@@ -159,7 +159,7 @@ function downloadIamge(image: HTMLImageElement) {
 
 
 
-import { _decorator, Component, Node, Sprite, SpriteFrame, Texture2D, ImageAsset, UITransformComponent, Vec2, Rect, loader, resources, PageView } from 'cc';
+import { _decorator, Component, Node, Sprite, SpriteFrame, Texture2D, ImageAsset, UITransformComponent, Vec2, Rect, loader, resources, PageView, Input } from 'cc';
 import { Constants } from './Other/constants';
 import { HttpUtil } from './Other/HttpUtil';
 import { customerListener } from './Other/listener';
@@ -288,6 +288,10 @@ export class ShareManager extends Component {
                                     tempSpriteFrame.texture = texture;
                                     showImg.spriteFrame = tempSpriteFrame;
                                     mergedPic = img as HTMLImageElement;
+
+                                    showImg.node.on(Input.EventType.TOUCH_START, () => {
+                                        // savePic();
+                                    });
                                 }
 
                                 if (img) {
@@ -348,5 +352,4 @@ export class ShareManager extends Component {
 
 
 }
-
 

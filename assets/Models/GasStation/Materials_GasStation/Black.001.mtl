@@ -1,6 +1,6 @@
 {
   "__type__": "cc.Material",
-  "_name": "Black.001",
+  "_name": "",
   "_objFlags": 0,
   "_native": "",
   "_effectAsset": {
@@ -9,29 +9,35 @@
   },
   "_techIdx": 0,
   "_defines": [
+    {
+      "USE_ALBEDO_MAP": true
+    },
+    {},
     {}
   ],
   "_states": [
     {
       "rasterizerState": {},
+      "depthStencilState": {},
       "blendState": {
         "targets": [
           {}
         ]
-      },
-      "depthStencilState": {}
-    }
+      }
+    },
+    {},
+    {}
   ],
   "_props": [
     {
-      "albedoScale": {
-        "__type__": "cc.Vec3",
-        "x": 0.052218008786439896,
-        "y": 0.04311821237206459,
-        "z": 0.04311821237206459
-      },
-      "metallic": 0.4000000059604645,
-      "roughness": 0.27216553688049316
-    }
+      "roughness": 1,
+      "metallic": 0,
+      "mainTexture": {
+        "__uuid__": "735b20dd-fd4c-4421-b47d-9f808c0ebe44@6c48a",
+        "__expectedType__": "cc.Texture2D"
+      }
+    },
+    {},
+    {}
   ]
 }

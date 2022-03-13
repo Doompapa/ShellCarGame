@@ -89,8 +89,8 @@ export class RewardManager extends Component {
      */
     public OpenBox() {
         this.ConfirmButton.node.active = false;
-       
-   
+
+
         let offset = 15;
         let time = 0.05;
         this.boxTween = tween(this.Box).repeatForever(
@@ -104,34 +104,47 @@ export class RewardManager extends Component {
                 .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
         ).start();
 
-
-
         let phone = localStorage.getItem(Constants.GameStatus.PHONE);
-        console.log("phone " + phone);
-        if (phone) {
-            ApiManager.GetRewardZJ(phone, (ticketName) => {
-                this.EffectsNode.active = true;
+        let area = localStorage.getItem(Constants.GameStatus.SELECT_AREA);
+        if (phone && area) {
 
-                this.boxTween.stop();
-                this.BoxSprite.spriteFrame = this.BoxOpendSprite;
+            switch (area) {
+                case "浙江省":
+                    ApiManager.GetRewardZJ(phone, (ticketName) => {
+                        this.ReceiveReward(ticketName);
+                    });
+                    break;
+                default:
+                    break;
+            }
 
-                let gameOverOpacity = this.ReceiveRewardUI.getComponent(UIOpacityComponent);
-                if (gameOverOpacity != null) {
-                    gameOverOpacity.opacity = 0;
-                    this.ReceiveRewardUI.active = true;
-                    tween(gameOverOpacity).by(1.5, { opacity: 255 }).start();
-                }
 
-                this.Ticket.worldScale = new Vec3(0, 0, 0);
-                this.Ticket.active = true;
-                tween(this.Ticket).by(1.5, { worldScale: new Vec3(1, 1, 1) }).start();
-                this.TicketLabel.string = ticketName;
-            });
         } else {
 
         }
 
 
+    }
+
+    private ReceiveReward(ticketName: string) {
+        this.EffectsNode.active = true;
+
+        //宝箱特效相关
+        this.boxTween.stop();
+        this.Box.eulerAngles = new Vec3(0, 0, 0);
+        this.BoxSprite.spriteFrame = this.BoxOpendSprite;
+
+        let gameOverOpacity = this.ReceiveRewardUI.getComponent(UIOpacityComponent);
+        if (gameOverOpacity != null) {
+            gameOverOpacity.opacity = 0;
+            this.ReceiveRewardUI.active = true;
+            tween(gameOverOpacity).by(1.5, { opacity: 255 }).start();
+        }
+
+        this.Ticket.worldScale = new Vec3(0, 0, 0);
+        this.Ticket.active = true;
+        tween(this.Ticket).by(1.5, { worldScale: new Vec3(1, 1, 1) }).start();
+        this.TicketLabel.string = ticketName;
     }
 
 

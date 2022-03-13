@@ -26,7 +26,25 @@ export class TestManager extends Component {
     start() {
         // [3]
 
-        
+        this.scheduleOnce(() => {
+            var my = document.getElementById("content");
+            // if (my == null) {
+            //     my = document.createElement("div");
+            //     document.body.appendChild(my);
+            //     my.style.position = "absolute";
+            //     my.id = "divCreator";
+            //     my.style.width = (100).toString();
+            //     my.style.height = (100).toString();
+            //     my.style.backgroundColor = "#ffffcc";
+            // }
+
+            //'<img src="http://127.0.0.1/test.jpg" style="width: 591px; height: 1280px;">'
+            let test = document.createElement("img");
+            test.src = "https://vshell-1257946517.cos.accelerate.myqcloud.com/test.jpg";
+            test.style.position = "absolute";
+            my!.appendChild(test);
+        }, 0.5);
+        // ApiManager.GetMemberGD("18627581858");
     }
 
 

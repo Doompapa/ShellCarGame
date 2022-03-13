@@ -2,16 +2,16 @@
   "ver": "1.0.22",
   "importer": "image",
   "imported": true,
-  "uuid": "2a036d41-7fa8-4997-b98b-0d2c2c631b1b",
+  "uuid": "e6bfaf5c-01e8-4364-9b88-b8098b07cef3",
   "files": [
-    ".png",
+    ".jpg",
     ".json"
   ],
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "2a036d41-7fa8-4997-b98b-0d2c2c631b1b@6c48a",
-      "displayName": "bg",
+      "uuid": "e6bfaf5c-01e8-4364-9b88-b8098b07cef3@6c48a",
+      "displayName": "SKY",
       "id": "6c48a",
       "name": "texture",
       "userData": {
@@ -22,7 +22,7 @@
         "mipfilter": "none",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "2a036d41-7fa8-4997-b98b-0d2c2c631b1b"
+        "imageUuidOrDatabaseUri": "e6bfaf5c-01e8-4364-9b88-b8098b07cef3"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -33,8 +33,8 @@
     }
   },
   "userData": {
-    "hasAlpha": true,
+    "hasAlpha": false,
     "type": "texture",
-    "redirect": "2a036d41-7fa8-4997-b98b-0d2c2c631b1b@6c48a"
+    "redirect": "e6bfaf5c-01e8-4364-9b88-b8098b07cef3@6c48a"
   }
 }

@@ -30,13 +30,14 @@
     {
       "mainColor": {
         "__type__": "cc.Color",
-        "r": 255,
+        "r": 254,
         "g": 0,
-        "b": 8,
+        "b": 2,
         "a": 255
       },
+      "occlusion": 0.7,
       "roughness": 1,
-      "metallic": 1,
+      "metallic": 0.5,
       "SpecularIntensity": 1
     },
     {},

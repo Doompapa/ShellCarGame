@@ -9,9 +9,7 @@
   },
   "_techIdx": "0",
   "_defines": [
-    {
-      "USE_ALBEDO_MAP": true
-    },
+    {},
     {},
     {}
   ],
@@ -30,6 +28,13 @@
   ],
   "_props": [
     {
+      "mainColor": {
+        "__type__": "cc.Color",
+        "r": 177,
+        "g": 167,
+        "b": 167,
+        "a": 255
+      },
       "roughness": 0.5,
       "metallic": 0,
       "SpecularIntensity": 0,
