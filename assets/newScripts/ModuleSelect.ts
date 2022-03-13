@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node } from 'cc';
+import { _decorator, Component, Node, ButtonComponent, PageView } from 'cc';
 const { ccclass, property } = _decorator;
 
 /**
@@ -13,23 +13,32 @@ const { ccclass, property } = _decorator;
  * ManualUrl = https://docs.cocos.com/creator/3.4/manual/zh/
  *
  */
- 
+
 @ccclass('ModuleSelect')
 export class ModuleSelect extends Component {
-    // [1]
-    // dummy = '';
 
-    // [2]
-    // @property
-    // serializableDummy = 0;
+    @property({
+        type: PageView
+    })
+    picTemplePageView!: PageView
 
-    start () {
+    start() {
         // [3]
     }
 
     // update (deltaTime: number) {
     //     // [4]
     // }
+
+    public clickRight() {
+        let index = this.picTemplePageView.curPageIdx + 1;
+        this.picTemplePageView.setCurrentPageIndex(index);
+    }
+
+    public clickLeft() {
+        let index = this.picTemplePageView.curPageIdx - 1;
+        this.picTemplePageView.setCurrentPageIndex(index);
+    }
 }
 
 /**
