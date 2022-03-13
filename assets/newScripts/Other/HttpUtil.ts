@@ -57,7 +57,7 @@ export class HttpUtil {
     public static post(url: string, param: string, callback: (arg0: boolean, arg1: object) => void) {
         var xhr = loader.getXMLHttpRequest();
         xhr.open("POST", url, true);
-        xhr.setRequestHeader("Content-Type", "application/application/json"
+        xhr.setRequestHeader("Content-Type", "application/json"
         );
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4) {

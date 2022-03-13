@@ -1,7 +1,8 @@
 
-import { _decorator, Component, Node, tween, Tween, Vec3, UIOpacityComponent, LabelComponent } from 'cc';
+import { _decorator, Component, Node, tween, Tween, Vec3, UIOpacityComponent, LabelComponent, SpriteComponent, SpriteFrame, ButtonComponent } from 'cc';
 import { Constants } from './Other/constants';
 import { customerListener } from './Other/listener';
+import { ApiManager } from './plugin/ApiManager';
 const { ccclass, property } = _decorator;
 
 /**
@@ -43,6 +44,22 @@ export class RewardManager extends Component {
     })
     TicketLabel!: LabelComponent
 
+    @property({
+        type: ButtonComponent
+    })
+    ConfirmButton!: LabelComponent
+
+
+    @property({
+        type: SpriteComponent
+    })
+    BoxSprite!: SpriteComponent
+
+    @property({
+        type: SpriteFrame
+    })
+    BoxOpendSprite!: SpriteFrame
+
     private boxTween !: Tween<Node>;
 
 
@@ -53,6 +70,27 @@ export class RewardManager extends Component {
         this.Ticket.active = false;
 
         //宝箱动画
+        // let offset = 15;
+        // let time = 0.05;
+        // this.boxTween = tween(this.Box).repeatForever(
+        //     tween().by(time, { eulerAngles: new Vec3(0, 0, offset) })
+        //         .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
+        //         .by(time, { eulerAngles: new Vec3(0, 0, offset) })
+        //         .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
+        //         .by(time, { eulerAngles: new Vec3(0, 0, offset) })
+        //         .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
+        //         .by(time, { eulerAngles: new Vec3(0, 0, offset) })
+        //         .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
+        //         .delay(2)
+        // ).start();
+    }
+    /**
+     * 打开宝箱
+     */
+    public OpenBox() {
+        this.ConfirmButton.node.active = false;
+       
+   
         let offset = 15;
         let time = 0.05;
         this.boxTween = tween(this.Box).repeatForever(
@@ -64,41 +102,38 @@ export class RewardManager extends Component {
                 .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
                 .by(time, { eulerAngles: new Vec3(0, 0, offset) })
                 .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
-                .delay(2)
         ).start();
-    }
-    /**
-     * 打开宝箱
-     */
-    public OpenBox() {
-        this.boxTween.stop();
-        this.EffectsNode.active = true;
-        // this.ReceiveRewardUI.active = true;
 
-        let gameOverOpacity = this.ReceiveRewardUI.getComponent(UIOpacityComponent);
-        if (gameOverOpacity != null) {
-            gameOverOpacity.opacity = 0;
-            this.ReceiveRewardUI.active = true;
-            // tween(gameOverOpacity).by(0.5, { worldScale: new Vec3(1, 1, 1) }).start();
-            tween(gameOverOpacity).by(1.5, { opacity: 255 }).start();
+
+
+        let phone = localStorage.getItem(Constants.GameStatus.PHONE);
+        console.log("phone " + phone);
+        if (phone) {
+            ApiManager.GetRewardZJ(phone, (ticketName) => {
+                this.EffectsNode.active = true;
+
+                this.boxTween.stop();
+                this.BoxSprite.spriteFrame = this.BoxOpendSprite;
+
+                let gameOverOpacity = this.ReceiveRewardUI.getComponent(UIOpacityComponent);
+                if (gameOverOpacity != null) {
+                    gameOverOpacity.opacity = 0;
+                    this.ReceiveRewardUI.active = true;
+                    tween(gameOverOpacity).by(1.5, { opacity: 255 }).start();
+                }
+
+                this.Ticket.worldScale = new Vec3(0, 0, 0);
+                this.Ticket.active = true;
+                tween(this.Ticket).by(1.5, { worldScale: new Vec3(1, 1, 1) }).start();
+                this.TicketLabel.string = ticketName;
+            });
+        } else {
+
         }
 
-        this.Ticket.worldScale = new Vec3(0, 0, 0);
-        this.Ticket.active = true;
-        tween(this.Ticket).by(1.5, { worldScale: new Vec3(1, 1, 1) }).start();
 
     }
 
 
 }
 
-/**
- * [1] Class member could be defined like this.
- * [2] Use `property` decorator if your want the member to be serializable.
- * [3] Your initialization goes here.
- * [4] Your update function goes here.
- *
- * Learn more about scripting: https://docs.cocos.com/creator/3.4/manual/zh/scripting/
- * Learn more about CCClass: https://docs.cocos.com/creator/3.4/manual/zh/scripting/ccclass.html
- * Learn more about life-cycle callbacks: https://docs.cocos.com/creator/3.4/manual/zh/scripting/life-cycle-callbacks.html
- */
