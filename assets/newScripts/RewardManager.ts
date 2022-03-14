@@ -90,26 +90,12 @@ export class RewardManager extends Component {
     public OpenBox() {
         this.ConfirmButton.node.active = false;
 
-
-        let offset = 15;
-        let time = 0.05;
-        this.boxTween = tween(this.Box).repeatForever(
-            tween().by(time, { eulerAngles: new Vec3(0, 0, offset) })
-                .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
-                .by(time, { eulerAngles: new Vec3(0, 0, offset) })
-                .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
-                .by(time, { eulerAngles: new Vec3(0, 0, offset) })
-                .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
-                .by(time, { eulerAngles: new Vec3(0, 0, offset) })
-                .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
-        ).start();
-
         let phone = localStorage.getItem(Constants.GameStatus.PHONE);
         let area = localStorage.getItem(Constants.GameStatus.SELECT_AREA);
         if (phone && area) {
-
             switch (area) {
                 case "浙江省":
+                    this.BoxShake();
                     ApiManager.GetRewardZJ(phone, (ticketName) => {
                         this.ReceiveReward(ticketName);
                     });
@@ -122,8 +108,21 @@ export class RewardManager extends Component {
         } else {
 
         }
+    }
 
-
+    private BoxShake() {
+        let offset = 15;
+        let time = 0.05;
+        this.boxTween = tween(this.Box).repeatForever(
+            tween().by(time, { eulerAngles: new Vec3(0, 0, offset) })
+                .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
+                .by(time, { eulerAngles: new Vec3(0, 0, offset) })
+                .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
+                .by(time, { eulerAngles: new Vec3(0, 0, offset) })
+                .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
+                .by(time, { eulerAngles: new Vec3(0, 0, offset) })
+                .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
+        ).start();
     }
 
     private ReceiveReward(ticketName: string) {

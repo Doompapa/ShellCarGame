@@ -41,6 +41,9 @@ export class EnvItemControl extends Component {
 
     private itemsMananger!: Node;
 
+
+    private _tools: Node[] = [];
+
     /**
      * 是否生成道具
      */
@@ -85,6 +88,7 @@ export class EnvItemControl extends Component {
         //远处景物
         for (let i = 0; i < this.farEnvNode.children.length; i++) {
             this.farEnvNode.children[i].active = false;
+
         }
         let randomFar = this.random(0, this.farEnvNode.children.length);
         if (randomFar < this.farEnvNode.children.length) {
@@ -98,6 +102,13 @@ export class EnvItemControl extends Component {
     public updateRandom() {
         this.updateEnv();
         if (this.isCreate) {
+
+            for (let index = 0; index < this._tools.length; index++) {
+                this._tools[index].destroy();
+            }
+
+
+
             let whichOne = this.random(0, 5);
             let fab = null;
             if (whichOne < 3) {
@@ -126,10 +137,22 @@ export class EnvItemControl extends Component {
             while (randomNUmSecond == randomNum) {
                 randomNUmSecond = this.random(-1, 2);
             }
+
+            // let randomNUmSecond = 0;
+            // if (randomNum == 0) {
+            //     if (this.random(1, 50) > 25) {
+            //         randomNUmSecond = -1;
+            //     } else {
+            //         randomNUmSecond = 1;
+            //     }
+            // }
             fabTwo.position = new Vec3(10 * randomNUmSecond, 0, this.node.position.z + this.random(60, 70));
             fabTwo.parent = this.itemsMananger;
             fabTwo.eulerAngles = new Vec3(0, 0, 0);
             this.initColliderObjects(fabTwo, Constants.ColliderGroup.NORMALCOIN, Constants.ColliderGroup.CAR);
+
+            this._tools.push(fab);
+            this._tools.push(fabTwo);
         }
 
     }

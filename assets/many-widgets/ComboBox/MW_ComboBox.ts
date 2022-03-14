@@ -1,5 +1,6 @@
 
 import { _decorator, Component, Node, Label, instantiate, Button, UITransformComponent, Vec3 } from 'cc';
+import { province } from '../../newScripts/data/province';
 import { Constants } from '../../newScripts/Other/constants';
 import { customerListener } from '../../newScripts/Other/listener';
 const { ccclass, property } = _decorator;
@@ -140,9 +141,13 @@ export class MWComboBox extends Component {
     _itemClicked(button: Button) {
         let currentLabel = this._currentLabel.getComponent(Label)!;
         currentLabel.string = button.node.children[0].getComponent(Label)!.string;
+
+        for (var i = 0; i < province.length; i++) {
+            if (province[i].name == currentLabel.string) {
+                customerListener.dispatch(Constants.GameStatus.CLICK_COMBOXITEM, currentLabel.string);
+            }
+        }
         this._openCloseComboBox();
-        customerListener.dispatch(Constants.GameStatus.CLICK_COMBOXITEM, currentLabel.string);
-        console.log(currentLabel.string);
     }
 
     private _OnClickCombox(text: string) {

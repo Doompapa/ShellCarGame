@@ -340,25 +340,23 @@ export class TabControl extends Component {
     }
 
     private OnSelectProvince() {
-        let id = '';
+      
 
-        for (var i = 0; i < province.length; i++) {
+        for (let i = 0; i < province.length; i++) {
             if (this.provinceComBox.getCurrentText() == province[i].name) {
-                // id = Number(province[i].id);
-                id = province[i].id;
+                let id = province[i].id  as string;
+               
                 this.selectProvince = province[i].name;
+
+                let cities_data: string[] = [];
+                for (let index = 0; index < city[id].length; index++) {
+                    cities_data.push(city[id][index].name);
+                }
+                this.CityComBox.setItems(cities_data);
+                console.log("触发city选择");
             }
         }
 
-        if (id != '') {
-            let cities_data: string[] = [];
-
-            for (var i = 0; i < city[id].length; i++) {
-                cities_data.push(city[id][i].name);
-            }
-
-            this.CityComBox.setItems(cities_data);
-        }
     }
 
     public ShowInstruction() {

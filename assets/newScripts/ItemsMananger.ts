@@ -68,7 +68,7 @@ export class ItemsMananger extends Component {
                 }
             } else {
                 this._prevPos.set(this.carNode.worldPosition);
-                let newPos: Vec3 = new Vec3(0, 0, this.roadCount * 100 + 800);
+                let newPos: Vec3 = new Vec3(0, 0, this.roadCount * 100 + 900);
                 let first = this.envItems[0];
                 this.envItems.splice(0, 1);
                 first.position = newPos;
@@ -76,17 +76,6 @@ export class ItemsMananger extends Component {
                 this.envItems.push(first);
                 this.roadCount++;
             }
-
-
-            // this._prevPos.set(this.carNode.worldPosition);
-            // let newPos: Vec3 = new Vec3(0, 0, this.roadCount * 100 + 600);
-            // let first = this.envItems[0];
-            // this.envItems.splice(0, 1);
-            // first.position = newPos;
-            // first.getComponent(EnvItemControl)?.updateRandom();
-            // this.envItems.push(first);
-            // this.roadCount++;
-
         }
 
     }

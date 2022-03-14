@@ -1,6 +1,6 @@
 {
   "__type__": "cc.Material",
-  "_name": "黄",
+  "_name": "",
   "_objFlags": 0,
   "_native": "",
   "_effectAsset": {
@@ -9,29 +9,36 @@
   },
   "_techIdx": 0,
   "_defines": [
+    {},
+    {},
     {}
   ],
   "_states": [
     {
       "rasterizerState": {},
+      "depthStencilState": {},
       "blendState": {
         "targets": [
           {}
         ]
-      },
-      "depthStencilState": {}
-    }
+      }
+    },
+    {},
+    {}
   ],
   "_props": [
     {
-      "albedoScale": {
-        "__type__": "cc.Vec3",
-        "x": 1,
-        "y": 0.5296725630760193,
-        "z": 0.035414911806583405
+      "mainColor": {
+        "__type__": "cc.Color",
+        "r": 206,
+        "g": 202,
+        "b": 202,
+        "a": 255
       },
-      "metallic": 0.4000000059604645,
-      "roughness": 0.27216553688049316
-    }
+      "roughness": 1,
+      "metallic": 0
+    },
+    {},
+    {}
   ]
 }
