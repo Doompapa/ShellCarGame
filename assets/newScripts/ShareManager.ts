@@ -159,7 +159,7 @@ function downloadIamge(image: HTMLImageElement) {
 
 
 
-import { _decorator, Component, Node, Sprite, SpriteFrame, Texture2D, ImageAsset, UITransformComponent, Vec2, Rect, loader, resources, PageView, Input } from 'cc';
+import { _decorator, Component, Node, Sprite, SpriteFrame, Texture2D, ImageAsset, UITransformComponent, Vec2, Rect, loader, resources, PageView, Input, tween, Vec3 } from 'cc';
 import { Constants } from './Other/constants';
 import { HttpUtil } from './Other/HttpUtil';
 import { customerListener } from './Other/listener';
@@ -194,14 +194,25 @@ export class ShareManager extends Component {
     })
     picTemplePageView!: PageView
 
+
+    @property({
+        type: Node
+    })
+    BoxButton!: Node
+
+
     start() {
         // [3]
+
+
     }
 
     onLoad() {
         spImg = this.img;
         showImg = this.ShowImage;
     }
+
+
 
     public onUpload() {
         var fileInput = document.getElementById("fileInput") as HTMLInputElement;
@@ -300,6 +311,21 @@ export class ShareManager extends Component {
 
                                 my.style.display = 'none';
                                 my.style.visibility = "hidden";
+
+
+                                let offset = 15;
+                                let time = 0.05;
+                                tween(this.BoxButton).repeatForever(
+                                    tween().by(time, { eulerAngles: new Vec3(0, 0, offset) })
+                                        .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
+                                        .by(time, { eulerAngles: new Vec3(0, 0, offset) })
+                                        .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
+                                        .by(time, { eulerAngles: new Vec3(0, 0, offset) })
+                                        .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
+                                        .by(time, { eulerAngles: new Vec3(0, 0, offset) })
+                                        .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
+                                        .delay(2)
+                                ).start();
 
                             } else {
 

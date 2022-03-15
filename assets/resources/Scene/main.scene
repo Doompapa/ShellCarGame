@@ -6063,7 +6063,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 122.822,
+      "y": 84.151,
       "z": 0
     },
     "_lrot": {
@@ -6100,7 +6100,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 700,
-      "height": 313
+      "height": 157.79999999999998
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -6118,10 +6118,10 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_lineHeight": 50,
-    "_string": "快快拾取壳牌V-Power威澎能效燃油，提升引擎动力表现！\n它的清洁配方，可有效阻止95%*积碳堆积更高标号的壳牌V-Power 98还能减少爆震哦\n",
+    "_lineHeight": 30,
+    "_string": "    快快拾取壳牌V-Power威澎能效燃油，提升引擎动力表现！\n它的清洁配方，可有效阻止95%*积碳堆积更高标号的壳牌V-Power 98还能减少爆震哦\n",
     "_horizontalAlign": 0,
-    "_fontSize": 50,
+    "_fontSize": 30,
     "_maxWidth": 700,
     "_fontFamily": "Arial",
     "_font": null,
@@ -6153,7 +6153,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": -149.619,
+      "y": -65.07,
       "z": 0
     },
     "_lrot": {
@@ -6191,7 +6191,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 700,
-      "height": 187.79999999999998
+      "height": 131.5
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -6210,10 +6210,10 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_lineHeight": 30,
+    "_lineHeight": 25,
     "_string": "*使用行业标准进行测量，帮助保护关键的燃料系统组件，如进气阀/或喷油器，防止沉积物积累影响其性能。\n实际效果和效益可能因为车辆类型、驾驶条件和驾驶方式而异，不做保证。\n",
     "_horizontalAlign": 0,
-    "_fontSize": 30,
+    "_fontSize": 25,
     "_maxWidth": 700,
     "_fontFamily": "Arial",
     "_font": null,
@@ -6235,8 +6235,8 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 900,
-      "height": 800
+      "width": 820,
+      "height": 450
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -6475,9 +6475,6 @@
         "__id__": 241
       },
       {
-        "__id__": 244
-      },
-      {
         "__id__": 247
       }
     ],
@@ -6529,14 +6526,18 @@
     "_parent": {
       "__id__": 240
     },
-    "_children": [],
+    "_children": [
+      {
+        "__id__": 242
+      }
+    ],
     "_active": true,
     "_components": [
       {
-        "__id__": 242
+        "__id__": 245
       },
       {
-        "__id__": 243
+        "__id__": 246
       }
     ],
     "_prefab": null,
@@ -6569,6 +6570,111 @@
     "_id": "18KxXg0ZZE3Kh0sg1uZB2n"
   },
   {
+    "__type__": "cc.Node",
+    "_name": "Label",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 241
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 243
+      },
+      {
+        "__id__": 244
+      }
+    ],
+    "_prefab": null,
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 1,
+      "z": 0,
+      "w": 6.123233995736766e-17
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_layer": 524288,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 180,
+      "z": 0
+    },
+    "_id": "64d97opWtPKZGLbpvkIEZL"
+  },
+  {
+    "__type__": "cc.UITransform",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 242
+    },
+    "_enabled": true,
+    "__prefab": null,
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 420,
+      "height": 97.8
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_id": "cdcpkVh2RO+5KEgH/ufU94"
+  },
+  {
+    "__type__": "cc.Label",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 242
+    },
+    "_enabled": true,
+    "__prefab": null,
+    "_visFlags": 0,
+    "_customMaterial": null,
+    "_srcBlendFactor": 2,
+    "_dstBlendFactor": 4,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_string": "损伤发动机，影响车辆纵擎表现\n注意避开它！\n",
+    "_horizontalAlign": 0,
+    "_verticalAlign": 1,
+    "_actualFontSize": 30,
+    "_fontSize": 30,
+    "_fontFamily": "Arial",
+    "_lineHeight": 30,
+    "_overflow": 0,
+    "_enableWrapText": true,
+    "_font": null,
+    "_isSystemFontUsed": true,
+    "_isItalic": false,
+    "_isBold": false,
+    "_isUnderline": false,
+    "_underlineHeight": 2,
+    "_cacheMode": 0,
+    "_id": "16AWhJZZVOQoO0Kp3RIwc8"
+  },
+  {
     "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
@@ -6579,8 +6685,8 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 743,
-      "height": 340
+      "width": 550,
+      "height": 200
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -6615,7 +6721,7 @@
     },
     "_type": 0,
     "_fillType": 0,
-    "_sizeMode": 1,
+    "_sizeMode": 0,
     "_fillCenter": {
       "__type__": "cc.Vec2",
       "x": 0,
@@ -6627,96 +6733,6 @@
     "_useGrayscale": false,
     "_atlas": null,
     "_id": "0eXzNDcrxEw7dIWYmsuGXJ"
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "RichText",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 240
-    },
-    "_children": [],
-    "_active": true,
-    "_components": [
-      {
-        "__id__": 245
-      },
-      {
-        "__id__": 246
-      }
-    ],
-    "_prefab": null,
-    "_lpos": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": -31.264,
-      "z": 0
-    },
-    "_lrot": {
-      "__type__": "cc.Quat",
-      "x": 0,
-      "y": 0,
-      "z": 0,
-      "w": 1
-    },
-    "_lscale": {
-      "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
-      "z": 1
-    },
-    "_layer": 524288,
-    "_euler": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_id": "f0hJeyAbVBlarKzgnQQacu"
-  },
-  {
-    "__type__": "cc.UITransform",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 244
-    },
-    "_enabled": true,
-    "__prefab": null,
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 600,
-      "height": 298.2
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_id": "d2T56CGx5FsqibURpQNVwL"
-  },
-  {
-    "__type__": "cc.RichText",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 244
-    },
-    "_enabled": true,
-    "__prefab": null,
-    "_lineHeight": 70,
-    "_string": "损伤发动机，影响车辆纵擎表现\n注意避开它！\n",
-    "_horizontalAlign": 0,
-    "_fontSize": 45,
-    "_maxWidth": 600,
-    "_fontFamily": "Arial",
-    "_font": null,
-    "_isSystemFontUsed": true,
-    "_userDefinedFont": null,
-    "_cacheMode": 0,
-    "_imageAtlas": null,
-    "_handleTouchEvent": true,
-    "_id": "2fBlplK5hNx6ks/ZZdyfbg"
   },
   {
     "__type__": "cc.Node",
@@ -9010,7 +9026,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 24.311,
+      "y": 35.669,
       "z": 0
     },
     "_lrot": {
@@ -9068,7 +9084,7 @@
     "_lineHeight": 40,
     "_string": "限时45s\n行驶距离越远评分越高哦\n",
     "_horizontalAlign": 1,
-    "_fontSize": 40,
+    "_fontSize": 30,
     "_maxWidth": 600,
     "_fontFamily": "Arial",
     "_font": null,
@@ -12066,6 +12082,9 @@
     "picTemplePageView": {
       "__id__": 458
     },
+    "BoxButton": {
+      "__id__": 446
+    },
     "_id": "a77PSQ9dVO7J2vWZ1th84p"
   },
   {
@@ -12521,7 +12540,10 @@
       "b": 124,
       "a": 255
     },
-    "_normalSprite": null,
+    "_normalSprite": {
+      "__uuid__": "5037762f-4337-4874-8780-d25ff8b17016@f9941",
+      "__expectedType__": "cc.SpriteFrame"
+    },
     "_hoverSprite": null,
     "_pressedSprite": null,
     "_disabledSprite": null,
@@ -12746,7 +12768,10 @@
       "b": 124,
       "a": 255
     },
-    "_normalSprite": null,
+    "_normalSprite": {
+      "__uuid__": "82f0cb7c-c4db-40a5-9e1a-7f106df5d035@f9941",
+      "__expectedType__": "cc.SpriteFrame"
+    },
     "_hoverSprite": null,
     "_pressedSprite": null,
     "_disabledSprite": null,
@@ -17787,7 +17812,7 @@
       "r": 0,
       "g": 0,
       "b": 0,
-      "a": 100
+      "a": 150
     },
     "_spriteFrame": {
       "__uuid__": "7d8f9b89-4fd1-4c9f-a3ab-38ec7cded7ca@f9941",
