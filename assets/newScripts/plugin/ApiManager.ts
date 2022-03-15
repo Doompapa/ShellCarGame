@@ -1,7 +1,6 @@
 
 import { _decorator, Component, Node } from 'cc';
 import { HttpUtil } from '../Other/HttpUtil';
-import MD5 from './MD5';
 const { ccclass, property } = _decorator;
 
 declare var param: any;
