@@ -68,7 +68,7 @@ export class ItemsMananger extends Component {
                 }
             } else {
                 this._prevPos.set(this.carNode.worldPosition);
-                let newPos: Vec3 = new Vec3(0, 0, this.roadCount * 100 + 900);
+                let newPos: Vec3 = new Vec3(0, 0, this.roadCount * 100 + 1000);
                 let first = this.envItems[0];
                 this.envItems.splice(0, 1);
                 first.position = newPos;
