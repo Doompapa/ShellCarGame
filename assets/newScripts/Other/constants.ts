@@ -21,7 +21,9 @@ enum GameStatus {   //定义游戏状态
     OPEN_LOGIN = 'open-login',
     SHOW_TOAST = 'show-toast',
     SELECT_AREA = 'select-area',
-    PHONE = "phone"
+    PHONE = "phone",
+    ISLOGIN = "islogin",
+    HIDE_SHARE = "hideshare",
 }
 // enum CoinScore {    //定义游戏金币类型
 //     RED_COIN = 'red-coin',

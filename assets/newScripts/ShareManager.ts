@@ -6,6 +6,8 @@ var spImg: Sprite;
 var showImg: Sprite;
 var currentUri = "";
 var mergedPic: HTMLImageElement;
+
+var showImageElement: HTMLImageElement;
 function loadLocalimg(uri: string) {
     //创建一个div   
     var my = document.getElementById("divCreator");
@@ -138,28 +140,9 @@ const getBase64 = (url: string) => {
     });
 }
 
-function downloadIamge(image: HTMLImageElement) {
-    // 解决跨域 Canvas 污染问题
-    image.setAttribute('crossOrigin', 'anonymous')
-    image.onload = function () {
-        // 生成一个a元素
-        var a = document.createElement('a')
-        // 创建一个单击事件
-        var event = new MouseEvent('click')
-        // 将a的download属性设置为我们想要下载的图片名称，若name不存在则使用‘下载图片名称’作为默认名称
-        a.download = '我的个性海报.png'
-        // 将生成的URL设置为a.href属性
-        a.href = image.src
-        // 触发a的单击事件
-        a.dispatchEvent(event)
-    }
-
-}
 
 
-
-
-import { _decorator, Component, Node, Sprite, SpriteFrame, Texture2D, ImageAsset, UITransformComponent, Vec2, Rect, loader, resources, PageView, Input, tween, Vec3 } from 'cc';
+import { _decorator, Component, Node, Sprite, SpriteFrame, Texture2D, ImageAsset, UITransformComponent, Vec2, Rect, loader, resources, PageView, Input, tween, Vec3, UITransform } from 'cc';
 import { Constants } from './Other/constants';
 import { HttpUtil } from './Other/HttpUtil';
 import { customerListener } from './Other/listener';
@@ -203,7 +186,7 @@ export class ShareManager extends Component {
 
     start() {
         // [3]
-
+        customerListener.on(Constants.GameStatus.HIDE_SHARE, this.hideImgHTML, this);
 
     }
 
@@ -213,6 +196,9 @@ export class ShareManager extends Component {
     }
 
 
+    hideImgHTML() {
+        showImageElement.style.display = "none";
+    }
 
     public onUpload() {
         var fileInput = document.getElementById("fileInput") as HTMLInputElement;
@@ -277,41 +263,32 @@ export class ShareManager extends Component {
                             if (resp['error_code'] == 0) {
 
                                 var strImg = "data:image/jpg;base64," + resp['result']['merge_image'];
+                                //-------------------------------------------
 
-                                let my = document.getElementById("divCreator");
-                                if (my == null) {
-                                    my = document.createElement("div");
-                                    document.body.appendChild(my);
-                                    my.style.position = "absolute";
-                                    my.id = "divCreator";
-                                    my.style.width = (100).toString();
-                                    my.style.height = (100).toString();
-                                    my.style.backgroundColor = "#ffffcc";
-                                }
-                                my.innerHTML = '<img id=imghead>';
-                                let img = document.getElementById('imghead');
-                                img!.onload = function () {
-                                    let texture = new Texture2D();
-                                    let imageAsset = new ImageAsset(img as HTMLImageElement);
-                                    texture.image = imageAsset;
+                                let testUI = showImg.getComponent(UITransform);
+                                if (testUI) {
+            
+                                    let GameCanvas = document.getElementById('GameDiv') as HTMLElement;
 
-                                    let tempSpriteFrame = new SpriteFrame();
-                                    tempSpriteFrame.texture = texture;
-                                    showImg.spriteFrame = tempSpriteFrame;
-                                    mergedPic = img as HTMLImageElement;
 
-                                    showImg.node.on(Input.EventType.TOUCH_START, () => {
-                                        // savePic();
-                                    });
+                                    let deltaWidth = Number(GameCanvas.style.width.replace("px", "")) / 1080;
+                                    let deltaHeight = Number(GameCanvas.style.height.replace("px", "")) / 1920;
+
+                                    let offsetY = deltaHeight * showImg.node.position.y;
+
+                                    showImageElement = document.createElement("img");
+                                    showImageElement.src = "https://www.doompapa.com/test.png";
+                                    showImageElement.style.position = "absolute";
+                                    showImageElement.style.width = (deltaWidth * testUI.width).toString();
+                                    showImageElement.style.height = (deltaHeight * testUI.height).toString();
+                                    showImageElement.style.transform = "translate(0, -" + offsetY + "px)";
+                                    showImageElement.src = strImg;
+                                    GameCanvas!.appendChild(showImageElement);
                                 }
 
-                                if (img) {
-                                    (img as HTMLImageElement).src = strImg;
-                                }
 
-                                my.style.display = 'none';
-                                my.style.visibility = "hidden";
 
+                                //-------------------------------------------
 
                                 let offset = 15;
                                 let time = 0.05;
@@ -339,10 +316,6 @@ export class ShareManager extends Component {
         });
     }
 
-
-    public savePic() {
-        downloadIamge(mergedPic);
-    }
 
     //获取指定图片地址的base64值，
     public getBase64Image(url: string, callback: (arg0: string) => void) {

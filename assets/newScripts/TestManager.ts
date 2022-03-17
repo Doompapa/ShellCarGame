@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, loader, Prefab, instantiate, Vec3, find, AssetManager } from 'cc';
+import { _decorator, Component, Node, loader, Prefab, instantiate, Vec3, find, AssetManager, UITransform } from 'cc';
 import { MWComboBox } from '../many-widgets/ComboBox/MW_ComboBox';
 import { city } from './data/city';
 import { province } from './data/province';
@@ -24,28 +24,64 @@ const { ccclass, property } = _decorator;
 @ccclass('TestManager')
 export class TestManager extends Component {
 
+    @property({
+        type: Node
+    })
+    TestNode!: Node
+
     start() {
         // [3]
 
         // this.scheduleOnce(() => {
         //     var my = document.getElementById("content");
-        //     // if (my == null) {
-        //     //     my = document.createElement("div");
-        //     //     document.body.appendChild(my);
-        //     //     my.style.position = "absolute";
-        //     //     my.id = "divCreator";
-        //     //     my.style.width = (100).toString();
-        //     //     my.style.height = (100).toString();
-        //     //     my.style.backgroundColor = "#ffffcc";
-        //     // }
-
-        //     //'<img src="http://127.0.0.1/test.jpg" style="width: 591px; height: 1280px;">'
         //     let test = document.createElement("img");
-        //     test.src = "https://vshell-1257946517.cos.accelerate.myqcloud.com/test.jpg";
+        //     test.src = "https://www.doompapa.com/test.png";
         //     test.style.position = "absolute";
+        //     test.style.width = "558";
+        //     test.style.height = "558";
         //     my!.appendChild(test);
         // }, 0.5);
-        
+
+
+        let testUI = this.TestNode.getComponent(UITransform);
+        if (testUI) {
+            // console.log(this.TestNode.position);
+            // console.log(testUI.width);
+            // console.log(testUI.height);
+
+            let GameCanvas = document.getElementById('GameDiv') as HTMLElement;
+
+
+            let deltaWidth = Number(GameCanvas.style.width.replace("px", "")) / 1080;
+            let deltaHeight = Number(GameCanvas.style.height.replace("px", "")) / 1920;
+
+            console.log(testUI.width * deltaWidth);
+            console.log(testUI.height * deltaHeight);
+
+            let offsetY = deltaHeight * this.TestNode.position.y;
+
+            console.log(offsetY);
+
+            let test = document.createElement("img");
+            test.src = "https://www.doompapa.com/test.png";
+            test.style.position = "absolute";
+            // test.style.width = (deltaWidth * 558).toString();
+            // test.style.height = (deltaHeight * 558).toString();
+
+            test.style.width = (deltaWidth * testUI.width).toString();
+            test.style.height = (deltaHeight * testUI.height).toString();
+
+            //transform:translate(0, -30px)
+            test.style.transform = "translate(0, -" + offsetY + "px)";
+
+            GameCanvas!.appendChild(test);
+
+            this.scheduleOnce(() => {
+                test.style.display = "none";
+            }, 1.5);
+
+        }
+
 
         // ApiManager.GetMemberGD("18627581858");
     }

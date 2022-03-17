@@ -59,9 +59,46 @@ export class LoginManager extends Component {
 
         switch (area) {
             case "浙江省":
-                ApiManager.GetMemberZJ(phone, (isSuccess, resp) => {
+                ApiManager.GetMember("ZJ", phone, (isSuccess, resp) => {
                     if (isSuccess) {
+                        ApiManager.IsLogin = true;
                         this.uiControl.ShowInstruction();
+                        // ApiManager.IsLogin = true;
+                        // this.uiControl.ShowReward();
+                    } else {
+                        customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "当前手机号未注册");
+                    }
+                });
+                break;
+            case "北京市":
+                ApiManager.GetMember("BJ", phone, (isSuccess, resp) => {
+                    if (isSuccess) {
+                        ApiManager.IsLogin = true;
+                        this.uiControl.ShowInstruction();
+                        // ApiManager.IsLogin = true;
+                        // this.uiControl.ShowReward();
+                    } else {
+                        customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "当前手机号未注册");
+                    }
+                });
+                break;
+            case "重庆市":
+                ApiManager.GetMember("CQ", phone, (isSuccess, resp) => {
+                    if (isSuccess) {
+            
+                        ApiManager.IsLogin = true;
+                        this.uiControl.ShowReward();
+                    } else {
+                        customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "当前手机号未注册");
+                    }
+                });
+                break;
+            case "广东省":
+                ApiManager.GetMember("GD", phone, (isSuccess, resp) => {
+                    if (isSuccess) {
+               
+                        ApiManager.IsLogin = true;
+                        this.uiControl.ShowReward();
                     } else {
                         customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "当前手机号未注册");
                     }

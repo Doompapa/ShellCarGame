@@ -1,6 +1,7 @@
 import { _decorator, Component, Node, Prefab, find, instantiate, Vec3, BoxColliderComponent } from 'cc';
 import { ItemsMananger } from '../ItemsMananger';
 import { Constants } from '../Other/constants';
+import { ApiManager } from '../plugin/ApiManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('EnvItemControl')
@@ -50,6 +51,7 @@ export class EnvItemControl extends Component {
     @property
     public isCreate = true;
 
+
     onLoad() {
 
     }
@@ -70,21 +72,30 @@ export class EnvItemControl extends Component {
         for (let i = 0; i < this.leftEnvNode.children.length; i++) {
             this.leftEnvNode.children[i].active = false;
         }
-        let randomLeft = this.random(0, this.leftEnvNode.children.length);
-        if (randomLeft < this.leftEnvNode.children.length) {
-            this.leftEnvNode.children[randomLeft].active = true;
-        }
+
+
+
+        let leftIndex = ApiManager.envIndex % this.leftEnvNode.children.length;
+        this.leftEnvNode.children[leftIndex].active = true;
+
+        // let randomLeft = this.random(0, this.leftEnvNode.children.length);
+        // if (randomLeft < this.leftEnvNode.children.length) {
+        //     this.leftEnvNode.children[randomLeft].active = true;
+        // }
 
 
         //右边景物
         for (let i = 0; i < this.rightEnvNode.children.length; i++) {
             this.rightEnvNode.children[i].active = false;
         }
-        let randomRight = this.random(0, this.rightEnvNode.children.length);
-        if (randomRight < this.rightEnvNode.children.length) {
-            this.rightEnvNode.children[randomRight].active = true;
-        }
 
+        let rightIndex = ApiManager.envIndex % this.rightEnvNode.children.length;
+        this.rightEnvNode.children[rightIndex].active = true;
+        // let randomRight = this.random(0, this.rightEnvNode.children.length);
+        // if (randomRight < this.rightEnvNode.children.length) {
+        //     this.rightEnvNode.children[randomRight].active = true;
+        // }
+        ApiManager.envIndex++;
         //远处景物
         for (let i = 0; i < this.farEnvNode.children.length; i++) {
             this.farEnvNode.children[i].active = false;
@@ -138,14 +149,6 @@ export class EnvItemControl extends Component {
                 randomNUmSecond = this.random(-1, 2);
             }
 
-            // let randomNUmSecond = 0;
-            // if (randomNum == 0) {
-            //     if (this.random(1, 50) > 25) {
-            //         randomNUmSecond = -1;
-            //     } else {
-            //         randomNUmSecond = 1;
-            //     }
-            // }
             fabTwo.position = new Vec3(10 * randomNUmSecond, 0, this.node.position.z + this.random(60, 70));
             fabTwo.parent = this.itemsMananger;
             fabTwo.eulerAngles = new Vec3(0, 0, 0);

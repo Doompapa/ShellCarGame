@@ -5,6 +5,7 @@ import { city } from '../data/city';
 import { province } from '../data/province';
 import { Constants } from '../Other/constants';
 import { customerListener } from '../Other/listener';
+import { ApiManager } from '../plugin/ApiManager';
 import { ResourceManager } from '../ResourceManager';
 const { ccclass, property } = _decorator;
 
@@ -145,7 +146,7 @@ export class TabControl extends Component {
     /**
      * 游戏总时长
      */
-    private GameTotalTime = 45;
+    private GameTotalTime = 5;
 
     public runingTime: number = 0;
 
@@ -325,14 +326,10 @@ export class TabControl extends Component {
 
         localStorage.setItem(Constants.GameStatus.SELECT_AREA, this.selectProvince);
 
-        //todo 判断当前省份
-        // if (this.selectProvince == "北京市" || this.selectProvince == "浙江省") {
-        //     this.openUI(this.LoginUI);
-        // } else {
-        //     this.openUI(this.InstructionNode);
-        // }
+        //todo 进入说明界面前判断
 
-        if (this.selectProvince == "浙江省") {
+        //广东省 重庆市 北京市 浙江省
+        if (this.selectProvince == "浙江省" || this.selectProvince == "北京市") {
             this.openUI(this.LoginUI);
         } else {
             this.openUI(this.InstructionNode);
@@ -340,12 +337,12 @@ export class TabControl extends Component {
     }
 
     private OnSelectProvince() {
-      
+
 
         for (let i = 0; i < province.length; i++) {
             if (this.provinceComBox.getCurrentText() == province[i].name) {
-                let id = province[i].id  as string;
-               
+                let id = province[i].id as string;
+
                 this.selectProvince = province[i].name;
 
                 let cities_data: string[] = [];
@@ -364,7 +361,14 @@ export class TabControl extends Component {
     }
 
     public ShowReward() {
-        this.openUI(this.RewardUI);
+
+        if (ApiManager.IsLogin) {
+            this.openUI(this.RewardUI);
+        } else {
+            this.openUI(this.LoginUI);
+        }
+        customerListener.dispatch(Constants.GameStatus.HIDE_SHARE);
+
     }
 
 
