@@ -20,29 +20,25 @@ export class Instruction extends Component {
     // dummy = '';
 
     @property({
+        type: Sprite
+    })
+    ToolSprite!: Sprite;
+
+    @property({
         type: Node
     })
     VShellNode!: Node;
-
-    @property({
-        type: Sprite
-    })
-    VShellSprite!: Sprite;
 
 
     @property({
         type: Node
     })
     KnockNode!: Node;
-    @property({
-        type: Sprite
-    })
-    KnockSprite!: Sprite;
 
     @property({
         type: Sprite
     })
-    CarSprite!: Sprite;
+    KnockSprite!: Sprite;
 
     @property({
         type: Camera
@@ -71,9 +67,10 @@ export class Instruction extends Component {
 
     start() {
         this.renderCamera.enabled = false;
-        this.VShellSprite.node.active = false;
-        this.KnockSprite.node.active = false;
-        this.CarSprite.node.active = false;
+        this.ToolSprite.node.active = false;
+
+        this.KnockNode.active = false;
+        this.VShellNode.active = false;
 
         let width = this.currentCavans.getComponent(UITransform)?.width;
         let height = this.currentCavans.getComponent(UITransform)?.height;
@@ -105,32 +102,34 @@ export class Instruction extends Component {
 
         switch (this.step) {
             case 0:
-                this.KnockNode.active = false;
-                this.KnockSprite.node.active = false;
-                this.CarSprite.node.active = false;
-
-                this.VShellNode.active = true;
-                this.VShellSprite.spriteFrame = spriteFrame;
-                this.VShellSprite.node.active = true;
-                break;
-            case 1:
-                this.VShellNode.active = false;
-                this.VShellSprite.node.active = false;
-                this.CarSprite.node.active = false;
-
                 this.KnockNode.active = true;
-                this.KnockSprite.spriteFrame = spriteFrame;
-                this.KnockSprite.node.active = true;
-                break;
-            case 2:
-                this.KnockNode.active = false;
-                this.KnockSprite.node.active = false;
-                this.VShellNode.active = false;
-                this.VShellSprite.node.active = false;
+                this.VShellNode.active = true;
+       
 
-                this.CarSprite.node.active = true;
-                this.CarSprite.spriteFrame = spriteFrame;
+                this.ToolSprite.spriteFrame = spriteFrame;
+                this.ToolSprite.node.active = true;
+
+           
                 break;
+            // case 1:
+            //     this.VShellNode.active = false;
+            //     this.ToolSprite.node.active = false;
+            //     this.CarSprite.node.active = false;
+       
+
+            //     this.KnockNode.active = true;
+            //     this.KnockSprite.spriteFrame = spriteFrame;
+        
+            //     break;
+            // case 2:
+            //     // this.KnockNode.active = false;
+            //     // this.KnockSprite.node.active = false;
+            //     // this.VShellNode.active = false;
+            //     // this.VShellSprite.node.active = false;
+
+            //     // this.CarSprite.node.active = true;
+            //     // this.CarSprite.spriteFrame = spriteFrame;
+            //     break;
             default:
                 this.StartTipNode.active = true;
                 //展示开始界面
