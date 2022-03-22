@@ -96,8 +96,23 @@ export class RewardManager extends Component {
             switch (area) {
                 case "浙江省":
                     this.BoxShake();
-                    ApiManager.GetRewardZJ(phone, (ticketName) => {
-                        this.ReceiveReward(ticketName);
+                    ApiManager.GetReward("ZJ", phone, (isSuccess, ticketName) => {
+                        if (isSuccess) {
+                            this.ReceiveReward(ticketName);
+                        } else {
+                            this.BoxShakeStop();
+                        }
+
+                    });
+                    break;
+                case "北京市":
+                    this.BoxShake();
+                    ApiManager.GetReward("BJ", phone, (isSuccess, ticketName) => {
+                        if (isSuccess) {
+                            this.ReceiveReward(ticketName);
+                        } else {
+                            this.BoxShakeStop();
+                        }
                     });
                     break;
                 default:
@@ -123,6 +138,12 @@ export class RewardManager extends Component {
                 .by(time, { eulerAngles: new Vec3(0, 0, offset) })
                 .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
         ).start();
+    }
+
+    private BoxShakeStop() {
+
+        this.boxTween.stop();
+        this.Box.eulerAngles = new Vec3(0, 0, 0);
     }
 
     private ReceiveReward(ticketName: string) {
