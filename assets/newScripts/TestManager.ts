@@ -81,9 +81,6 @@ export class TestManager extends Component {
             }, 1.5);
 
         }
-
-
-        // ApiManager.GetMemberGD("18627581858");
     }
 
 

@@ -108,13 +108,6 @@ export class LoginManager extends Component {
                 break;
         }
 
-        // if (area == "北京市" || area == "浙江省") {
-        //     this.uiControl.ShowInstruction();
-        // } else {
-
-        // }
-
-
     }
 
     public ClickGetCode() {

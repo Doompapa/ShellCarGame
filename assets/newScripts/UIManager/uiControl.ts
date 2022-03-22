@@ -126,6 +126,11 @@ export class TabControl extends Component {
     @property({
         type: Node
     })
+    RegisterUI!: Node
+
+    @property({
+        type: Node
+    })
     RewardUI!: Node
 
     @property({
@@ -146,7 +151,7 @@ export class TabControl extends Component {
     /**
      * 游戏总时长
      */
-    private GameTotalTime = 5;
+    private GameTotalTime = 45;
 
     public runingTime: number = 0;
 
@@ -195,6 +200,7 @@ export class TabControl extends Component {
         this.UIList.push(this.LoginUI);
         this.UIList.push(this.SelectAreaNode);
         this.UIList.push(this.RewardUI);
+        this.UIList.push(this.RegisterUI);
 
 
         this.openUI(this.SelectAreaNode);
@@ -358,6 +364,10 @@ export class TabControl extends Component {
 
     public ShowInstruction() {
         this.openUI(this.InstructionNode);
+    }
+
+    public ShowRegister() {
+        this.openUI(this.RegisterUI);
     }
 
     public ShowReward() {
