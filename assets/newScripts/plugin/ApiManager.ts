@@ -35,19 +35,20 @@ export class ApiManager {
             customerListener.dispatch(Constants.GameStatus.SHOW_MASK, false);
 
             let respJson = resp as any;
-            let message = JSON.parse(respJson.message);
+            // let message = JSON.parse(respJson.message);
+            // let message = JSON.parse(respJson.message);
             //响应是否成功
             if (isSuccess) {
-                console.log(message);
+                console.log(respJson.message);
                 //数据是否正常
                 if (respJson.code == "200") {
-                    callback(true, message);
+                    callback(true, respJson.message);
                 } else {
-                    callback(false, message);
+                    callback(false, respJson.message);
                 }
             } else {
                 customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "连接失败,请稍后再试");
-                callback(false, message);
+                callback(false, respJson.message);
             }
         });
     }

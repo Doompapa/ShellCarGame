@@ -271,30 +271,17 @@ export class ShareManager extends Component {
                                     let GameCanvas = document.getElementById('GameDiv') as HTMLElement;
 
 
-                                    // console.log("GameCanvas width=" + GameCanvas.style.width);
-                                    // console.log("GameCanvas height=" + GameCanvas.style.height);
-
-
                                     let deltaWidth = Number(GameCanvas.style.width.replace("px", "")) / 1080;
                                     let deltaHeight = Number(GameCanvas.style.height.replace("px", "")) / 1920;
 
                                     let offsetY = deltaHeight * showImg.node.position.y;
 
                                     showImageElement = document.createElement("img");
-                                    showImageElement.src = "https://www.doompapa.com/test.png";
+                                    // showImageElement.src = "https://www.doompapa.com/test.png";
                                     showImageElement.style.position = "absolute";
-
-                                    // console.log("deltaWidth=" + deltaWidth);
-                                    // console.log("deltaHeight=" + deltaHeight);
-
-                                    // console.log("Width=" + deltaWidth * testUI.width);
-                                    // console.log("Height=" + deltaHeight * testUI.height);
 
                                     showImageElement.style.width = (deltaWidth * testUI.width).toString() + "px";
                                     showImageElement.style.height = (deltaHeight * testUI.height).toString() + "px";
-
-                                    // console.log("Image width=" + showImageElement.style.width);
-                                    // console.log("Image height=" + showImageElement.style.height);
 
                                     showImageElement.style.transform = "translate(0, -" + offsetY + "px)";
                                     showImageElement.src = strImg;

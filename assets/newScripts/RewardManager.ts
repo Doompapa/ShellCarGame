@@ -1,21 +1,14 @@
 
-import { _decorator, Component, Node, tween, Tween, Vec3, UIOpacityComponent, LabelComponent, SpriteComponent, SpriteFrame, ButtonComponent } from 'cc';
+var showNode: Node;
+var showImageElement: HTMLImageElement;
+
+
+import { _decorator, Component, Node, tween, Tween, Vec3, UIOpacityComponent, LabelComponent, SpriteComponent, SpriteFrame, ButtonComponent, Texture2D, resources, UITransform, ImageAsset } from 'cc';
 import { Constants } from './Other/constants';
 import { customerListener } from './Other/listener';
 import { ApiManager } from './plugin/ApiManager';
 const { ccclass, property } = _decorator;
 
-/**
- * Predefined variables
- * Name = RewardManager
- * DateTime = Sun Mar 13 2022 02:30:10 GMT+0800 (中国标准时间)
- * Author = sdosatan915
- * FileBasename = RewardManager.ts
- * FileBasenameNoExtension = RewardManager
- * URL = db://assets/newScripts/RewardManager.ts
- * ManualUrl = https://docs.cocos.com/creator/3.4/manual/zh/
- *
- */
 
 @ccclass('RewardManager')
 export class RewardManager extends Component {
@@ -60,6 +53,12 @@ export class RewardManager extends Component {
     })
     BoxOpendSprite!: SpriteFrame
 
+
+    @property({
+        type: Node
+    })
+    QRNode!: Node
+
     private boxTween !: Tween<Node>;
 
 
@@ -69,20 +68,11 @@ export class RewardManager extends Component {
         this.EffectsNode.active = false;
         this.Ticket.active = false;
 
+        showNode = this.QRNode;
+
+
+        this.QRNode.active = false;
         //宝箱动画
-        // let offset = 15;
-        // let time = 0.05;
-        // this.boxTween = tween(this.Box).repeatForever(
-        //     tween().by(time, { eulerAngles: new Vec3(0, 0, offset) })
-        //         .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
-        //         .by(time, { eulerAngles: new Vec3(0, 0, offset) })
-        //         .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
-        //         .by(time, { eulerAngles: new Vec3(0, 0, offset) })
-        //         .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
-        //         .by(time, { eulerAngles: new Vec3(0, 0, offset) })
-        //         .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
-        //         .delay(2)
-        // ).start();
     }
     /**
      * 打开宝箱
@@ -99,6 +89,7 @@ export class RewardManager extends Component {
                     ApiManager.GetReward("ZJ", phone, (isSuccess, ticketName) => {
                         if (isSuccess) {
                             this.ReceiveReward(ticketName);
+                            this.LoadQRImage("ZJ");
                         } else {
                             this.BoxShakeStop();
                         }
@@ -110,6 +101,7 @@ export class RewardManager extends Component {
                     ApiManager.GetReward("BJ", phone, (isSuccess, ticketName) => {
                         if (isSuccess) {
                             this.ReceiveReward(ticketName);
+                            this.LoadQRImage("BJ");
                         } else {
                             this.BoxShakeStop();
                         }
@@ -123,6 +115,49 @@ export class RewardManager extends Component {
         } else {
 
         }
+    }
+
+
+    /**
+     * 加载图片
+     * @param head 
+     */
+    private LoadQRImage(head: string) {
+
+        this.QRNode.active = true;
+
+        resources.load<Texture2D>("pic/" + head + "/texture", (err, imageTemple) => {
+
+
+            this.getBase64ImageByTexture2D(imageTemple, (imageBase64) => {
+
+                let testUI = showNode.getComponent(UITransform);
+                if (testUI) {
+
+                    let GameCanvas = document.getElementById('GameDiv') as HTMLElement;
+
+
+                    let deltaWidth = Number(GameCanvas.style.width.replace("px", "")) / 1080;
+                    let deltaHeight = Number(GameCanvas.style.height.replace("px", "")) / 1920;
+
+                    let offsetY = deltaHeight * showNode.position.y;
+
+                    showImageElement = document.createElement("img");
+                    // showImageElement.src = "https://www.doompapa.com/test.png";
+                    showImageElement.style.position = "absolute";
+
+                    showImageElement.style.width = (deltaWidth * testUI.width).toString() + "px";
+                    showImageElement.style.height = (deltaHeight * testUI.height).toString() + "px";
+
+                    showImageElement.style.transform = "translate(0, -" + offsetY + "px)";
+
+                    showImageElement.src = imageBase64;
+                    GameCanvas!.appendChild(showImageElement);
+                }
+
+            });
+
+        });
     }
 
     private BoxShake() {
@@ -168,5 +203,21 @@ export class RewardManager extends Component {
     }
 
 
+    public getBase64ImageByTexture2D(texture: Texture2D, callback: (arg0: string) => void) {
+        var canvas = document.createElement("CANVAS") as HTMLCanvasElement;
+        var ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
+
+        let img = texture.getHtmlElementObj() as HTMLImageElement;
+        canvas.height = img.height;
+        canvas.width = img.width;
+        ctx.drawImage(img, 0, 0);
+        var dataURL = canvas.toDataURL('image/png');
+        canvas = null;
+        if (callback) callback(dataURL);
+
+    }
+
 }
+
+
 
