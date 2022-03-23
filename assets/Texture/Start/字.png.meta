@@ -2,16 +2,16 @@
   "ver": "1.0.22",
   "importer": "image",
   "imported": true,
-  "uuid": "1688f52f-76d4-4afd-992e-1bbf58f4bd95",
+  "uuid": "cd1a7a0c-afda-44de-94bc-bf2b5594b3ca",
   "files": [
-    ".jpg",
+    ".png",
     ".json"
   ],
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "1688f52f-76d4-4afd-992e-1bbf58f4bd95@6c48a",
-      "displayName": "loadBg",
+      "uuid": "cd1a7a0c-afda-44de-94bc-bf2b5594b3ca@6c48a",
+      "displayName": "字",
       "id": "6c48a",
       "name": "texture",
       "userData": {
@@ -22,7 +22,7 @@
         "mipfilter": "none",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "1688f52f-76d4-4afd-992e-1bbf58f4bd95"
+        "imageUuidOrDatabaseUri": "cd1a7a0c-afda-44de-94bc-bf2b5594b3ca"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -33,8 +33,8 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "1688f52f-76d4-4afd-992e-1bbf58f4bd95@f9941",
-      "displayName": "loadBg",
+      "uuid": "cd1a7a0c-afda-44de-94bc-bf2b5594b3ca@f9941",
+      "displayName": "字",
       "id": "f9941",
       "name": "spriteFrame",
       "userData": {
@@ -45,17 +45,17 @@
         "offsetY": 0,
         "trimX": 0,
         "trimY": 0,
-        "width": 648,
-        "height": 1152,
-        "rawWidth": 648,
-        "rawHeight": 1152,
+        "width": 837,
+        "height": 346,
+        "rawWidth": 837,
+        "rawHeight": 346,
         "borderTop": 0,
         "borderBottom": 0,
         "borderLeft": 0,
         "borderRight": 0,
         "packable": true,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "1688f52f-76d4-4afd-992e-1bbf58f4bd95@6c48a",
+        "imageUuidOrDatabaseUri": "cd1a7a0c-afda-44de-94bc-bf2b5594b3ca@6c48a",
         "atlasUuid": ""
       },
       "ver": "1.0.9",
@@ -67,8 +67,8 @@
     }
   },
   "userData": {
-    "hasAlpha": false,
+    "hasAlpha": true,
     "type": "sprite-frame",
-    "redirect": "1688f52f-76d4-4afd-992e-1bbf58f4bd95@f9941"
+    "redirect": "cd1a7a0c-afda-44de-94bc-bf2b5594b3ca@f9941"
   }
 }

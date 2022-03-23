@@ -46,7 +46,7 @@ export class StartSceneControl extends Component {
             this.loadBar.progress = per;
             this.loadLogo.left = this.loadBar.totalLength * per;
         }, (err, scene) => {
-            director.runScene(scene);
+            // director.runScene(scene);
         });
     }
 }
