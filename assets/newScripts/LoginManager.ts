@@ -35,10 +35,25 @@ export class LoginManager extends Component {
     })
     uiControl!: TabControl
 
+    @property({
+        type: Node
+    })
+    GoRegisterNode!: Node
+
     private totalTime = 60;
 
     start() {
-
+        
+        let area = localStorage.getItem(Constants.GameStatus.SELECT_AREA);
+        switch (area) {
+            case "浙江省":
+            case "北京市":
+                this.GoRegisterNode.active = true;
+                break;
+            default:
+                this.GoRegisterNode.active = false;
+                break;
+        }
     }
 
     public ClickConfirm() {
