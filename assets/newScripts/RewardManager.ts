@@ -212,7 +212,8 @@ export class RewardManager extends Component {
         canvas.width = img.width;
         ctx.drawImage(img, 0, 0);
         var dataURL = canvas.toDataURL('image/png');
-        canvas = null;
+        // canvas = null;
+        canvas.style.display = "none";
         if (callback) callback(dataURL);
 
     }

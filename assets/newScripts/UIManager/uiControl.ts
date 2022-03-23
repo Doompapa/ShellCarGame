@@ -139,6 +139,11 @@ export class TabControl extends Component {
     ToastUI!: Node
 
     @property({
+        type: Node
+    })
+    FirstUI!: Node
+
+    @property({
         type: LabelComponent
     })
     ToastLabel!: LabelComponent
@@ -201,21 +206,11 @@ export class TabControl extends Component {
         this.UIList.push(this.SelectAreaNode);
         this.UIList.push(this.RewardUI);
         this.UIList.push(this.RegisterUI);
+        this.UIList.push(this.FirstUI);
 
+        // this.openUI(this.SelectAreaNode);
+        this.openUI(this.FirstUI);
 
-        this.openUI(this.SelectAreaNode);
-
-        let provinces_data: string[] = [];
-
-        for (var i = 0; i < province.length; i++) {
-            provinces_data.push(province[i].name);
-        }
-        this.provinceComBox.setItems(provinces_data);
-        // this.CityComBox.setItems([]);
-
-        customerListener.on(Constants.GameStatus.CLICK_COMBOXITEM, this.OnSelectProvince, this);
-        customerListener.dispatch(Constants.GameStatus.CLICK_COMBOXITEM, "北京市");
-        // this.InstructionNode.active = true;
 
 
         this.ToastUI.active = false;
@@ -352,8 +347,8 @@ export class TabControl extends Component {
                 this.selectProvince = province[i].name;
 
                 let cities_data: string[] = [];
-                for (let index = 0; index < city[id].length; index++) {
-                    cities_data.push(city[id][index].name);
+                for (let index = 0; index < (city as any)[id].length; index++) {
+                    cities_data.push((city as any)[id][index].name);
                 }
                 this.CityComBox.setItems(cities_data);
                 console.log("触发city选择");
@@ -369,6 +364,22 @@ export class TabControl extends Component {
     public ShowRegister() {
         this.openUI(this.RegisterUI);
     }
+
+
+    public ShowAreaSelect() {
+        this.openUI(this.SelectAreaNode);
+
+        let provinces_data: string[] = [];
+
+        for (var i = 0; i < province.length; i++) {
+            provinces_data.push(province[i].name);
+        }
+        this.provinceComBox.setItems(provinces_data);
+
+        customerListener.on(Constants.GameStatus.CLICK_COMBOXITEM, this.OnSelectProvince, this);
+        customerListener.dispatch(Constants.GameStatus.CLICK_COMBOXITEM, "北京市");
+    }
+
 
     public ShowReward() {
 

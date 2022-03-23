@@ -105,7 +105,7 @@ export class ApiManager {
                         callback(true, "2元燃油优惠券");
                         break;
                     case "BJ":
-                        callback(true, resp.message);
+                        callback(true, (resp as any).message);
                         break;
                 }
 

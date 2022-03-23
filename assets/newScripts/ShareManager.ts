@@ -82,12 +82,12 @@ function loadLocalimg(uri: string) {
     currentUri = uri;
 }
 
-function tmpSelectFile(evt) {
+function tmpSelectFile(evt: any) {
     //console.log("image selected...");
     var file = evt.target.files[0];
     var type = file.type;
     if (!type) {
-        type = mime[file.name.match(/\.([^\.]+)$/i)[1]];
+        type = (mime as any)[file.name.match(/\.([^\.]+)$/i)[1]];
     }
     var url = myCreateObjectURL(file);
     //urlss = url;
@@ -260,9 +260,9 @@ export class ShareManager extends Component {
                         HttpUtil.post("https://aip.baidubce.com/rest/2.0/face/v1/merge?access_token=" + respToken, paramStr, (isSuccess, resp) => {
                             customerListener.dispatch(Constants.GameStatus.SHOW_MASK, false);
 
-                            if (resp['error_code'] == 0) {
+                            if ((resp as any)['error_code'] == 0) {
 
-                                var strImg = "data:image/jpg;base64," + resp['result']['merge_image'];
+                                var strImg = "data:image/jpg;base64," + (resp as any)['result']['merge_image'];
                                 //-------------------------------------------
 
                                 let testUI = showImg.getComponent(UITransform);
@@ -331,7 +331,8 @@ export class ShareManager extends Component {
             canvas.width = img.width;
             ctx.drawImage(img, 0, 0);
             var dataURL = canvas.toDataURL('image/png');
-            canvas = null;
+            // canvas = null;
+            canvas.style.display = "none";
             if (callback) callback(dataURL);
         }
     }
@@ -345,7 +346,8 @@ export class ShareManager extends Component {
         canvas.width = img.width;
         ctx.drawImage(img, 0, 0);
         var dataURL = canvas.toDataURL('image/png');
-        canvas = null;
+        // canvas = null;
+        canvas.style.display = "none";
         if (callback) callback(dataURL);
 
     }
