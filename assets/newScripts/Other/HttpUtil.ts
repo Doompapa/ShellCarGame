@@ -1,10 +1,12 @@
 import { _decorator, loader } from 'cc';
+import { Constants } from './constants';
+import { customerListener } from './listener';
 export class HttpUtil {
 
     public static get(url: string, params: object = {}, callback: (arg0: boolean, arg1: string) => void) {
         let dataStr = '';
         Object.keys(params).forEach(key => {
-            dataStr += key + '=' + encodeURIComponent(params[key]) + '&';
+            dataStr += key + '=' + encodeURIComponent((params as any)[key]) + '&';
         })
         if (dataStr !== '') {
             dataStr = dataStr.substr(0, dataStr.lastIndexOf('&'));
@@ -18,7 +20,8 @@ export class HttpUtil {
                 let response = xhr.responseText;
                 if (xhr.status >= 200 && xhr.status < 300) {
                     let httpStatus = xhr.statusText;
-                    callback(true, JSON.parse(response));
+                    let respJson = JSON.parse(response);
+                    callback(respJson.code == 200, JSON.parse(response));
                 } else {
                     callback(false, response);
                 }
@@ -30,7 +33,7 @@ export class HttpUtil {
     public static getToken(url: string, params: object = {}, callback: (arg0: boolean, arg1: string) => void) {
         let dataStr = '';
         Object.keys(params).forEach(key => {
-            dataStr += key + '=' + encodeURIComponent(params[key]) + '&';
+            dataStr += key + '=' + encodeURIComponent((params as any)[key]) + '&';
         })
         if (dataStr !== '') {
             dataStr = dataStr.substr(0, dataStr.lastIndexOf('&'));
@@ -46,7 +49,8 @@ export class HttpUtil {
                     let httpStatus = xhr.statusText;
                     callback(true, response);
                 } else {
-                    callback(false, response);
+                    customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "连接失败,请稍后再试");
+                    callback(false, "");
                 }
             }
         };
@@ -64,7 +68,8 @@ export class HttpUtil {
                 let response = xhr.responseText;
                 if (xhr.status >= 200 && xhr.status < 300) {
                     let httpStatus = xhr.statusText;
-                    callback(true, JSON.parse(response));
+                    let respJson = JSON.parse(response);
+                    callback(respJson.code == 200, JSON.parse(response));
                 } else {
                     callback(false, JSON.parse(response));
                 }

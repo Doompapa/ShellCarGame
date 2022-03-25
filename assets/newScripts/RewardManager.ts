@@ -107,6 +107,17 @@ export class RewardManager extends Component {
                         }
                     });
                     break;
+                case "广东省":
+                    this.BoxShake();
+                    ApiManager.GetReward("GD", phone, (isSuccess, ticketName) => {
+                        if (isSuccess) {
+                            this.ReceiveReward(ticketName);
+                            this.LoadQRImage("GD");
+                        } else {
+                            this.BoxShakeStop();
+                        }
+                    });
+                    break;
                 default:
                     break;
             }

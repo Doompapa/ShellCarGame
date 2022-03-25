@@ -43,7 +43,7 @@ export class LoginManager extends Component {
     private totalTime = 60;
 
     start() {
-        
+
         let area = localStorage.getItem(Constants.GameStatus.SELECT_AREA);
         switch (area) {
             case "浙江省":
@@ -56,82 +56,124 @@ export class LoginManager extends Component {
         }
     }
 
-    public ClickConfirm() {
 
-        let regPhone = /^1[3|4|5|6|7|8|9][0-9]{9}/;
-        if (!regPhone.test(this.PhoneInput.string)) {
-            //弹窗提示
-            customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "请输入正确的手机格式");
+
+    public ClickConfirm() {
+        let phone = this.PhoneInput.string;
+        let code = this.CodeInput.string;
+
+        //验证手机格式
+        if (!this.VerifyPhoneFormat(phone)) {
             return;
         }
-        let phone = this.PhoneInput.string;
 
-        //保存当前手机号
-        localStorage.setItem(Constants.GameStatus.PHONE, phone);
-
-        //校验注册
-        let area = localStorage.getItem(Constants.GameStatus.SELECT_AREA);
-
-        switch (area) {
-            case "浙江省":
-                ApiManager.GetMember("ZJ", phone, (isSuccess, resp) => {
-                    if (isSuccess) {
-                        ApiManager.IsLogin = true;
-                        this.uiControl.ShowInstruction();
-                        // ApiManager.IsLogin = true;
-                        // this.uiControl.ShowReward();
-                    } else {
-                        customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "当前手机号未注册");
-                    }
-                });
-                break;
-            case "北京市":
-                ApiManager.GetMember("BJ", phone, (isSuccess, resp) => {
-                    if (isSuccess) {
-                        ApiManager.IsLogin = true;
-                        this.uiControl.ShowInstruction();
-                        // ApiManager.IsLogin = true;
-                        // this.uiControl.ShowReward();
-                    } else {
-                        customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "当前手机号未注册");
-                    }
-                });
-                break;
-            case "重庆市":
-                ApiManager.GetMember("CQ", phone, (isSuccess, resp) => {
-                    if (isSuccess) {
-            
-                        ApiManager.IsLogin = true;
-                        this.uiControl.ShowReward();
-                    } else {
-                        customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "当前手机号未注册");
-                    }
-                });
-                break;
-            case "广东省":
-                ApiManager.GetMember("GD", phone, (isSuccess, resp) => {
-                    if (isSuccess) {
-               
-                        ApiManager.IsLogin = true;
-                        this.uiControl.ShowReward();
-                    } else {
-                        customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "当前手机号未注册");
-                    }
-                });
-                break;
-            default:
-                break;
+        //验证码验证
+        if (!this.VerifyCodeFormat(code)) {
+            return;
         }
+
+        if (!ApiManager.IsLoginCodeVerify) {
+            customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "请先获取验证码");
+            return;
+        }
+
+
+        ApiManager.VerifyCode(phone, code, (isSuccess) => {
+
+            if (isSuccess) {
+                //保存当前手机号
+                localStorage.setItem(Constants.GameStatus.PHONE, phone);
+
+                //校验注册
+                let area = localStorage.getItem(Constants.GameStatus.SELECT_AREA);
+
+                switch (area) {
+                    case "浙江省":
+                        ApiManager.GetMember("ZJ", phone, (isSuccess, resp) => {
+                            if (isSuccess) {
+                                ApiManager.IsLogin = true;
+                                this.uiControl.ShowInstruction();
+                                // ApiManager.IsLogin = true;
+                                // this.uiControl.ShowReward();
+                            }
+                        });
+                        break;
+                    case "北京市":
+                        ApiManager.GetMember("BJ", phone, (isSuccess, resp) => {
+                            if (isSuccess) {
+                                ApiManager.IsLogin = true;
+                                this.uiControl.ShowInstruction();
+                                // ApiManager.IsLogin = true;
+                                // this.uiControl.ShowReward();
+                            }
+                        });
+                        break;
+                    case "重庆市":
+                        ApiManager.GetMember("CQ", phone, (isSuccess, resp) => {
+                            if (isSuccess) {
+                                ApiManager.IsLogin = true;
+                                this.uiControl.ShowReward();
+                            }
+                        });
+                        break;
+                    case "广东省":
+                        //通过验证后直接抽奖
+                        ApiManager.IsLogin = true;
+                        this.uiControl.ShowReward();
+                        // ApiManager.GetMember("GD", phone, (isSuccess, resp) => {
+                        //     if (isSuccess) {
+                 
+                        //     } else {
+                        //         customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "当前手机号未注册");
+                        //     }
+                        // });
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
 
     }
 
     public ClickGetCode() {
         //send get code post
-        this.totalTime = 60;
-        this.GetCodeButtonLabel.string = this.totalTime + "s";
-        this.totalTime--;
-        this.schedule(this.ShowCoolDown, 1, 59);
-        this.GetCodeButton.interactable = false;
+        let phone = this.PhoneInput.string;
+        if (this.VerifyPhoneFormat(phone)) {
+            ApiManager.GetCode(this.PhoneInput.string, (isSuccess) => {
+
+                if (isSuccess) {
+                    this.totalTime = 60;
+                    this.GetCodeButtonLabel.string = this.totalTime + "s";
+                    this.totalTime--;
+                    this.schedule(this.ShowCoolDown, 1, 59);
+                    this.GetCodeButton.interactable = false;
+
+                    ApiManager.IsLoginCodeVerify = true;
+                }
+
+            });
+        }
+    }
+
+    VerifyPhoneFormat(phone: string) {
+        let regPhone = /^1[0-9][0-9]{9}/;
+        if (!regPhone.test(phone)) {
+            //弹窗提示
+            customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "请输入正确的手机格式");
+            return false;
+        }
+        return true;
+    }
+
+    VerifyCodeFormat(code: string) {
+        let regCode = /^[0-9]{6}/;
+        if (!regCode.test(code)) {
+            //弹窗提示
+            customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "请输入正确的验证码格式");
+            return false;
+        }
+        return true;
     }
 
     ShowCoolDown() {

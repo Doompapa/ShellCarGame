@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, EditBoxComponent, LabelComponent, ButtonComponent } from 'cc';
+import { _decorator, Component, Node, EditBoxComponent, LabelComponent, ButtonComponent, WebView } from 'cc';
 import { Constants } from './Other/constants';
 import { customerListener } from './Other/listener';
 import { ApiManager } from './plugin/ApiManager';
@@ -17,7 +17,7 @@ const { ccclass, property } = _decorator;
  * ManualUrl = https://docs.cocos.com/creator/3.4/manual/zh/
  *
  */
- 
+
 @ccclass('RegisterManager')
 export class RegisterManager extends Component {
     @property({
@@ -45,87 +45,150 @@ export class RegisterManager extends Component {
     })
     uiControl!: TabControl
 
+    @property({
+        type: WebView
+    })
+    webView!: WebView
+
     private totalTime = 60;
 
-    start () {
+    start() {
         // [3]
+        this.webView.node.active = false;
     }
 
     public ClickConfirm() {
 
-        let regPhone = /^1[3|4|5|6|7|8|9][0-9]{9}/;
-        if (!regPhone.test(this.PhoneInput.string)) {
-            //弹窗提示
-            customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "请输入正确的手机格式");
+        let phone = this.PhoneInput.string;
+        let code = this.CodeInput.string;
+
+        //验证手机格式
+        if (!this.VerifyPhoneFormat(phone)) {
             return;
         }
-        let phone = this.PhoneInput.string;
 
-        //保存当前手机号
-        localStorage.setItem(Constants.GameStatus.PHONE, phone);
-
-        //校验注册
-        let area = localStorage.getItem(Constants.GameStatus.SELECT_AREA);
-
-        switch (area) {
-            case "浙江省":
-                ApiManager.RegisterMember("ZJ", phone, (isSuccess, resp) => {
-                    if (isSuccess) {
-                        ApiManager.IsLogin = true;
-                        customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "注册成功");
-                        this.uiControl.ShowInstruction();
-                    } else {
-                        customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "注册失败,请稍后再试");
-                    }
-                });
-                break;
-            // case "北京市":
-            //     ApiManager.GetMember("BJ", phone, (isSuccess, resp) => {
-            //         if (isSuccess) {
-            //             ApiManager.IsLogin = true;
-            //             this.uiControl.ShowInstruction();
-            //             // ApiManager.IsLogin = true;
-            //             // this.uiControl.ShowReward();
-            //         } else {
-            //             customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "当前手机号未注册");
-            //         }
-            //     });
-            //     break;
-            // case "重庆市":
-            //     ApiManager.GetMember("CQ", phone, (isSuccess, resp) => {
-            //         if (isSuccess) {
-            
-            //             ApiManager.IsLogin = true;
-            //             this.uiControl.ShowReward();
-            //         } else {
-            //             customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "当前手机号未注册");
-            //         }
-            //     });
-            //     break;
-            // case "广东省":
-            //     ApiManager.GetMember("GD", phone, (isSuccess, resp) => {
-            //         if (isSuccess) {
-               
-            //             ApiManager.IsLogin = true;
-            //             this.uiControl.ShowReward();
-            //         } else {
-            //             customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "当前手机号未注册");
-            //         }
-            //     });
-            //     break;
-            default:
-                break;
+        //验证码验证
+        if (!this.VerifyCodeFormat(code)) {
+            return;
         }
+
+        if (!ApiManager.IsLoginCodeVerify) {
+            customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "请先获取验证码");
+            return;
+        }
+
+        ApiManager.VerifyCode(phone, code, (isSuccess) => {
+            //保存当前手机号
+            localStorage.setItem(Constants.GameStatus.PHONE, phone);
+
+            //校验注册
+            let area = localStorage.getItem(Constants.GameStatus.SELECT_AREA);
+
+            switch (area) {
+                case "浙江省":
+                    ApiManager.RegisterMember("ZJ", phone, (isSuccess, resp) => {
+                        if (isSuccess) {
+                            ApiManager.IsLogin = true;
+                            customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "注册成功");
+                            this.uiControl.ShowInstruction();
+                        } else {
+                            customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "注册失败,请稍后再试");
+                        }
+                    });
+                    break;
+                // case "北京市":
+                //     ApiManager.GetMember("BJ", phone, (isSuccess, resp) => {
+                //         if (isSuccess) {
+                //             ApiManager.IsLogin = true;
+                //             this.uiControl.ShowInstruction();
+                //             // ApiManager.IsLogin = true;
+                //             // this.uiControl.ShowReward();
+                //         } else {
+                //             customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "当前手机号未注册");
+                //         }
+                //     });
+                //     break;
+                // case "重庆市":
+                //     ApiManager.GetMember("CQ", phone, (isSuccess, resp) => {
+                //         if (isSuccess) {
+
+                //             ApiManager.IsLogin = true;
+                //             this.uiControl.ShowReward();
+                //         } else {
+                //             customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "当前手机号未注册");
+                //         }
+                //     });
+                //     break;
+                // case "广东省":
+                //     ApiManager.GetMember("GD", phone, (isSuccess, resp) => {
+                //         if (isSuccess) {
+
+                //             ApiManager.IsLogin = true;
+                //             this.uiControl.ShowReward();
+                //         } else {
+                //             customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "当前手机号未注册");
+                //         }
+                //     });
+                //     break;
+                default:
+                    break;
+            }
+        });
+    }
+
+    /**
+     * 查看协议一
+     */
+    public ClickShowText1() {
+        // this.webView.url = "https://wechat.zjshell.com/dest/index.html?code=051Bjp000A5DxN1wvr300unvWc1Bjp0O&state=12354#/personcenter/memberAgreement";
+        // this.webView.node.active = true;
+    }
+
+    /**
+    * 查看协议二
+    */
+    public ClickShowText2() {
 
     }
 
     public ClickGetCode() {
         //send get code post
-        this.totalTime = 60;
-        this.GetCodeButtonLabel.string = this.totalTime + "s";
-        this.totalTime--;
-        this.schedule(this.ShowCoolDown, 1, 59);
-        this.GetCodeButton.interactable = false;
+        let phone = this.PhoneInput.string;
+        if (this.VerifyPhoneFormat(phone)) {
+            ApiManager.GetCode(this.PhoneInput.string, (isSuccess) => {
+
+                if (isSuccess) {
+                    this.totalTime = 60;
+                    this.GetCodeButtonLabel.string = this.totalTime + "s";
+                    this.totalTime--;
+                    this.schedule(this.ShowCoolDown, 1, 59);
+                    this.GetCodeButton.interactable = false;
+
+                    ApiManager.IsLoginCodeVerify = true;
+                }
+
+            });
+        }
+    }
+
+    VerifyPhoneFormat(phone: string) {
+        let regPhone = /^1[0-9][0-9]{9}/;
+        if (!regPhone.test(phone)) {
+            //弹窗提示
+            customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "请输入正确的手机格式");
+            return false;
+        }
+        return true;
+    }
+
+    VerifyCodeFormat(code: string) {
+        let regCode = /^[0-9]{6}/;
+        if (!regCode.test(code)) {
+            //弹窗提示
+            customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "请输入正确的验证码格式");
+            return false;
+        }
+        return true;
     }
 
     ShowCoolDown() {

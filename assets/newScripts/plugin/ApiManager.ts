@@ -9,10 +9,15 @@ declare var param: any;
 export class ApiManager {
 
     //https://www.doompapa.com
-    // public static BaseUrl = "http://localhost:8080";
-    public static BaseUrl = "https://www.doompapa.com";
+    public static BaseUrl = "http://localhost:8080";
+    // public static BaseUrl = "https://www.doompapa.com";
 
     public static IsLogin = false;
+
+    /**
+     * 验证码是否验证过了
+     */
+    public static IsLoginCodeVerify = false;
 
     public static envIndex = 0;
 
@@ -45,6 +50,7 @@ export class ApiManager {
                     callback(true, respJson.message);
                 } else {
                     callback(false, respJson.message);
+                    customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "当前手机号未注册");
                 }
             } else {
                 customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "连接失败,请稍后再试");
@@ -104,7 +110,7 @@ export class ApiManager {
                     case "ZJ":
                         callback(true, "2元燃油优惠券");
                         break;
-                    case "BJ":
+                    default:
                         callback(true, (resp as any).message);
                         break;
                 }
@@ -116,5 +122,46 @@ export class ApiManager {
         });
 
     }
+
+    /**
+     * 获取验证码
+     * @param phone 
+     */
+    public static GetCode(phone: string, callback: (arg0: boolean) => void) {
+        customerListener.dispatch(Constants.GameStatus.SHOW_MASK, true);
+        let param = {
+            "phone": phone
+        };
+
+        let paramStr = JSON.stringify(param);
+        HttpUtil.post(this.BaseUrl + "/SMS", paramStr, (isSuccess, resp) => {
+            customerListener.dispatch(Constants.GameStatus.SHOW_MASK, false);
+            console.log(resp);
+            callback(isSuccess);
+            customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, (resp as any).message);
+        });
+    }
+
+    /**
+ * 验证验证码
+ * @param phone 
+ */
+    public static VerifyCode(phone: string, code: string, callback: (arg0: boolean) => void) {
+        customerListener.dispatch(Constants.GameStatus.SHOW_MASK, true);
+        let param = {
+            "phone": phone,
+            "code": code
+        };
+        let paramStr = JSON.stringify(param);
+        HttpUtil.post(this.BaseUrl + "/VerifySMS", paramStr, (isSuccess, resp) => {
+            customerListener.dispatch(Constants.GameStatus.SHOW_MASK, false);
+            console.log(resp);
+            callback(isSuccess);
+            if (!isSuccess) {
+                customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, (resp as any).message);
+            }
+        });
+    }
+
 
 }

@@ -228,93 +228,94 @@ export class ShareManager extends Component {
 
         //24.7a80557235b4004c8c39e165cbf51255.2592000.1648243624.282335-25649206
         customerListener.dispatch(Constants.GameStatus.SHOW_MASK, true);
-        HttpUtil.getToken("https://www.doompapa.com/getAccessToken", undefined, (isSuccess, respToken) => {
-            // console.log(respToken);
-            // var respToken = "24.7a80557235b4004c8c39e165cbf51255.2592000.1648243624.282335-25649206";
-            getBase64(currentUri).then((thumbnail: any) => {
-                //TODO
-                var targetImg = thumbnail.replace(/^data:image\/\w+;base64,/, "");//去掉base64位头部
+        HttpUtil.getToken("http://127.0.0.1:8080/getAccessToken", undefined, (isSuccess, respToken) => {
+            // HttpUtil.getToken("https://www.doompapa.com/getAccessToken", undefined, (isSuccess, respToken) => {
 
-                //加载模板图片
-                resources.load<Texture2D>("pic/temple" + index + "/texture", (err, imageTemple) => {
-                    // console.log(imageTemple.getHtmlElementObj().toDataURL());
-                    this.getBase64ImageByTexture2D(imageTemple, (imageTempleBase64) => {
+            if (isSuccess) {
+                getBase64(currentUri).then((thumbnail: any) => {
+                    //TODO
+                    var targetImg = thumbnail.replace(/^data:image\/\w+;base64,/, "");//去掉base64位头部
 
-                        imageTempleBase64 = imageTempleBase64.replace(/^data:image\/\w+;base64,/, "");//去掉base64位头部
+                    //加载模板图片
+                    resources.load<Texture2D>("pic/temple" + index + "/texture", (err, imageTemple) => {
+                        // console.log(imageTemple.getHtmlElementObj().toDataURL());
+                        this.getBase64ImageByTexture2D(imageTemple, (imageTempleBase64) => {
 
-                        let param = {
-                            'version': '4.0',
-                            'image_template': {
-                                'image': imageTempleBase64,
-                                'image_type': 'BASE64'
-                            },
-                            'image_target': {
-                                'image': targetImg,
-                                'image_type': 'BASE64'
-                            },
+                            imageTempleBase64 = imageTempleBase64.replace(/^data:image\/\w+;base64,/, "");//去掉base64位头部
 
-                        }
-                        let paramStr = JSON.stringify(param);
-
-                        this.uiControl.hideSelectPhoto();
-                        HttpUtil.post("https://aip.baidubce.com/rest/2.0/face/v1/merge?access_token=" + respToken, paramStr, (isSuccess, resp) => {
-                            customerListener.dispatch(Constants.GameStatus.SHOW_MASK, false);
-
-                            if ((resp as any)['error_code'] == 0) {
-
-                                var strImg = "data:image/jpg;base64," + (resp as any)['result']['merge_image'];
-                                //-------------------------------------------
-
-                                let testUI = showImg.getComponent(UITransform);
-                                if (testUI) {
-
-                                    let GameCanvas = document.getElementById('GameDiv') as HTMLElement;
-
-
-                                    let deltaWidth = Number(GameCanvas.style.width.replace("px", "")) / 1080;
-                                    let deltaHeight = Number(GameCanvas.style.height.replace("px", "")) / 1920;
-
-                                    let offsetY = deltaHeight * showImg.node.position.y;
-
-                                    showImageElement = document.createElement("img");
-                                    // showImageElement.src = "https://www.doompapa.com/test.png";
-                                    showImageElement.style.position = "absolute";
-
-                                    showImageElement.style.width = (deltaWidth * testUI.width).toString() + "px";
-                                    showImageElement.style.height = (deltaHeight * testUI.height).toString() + "px";
-
-                                    showImageElement.style.transform = "translate(0, -" + offsetY + "px)";
-                                    showImageElement.src = strImg;
-                                    GameCanvas!.appendChild(showImageElement);
-                                }
-
-
-
-                                //-------------------------------------------
-
-                                let offset = 15;
-                                let time = 0.05;
-                                tween(this.BoxButton).repeatForever(
-                                    tween().by(time, { eulerAngles: new Vec3(0, 0, offset) })
-                                        .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
-                                        .by(time, { eulerAngles: new Vec3(0, 0, offset) })
-                                        .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
-                                        .by(time, { eulerAngles: new Vec3(0, 0, offset) })
-                                        .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
-                                        .by(time, { eulerAngles: new Vec3(0, 0, offset) })
-                                        .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
-                                        .delay(2)
-                                ).start();
-
-                            } else {
+                            let param = {
+                                'version': '4.0',
+                                'image_template': {
+                                    'image': imageTempleBase64,
+                                    'image_type': 'BASE64'
+                                },
+                                'image_target': {
+                                    'image': targetImg,
+                                    'image_type': 'BASE64'
+                                },
 
                             }
+                            let paramStr = JSON.stringify(param);
 
+                            this.uiControl.hideSelectPhoto();
+                            HttpUtil.post("https://aip.baidubce.com/rest/2.0/face/v1/merge?access_token=" + respToken, paramStr, (isSuccess, resp) => {
+                                customerListener.dispatch(Constants.GameStatus.SHOW_MASK, false);
+
+                                if ((resp as any)['error_code'] == 0) {
+
+                                    var strImg = "data:image/jpg;base64," + (resp as any)['result']['merge_image'];
+                                    //-------------------------------------------
+
+                                    let testUI = showImg.getComponent(UITransform);
+                                    if (testUI) {
+
+                                        let GameCanvas = document.getElementById('GameDiv') as HTMLElement;
+
+
+                                        let deltaWidth = Number(GameCanvas.style.width.replace("px", "")) / 1080;
+                                        let deltaHeight = Number(GameCanvas.style.height.replace("px", "")) / 1920;
+
+                                        let offsetY = deltaHeight * showImg.node.position.y;
+
+                                        showImageElement = document.createElement("img");
+                                        // showImageElement.src = "https://www.doompapa.com/test.png";
+                                        showImageElement.style.position = "absolute";
+
+                                        showImageElement.style.width = (deltaWidth * testUI.width).toString() + "px";
+                                        showImageElement.style.height = (deltaHeight * testUI.height).toString() + "px";
+
+                                        showImageElement.style.transform = "translate(0, -" + offsetY + "px)";
+                                        showImageElement.src = strImg;
+                                        GameCanvas!.appendChild(showImageElement);
+                                    }
+
+                                    //-------------------------------------------
+
+                                    let offset = 15;
+                                    let time = 0.05;
+                                    tween(this.BoxButton).repeatForever(
+                                        tween().by(time, { eulerAngles: new Vec3(0, 0, offset) })
+                                            .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
+                                            .by(time, { eulerAngles: new Vec3(0, 0, offset) })
+                                            .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
+                                            .by(time, { eulerAngles: new Vec3(0, 0, offset) })
+                                            .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
+                                            .by(time, { eulerAngles: new Vec3(0, 0, offset) })
+                                            .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
+                                            .delay(2)
+                                    ).start();
+
+                                } else {
+
+                                }
+
+                            });
                         });
                     });
-                });
 
-            });
+                });
+            }
+
         });
     }
 
