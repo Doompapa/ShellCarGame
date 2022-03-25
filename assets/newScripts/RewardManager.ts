@@ -91,9 +91,9 @@ export class RewardManager extends Component {
                             this.ReceiveReward(ticketName);
                             this.LoadQRImage("ZJ");
                         } else {
-                            this.BoxShakeStop();
+                            this.ReceiveThanksReward(ticketName);
                         }
-
+                        this.BoxShakeStop();
                     });
                     break;
                 case "北京市":
@@ -103,8 +103,9 @@ export class RewardManager extends Component {
                             this.ReceiveReward(ticketName);
                             this.LoadQRImage("BJ");
                         } else {
-                            this.BoxShakeStop();
+                            this.ReceiveThanksReward(ticketName);
                         }
+                        this.BoxShakeStop();
                     });
                     break;
                 case "广东省":
@@ -114,8 +115,21 @@ export class RewardManager extends Component {
                             this.ReceiveReward(ticketName);
                             this.LoadQRImage("GD");
                         } else {
-                            this.BoxShakeStop();
+                            this.ReceiveThanksReward(ticketName);
                         }
+                        this.BoxShakeStop();
+                    });
+                    break;
+                case "重庆市":
+                    this.BoxShake();
+                    ApiManager.GetReward("CQ", phone, (isSuccess, ticketName) => {
+                        if (isSuccess) {
+                            this.ReceiveReward(ticketName);
+                            this.LoadQRImage("CQ");
+                        } else {
+                            this.ReceiveThanksReward(ticketName);
+                        }
+                        this.BoxShakeStop();
                     });
                     break;
                 default:
@@ -192,6 +206,27 @@ export class RewardManager extends Component {
         this.Box.eulerAngles = new Vec3(0, 0, 0);
     }
 
+
+    private ReceiveThanksReward(ticketName: string) {
+        // this.EffectsNode.active = true;
+
+        //宝箱特效相关
+        this.boxTween.stop();
+        this.Box.eulerAngles = new Vec3(0, 0, 0);
+        this.BoxSprite.spriteFrame = this.BoxOpendSprite;
+
+        // let gameOverOpacity = this.ReceiveRewardUI.getComponent(UIOpacityComponent);
+        // if (gameOverOpacity != null) {
+        //     gameOverOpacity.opacity = 0;
+        //     this.ReceiveRewardUI.active = true;
+        //     tween(gameOverOpacity).by(1.5, { opacity: 255 }).start();
+        // }
+
+        this.Ticket.worldScale = new Vec3(0, 0, 0);
+        this.Ticket.active = true;
+        tween(this.Ticket).by(1.5, { worldScale: new Vec3(1, 1, 1) }).start();
+        this.TicketLabel.string = ticketName;
+    }
     private ReceiveReward(ticketName: string) {
         this.EffectsNode.active = true;
 

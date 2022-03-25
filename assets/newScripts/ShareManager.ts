@@ -197,7 +197,10 @@ export class ShareManager extends Component {
 
 
     hideImgHTML() {
-        showImageElement.style.display = "none";
+        if (showImageElement != undefined && showImageElement != null) {
+            showImageElement.style.display = "none";
+        }
+
     }
 
     public onUpload() {
@@ -224,12 +227,10 @@ export class ShareManager extends Component {
         }
 
         var index = (this.picTemplePageView.curPageIdx + 1).toString();
-        //https://www.doompapa.com/getAccessToken
 
-        //24.7a80557235b4004c8c39e165cbf51255.2592000.1648243624.282335-25649206
         customerListener.dispatch(Constants.GameStatus.SHOW_MASK, true);
-        HttpUtil.getToken("http://127.0.0.1:8080/getAccessToken", undefined, (isSuccess, respToken) => {
-            // HttpUtil.getToken("https://www.doompapa.com/getAccessToken", undefined, (isSuccess, respToken) => {
+        // HttpUtil.getToken("http://127.0.0.1:8080/getAccessToken", undefined, (isSuccess, respToken) => {
+        HttpUtil.getToken("https://www.doompapa.com/getAccessToken", undefined, (isSuccess, respToken) => {
 
             if (isSuccess) {
                 getBase64(currentUri).then((thumbnail: any) => {

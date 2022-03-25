@@ -9,8 +9,8 @@ declare var param: any;
 export class ApiManager {
 
     //https://www.doompapa.com
-    public static BaseUrl = "http://localhost:8080";
-    // public static BaseUrl = "https://www.doompapa.com";
+    // public static BaseUrl = "http://localhost:8080";
+    public static BaseUrl = "https://www.doompapa.com";
 
     public static IsLogin = false;
 
@@ -106,17 +106,10 @@ export class ApiManager {
             customerListener.dispatch(Constants.GameStatus.SHOW_MASK, false);
             console.log(resp);
             if (isSuccess) {
-                switch (head) {
-                    case "ZJ":
-                        callback(true, "2元燃油优惠券");
-                        break;
-                    default:
-                        callback(true, (resp as any).message);
-                        break;
-                }
-
+                callback(true, (resp as any).message);
             } else {
-                customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "连接失败,请稍后再试");
+                callback(false, (resp as any).message);
+                // customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "连接失败,请稍后再试");
             }
 
         });

@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, ButtonComponent, PageView } from 'cc';
+import { _decorator, Component, Node, ButtonComponent, PageView, tween, Vec3 } from 'cc';
 const { ccclass, property } = _decorator;
 
 /**
@@ -22,8 +22,27 @@ export class ModuleSelect extends Component {
     })
     picTemplePageView!: PageView
 
+    @property({
+        type: Node
+    })
+    BoxButton!: Node
+
     start() {
         // [3]
+
+        let offset = 15;
+        let time = 0.05;
+        tween(this.BoxButton).repeatForever(
+            tween().by(time, { eulerAngles: new Vec3(0, 0, offset) })
+                .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
+                .by(time, { eulerAngles: new Vec3(0, 0, offset) })
+                .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
+                .by(time, { eulerAngles: new Vec3(0, 0, offset) })
+                .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
+                .by(time, { eulerAngles: new Vec3(0, 0, offset) })
+                .by(time, { eulerAngles: new Vec3(0, 0, -offset) })
+                .delay(2)
+        ).start();
     }
 
     // update (deltaTime: number) {
