@@ -45,16 +45,12 @@ export class RegisterManager extends Component {
     })
     uiControl!: TabControl
 
-    @property({
-        type: WebView
-    })
-    webView!: WebView
 
     private totalTime = 60;
 
     start() {
         // [3]
-        this.webView.node.active = false;
+
     }
 
     public ClickConfirm() {

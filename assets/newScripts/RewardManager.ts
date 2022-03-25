@@ -166,6 +166,7 @@ export class RewardManager extends Component {
                     let deltaHeight = Number(GameCanvas.style.height.replace("px", "")) / 1920;
 
                     let offsetY = deltaHeight * showNode.position.y;
+                    console.log("QRCode " + offsetY);
 
                     showImageElement = document.createElement("img");
                     // showImageElement.src = "https://www.doompapa.com/test.png";
@@ -174,7 +175,7 @@ export class RewardManager extends Component {
                     showImageElement.style.width = (deltaWidth * testUI.width).toString() + "px";
                     showImageElement.style.height = (deltaHeight * testUI.height).toString() + "px";
 
-                    showImageElement.style.transform = "translate(0, -" + offsetY + "px)";
+                    // showImageElement.style.transform = "translate(0, -100px)";
 
                     showImageElement.src = imageBase64;
                     GameCanvas!.appendChild(showImageElement);
