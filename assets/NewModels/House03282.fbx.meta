@@ -1,0 +1,63 @@
+{
+  "ver": "2.1.10",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "ea49e7be-02e0-4ecd-8aed-63521d6564a0",
+  "files": [],
+  "subMetas": {
+    "5a953": {
+      "importer": "gltf-mesh",
+      "uuid": "ea49e7be-02e0-4ecd-8aed-63521d6564a0@5a953",
+      "displayName": "",
+      "id": "5a953",
+      "name": "House4_Material0.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "a3444": {
+      "importer": "gltf-scene",
+      "uuid": "ea49e7be-02e0-4ecd-8aed-63521d6564a0@a3444",
+      "displayName": "",
+      "id": "a3444",
+      "name": "House03282.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "redirect": "ea49e7be-02e0-4ecd-8aed-63521d6564a0@a3444",
+    "assetFinder": {
+      "meshes": [
+        "ea49e7be-02e0-4ecd-8aed-63521d6564a0@5a953"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "f91a1353-51ba-4e12-8839-8f21d203fdfb",
+        "289aff64-39e5-4456-8b49-e79ea02c9841"
+      ],
+      "scenes": [
+        "ea49e7be-02e0-4ecd-8aed-63521d6564a0@a3444"
+      ]
+    },
+    "dumpMaterials": true,
+    "materialDumpDir": "db://assets/NewModels/Materials_House03282"
+  }
+}
