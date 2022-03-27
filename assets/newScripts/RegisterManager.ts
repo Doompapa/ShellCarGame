@@ -51,6 +51,8 @@ export class RegisterManager extends Component {
     start() {
         // [3]
 
+        //北京
+        // 
     }
 
     public ClickConfirm() {
@@ -88,44 +90,22 @@ export class RegisterManager extends Component {
                             customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "注册成功");
                             this.uiControl.ShowInstruction();
                         } else {
-                            customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "注册失败,请稍后再试");
+                            // customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "注册失败,请稍后再试");
                         }
                     });
                     break;
-                // case "北京市":
-                //     ApiManager.GetMember("BJ", phone, (isSuccess, resp) => {
-                //         if (isSuccess) {
-                //             ApiManager.IsLogin = true;
-                //             this.uiControl.ShowInstruction();
-                //             // ApiManager.IsLogin = true;
-                //             // this.uiControl.ShowReward();
-                //         } else {
-                //             customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "当前手机号未注册");
-                //         }
-                //     });
-                //     break;
-                // case "重庆市":
-                //     ApiManager.GetMember("CQ", phone, (isSuccess, resp) => {
-                //         if (isSuccess) {
-
-                //             ApiManager.IsLogin = true;
-                //             this.uiControl.ShowReward();
-                //         } else {
-                //             customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "当前手机号未注册");
-                //         }
-                //     });
-                //     break;
-                // case "广东省":
-                //     ApiManager.GetMember("GD", phone, (isSuccess, resp) => {
-                //         if (isSuccess) {
-
-                //             ApiManager.IsLogin = true;
-                //             this.uiControl.ShowReward();
-                //         } else {
-                //             customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "当前手机号未注册");
-                //         }
-                //     });
-                //     break;
+                case "重庆市":
+                    ApiManager.RegisterMember("CQ", phone, (isSuccess, resp) => {
+                        if (isSuccess) {
+                            ApiManager.IsLogin = true;
+                            customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "注册成功");
+                            this.uiControl.ShowInstruction();
+                        } else {
+                            // customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "当前手机号未注册");
+                        }
+                    });
+                    break;
+                //四合一
                 default:
                     break;
             }
@@ -136,14 +116,18 @@ export class RegisterManager extends Component {
      * 查看协议一
      */
     public ClickShowText1() {
-        // this.webView.url = "https://wechat.zjshell.com/dest/index.html?code=051Bjp000A5DxN1wvr300unvWc1Bjp0O&state=12354#/personcenter/memberAgreement";
-        // this.webView.node.active = true;
+
+        //浙江
+        window.location.href = "https://wechat.zjshell.com/dest/index.html?code=051Bjp000A5DxN1wvr300unvWc1Bjp0O&state=12354#/personcenter/memberAgreement";
+
     }
 
     /**
     * 查看协议二
     */
     public ClickShowText2() {
+        //浙江
+        window.location.href = "https://wechat.zjshell.com/dest/index.html?code=051Bjp000A5DxN1wvr300unvWc1Bjp0O&state=12354#/personcenter/memberAgreement";
 
     }
 

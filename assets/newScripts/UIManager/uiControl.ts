@@ -133,6 +133,12 @@ export class TabControl extends Component {
     })
     RewardUI!: Node
 
+
+    @property({
+        type: Node
+    })
+    GamePosterUI!: Node
+
     @property({
         type: Node
     })
@@ -162,7 +168,7 @@ export class TabControl extends Component {
 
     private startZ = 0;
 
-    private boxTween !: Tween<Node>;
+    // private boxTween !: Tween<Node>;
 
     private UIList: Node[] = [];;
 
@@ -207,7 +213,7 @@ export class TabControl extends Component {
         this.UIList.push(this.RewardUI);
         this.UIList.push(this.RegisterUI);
         this.UIList.push(this.FirstUI);
-
+        this.UIList.push(this.GamePosterUI);
         // this.openUI(this.SelectAreaNode);
         this.openUI(this.FirstUI);
 
@@ -312,6 +318,10 @@ export class TabControl extends Component {
         this.openUI(this.TempleSelectUI);
     }
 
+    public goToGamePoster() {
+        this.openUI(this.GamePosterUI);
+    }
+
     public templcSelected() {
         this.openUI(this.PhotoSelectUI);
     }
@@ -330,10 +340,10 @@ export class TabControl extends Component {
         //todo 进入说明界面前判断
 
         //广东省 重庆市 北京市 浙江省
-        if (this.selectProvince == "浙江省" || this.selectProvince == "北京市") {
-            this.openUI(this.LoginUI);
-        } else {
+        if (this.selectProvince == "广东省" || this.selectProvince == "天津市") {
             this.openUI(this.InstructionNode);
+        } else {
+            this.openUI(this.LoginUI);
         }
     }
 
@@ -361,8 +371,17 @@ export class TabControl extends Component {
         this.openUI(this.InstructionNode);
     }
 
+    /**
+     *显示注册页
+     */
     public ShowRegister() {
-        this.openUI(this.RegisterUI);
+        let area = localStorage.getItem(Constants.GameStatus.SELECT_AREA);
+        if (area == "北京市") {
+            window.location.href = "http://loyalty.bjshell.com.cn/dest/index.html?code=03300fll2btdR84G6Sml2uMPa6100flD&state=12354#/register";
+        } else {
+            this.openUI(this.RegisterUI);
+        }
+
     }
 
 

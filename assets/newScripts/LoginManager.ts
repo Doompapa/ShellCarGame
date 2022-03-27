@@ -44,16 +44,16 @@ export class LoginManager extends Component {
 
     start() {
 
-        let area = localStorage.getItem(Constants.GameStatus.SELECT_AREA);
-        switch (area) {
-            case "浙江省":
-            case "北京市":
-                this.GoRegisterNode.active = true;
-                break;
-            default:
-                this.GoRegisterNode.active = false;
-                break;
-        }
+        // let area = localStorage.getItem(Constants.GameStatus.SELECT_AREA);
+        // switch (area) {
+        //     case "浙江省":
+        //     case "北京市":
+        //         this.GoRegisterNode.active = false;
+        //         break;
+        //     default:
+        //         this.GoRegisterNode.active = true;
+        //         break;
+        // }
     }
 
 
@@ -122,7 +122,7 @@ export class LoginManager extends Component {
                         this.uiControl.ShowReward();
                         // ApiManager.GetMember("GD", phone, (isSuccess, resp) => {
                         //     if (isSuccess) {
-                 
+
                         //     } else {
                         //         customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "当前手机号未注册");
                         //     }

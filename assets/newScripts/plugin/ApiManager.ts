@@ -21,6 +21,8 @@ export class ApiManager {
 
     public static envIndex = 0;
 
+    public static resultType = "天赋";
+
     /**
      * 会员验证
      * @param head 请求前缀 
@@ -53,7 +55,7 @@ export class ApiManager {
                     customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "当前手机号未注册");
                 }
             } else {
-                customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "连接失败,请稍后再试");
+                customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, respJson.message);
                 callback(false, respJson.message);
             }
         });
@@ -71,7 +73,7 @@ export class ApiManager {
 
             customerListener.dispatch(Constants.GameStatus.SHOW_MASK, false);
             let respJson = resp as any;
-            let message = JSON.parse(respJson.message);
+            let message = respJson.message;
             //响应是否成功
             if (isSuccess) {
                 console.log(message);
@@ -82,7 +84,7 @@ export class ApiManager {
                     callback(false, message);
                 }
             } else {
-                customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "连接失败,请稍后再试");
+                customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, message);
                 callback(false, message);
             }
         });
