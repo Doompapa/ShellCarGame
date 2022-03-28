@@ -112,7 +112,8 @@ export class LoginManager extends Component {
                         ApiManager.GetMember("CQ", phone, (isSuccess, resp) => {
                             if (isSuccess) {
                                 ApiManager.IsLogin = true;
-                                this.uiControl.ShowReward();
+                                this.uiControl.ShowInstruction();
+                                // this.uiControl.ShowReward();
                             }
                         });
                         break;

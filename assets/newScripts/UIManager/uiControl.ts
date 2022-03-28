@@ -142,6 +142,11 @@ export class TabControl extends Component {
     @property({
         type: Node
     })
+    BJRegisterUI!: Node
+
+    @property({
+        type: Node
+    })
     ToastUI!: Node
 
     @property({
@@ -153,6 +158,8 @@ export class TabControl extends Component {
         type: LabelComponent
     })
     ToastLabel!: LabelComponent
+
+
 
 
     private VShellCount = 0;
@@ -215,6 +222,7 @@ export class TabControl extends Component {
         this.UIList.push(this.FirstUI);
         this.UIList.push(this.GamePosterUI);
         // this.openUI(this.SelectAreaNode);
+        this.UIList.push(this.BJRegisterUI);
         this.openUI(this.FirstUI);
 
 
@@ -377,7 +385,8 @@ export class TabControl extends Component {
     public ShowRegister() {
         let area = localStorage.getItem(Constants.GameStatus.SELECT_AREA);
         if (area == "北京市") {
-            window.location.href = "http://loyalty.bjshell.com.cn/dest/index.html?code=03300fll2btdR84G6Sml2uMPa6100flD&state=12354#/register";
+            this.openUI(this.BJRegisterUI);
+            //     window.location.href = "http://loyalty.bjshell.com.cn/dest/index.html?code=03300fll2btdR84G6Sml2uMPa6100flD&state=12354#/register";
         } else {
             this.openUI(this.RegisterUI);
         }

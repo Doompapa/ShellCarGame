@@ -88,11 +88,11 @@ export class RewardManager extends Component {
                     this.BoxShake();
                     ApiManager.GetReward("ZJ", phone, (isSuccess, ticketName) => {
                         if (isSuccess) {
-                            this.ReceiveReward(ticketName);
-                            this.LoadQRImage("ZJ");
+                            this.ReceiveReward(ticketName);  
                         } else {
                             this.ReceiveThanksReward(ticketName);
                         }
+                        this.LoadQRImage("ZJ");
                         this.BoxShakeStop();
                     });
                     break;
@@ -100,11 +100,11 @@ export class RewardManager extends Component {
                     this.BoxShake();
                     ApiManager.GetReward("BJ", phone, (isSuccess, ticketName) => {
                         if (isSuccess) {
-                            this.ReceiveReward(ticketName);
-                            this.LoadQRImage("BJ");
+                            this.ReceiveReward(ticketName);                         
                         } else {
                             this.ReceiveThanksReward(ticketName);
                         }
+                        this.LoadQRImage("BJ");
                         this.BoxShakeStop();
                     });
                     break;
@@ -113,10 +113,10 @@ export class RewardManager extends Component {
                     ApiManager.GetReward("GD", phone, (isSuccess, ticketName) => {
                         if (isSuccess) {
                             this.ReceiveReward(ticketName);
-                            this.LoadQRImage("GD");
                         } else {
                             this.ReceiveThanksReward(ticketName);
                         }
+                        this.LoadQRImage("GD");
                         this.BoxShakeStop();
                     });
                     break;
@@ -125,10 +125,10 @@ export class RewardManager extends Component {
                     ApiManager.GetReward("CQ", phone, (isSuccess, ticketName) => {
                         if (isSuccess) {
                             this.ReceiveReward(ticketName);
-                            this.LoadQRImage("CQ");
                         } else {
                             this.ReceiveThanksReward(ticketName);
                         }
+                        this.LoadQRImage("CQ");
                         this.BoxShakeStop();
                     });
                     break;
@@ -216,12 +216,7 @@ export class RewardManager extends Component {
         this.Box.eulerAngles = new Vec3(0, 0, 0);
         this.BoxSprite.spriteFrame = this.BoxOpendSprite;
 
-        // let gameOverOpacity = this.ReceiveRewardUI.getComponent(UIOpacityComponent);
-        // if (gameOverOpacity != null) {
-        //     gameOverOpacity.opacity = 0;
-        //     this.ReceiveRewardUI.active = true;
-        //     tween(gameOverOpacity).by(1.5, { opacity: 255 }).start();
-        // }
+        this.Box.active = false;
 
         this.Ticket.worldScale = new Vec3(0, 0, 0);
         this.Ticket.active = true;
