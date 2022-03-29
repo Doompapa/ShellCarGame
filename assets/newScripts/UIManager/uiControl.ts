@@ -46,15 +46,15 @@ export class TabControl extends Component {
     })
     GameOverParent!: Node  //游戏结束UI父节点
 
-    @property({
-        type: LabelComponent
-    })
-    GameOverDistance!: LabelComponent  //游戏结束UI
+    // @property({
+    //     type: LabelComponent
+    // })
+    // GameOverDistance!: LabelComponent  //游戏结束UI
 
-    @property({
-        type: RichText
-    })
-    ScoreRank!: RichText  //道具数量
+    // @property({
+    //     type: RichText
+    // })
+    // ScoreRank!: RichText  //道具数量
 
     @property({
         type: Node
@@ -220,7 +220,7 @@ export class TabControl extends Component {
         this.UIList.push(this.RewardUI);
         this.UIList.push(this.RegisterUI);
         this.UIList.push(this.FirstUI);
-        this.UIList.push(this.GamePosterUI);
+        // this.UIList.push(this.GamePosterUI);
         // this.openUI(this.SelectAreaNode);
         this.UIList.push(this.BJRegisterUI);
         this.openUI(this.FirstUI);
@@ -313,8 +313,8 @@ export class TabControl extends Component {
             // tween(gameOverOpacity).by(0.5, { worldScale: new Vec3(1, 1, 1) }).start();
             tween(gameOverOpacity).by(1.5, { opacity: 255 }).start();
 
-            this.GameOverDistance.string = this.distanceLabel.string;
-            this.ScoreRank.string = "<color=#dc150b><outline color=#ffc40f width=6><size=60><b>" + this.VShellCount.toString() + "</b></size></color>";
+        //     this.GameOverDistance.string = this.distanceLabel.string;
+        //     this.ScoreRank.string = "<color=#dc150b><outline color=#ffc40f width=6><size=60><b>" + this.VShellCount.toString() + "</b></size></color>";
         }
 
     }
@@ -326,9 +326,9 @@ export class TabControl extends Component {
         this.openUI(this.TempleSelectUI);
     }
 
-    public goToGamePoster() {
-        this.openUI(this.GamePosterUI);
-    }
+    // public goToGamePoster() {
+    //     this.openUI(this.GamePosterUI);
+    // }
 
     public templcSelected() {
         this.openUI(this.PhotoSelectUI);

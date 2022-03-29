@@ -2,7 +2,7 @@
   "ver": "1.0.22",
   "importer": "image",
   "imported": true,
-  "uuid": "45bbfe0f-79cb-498f-bd2e-13791453e5e1",
+  "uuid": "d3eaadbc-321e-44b2-bf40-588146d0034c",
   "files": [
     ".png",
     ".json"
@@ -10,8 +10,8 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "45bbfe0f-79cb-498f-bd2e-13791453e5e1@6c48a",
-      "displayName": "红字",
+      "uuid": "d3eaadbc-321e-44b2-bf40-588146d0034c@6c48a",
+      "displayName": "文字",
       "id": "6c48a",
       "name": "texture",
       "userData": {
@@ -22,7 +22,7 @@
         "mipfilter": "none",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "45bbfe0f-79cb-498f-bd2e-13791453e5e1"
+        "imageUuidOrDatabaseUri": "d3eaadbc-321e-44b2-bf40-588146d0034c"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -33,8 +33,8 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "45bbfe0f-79cb-498f-bd2e-13791453e5e1@f9941",
-      "displayName": "红字",
+      "uuid": "d3eaadbc-321e-44b2-bf40-588146d0034c@f9941",
+      "displayName": "文字",
       "id": "f9941",
       "name": "spriteFrame",
       "userData": {
@@ -45,17 +45,17 @@
         "offsetY": 0,
         "trimX": 0,
         "trimY": 0,
-        "width": 845,
-        "height": 324,
-        "rawWidth": 845,
-        "rawHeight": 324,
+        "width": 733,
+        "height": 319,
+        "rawWidth": 733,
+        "rawHeight": 319,
         "borderTop": 0,
         "borderBottom": 0,
         "borderLeft": 0,
         "borderRight": 0,
         "packable": true,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "45bbfe0f-79cb-498f-bd2e-13791453e5e1@6c48a",
+        "imageUuidOrDatabaseUri": "d3eaadbc-321e-44b2-bf40-588146d0034c@6c48a",
         "atlasUuid": ""
       },
       "ver": "1.0.9",
@@ -69,6 +69,6 @@
   "userData": {
     "hasAlpha": true,
     "type": "sprite-frame",
-    "redirect": "45bbfe0f-79cb-498f-bd2e-13791453e5e1@f9941"
+    "redirect": "d3eaadbc-321e-44b2-bf40-588146d0034c@f9941"
   }
 }

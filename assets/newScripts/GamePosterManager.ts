@@ -40,6 +40,32 @@ export class GamePosterManager extends Component {
 
 
     start() {
+
+        var distance = Math.floor(this.mainCar.node.getWorldPosition().z - 50);
+
+        if (this.mainCar._vshellNumber >= 30) {
+            ApiManager.resultType = "智慧";
+        } else {
+            if (this.mainCar._knockNumber <= 15) {
+                ApiManager.resultType = "操作";
+            } else {
+                //6500m
+                if (distance >= 7000) {
+                    let isFristPlay = localStorage.getItem("isFristPlay");
+                    if (!isFristPlay) {
+                        ApiManager.resultType = "天赋";
+                    } else {
+                        ApiManager.resultType = "实力";
+                    }
+                } else {
+                    ApiManager.resultType = "敏捷";
+                }
+
+            }
+        }
+
+
+
         // [3]
         this.PosterImage.node.active = false;
         resources.load<Texture2D>("pic/poster/" + ApiManager.resultType + "/texture", (err, resultImage) => {
@@ -49,7 +75,7 @@ export class GamePosterManager extends Component {
             this.PosterImage.node.active = true;
         });
 
-        this.DistanceLabel.string = Math.floor(this.mainCar.node.getWorldPosition().z).toString();
+        this.DistanceLabel.string = distance.toString();
 
         this.VShellLabel.string = "<color=#D02D25><outline color=white width=6><size=66><b>" + this.mainCar._vshellNumber + "</b></size></color>"
 
