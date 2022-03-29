@@ -91,29 +91,30 @@ export class LoginManager extends Component {
                     case "浙江省":
                         ApiManager.GetMember("ZJ", phone, (isSuccess, resp) => {
                             if (isSuccess) {
-                                ApiManager.IsLogin = true;
-                                this.uiControl.ShowInstruction();
                                 // ApiManager.IsLogin = true;
-                                // this.uiControl.ShowReward();
+                                // this.uiControl.ShowInstruction();
+                                ApiManager.IsLogin = true;
+                                this.uiControl.ShowReward();
                             }
                         });
                         break;
                     case "北京市":
                         ApiManager.GetMember("BJ", phone, (isSuccess, resp) => {
                             if (isSuccess) {
-                                ApiManager.IsLogin = true;
-                                this.uiControl.ShowInstruction();
                                 // ApiManager.IsLogin = true;
-                                // this.uiControl.ShowReward();
+                                // this.uiControl.ShowInstruction();
+                                ApiManager.IsLogin = true;
+                                this.uiControl.ShowReward();
                             }
                         });
                         break;
                     case "重庆市":
                         ApiManager.GetMember("CQ", phone, (isSuccess, resp) => {
                             if (isSuccess) {
+                                // ApiManager.IsLogin = true;
+                                // this.uiControl.ShowInstruction();
                                 ApiManager.IsLogin = true;
-                                this.uiControl.ShowInstruction();
-                                // this.uiControl.ShowReward();
+                                this.uiControl.ShowReward();
                             }
                         });
                         break;

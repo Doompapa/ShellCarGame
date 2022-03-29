@@ -193,7 +193,7 @@ export class TabControl extends Component {
             this.clock.active = true;
             this.schedule(this._startSche, 1);
             this.schedule(this._updateRuning, 0.1);
-        }, this)
+        }, this);
         customerListener.on(Constants.GameStatus.GAME_OVER, this._gameOverEvent, this);
         customerListener.on(Constants.GameStatus.SHOW_MASK, this._showMask, this);
         customerListener.on(Constants.GameStatus.SHOW_TOAST, this.ShowToast, this);
@@ -313,8 +313,8 @@ export class TabControl extends Component {
             // tween(gameOverOpacity).by(0.5, { worldScale: new Vec3(1, 1, 1) }).start();
             tween(gameOverOpacity).by(1.5, { opacity: 255 }).start();
 
-        //     this.GameOverDistance.string = this.distanceLabel.string;
-        //     this.ScoreRank.string = "<color=#dc150b><outline color=#ffc40f width=6><size=60><b>" + this.VShellCount.toString() + "</b></size></color>";
+            //     this.GameOverDistance.string = this.distanceLabel.string;
+            //     this.ScoreRank.string = "<color=#dc150b><outline color=#ffc40f width=6><size=60><b>" + this.VShellCount.toString() + "</b></size></color>";
         }
 
     }
@@ -348,11 +348,15 @@ export class TabControl extends Component {
         //todo 进入说明界面前判断
 
         //广东省 重庆市 北京市 浙江省
-        if (this.selectProvince == "广东省" || this.selectProvince == "天津市") {
-            this.openUI(this.InstructionNode);
-        } else {
-            this.openUI(this.LoginUI);
-        }
+        // if (this.selectProvince == "广东省" || this.selectProvince == "天津市") {
+        //     this.openUI(this.InstructionNode);
+        // } else {
+        //     this.openUI(this.LoginUI);
+        // }
+
+
+        this.openUI(this.InstructionNode);
+
     }
 
     private OnSelectProvince() {

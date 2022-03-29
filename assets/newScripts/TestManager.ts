@@ -44,7 +44,7 @@ function hechen(text: string, urlData: string, callback: (arg0: string) => void)
 
 
 
-import { _decorator, Component, Node, loader, Prefab, instantiate, Vec3, find, AssetManager, UITransform, CameraComponent, Camera, RenderTexture, Sprite, Texture2D, SpriteFrame, ImageAsset, view, gfx, Vec2, Rect, resources } from 'cc';
+import { _decorator, Component, Node, loader, Prefab, instantiate, Vec3, find, AssetManager, UITransform, CameraComponent, Camera, RenderTexture, Sprite, Texture2D, SpriteFrame, ImageAsset, view, gfx, Vec2, Rect, resources, Canvas } from 'cc';
 const { ccclass, property } = _decorator;
 
 /**
@@ -63,64 +63,76 @@ const { ccclass, property } = _decorator;
 export class TestManager extends Component {
 
     @property({
-        type: Node
+        type: Camera
     })
-    TestNode!: Node
+    PosterCamera!: Camera
 
     @property({
         type: Camera
     })
-    PosterCamera!: Camera
+    MainCamera!: Camera
 
     @property({
         type: Node
     })
     showImg!: Node
 
+    @property({
+        type: Canvas
+    })
+    currentCavans!: Canvas
+
+    _canvas!: HTMLCanvasElement
+
+    private width = 0;
+    private height = 0;
+
     start() {
 
         showBorder = this.showImg;
 
-        resources.load<Texture2D>("pic/poster/天赋/texture", (err, imageTemple) => {
-            this.getBase64ImageByTexture2D(imageTemple, (imageTempleBase64) => {
-                hechen("测试", imageTempleBase64, (resultImage) => {
-
-                    let testUI = showBorder.getComponent(UITransform);
-                    if (testUI) {
-
-                        let GameCanvas = document.getElementById('GameDiv') as HTMLElement;
-
-
-                        let deltaWidth = Number(GameCanvas.style.width.replace("px", "")) / 1080;
-                        let deltaHeight = Number(GameCanvas.style.height.replace("px", "")) / 1920;
-
-                        let offsetY = deltaHeight * showBorder.position.y;
-
-                        showImageElement = document.createElement("img");
-                        showImageElement.style.position = "absolute";
-
-
-                        showImageElement.style.width = "756px";
-                        showImageElement.style.height = "1344px";
-
-                        // showImageElement.style.width = (deltaWidth * testUI.width).toString() + "px";
-                        // showImageElement.style.height = (deltaHeight * testUI.height).toString() + "px";
-
-                        showImageElement.style.transform = "translate(0, -" + offsetY + "px)";
-                        showImageElement.src = resultImage;
-                        GameCanvas!.appendChild(showImageElement);
-                    }
-
-
-                });
 
 
 
-            });
-        });
+        // resources.load<Texture2D>("pic/poster/天赋/texture", (err, imageTemple) => {
+        //     this.getBase64ImageByTexture2D(imageTemple, (imageTempleBase64) => {
+        //         hechen("测试", imageTempleBase64, (resultImage) => {
+
+        //             let testUI = showBorder.getComponent(UITransform);
+        //             if (testUI) {
+
+        //                 let GameCanvas = document.getElementById('GameDiv') as HTMLElement;
+
+
+        //                 let deltaWidth = Number(GameCanvas.style.width.replace("px", "")) / 1080;
+        //                 let deltaHeight = Number(GameCanvas.style.height.replace("px", "")) / 1920;
+
+        //                 let offsetY = deltaHeight * showBorder.position.y;
+
+        //                 showImageElement = document.createElement("img");
+        //                 showImageElement.style.position = "absolute";
+
+
+        //                 showImageElement.style.width = "756px";
+        //                 showImageElement.style.height = "1344px";
+
+        //                 // showImageElement.style.width = (deltaWidth * testUI.width).toString() + "px";
+        //                 // showImageElement.style.height = (deltaHeight * testUI.height).toString() + "px";
+
+        //                 showImageElement.style.transform = "translate(0, -" + offsetY + "px)";
+        //                 showImageElement.src = resultImage;
+        //                 GameCanvas!.appendChild(showImageElement);
+        //             }
+
+
+        //         });
+
+
+
+        //     });
+        // });
 
     }
-
 
 
     public getBase64ImageByTexture2D(texture: Texture2D, callback: (arg0: string) => void) {
@@ -137,7 +149,6 @@ export class TestManager extends Component {
         if (callback) callback(dataURL);
 
     }
-
 
     // update (deltaTime: number) {
     //     // [4]
