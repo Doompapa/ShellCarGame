@@ -1,5 +1,6 @@
 var showImageElement: HTMLImageElement;
 import { _decorator, Component, Node, Texture2D, resources } from 'cc';
+import { Constants } from './Other/constants';
 const { ccclass, property } = _decorator;
 
 /**
@@ -29,7 +30,34 @@ export class BJRegister extends Component {
     // Ticket!: Node
 
     start() {
-        resources.load<Texture2D>("pic/BJTest/texture", (err, imageTemple) => {
+        let area = localStorage.getItem(Constants.GameStatus.SELECT_AREA);
+        switch (area) {
+            case "浙江省":
+                this.LoadQRImage("ZJ");
+                break;
+            case "北京市":
+                this.LoadQRImage("BJ");
+                break;
+            case "广东省":
+                this.LoadQRImage("GD");
+                break;
+            case "重庆市":
+                this.LoadQRImage("CQ");
+                break;
+            default:
+                this.LoadQRImage("FIO");
+                break;
+        }
+
+    }
+
+    /**
+    * 加载图片
+    * @param head 
+    */
+    private LoadQRImage(head: string) {
+
+        resources.load<Texture2D>("pic/" + head + "/texture", (err, imageTemple) => {
 
 
             this.getBase64ImageByTexture2D(imageTemple, (imageBase64) => {
@@ -45,17 +73,14 @@ export class BJRegister extends Component {
                 showImageElement = document.createElement("img");
                 showImageElement.style.position = "absolute";
 
-                showImageElement.style.width = (deltaWidth * 800).toString() + "px";
-                showImageElement.style.height = (deltaWidth * 800).toString() + "px";
+                showImageElement.style.width = (deltaWidth * 260).toString() + "px";
+                showImageElement.style.height = (deltaWidth * 260).toString() + "px";
 
                 // showImageElement.style.transform = "translate(0, -100px)";
 
                 showImageElement.src = imageBase64;
                 GameCanvas!.appendChild(showImageElement);
-
-
             });
-
         });
     }
 

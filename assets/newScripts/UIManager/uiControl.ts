@@ -164,12 +164,12 @@ export class TabControl extends Component {
 
     private VShellCount = 0;
 
-    public timeCount = 0; 
+    public timeCount = 0;
 
     /**
      * 游戏总时长
      */
-    private GameTotalTime = 10;
+    private GameTotalTime = 45;
 
     public runingTime: number = 0;
 
@@ -223,7 +223,7 @@ export class TabControl extends Component {
         this.UIList.push(this.BJRegisterUI);
 
 
-    
+
         this.openUI(this.FirstUI);
 
 
@@ -390,14 +390,13 @@ export class TabControl extends Component {
      *显示注册页
      */
     public ShowRegister() {
-        let area = localStorage.getItem(Constants.GameStatus.SELECT_AREA);
-        if (area == "北京市") {
-            this.openUI(this.BJRegisterUI);
-            //     window.location.href = "http://loyalty.bjshell.com.cn/dest/index.html?code=03300fll2btdR84G6Sml2uMPa6100flD&state=12354#/register";
-        } else {
-            this.openUI(this.RegisterUI);
-        }
 
+        // if (area == "北京市") {
+        //     this.openUI(this.BJRegisterUI);
+        // } else {
+        //     this.openUI(this.RegisterUI);
+        // }
+        this.openUI(this.BJRegisterUI);
     }
 
 
