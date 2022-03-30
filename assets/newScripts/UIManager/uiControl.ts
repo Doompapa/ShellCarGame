@@ -164,12 +164,12 @@ export class TabControl extends Component {
 
     private VShellCount = 0;
 
-    public timeCount = 0; //开始计时，每隔15S进行一次关卡替换
+    public timeCount = 0; 
 
     /**
      * 游戏总时长
      */
-    private GameTotalTime = 1;
+    private GameTotalTime = 10;
 
     public runingTime: number = 0;
 
@@ -221,6 +221,9 @@ export class TabControl extends Component {
         this.UIList.push(this.RegisterUI);
         this.UIList.push(this.FirstUI);
         this.UIList.push(this.BJRegisterUI);
+
+
+    
         this.openUI(this.FirstUI);
 
 
@@ -304,16 +307,18 @@ export class TabControl extends Component {
 
         //todo 延迟显示，有过度过程
         let gameOverOpacity = this.GameOverParent.getComponent(UIOpacityComponent);
-        if (gameOverOpacity != null) {
-            gameOverOpacity.opacity = 0;
-            // this.GameOverParent.worldScale = new Vec3(0, 0, 0);
-            this.GameOverParent.active = true;
-            // tween(gameOverOpacity).by(0.5, { worldScale: new Vec3(1, 1, 1) }).start();
-            tween(gameOverOpacity).by(1.5, { opacity: 255 }).start();
 
-            //     this.GameOverDistance.string = this.distanceLabel.string;
-            //     this.ScoreRank.string = "<color=#dc150b><outline color=#ffc40f width=6><size=60><b>" + this.VShellCount.toString() + "</b></size></color>";
-        }
+        this.GameOverParent.active = true;
+
+        // if (gameOverOpacity != null) {
+        //     gameOverOpacity.opacity = 0;
+        //     // this.GameOverParent.worldScale = new Vec3(0, 0, 0);
+        //     this.GameOverParent.active = true;
+        //     // tween(gameOverOpacity).by(0.5, { worldScale: new Vec3(1, 1, 1) }).start();
+        //     tween(gameOverOpacity).by(1.5, { opacity: 255 }).start();
+        //     //     this.GameOverDistance.string = this.distanceLabel.string;
+        //     //     this.ScoreRank.string = "<color=#dc150b><outline color=#ffc40f width=6><size=60><b>" + this.VShellCount.toString() + "</b></size></color>";
+        // }
 
     }
 

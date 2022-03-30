@@ -1,6 +1,8 @@
 
 import { _decorator, Component, Node, Sprite, LabelComponent, RichTextComponent, resources, Texture2D, ImageAsset, SpriteFrame } from 'cc';
 import { Car } from './Car';
+import { Constants } from './Other/constants';
+import { customerListener } from './Other/listener';
 import { ApiManager } from './plugin/ApiManager';
 import { Screenshot2D } from './plugin/Screenshot2D';
 const { ccclass, property } = _decorator;
@@ -30,9 +32,9 @@ export class GamePosterManager extends Component {
     DistanceLabel!: LabelComponent;
 
     @property({
-        type: RichTextComponent
+        type: LabelComponent
     })
-    VShellLabel!: RichTextComponent;
+    VShellLabel!: LabelComponent;
 
     @property({
         type: Car
@@ -40,8 +42,9 @@ export class GamePosterManager extends Component {
     mainCar!: Car    //获取赛车
 
 
-    onLoad() {
-
+    start() {
+        customerListener.dispatch(Constants.GameStatus.SHOW_MASK, true);
+        
         var distance = Math.floor(this.mainCar.node.getWorldPosition().z - 50);
 
         if (this.mainCar._vshellNumber >= 30) {
@@ -78,9 +81,13 @@ export class GamePosterManager extends Component {
 
         this.DistanceLabel.string = distance.toString();
 
-        this.VShellLabel.string = "<color=#D02D25><outline color=white width=6><size=66><b>" + this.mainCar._vshellNumber + "</b></size></color>"
+        // this.VShellLabel.string = "<color=#D02D25><outline color=white width=6><size=66><b>" + this.mainCar._vshellNumber + "</b></size></color>"
+        this.VShellLabel.string = this.mainCar._vshellNumber.toString();
 
-        // this.getComponent(Screenshot2D)?.showImage();
+
+        this.scheduleOnce(() => {
+            this.getComponent(Screenshot2D)?.showImage();
+        }, 0.1)
 
     }
 

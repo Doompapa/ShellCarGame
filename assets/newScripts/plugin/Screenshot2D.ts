@@ -4,6 +4,8 @@ var showImageElement: HTMLImageElement;
 
 import { _decorator, Component, Node, Camera, RenderTexture, director, gfx, ImageAsset, renderer, view, Size, Texture2D, SpriteFrame, Sprite, UITransform, spriteAssembler, sys, Vec2, Canvas, warnID, log, error, Button, assetManager, instantiate, Vec3, Label } from 'cc';
 import { JSB, PREVIEW } from 'cc/env';
+import { Constants } from '../Other/constants';
+import { customerListener } from '../Other/listener';
 import { Canvas2Image } from "./Canvas2Image";
 const { ccclass, property } = _decorator;
 
@@ -29,6 +31,12 @@ export class Screenshot2D extends Component {
     canvas2image!: Canvas2Image;
 
     start() {
+
+        this.copyCamera.enabled = false;
+    }
+
+    showImage() {
+        this.copyCamera.enabled = true;
         this.canvas2image = Canvas2Image.getInstance();
         this.rt = new RenderTexture();
         this.rt.reset({
@@ -41,12 +49,6 @@ export class Screenshot2D extends Component {
         this.scheduleOnce(() => {
             this.capture();
         }, 0.5)
-
-    }
-
-    showImage() {
-
-
     }
 
     capture() {
@@ -110,6 +112,8 @@ export class Screenshot2D extends Component {
             showImageElement.src = this._canvas.toDataURL("image/jpeg");
             GameCanvas!.appendChild(showImageElement);
         }
+
+        customerListener.dispatch(Constants.GameStatus.SHOW_MASK, false);
     }
 
     clearCanvas() {
