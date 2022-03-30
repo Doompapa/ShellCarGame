@@ -6,7 +6,6 @@ import { _decorator, Component, Node, Camera, RenderTexture, director, gfx, Imag
 import { JSB, PREVIEW } from 'cc/env';
 import { Constants } from '../Other/constants';
 import { customerListener } from '../Other/listener';
-import { Canvas2Image } from "./Canvas2Image";
 const { ccclass, property } = _decorator;
 
 @ccclass('Screenshot2D')
@@ -28,7 +27,7 @@ export class Screenshot2D extends Component {
 
     _buffer!: Uint8Array;
 
-    canvas2image!: Canvas2Image;
+    // canvas2image!: Canvas2Image;
 
     start() {
 
@@ -37,7 +36,7 @@ export class Screenshot2D extends Component {
 
     showImage() {
         this.copyCamera.enabled = true;
-        this.canvas2image = Canvas2Image.getInstance();
+        // this.canvas2image = Canvas2Image.getInstance();
         this.rt = new RenderTexture();
         this.rt.reset({
             width: view.getVisibleSize().width,
