@@ -105,7 +105,8 @@ export class Screenshot2D extends Component {
             showImageElement.style.position = "absolute";
 
             showImageElement.style.width = (deltaWidth * testUI.width).toString() + "px";
-            showImageElement.style.height = (deltaHeight * testUI.height).toString() + "px";
+            // showImageElement.style.height = (deltaHeight * testUI.height).toString() + "px";
+            showImageElement.style.height = (deltaWidth * testUI.width / 9 * 16).toString() + "px";
 
             showImageElement.style.transform = "translate(0, -" + offsetY + "px)";
             showImageElement.src = this._canvas.toDataURL("image/jpeg");
