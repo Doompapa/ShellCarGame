@@ -150,7 +150,53 @@ export class TestManager extends Component {
 
     }
 
-    // update (deltaTime: number) {
-    //     // [4]
-    // }
+
+    compositeImg() {
+        let canvas = document.createElement('canvas'),
+            ctx = canvas.getContext('2d');
+        canvas.width = 500;
+        canvas.height = 800;
+
+        let img1 = new Image();
+        let img2 = new Image();
+        // img1.src = url;
+        // img2.src = require('../../assets/img/qrcode-bg.png');
+
+        img1.complete  //这里可以用这个方法查看所引入图片加载是否完成 完成是返回true，失败false
+
+        console.log('img1', img1.complete)
+        console.log('img2', img2.complete)
+
+        setTimeout(() => {
+            if (img1.complete && img2.complete) {
+                ctx!.drawImage(img2, 0, 0, 500, 800);
+                ctx!.drawImage(img1, 120, 310, 256, 270);
+            } else {
+                console.log('图片加载失败，请重试');
+                // this.downloading = false
+                return
+            }
+
+            // ctx.drawImage(img2, 0, 0, 500, 800);
+            // canvas-drawImage 的五个属性 第一个是所需要合并的图片 第二与第三 是X轴与Y轴；四和五 是图片的width和height
+
+            ctx!.stroke()
+            //  ctx.stroke() 这个属性很重要，这个是图片画布开始绘制
+            let urls = canvas.toDataURL("image/jpg")
+            // canvas.toDataURL("image/jpg") 这个是生成新图片的url
+            console.log('ctx', urls)
+            // this.downloading = false
+            this.pictruedowns(urls)
+        }, 1000)
+        // 设置setTimeout是为了防止图片加载失败的时候，canvas绘制空画布返回
+    }
+
+    // 下载图片的方法 很简陋 大佬们别介意
+    pictruedowns(url: string) {
+        var alink = document.createElement("a");
+        alink.href = url;
+        alink.download = "qrcode"; //图片名
+        alink.click();
+    }
+
 }

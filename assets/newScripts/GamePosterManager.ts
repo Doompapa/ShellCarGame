@@ -2,6 +2,7 @@
 import { _decorator, Component, Node, Sprite, LabelComponent, RichTextComponent, resources, Texture2D, ImageAsset, SpriteFrame } from 'cc';
 import { Car } from './Car';
 import { ApiManager } from './plugin/ApiManager';
+import { Screenshot2D } from './plugin/Screenshot2D';
 const { ccclass, property } = _decorator;
 
 /**
@@ -39,7 +40,7 @@ export class GamePosterManager extends Component {
     mainCar!: Car    //获取赛车
 
 
-    start() {
+    onLoad() {
 
         var distance = Math.floor(this.mainCar.node.getWorldPosition().z - 50);
 
@@ -78,6 +79,8 @@ export class GamePosterManager extends Component {
         this.DistanceLabel.string = distance.toString();
 
         this.VShellLabel.string = "<color=#D02D25><outline color=white width=6><size=66><b>" + this.mainCar._vshellNumber + "</b></size></color>"
+
+        // this.getComponent(Screenshot2D)?.showImage();
 
     }
 

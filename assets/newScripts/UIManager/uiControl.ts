@@ -169,7 +169,7 @@ export class TabControl extends Component {
     /**
      * 游戏总时长
      */
-    private GameTotalTime = 45;
+    private GameTotalTime = 1;
 
     public runingTime: number = 0;
 
@@ -220,8 +220,6 @@ export class TabControl extends Component {
         this.UIList.push(this.RewardUI);
         this.UIList.push(this.RegisterUI);
         this.UIList.push(this.FirstUI);
-        // this.UIList.push(this.GamePosterUI);
-        // this.openUI(this.SelectAreaNode);
         this.UIList.push(this.BJRegisterUI);
         this.openUI(this.FirstUI);
 
