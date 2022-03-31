@@ -195,7 +195,6 @@ export class ShareManager extends Component {
         showImg = this.ShowImage;
     }
 
-
     hideImgHTML() {
         if (showImageElement != undefined && showImageElement != null) {
             showImageElement.style.display = "none";
@@ -279,11 +278,13 @@ export class ShareManager extends Component {
                                         let offsetY = deltaHeight * showImg.node.position.y;
 
                                         showImageElement = document.createElement("img");
-                                        // showImageElement.src = "https://www.doompapa.com/test.png";
                                         showImageElement.style.position = "absolute";
 
+                                        // showImageElement.style.width = (deltaWidth * testUI.width).toString() + "px";
+                                        // showImageElement.style.height = (deltaHeight * testUI.height).toString() + "px";
+
                                         showImageElement.style.width = (deltaWidth * testUI.width).toString() + "px";
-                                        showImageElement.style.height = (deltaHeight * testUI.height).toString() + "px";
+                                        showImageElement.style.height = (deltaWidth * testUI.width / 9 * 16).toString() + "px";
 
                                         showImageElement.style.transform = "translate(0, -" + offsetY + "px)";
                                         showImageElement.src = strImg;

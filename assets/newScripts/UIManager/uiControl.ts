@@ -160,8 +160,6 @@ export class TabControl extends Component {
     ToastLabel!: LabelComponent
 
 
-
-
     private VShellCount = 0;
 
     public timeCount = 0;
@@ -358,7 +356,7 @@ export class TabControl extends Component {
         // }
 
 
-        this.openUI(this.InstructionNode);
+        this.openUI(this.LoginUI);
 
     }
 
@@ -409,6 +407,9 @@ export class TabControl extends Component {
             provinces_data.push(province[i].name);
         }
         this.provinceComBox.setItems(provinces_data);
+
+
+        customerListener.dispatch(Constants.GameStatus.HIDE_SHARE);
 
         customerListener.on(Constants.GameStatus.CLICK_COMBOXITEM, this.OnSelectProvince, this);
         customerListener.dispatch(Constants.GameStatus.CLICK_COMBOXITEM, "北京市");

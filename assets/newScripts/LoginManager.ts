@@ -40,20 +40,22 @@ export class LoginManager extends Component {
     })
     GoRegisterNode!: Node
 
+    @property({
+        type: LabelComponent
+    })
+    TipLabel!: LabelComponent
+
     private totalTime = 60;
 
     start() {
 
-        // let area = localStorage.getItem(Constants.GameStatus.SELECT_AREA);
-        // switch (area) {
-        //     case "浙江省":
-        //     case "北京市":
-        //         this.GoRegisterNode.active = false;
-        //         break;
-        //     default:
-        //         this.GoRegisterNode.active = true;
-        //         break;
-        // }
+        let area = localStorage.getItem(Constants.GameStatus.SELECT_AREA);
+        switch (area) {
+            case "广东省":
+                this.GoRegisterNode.active = false;
+                this.TipLabel.string = "请进行短信验证";
+                break;
+        }
     }
 
 
@@ -122,13 +124,6 @@ export class LoginManager extends Component {
                         //通过验证后直接抽奖
                         ApiManager.IsLogin = true;
                         this.uiControl.ShowReward();
-                        // ApiManager.GetMember("GD", phone, (isSuccess, resp) => {
-                        //     if (isSuccess) {
-
-                        //     } else {
-                        //         customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "当前手机号未注册");
-                        //     }
-                        // });
                         break;
                     default:
                         break;

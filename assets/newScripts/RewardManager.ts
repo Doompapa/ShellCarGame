@@ -169,11 +169,10 @@ export class RewardManager extends Component {
                     console.log("QRCode " + offsetY);
 
                     showImageElement = document.createElement("img");
-                    // showImageElement.src = "https://www.doompapa.com/test.png";
                     showImageElement.style.position = "absolute";
 
                     showImageElement.style.width = (deltaWidth * testUI.width).toString() + "px";
-                    showImageElement.style.height = (deltaHeight * testUI.height).toString() + "px";
+                    showImageElement.style.height = (deltaWidth * testUI.width).toString() + "px";
 
                     // showImageElement.style.transform = "translate(0, -100px)";
 

@@ -44,7 +44,7 @@ export class GamePosterManager extends Component {
 
     start() {
         customerListener.dispatch(Constants.GameStatus.SHOW_MASK, true);
-        
+
         var distance = Math.floor(this.mainCar.node.getWorldPosition().z - 50);
 
         if (this.mainCar._vshellNumber >= 30) {
@@ -77,17 +77,15 @@ export class GamePosterManager extends Component {
             sp.texture = resultImage;
             this.PosterImage.spriteFrame = sp;
             this.PosterImage.node.active = true;
+
+            this.scheduleOnce(() => {
+                this.getComponent(Screenshot2D)?.showImage();
+            }, 0.5)
         });
 
         this.DistanceLabel.string = distance.toString();
 
-        // this.VShellLabel.string = "<color=#D02D25><outline color=white width=6><size=66><b>" + this.mainCar._vshellNumber + "</b></size></color>"
         this.VShellLabel.string = this.mainCar._vshellNumber.toString();
-
-
-        this.scheduleOnce(() => {
-            this.getComponent(Screenshot2D)?.showImage();
-        }, 0.1)
 
     }
 
