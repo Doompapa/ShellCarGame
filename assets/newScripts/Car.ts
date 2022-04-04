@@ -231,7 +231,7 @@ export class Car extends Component {
 
 
     start() {
-        // game.frameRate = 60;
+        game.frameRate = 60;
         // game.setFrameRate(60);
         this.setNode(this.startPos)
         this._cameraPos = this.camera.worldPosition;
