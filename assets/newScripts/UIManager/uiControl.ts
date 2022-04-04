@@ -167,7 +167,7 @@ export class TabControl extends Component {
     /**
      * 游戏总时长
      */
-    private GameTotalTime = 1;
+    private GameTotalTime = 45;
 
     public runingTime: number = 0;
 
