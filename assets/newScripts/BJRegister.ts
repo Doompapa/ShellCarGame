@@ -17,19 +17,17 @@ const { ccclass, property } = _decorator;
 
 @ccclass('BJRegister')
 export class BJRegister extends Component {
-    // [1]
-    // dummy = '';
-
-    // [2]
-    // @property
-    // serializableDummy = 0;
-
-    // @property({
-    //     type: Node
-    // })
-    // Ticket!: Node
 
     start() {
+
+
+    }
+
+    onEnable() {
+        if (showImageElement != undefined && showImageElement != null) {
+            showImageElement.style.display = "";
+        }
+
         let area = localStorage.getItem(Constants.GameStatus.SELECT_AREA);
         switch (area) {
             case "浙江省":
@@ -47,6 +45,13 @@ export class BJRegister extends Component {
             default:
                 this.LoadQRImage("FIO");
                 break;
+        }
+
+    }
+
+    onDisable() {
+        if (showImageElement != undefined && showImageElement != null) {
+            showImageElement.style.display = "none";
         }
 
     }
@@ -70,7 +75,10 @@ export class BJRegister extends Component {
                 let deltaWidth = Number(GameCanvas.style.width.replace("px", "")) / 1080;
                 // let deltaHeight = Number(GameCanvas.style.height.replace("px", "")) / 1920;
 
-                showImageElement = document.createElement("img");
+                if (showImageElement == null) {
+                    showImageElement = document.createElement("img");
+                }
+
                 showImageElement.style.position = "absolute";
 
                 showImageElement.style.width = (deltaWidth * 260).toString() + "px";

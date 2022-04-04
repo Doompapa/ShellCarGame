@@ -54,6 +54,13 @@ export class Screenshot2D extends Component {
         this.copyRenderTex();
     }
 
+    onEnable() {
+        if (showImageElement != undefined && showImageElement != null) {
+            showImageElement.style.display = "";
+        }
+
+    }
+
     onDisable() {
         if (showImageElement != undefined && showImageElement != null) {
             showImageElement.style.display = "none";

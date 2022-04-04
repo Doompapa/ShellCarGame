@@ -175,9 +175,13 @@ export class TabControl extends Component {
 
     // private boxTween !: Tween<Node>;
 
+    private prePage!: Node;
+
     private UIList: Node[] = [];;
 
     private selectProvince = "北京市";
+
+    private provinces_data: string[] = [];
 
     update() {
         this._posTem();
@@ -240,7 +244,10 @@ export class TabControl extends Component {
 
     private closeAllUI() {
         for (let i = 0; i < this.UIList.length; i++) {
-            this.UIList[i].active = false;
+            if (this.UIList[i].active) {
+                this.UIList[i].active = false;
+                this.prePage = this.UIList[i];
+            }
         }
     }
 
@@ -304,7 +311,7 @@ export class TabControl extends Component {
         this.resourceManager.playGameOver();
 
         //todo 延迟显示，有过度过程
-        let gameOverOpacity = this.GameOverParent.getComponent(UIOpacityComponent);
+        // let gameOverOpacity = this.GameOverParent.getComponent(UIOpacityComponent);
 
         this.GameOverParent.active = true;
 
@@ -360,6 +367,10 @@ export class TabControl extends Component {
 
     }
 
+    public ShowGamePoster() {
+        this.openUI(this.GameOverParent);
+    }
+
     private OnSelectProvince() {
 
 
@@ -401,18 +412,18 @@ export class TabControl extends Component {
     public ShowAreaSelect() {
         this.openUI(this.SelectAreaNode);
 
-        let provinces_data: string[] = [];
+        if (this.provinces_data == null || this.provinces_data.length == 0) {
+            for (var i = 0; i < province.length; i++) {
+                this.provinces_data.push(province[i].name);
+            }
 
-        for (var i = 0; i < province.length; i++) {
-            provinces_data.push(province[i].name);
+            this.provinceComBox.setItems(this.provinces_data);
+            customerListener.on(Constants.GameStatus.CLICK_COMBOXITEM, this.OnSelectProvince, this);
+            customerListener.dispatch(Constants.GameStatus.CLICK_COMBOXITEM, "北京市");
         }
-        this.provinceComBox.setItems(provinces_data);
-
 
         customerListener.dispatch(Constants.GameStatus.HIDE_SHARE);
 
-        customerListener.on(Constants.GameStatus.CLICK_COMBOXITEM, this.OnSelectProvince, this);
-        customerListener.dispatch(Constants.GameStatus.CLICK_COMBOXITEM, "北京市");
     }
 
 
@@ -433,6 +444,10 @@ export class TabControl extends Component {
         this.ToastLabel.string = text;
         this.ToastUI.active = true;
         this.schedule(this._hideToastFuc, 2);
+    }
+
+    public BackPrePage() {
+        this.openUI(this.prePage);
     }
 
     _hideToastFuc() {
