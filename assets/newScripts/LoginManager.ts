@@ -49,12 +49,18 @@ export class LoginManager extends Component {
 
     start() {
 
+
+    }
+
+    onEnable() {
         let area = localStorage.getItem(Constants.GameStatus.SELECT_AREA);
-        switch (area) {
-            case "广东省":
-                this.GoRegisterNode.active = false;
-                this.TipLabel.string = "请进行短信验证";
-                break;
+
+        if (area == "广东省") {
+            this.GoRegisterNode.active = false;
+            this.TipLabel.string = "请进行短信验证";
+        } else {
+            this.GoRegisterNode.active = true;
+            this.TipLabel.string = "如果您已是会员，请进行短信验证";
         }
     }
 
@@ -126,6 +132,14 @@ export class LoginManager extends Component {
                         this.uiControl.ShowReward();
                         break;
                     default:
+                        ApiManager.GetMember("FIO", phone, (isSuccess, resp) => {
+                            if (isSuccess) {
+                                ApiManager.IsLogin = true;
+                                this.uiControl.ShowReward();
+                            } else {
+                                this.uiControl.ShowRegister();
+                            }
+                        });
                         break;
                 }
             }

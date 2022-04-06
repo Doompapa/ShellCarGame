@@ -2,7 +2,7 @@
   "ver": "1.0.22",
   "importer": "image",
   "imported": true,
-  "uuid": "1c71c571-cc04-4f28-8668-c3d96859e1d4",
+  "uuid": "d64a1c08-84b1-45d1-868b-4a8b1a750f02",
   "files": [
     ".jpg",
     ".json"
@@ -10,7 +10,7 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "1c71c571-cc04-4f28-8668-c3d96859e1d4@6c48a",
+      "uuid": "d64a1c08-84b1-45d1-868b-4a8b1a750f02@6c48a",
       "displayName": "temple2",
       "id": "6c48a",
       "name": "texture",
@@ -22,7 +22,7 @@
         "mipfilter": "none",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "1c71c571-cc04-4f28-8668-c3d96859e1d4"
+        "imageUuidOrDatabaseUri": "d64a1c08-84b1-45d1-868b-4a8b1a750f02"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -33,7 +33,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "1c71c571-cc04-4f28-8668-c3d96859e1d4@f9941",
+      "uuid": "d64a1c08-84b1-45d1-868b-4a8b1a750f02@f9941",
       "displayName": "temple2",
       "id": "f9941",
       "name": "spriteFrame",
@@ -45,17 +45,17 @@
         "offsetY": 0,
         "trimX": 0,
         "trimY": 0,
-        "width": 1080,
-        "height": 1920,
-        "rawWidth": 1080,
-        "rawHeight": 1920,
+        "width": 756,
+        "height": 1344,
+        "rawWidth": 756,
+        "rawHeight": 1344,
         "borderTop": 0,
         "borderBottom": 0,
         "borderLeft": 0,
         "borderRight": 0,
         "packable": true,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "1c71c571-cc04-4f28-8668-c3d96859e1d4@6c48a",
+        "imageUuidOrDatabaseUri": "d64a1c08-84b1-45d1-868b-4a8b1a750f02@6c48a",
         "atlasUuid": ""
       },
       "ver": "1.0.9",
@@ -69,6 +69,6 @@
   "userData": {
     "hasAlpha": false,
     "type": "sprite-frame",
-    "redirect": "1c71c571-cc04-4f28-8668-c3d96859e1d4@f9941"
+    "redirect": "d64a1c08-84b1-45d1-868b-4a8b1a750f02@f9941"
   }
 }

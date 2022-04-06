@@ -133,6 +133,16 @@ export class RewardManager extends Component {
                     });
                     break;
                 default:
+                    this.BoxShake();
+                    ApiManager.GetReward("FIO", phone, (isSuccess, ticketName) => {
+                        if (isSuccess) {
+                            this.ReceiveReward(ticketName);
+                        } else {
+                            this.ReceiveThanksReward(ticketName);
+                        }
+                        this.LoadQRImage("FIO");
+                        this.BoxShakeStop();
+                    });
                     break;
             }
 
