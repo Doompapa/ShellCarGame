@@ -2,7 +2,7 @@
   "ver": "1.0.22",
   "importer": "image",
   "imported": true,
-  "uuid": "5b2a3bcc-e754-4b46-a6d4-1b9f8d2ff1eb",
+  "uuid": "29a838b5-15b1-4ce4-bbc7-8d3e746250f7",
   "files": [
     ".jpg",
     ".json"
@@ -10,7 +10,7 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "5b2a3bcc-e754-4b46-a6d4-1b9f8d2ff1eb@6c48a",
+      "uuid": "29a838b5-15b1-4ce4-bbc7-8d3e746250f7@6c48a",
       "displayName": "敏捷",
       "id": "6c48a",
       "name": "texture",
@@ -22,7 +22,7 @@
         "mipfilter": "none",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "5b2a3bcc-e754-4b46-a6d4-1b9f8d2ff1eb"
+        "imageUuidOrDatabaseUri": "29a838b5-15b1-4ce4-bbc7-8d3e746250f7"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -33,7 +33,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "5b2a3bcc-e754-4b46-a6d4-1b9f8d2ff1eb@f9941",
+      "uuid": "29a838b5-15b1-4ce4-bbc7-8d3e746250f7@f9941",
       "displayName": "敏捷",
       "id": "f9941",
       "name": "spriteFrame",
@@ -55,7 +55,7 @@
         "borderRight": 0,
         "packable": true,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "5b2a3bcc-e754-4b46-a6d4-1b9f8d2ff1eb@6c48a",
+        "imageUuidOrDatabaseUri": "29a838b5-15b1-4ce4-bbc7-8d3e746250f7@6c48a",
         "atlasUuid": ""
       },
       "ver": "1.0.9",
@@ -69,6 +69,6 @@
   "userData": {
     "hasAlpha": false,
     "type": "sprite-frame",
-    "redirect": "5b2a3bcc-e754-4b46-a6d4-1b9f8d2ff1eb@f9941"
+    "redirect": "29a838b5-15b1-4ce4-bbc7-8d3e746250f7@f9941"
   }
 }

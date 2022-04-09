@@ -88,7 +88,7 @@ export class RewardManager extends Component {
                     this.BoxShake();
                     ApiManager.GetReward("ZJ", phone, (isSuccess, ticketName) => {
                         if (isSuccess) {
-                            this.ReceiveReward(ticketName);  
+                            this.ReceiveReward(ticketName);
                         } else {
                             this.ReceiveThanksReward(ticketName);
                         }
@@ -100,7 +100,7 @@ export class RewardManager extends Component {
                     this.BoxShake();
                     ApiManager.GetReward("BJ", phone, (isSuccess, ticketName) => {
                         if (isSuccess) {
-                            this.ReceiveReward(ticketName);                         
+                            this.ReceiveReward(ticketName);
                         } else {
                             this.ReceiveThanksReward(ticketName);
                         }
@@ -134,7 +134,7 @@ export class RewardManager extends Component {
                     break;
                 default:
                     this.BoxShake();
-                    ApiManager.GetReward("FIO", phone, (isSuccess, ticketName) => {
+                    ApiManager.GetRewardFIO("FIO", phone, area, (isSuccess, ticketName) => {
                         if (isSuccess) {
                             this.ReceiveReward(ticketName);
                         } else {

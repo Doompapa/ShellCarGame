@@ -2,7 +2,7 @@
   "ver": "1.0.22",
   "importer": "image",
   "imported": true,
-  "uuid": "b2aafc22-d9af-4984-887e-031f1ea1ffe3",
+  "uuid": "b2734c62-2911-4835-a49a-20bdd7c354b1",
   "files": [
     ".jpg",
     ".json"
@@ -10,7 +10,7 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "b2aafc22-d9af-4984-887e-031f1ea1ffe3@6c48a",
+      "uuid": "b2734c62-2911-4835-a49a-20bdd7c354b1@6c48a",
       "displayName": "天赋",
       "id": "6c48a",
       "name": "texture",
@@ -22,7 +22,7 @@
         "mipfilter": "none",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "b2aafc22-d9af-4984-887e-031f1ea1ffe3"
+        "imageUuidOrDatabaseUri": "b2734c62-2911-4835-a49a-20bdd7c354b1"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -33,7 +33,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "b2aafc22-d9af-4984-887e-031f1ea1ffe3@f9941",
+      "uuid": "b2734c62-2911-4835-a49a-20bdd7c354b1@f9941",
       "displayName": "天赋",
       "id": "f9941",
       "name": "spriteFrame",
@@ -55,7 +55,7 @@
         "borderRight": 0,
         "packable": true,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "b2aafc22-d9af-4984-887e-031f1ea1ffe3@6c48a",
+        "imageUuidOrDatabaseUri": "b2734c62-2911-4835-a49a-20bdd7c354b1@6c48a",
         "atlasUuid": ""
       },
       "ver": "1.0.9",
@@ -69,6 +69,6 @@
   "userData": {
     "hasAlpha": false,
     "type": "sprite-frame",
-    "redirect": "b2aafc22-d9af-4984-887e-031f1ea1ffe3@f9941"
+    "redirect": "b2734c62-2911-4835-a49a-20bdd7c354b1@f9941"
   }
 }

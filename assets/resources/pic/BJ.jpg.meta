@@ -2,7 +2,7 @@
   "ver": "1.0.22",
   "importer": "image",
   "imported": true,
-  "uuid": "42726986-8c24-46df-a7ce-af35c3b69158",
+  "uuid": "243fcb44-8d7b-4dd2-aae0-75f90a9f870f",
   "files": [
     ".jpg",
     ".json"
@@ -10,7 +10,7 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "42726986-8c24-46df-a7ce-af35c3b69158@6c48a",
+      "uuid": "243fcb44-8d7b-4dd2-aae0-75f90a9f870f@6c48a",
       "displayName": "BJ",
       "id": "6c48a",
       "name": "texture",
@@ -22,7 +22,7 @@
         "mipfilter": "none",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "42726986-8c24-46df-a7ce-af35c3b69158"
+        "imageUuidOrDatabaseUri": "243fcb44-8d7b-4dd2-aae0-75f90a9f870f"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -33,7 +33,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "42726986-8c24-46df-a7ce-af35c3b69158@f9941",
+      "uuid": "243fcb44-8d7b-4dd2-aae0-75f90a9f870f@f9941",
       "displayName": "BJ",
       "id": "f9941",
       "name": "spriteFrame",
@@ -45,17 +45,17 @@
         "offsetY": 0,
         "trimX": 0,
         "trimY": 0,
-        "width": 258,
-        "height": 258,
-        "rawWidth": 258,
-        "rawHeight": 258,
+        "width": 430,
+        "height": 430,
+        "rawWidth": 430,
+        "rawHeight": 430,
         "borderTop": 0,
         "borderBottom": 0,
         "borderLeft": 0,
         "borderRight": 0,
         "packable": true,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "42726986-8c24-46df-a7ce-af35c3b69158@6c48a",
+        "imageUuidOrDatabaseUri": "243fcb44-8d7b-4dd2-aae0-75f90a9f870f@6c48a",
         "atlasUuid": ""
       },
       "ver": "1.0.9",
@@ -69,6 +69,6 @@
   "userData": {
     "hasAlpha": false,
     "type": "sprite-frame",
-    "redirect": "42726986-8c24-46df-a7ce-af35c3b69158@f9941"
+    "redirect": "243fcb44-8d7b-4dd2-aae0-75f90a9f870f@f9941"
   }
 }

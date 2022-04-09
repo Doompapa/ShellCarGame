@@ -104,7 +104,40 @@ export class ApiManager {
         };
 
         let paramStr = JSON.stringify(param);
+        //http://localhost:8080
+        // HttpUtil.post("http://localhost:8080/" + head + "/ReceiveMemberCoupon", paramStr, (isSuccess, resp) => {
         HttpUtil.post(this.BaseUrl + "/" + head + "/ReceiveMemberCoupon", paramStr, (isSuccess, resp) => {
+            customerListener.dispatch(Constants.GameStatus.SHOW_MASK, false);
+            console.log(resp);
+            if (isSuccess) {
+                callback(true, (resp as any).message);
+            } else {
+                callback(false, (resp as any).message);
+                // customerListener.dispatch(Constants.GameStatus.SHOW_TOAST, "连接失败,请稍后再试");
+            }
+
+        });
+
+    }
+
+    /**
+ * 四合一抽奖区分地区抽奖
+ * @param head 请求前缀
+ * @param phone 手机号码
+ * @param callback 回调
+ */
+    public static GetRewardFIO(head: string, phone: string, area: string, callback: (arg0: boolean, arg1: string) => void) {
+
+        customerListener.dispatch(Constants.GameStatus.SHOW_MASK, true);
+        let param = {
+            "phone": phone,
+            "area": area
+        };
+
+        let paramStr = JSON.stringify(param);
+        //http://localhost:8080
+        // HttpUtil.post("http://localhost:8080/" + head + "/ReceiveMemberCoupon", paramStr, (isSuccess, resp) => {
+        HttpUtil.post(this.BaseUrl + "/FIO/ReceiveMemberCoupon", paramStr, (isSuccess, resp) => {
             customerListener.dispatch(Constants.GameStatus.SHOW_MASK, false);
             console.log(resp);
             if (isSuccess) {

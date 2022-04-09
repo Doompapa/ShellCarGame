@@ -2,7 +2,7 @@
   "ver": "1.0.22",
   "importer": "image",
   "imported": true,
-  "uuid": "5dfae267-a8d4-4c8d-9aec-87b7155bd4b5",
+  "uuid": "eb943fe9-dea3-4d60-ab92-20c87ebc02a5",
   "files": [
     ".jpg",
     ".json"
@@ -10,7 +10,7 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "5dfae267-a8d4-4c8d-9aec-87b7155bd4b5@6c48a",
+      "uuid": "eb943fe9-dea3-4d60-ab92-20c87ebc02a5@6c48a",
       "displayName": "智慧",
       "id": "6c48a",
       "name": "texture",
@@ -22,7 +22,7 @@
         "mipfilter": "none",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "5dfae267-a8d4-4c8d-9aec-87b7155bd4b5"
+        "imageUuidOrDatabaseUri": "eb943fe9-dea3-4d60-ab92-20c87ebc02a5"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -33,7 +33,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "5dfae267-a8d4-4c8d-9aec-87b7155bd4b5@f9941",
+      "uuid": "eb943fe9-dea3-4d60-ab92-20c87ebc02a5@f9941",
       "displayName": "智慧",
       "id": "f9941",
       "name": "spriteFrame",
@@ -55,7 +55,7 @@
         "borderRight": 0,
         "packable": true,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "5dfae267-a8d4-4c8d-9aec-87b7155bd4b5@6c48a",
+        "imageUuidOrDatabaseUri": "eb943fe9-dea3-4d60-ab92-20c87ebc02a5@6c48a",
         "atlasUuid": ""
       },
       "ver": "1.0.9",
@@ -69,6 +69,6 @@
   "userData": {
     "hasAlpha": false,
     "type": "sprite-frame",
-    "redirect": "5dfae267-a8d4-4c8d-9aec-87b7155bd4b5@f9941"
+    "redirect": "eb943fe9-dea3-4d60-ab92-20c87ebc02a5@f9941"
   }
 }
